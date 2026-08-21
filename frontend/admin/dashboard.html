@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard · Admin Console</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app">
+  <aside class="sidebar">
+    <div class="brand">LimeAuto<span>After-Sales</span></div>
+    <nav>
+      <div class="nav-group">Admin Console</div>
+      <a href="dashboard.html"><span class="ic">📊</span> Dashboard</a>
+      <a href="claims-review.html"><span class="ic">🧾</span> Claims Review</a>
+      <a href="writeoff.html"><span class="ic">✅</span> Write-off</a>
+      <a href="parts-inventory.html"><span class="ic">📦</span> Parts &amp; Inventory</a>
+      <div class="nav-group">Setup</div>
+      <a href="#"><span class="ic">🔩</span> OE Catalog<span class="soon">soon</span></a>
+      <a href="#"><span class="ic">📐</span> Warranty Rules<span class="soon">soon</span></a>
+      <a href="#"><span class="ic">👥</span> Users &amp; Access<span class="soon">soon</span></a>
+    </nav>
+    <div class="sidebar-foot">LimeAuto · Admin</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar"><h2>Admin Dashboard</h2>
+      <div class="user"><span id="topbar-user">Alan (Admin)</span><div class="avatar">A</div></div>
+    </header>
+    <main class="content">
+      <div class="grid g-4 mb16">
+        <div class="card stat"><div class="num" style="color:var(--warning)">1</div><div class="lbl">Pending Review</div></div>
+        <div class="card stat"><div class="num" style="color:var(--success)">1</div><div class="lbl">Approved (awaiting write-off)</div></div>
+        <div class="card stat"><div class="num" style="color:var(--danger)">3</div><div class="lbl">Low-stock SKUs</div></div>
+        <div class="card stat"><div class="num">4</div><div class="lbl">Claims this week</div></div>
+      </div>
+
+      <div class="card">
+        <h3>Pending Review Queue <a href="claims-review.html" class="spacer small">Review all →</a></h3>
+        <table class="table" id="qTable">
+          <thead><tr><th>Claim</th><th>Dealer</th><th>Vehicle</th><th>Fault</th><th>Status</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/app.js"></script>
+  <script>
+    const L = window.LIME;
+    (async () => {
+      const { data } = await L.api('GET', '/api/claims');
+      const pending = data.filter(c => c.status === 'Under Review');
+      L.$('#qTable tbody').innerHTML = pending.map(c =>
+        `<tr>
+          <td><a class="link" href="claims-review.html">${L.esc(c.no)}</a></td>
+          <td>KTL</td><td>${L.esc(c.model)}</td><td>${L.esc(c.fault)}</td><td>${L.badge(c.status)}</td>
+        </tr>`).join('');
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claims Review · Admin Console</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app">
+  <aside class="sidebar">
+    <div class="brand">LimeAuto<span>After-Sales</span></div>
+    <nav>
+      <div class="nav-group">Admin Console</div>
+      <a href="dashboard.html"><span class="ic">📊</span> Dashboard</a>
+      <a href="claims-review.html"><span class="ic">🧾</span> Claims Review</a>
+      <a href="writeoff.html"><span class="ic">✅</span> Write-off</a>
+      <a href="parts-inventory.html"><span class="ic">📦</span> Parts &amp; Inventory</a>
+      <div class="nav-group">Setup</div>
+      <a href="#"><span class="ic">🔩</span> OE Catalog<span class="soon">soon</span></a>
+      <a href="#"><span class="ic">📐</span> Warranty Rules<span class="soon">soon</span></a>
+      <a href="#"><span class="ic">👥</span> Users &amp; Access<span class="soon">soon</span></a>
+    </nav>
+    <div class="sidebar-foot">LimeAuto · Admin</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar"><h2>Claim Review — CLM-2026-0007</h2>
+      <div class="user"><span id="topbar-user">Alan (Admin)</span><div class="avatar">A</div></div>
+    </header>
+    <main class="content">
+      <div class="grid g-2">
+        <!-- 左：索赔信息 -->
+        <div>
+          <div class="card">
+            <h3>Claim Details</h3>
+            <div class="flex"><span class="badge b-amber"><span class="dot"></span>Under Review</span>
+              <span class="right small muted">Submitted 2026-08-17 · KTL (Iran)</span></div>
+            <div class="mt16" style="font-size:13.5px">
+              <p><b>Vehicle:</b> Sealion 6 · <span class="mono">LGXCE4CC0N0123456</span></p>
+              <p><b>Fault:</b> Battery pack failure, cannot charge</p>
+              <p><b>Diagnosis:</b> Error code BMS-0x07</p>
+              <p><b>Claimed part:</b> <span class="mono">BYD-BAT-8842</span> — Battery Pack (71.8kWh) ×1</p>
+            </div>
+            <div class="upload-zone mt8">📷 fault_photos (2 attached)</div>
+          </div>
+
+          <div class="card mt16">
+            <h3>Claimed Parts</h3>
+            <table class="table">
+              <thead><tr><th>OE No.</th><th>Name</th><th>Qty</th><th>Warranty</th></tr></thead>
+              <tbody>
+                <tr><td><span class="mono">BYD-BAT-8842</span></td><td>Battery Pack (71.8kWh)</td><td>1</td><td><span class="tag">EV Core</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 右：质保判断卡片 -->
+        <div>
+          <div class="card">
+            <h3>Warranty Check <span class="spacer small muted">auto-computed</span></h3>
+            <div class="check-item"><div class="mark mark-ok">✓</div>
+              <div class="txt"><b>① Vehicle Identity</b><span>VIN matches dealer inventory · KTL</span></div></div>
+            <div class="check-item"><div class="mark mark-ok">✓</div>
+              <div class="txt"><b>② Warranty Term / Mileage</b><span>18,400 km · within EV 96mo / 240,000 km</span></div></div>
+            <div class="check-item"><div class="mark mark-ok">✓</div>
+              <div class="txt"><b>③ Wear / Exclusion</b><span>Battery pack is EV Core — not a wear item</span></div></div>
+            <div class="check-item"><div class="mark mark-ok">✓</div>
+              <div class="txt"><b>④ Human / Accident</b><span>No accident record; pending manual confirm</span></div></div>
+            <div class="check-item"><div class="mark mark-ok">✓</div>
+              <div class="txt"><b>⑤ Maintenance Compliance</b><span>First service on record (2026-08-02)</span></div></div>
+            <div class="flex mt16">
+              <span class="badge b-green"><span class="dot"></span>Recommendation: Approve</span>
+            </div>
+          </div>
+
+          <div class="card mt16">
+            <h3>Decision</h3>
+            <div class="field"><label>Review note (required)</label>
+              <textarea id="note" rows="2" placeholder="Reason for decision..."></textarea></div>
+            <div class="flex">
+              <button class="btn btn-success" onclick="decide('Approved')">Approve</button>
+              <button class="btn btn-outline" onclick="decide('Partial')">Partial</button>
+              <button class="btn btn-danger" onclick="decide('Rejected')">Reject</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/app.js"></script>
+  <script>
+    const L = window.LIME;
+    window.decide = async (s) => {
+      const note = L.$('#note').value;
+      if (!note) { alert('Please enter a review note.'); return; }
+      await L.api('POST', '/api/claims/CLM-2026-0007/review', { decision: s, note });
+      alert(`Decision: ${s} (mock). Backend: POST /api/claims/{id}/review → audit logged.`);
+      location.href = 'dashboard.html';
+    };
+  </script>
+</body>
+</html>

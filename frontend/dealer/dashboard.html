@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard · Dealer Portal</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app">
+  <aside class="sidebar">
+    <div class="brand">LimeAuto<span>After-Sales</span></div>
+    <nav>
+      <div class="nav-group">Dealer Portal</div>
+      <a href="dashboard.html"><span class="ic">📊</span> Dashboard</a>
+      <a href="vehicles.html"><span class="ic">🚗</span> Vehicles</a>
+      <a href="claims.html"><span class="ic">📝</span> Claims</a>
+      <a href="parts-catalog.html"><span class="ic">🔩</span> Parts Catalog</a>
+      <a href="shipments.html"><span class="ic">📦</span> Shipments</a>
+    </nav>
+    <div class="sidebar-foot">KTL Dealer · Iran</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <h2>Dashboard</h2>
+      <div class="user"><span id="topbar-user">KTL Dealer</span><div class="avatar">K</div></div>
+    </header>
+
+    <main class="content">
+      <!-- 统计卡 -->
+      <div class="grid g-4 mb16">
+        <div class="card stat"><div class="num" style="color:var(--warning)">1</div><div class="lbl">Under Review</div></div>
+        <div class="card stat"><div class="num" style="color:var(--success)">1</div><div class="lbl">Approved</div></div>
+        <div class="card stat"><div class="num" style="color:var(--indigo)">1</div><div class="lbl">Shipped</div></div>
+        <div class="card stat"><div class="num">4</div><div class="lbl">Active Vehicles</div></div>
+      </div>
+
+      <div class="grid g-2">
+        <!-- 最近索赔 -->
+        <div class="card">
+          <h3>Recent Claims <a href="claims.html" class="spacer small">View all →</a></h3>
+          <table class="table" id="claimTable">
+            <thead><tr><th>Claim</th><th>Vehicle</th><th>Status</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <!-- 快捷入口 -->
+        <div class="card">
+          <h3>Quick Actions</h3>
+          <div class="grid g-2">
+            <a href="claim-new.html" class="card" style="text-align:center"><div style="font-size:28px">📝</div><div style="font-weight:600;margin-top:6px">New Claim</div></a>
+            <a href="parts-catalog.html" class="card" style="text-align:center"><div style="font-size:28px">🔩</div><div style="font-weight:600;margin-top:6px">Find OE Parts</div></a>
+            <a href="vehicles.html" class="card" style="text-align:center"><div style="font-size:28px">🚗</div><div style="font-weight:600;margin-top:6px">My Vehicles</div></a>
+            <a href="shipments.html" class="card" style="text-align:center"><div style="font-size:28px">📦</div><div style="font-weight:600;margin-top:6px">Track Shipments</div></a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/app.js"></script>
+  <script>
+    const L = window.LIME;
+    (async () => {
+      const { data } = await L.api('GET', '/api/claims');
+      const rows = data.slice(0, 4).map(c =>
+        `<tr><td><span class="mono">${L.esc(c.no)}</span></td><td>${L.esc(c.model)}</td><td>${L.badge(c.status)}</td></tr>`
+      ).join('');
+      L.$('#claimTable tbody').innerHTML = rows;
+    })();
+  </script>
+</body>
+</html>

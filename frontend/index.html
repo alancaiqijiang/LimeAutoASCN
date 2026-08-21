@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In · LimeAuto After-Sales Portal</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="login-wrap">
+    <div class="login-card">
+      <div class="login-brand">
+        <div class="logo">LA</div>
+        <h1>LimeAuto After-Sales</h1>
+        <p>Dealer &amp; Service Portal</p>
+      </div>
+
+      <!-- 演示用：切换进入经销商门户 / 内部后台 -->
+      <div class="role-switch" id="roleSwitch">
+        <button type="button" data-role="dealer" class="active">Dealer Portal</button>
+        <button type="button" data-role="admin">Admin Console</button>
+      </div>
+
+      <div class="field">
+        <label for="email">Email / Account</label>
+        <input type="text" id="email" placeholder="dealer@example.com" value="ktl@limeauto.com">
+      </div>
+      <div class="field">
+        <label for="pwd">Password</label>
+        <input type="password" id="pwd" placeholder="••••••••" value="demo1234">
+      </div>
+
+      <button class="btn btn-primary btn-block" id="loginBtn">Sign In</button>
+      <p class="hint" style="text-align:center;margin-top:14px">
+        Front-end skeleton (v1) — mock sign-in. Backend (Laravel + Sanctum) wired in Iter 0.
+      </p>
+    </div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+  <script>
+    const L = window.LIME;
+    let selectedRole = 'dealer';
+    L.$('#roleSwitch').addEventListener('click', (e) => {
+      const btn = e.target.closest('button'); if (!btn) return;
+      L.$$('#roleSwitch button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedRole = btn.dataset.role;
+    });
+    L.$('#loginBtn').addEventListener('click', async () => {
+      const email = L.$('#email').value, pwd = L.$('#pwd').value;
+      if (!email || !pwd) { alert('Please enter account and password.'); return; }
+      await L.api('POST', '/api/login', { email, password: pwd, role: selectedRole });
+      L.login(selectedRole);
+    });
+  </script>
+</body>
+</html>

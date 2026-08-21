@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipments · Dealer Portal</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app">
+  <aside class="sidebar">
+    <div class="brand">LimeAuto<span>After-Sales</span></div>
+    <nav>
+      <div class="nav-group">Dealer Portal</div>
+      <a href="dashboard.html"><span class="ic">📊</span> Dashboard</a>
+      <a href="vehicles.html"><span class="ic">🚗</span> Vehicles</a>
+      <a href="claims.html"><span class="ic">📝</span> Claims</a>
+      <a href="parts-catalog.html"><span class="ic">🔩</span> Parts Catalog</a>
+      <a href="shipments.html"><span class="ic">📦</span> Shipments</a>
+    </nav>
+    <div class="sidebar-foot">KTL Dealer · Iran</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar"><h2>Shipments</h2>
+      <div class="user"><span id="topbar-user">KTL Dealer</span><div class="avatar">K</div></div>
+    </header>
+    <main class="content">
+      <div class="card">
+        <table class="table" id="sTable">
+          <thead><tr><th>Shipment</th><th>Claim</th><th>Part</th><th>Qty</th><th>Carrier / Tracking</th><th>Status</th><th>ETA</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/app.js"></script>
+  <script>
+    const L = window.LIME;
+    (async () => {
+      const { data } = await L.api('GET', '/api/shipments');
+      L.$('#sTable tbody').innerHTML = data.map(s =>
+        `<tr>
+          <td><span class="mono">${L.esc(s.no)}</span></td>
+          <td><span class="mono">${L.esc(s.claim)}</span></td>
+          <td>${L.esc(s.part)}</td><td>${s.qty}</td>
+          <td class="small">${L.esc(s.carrier)}<br><span class="mono">${L.esc(s.tracking)}</span></td>
+          <td>${L.badge(s.status)}</td><td class="small">${L.esc(s.eta)}</td>
+        </tr>`).join('') || '<tr><td colspan="7" class="muted">No shipments</td></tr>';
+    })();
+  </script>
+</body>
+</html>

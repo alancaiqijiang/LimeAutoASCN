@@ -1,0 +1,346 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>L001-AOSS_002 网站需求文档</title><style>
+:root{--bg:#f5f6f8;--card:#fff;--ink:#1f2733;--muted:#5b6675;--line:#e5e8ee;--brand:#c62828;--brand-soft:#fdeeee;--accent:#1565c0}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.75;font-size:15.5px}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 80px}
+article{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:48px 56px;box-shadow:0 8px 30px rgba(20,30,50,.06)}
+h1{font-size:26px;margin:0 0 6px;color:#111}
+h2{font-size:20px;margin:42px 0 14px;padding:10px 14px;background:var(--brand-soft);border-left:4px solid var(--brand);border-radius:6px;color:#a01f1f}
+h3{font-size:16.5px;margin:28px 0 10px;color:var(--accent)}
+h4{font-size:15px;margin:20px 0 8px}
+p{margin:12px 0}
+blockquote{margin:16px 0;padding:12px 16px;background:#f0f6fd;border-left:4px solid var(--accent);border-radius:6px;color:#37475a;font-size:14.5px}
+blockquote p{margin:4px 0}
+ul,ol{margin:10px 0;padding-left:26px}li{margin:5px 0}
+code{background:#eef1f6;padding:2px 6px;border-radius:4px;font-family:"SF Mono",Menlo,monospace;font-size:13px;color:#b3261e}
+pre{background:#1f2733;color:#e8eef5;padding:16px 18px;border-radius:10px;overflow-x:auto;font-size:13px;line-height:1.6}
+pre code{background:none;color:inherit;padding:0}
+table{border-collapse:collapse;width:100%;margin:16px 0;font-size:14px}
+th,td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+th{background:#f2f4f8;font-weight:600;color:#37475a;white-space:nowrap}
+tr:nth-child(even) td{background:#fafbfd}
+hr{border:none;border-top:1px solid var(--line);margin:30px 0}
+a{color:var(--accent);text-decoration:none}
+.badge{display:inline-block;background:var(--brand);color:#fff;font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px;margin-right:6px;vertical-align:2px}
+.meta{color:var(--muted);font-size:13.5px}
+@media print{body{background:#fff}.wrap{padding:0}article{box-shadow:none;border:none}}
+@media (max-width:640px){article{padding:28px 20px}.wrap{padding:16px 10px}}
+</style></head>
+<body><div class="wrap"><article><h1 id="limeauto-oa-web-app-requirements">LimeAuto 售后经销商 OA 系统 — 网站需求文档（Web App Requirements）</h1>
+<blockquote>
+<p><strong>Project ID:</strong> L001-AOSS_002　|　<strong>所属项目:</strong> L001-AOSS_001 LimeAuto 售后经销商 OA 系统
+<strong>文档版本:</strong> v1.0　|　<strong>状态:</strong> 待评审　|　<strong>日期:</strong> 2026-08-18
+<strong>上游文档:</strong> L001-AOSS_001 产品规格文档（业务 PRD）
+<strong>技术基线:</strong> HTML + AJAX + Laravel（PHP）+ MySQL　|　<strong>界面语言:</strong> 英文</p>
+</blockquote>
+<hr>
+<h2 id="1">1. 文档定位</h2>
+<p>本文档是把业务 PRD（L001-AOSS_001）落到 <strong>网页端</strong> 的规格说明，回答三个问题：</p>
+<ol>
+<li>这个网站是什么（产品端口定位）</li>
+<li>网站有哪些页面、每个页面做什么（信息架构 + 页面清单）</li>
+<li>用户怎么在这些页面间完成核心任务（流程 + 权限）</li>
+</ol>
+<p>本文档面向产品、设计、前端开发评审；技术实现细节（数据库、API、目录结构）见 L001-AOSS_003 技术架构文档。</p>
+<hr>
+<h2 id="2">2. 产品端口定位</h2>
+<p><strong>LimeAuto After-Sales Portal</strong> 是一个面向 <strong>海外经销商 + LimeAuto 内部团队</strong> 的 Web 售后协同门户，用单一入口承载两个端：</p>
+<table>
+<thead>
+<tr>
+<th>端</th>
+<th>使用者</th>
+<th>核心目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dealer Portal（经销商门户）</strong></td>
+<td>海外经销商（KTL、AvaMotor、NekBar 等）售后人员</td>
+<td>自服务：查车、录维保、提索赔、查配件、跟发货</td>
+</tr>
+<tr>
+<td><strong>Admin Console（内部后台）</strong></td>
+<td>LimeAuto 内部（Alan/中方团队）</td>
+<td>运营：审索赔、核销、管备件、维护 OE 与规则</td>
+</tr>
+</tbody>
+</table>
+<p><strong>定位原则：</strong> 本系统是「售后协同」而非「门户展示」，一切页面围绕 <em>索赔闭环</em> 与 <em>配件自服务</em> 设计；不做售前、不做营销内容。</p>
+<p><strong>形态：</strong> 桌面端优先的响应式 Web 应用，英文界面，浅色主题，业务数据密集型布局（表格 + 表单 + 状态看板）。</p>
+<hr>
+<h2 id="3-ia">3. 信息架构（IA / 站点地图）</h2>
+<pre><code>LimeAuto After-Sales Portal
+│
+├─ /login                         登录（统一入口）
+│
+├─ Dealer Portal（经销商门户）          /dealer/*
+│   ├─ Dashboard                    工作台（待办 + 索赔状态 + 车辆概览）
+│   ├─ Vehicles                     车辆管理
+│   │    ├─ List                    车辆列表（VIN/车牌检索）
+│   │    └─ Detail                  车辆详情（质保档案 + 维保记录 + 关联索赔）
+│   ├─ Claims                       索赔管理
+│   │    ├─ List                    索赔列表（状态筛选 + 详情）
+│   │    └─ New                     新建索赔（分步表单）
+│   ├─ Parts Catalog                OE 配件查询（检索 + 详情）
+│   └─ Shipments                    发货跟踪（物流状态）
+│
+└─ Admin Console（内部后台）            /admin/*
+    ├─ Dashboard                    审核工作台（待审队列 + 统计）
+    ├─ Claims Review                索赔审核（质保判断卡片 + 批复）
+    ├─ Write-off                    核销（生成核销单 + 触发发货）
+    ├─ Parts &amp; Inventory            备件库存 + 出库 + 发货
+    ├─ OE Catalog Admin             OE 目录维护（导入/编辑）
+    ├─ Warranty Rules               质保规则配置（品牌×车系）
+    └─ Users &amp; Access               账号与权限（经销商机构 + 品牌授权）
+</code></pre>
+<hr>
+<h2 id="4-page-inventory-spec">4. 页面清单与规格（Page Inventory &amp; Spec）</h2>
+<blockquote>
+<p>状态：<strong>P0</strong> = MVP 必备；<strong>P1</strong> = 快速跟进；<strong>P2</strong> = 后续。
+每个页面列出：功能、关键组件、关键交互、权限。</p>
+</blockquote>
+<h3 id="41">4.1 通用（两个端共用）</h3>
+<table>
+<thead>
+<tr>
+<th>页面</th>
+<th>功能与组件</th>
+<th>交互</th>
+<th>优先级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Login</strong></td>
+<td>邮箱/账号 + 密码；「Remember me」；错误提示；登出后回跳</td>
+<td>登录成功按角色路由（dealer→门户，admin→后台）</td>
+<td>P0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-dealer-portal">4.2 经销商门户（Dealer Portal）</h3>
+<table>
+<thead>
+<tr>
+<th>页面</th>
+<th>功能与组件</th>
+<th>关键交互</th>
+<th>优先级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>D1 Dashboard</strong></td>
+<td>待办提示；索赔状态计数卡（Draft/Submitted/Under Review/Approved/Shipped）；最近车辆；快捷入口（新建索赔/查配件）</td>
+<td>点击计数卡跳转对应筛选列表</td>
+<td>P0</td>
+</tr>
+<tr>
+<td><strong>D2 Vehicles · List</strong></td>
+<td>车辆表格（VIN、品牌、车型、车牌、质保到期、状态）；搜索框（VIN/车牌）；分页</td>
+<td>检索 + 点击行进入详情</td>
+<td>P0</td>
+</tr>
+<tr>
+<td><strong>D3 Vehicles · Detail</strong></td>
+<td>车辆主档卡；质保档案卡（整车/三电期限+里程+剩余天数）；维保记录时间线；关联索赔列表</td>
+<td>维保记录可展开附件；关联索赔可跳转</td>
+<td>P0</td>
+</tr>
+<tr>
+<td><strong>D4 Claims · List</strong></td>
+<td>索赔表格（编号、车辆、故障、状态、日期）；状态筛选；状态徽章</td>
+<td>筛选 + 点击进入详情/新建</td>
+<td>P0</td>
+</tr>
+<tr>
+<td><strong>D5 Claims · New</strong></td>
+<td>分步表单：①选车（VIN 检索）②故障描述+照片上传+诊断信息 ③索赔配件（从 OE 目录选件）④确认提交</td>
+<td>选车自动带出质保信息；选件引用 OE；提交进入待审</td>
+<td>P0</td>
+</tr>
+<tr>
+<td><strong>D6 Parts Catalog</strong></td>
+<td>检索区（OE 号/关键词/品牌/车系树）；结果列表（缩略图+名称+OE 号）；配件详情（大图+属性+替代件+适用车型）</td>
+<td>检索 + 系统树浏览 + 详情查看</td>
+<td>P0</td>
+</tr>
+<tr>
+<td><strong>D7 Shipments</strong></td>
+<td>发货列表（核销单号、配件、物流单号、状态、预计送达）</td>
+<td>点击查看详情 + 确认收货</td>
+<td>P0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-admin-console">4.3 内部后台（Admin Console）</h3>
+<table>
+<thead>
+<tr>
+<th>页面</th>
+<th>功能与组件</th>
+<th>关键交互</th>
+<th>优先级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A1 Dashboard</strong></td>
+<td>待审队列计数；近 7 天索赔趋势；超范围赔付预警；快捷审核入口</td>
+<td>点击待审进入审核列表</td>
+<td>P0</td>
+</tr>
+<tr>
+<td><strong>A2 Claims Review</strong></td>
+<td>待审列表；审核详情页：<strong>质保判断卡片</strong>（①车辆身份 ②质保期限/里程 ③易损件排除 ④人为/事故 ⑤保养合规）+ 风险高亮；批复（通过/部分通过/驳回 + 理由）</td>
+<td>逐项核对 + 三态批复 + 留痕</td>
+<td>P0</td>
+</tr>
+<tr>
+<td><strong>A3 Write-off</strong></td>
+<td>已批复索赔列表；核销单生成（赔付内容：补件/退换/金额冲抵）；触发发货需求</td>
+<td>核销确认 + 生成发货单</td>
+<td>P0</td>
+</tr>
+<tr>
+<td><strong>A4 Parts &amp; Inventory</strong></td>
+<td>库存表（SKU/OE 号、库存量、库位、阈值）；出库单；发货（物流单号录入）</td>
+<td>出库扣减 + 发货 + 库存不足告警</td>
+<td>P0</td>
+</tr>
+<tr>
+<td><strong>A5 OE Catalog Admin</strong></td>
+<td>OE 目录表格；新增/编辑；批量导入（Excel + 图片包）；替代件关系维护</td>
+<td>导入/编辑/替代件建链</td>
+<td>P1</td>
+</tr>
+<tr>
+<td><strong>A6 Warranty Rules</strong></td>
+<td>规则列表（品牌×车系：整车质保、三电质保、里程限制、易损件清单）</td>
+<td>增删改规则</td>
+<td>P1</td>
+</tr>
+<tr>
+<td><strong>A7 Users &amp; Access</strong></td>
+<td>经销商机构管理；用户账号；品牌授权（机构↔品牌可见性）</td>
+<td>开账号/授权/停用</td>
+<td>P0（最小版）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="5-key-flows">5. 关键用户流程（Key Flows）</h2>
+<h3 id="51">5.1 登录与路由</h3>
+<pre><code>输入账号密码 → 校验 → 成功：按角色路由
+                       ├─ 经销商用户 → /dealer/dashboard
+                       └─ 内部用户   → /admin/dashboard
+                    → 失败：错误提示，留登录页
+</code></pre>
+<h3 id="52">5.2 经销商提索赔（核心）</h3>
+<pre><code>Dashboard/Claims → New Claim
+  ① Select Vehicle（VIN 检索 → 选车，自动带出质保档案）
+  ② Fault Description（故障描述 + 照片/视频上传 + 诊断信息）
+  ③ Claim Parts（从 OE 目录选件，自动带出名称/图片/替代件）
+  ④ Review &amp; Submit（确认 → 生成索赔编号 → 状态=Submitted）
+</code></pre>
+<h3 id="53">5.3 内部审核 → 核销 → 发货（核心闭环）</h3>
+<pre><code>Admin Dashboard → Claims Review（待审队列）
+  → 审核详情：质保判断卡片（5 项核对 + 风险高亮）
+  → 批复：Approved / Partial / Rejected（附理由，留痕）
+      ├─ 驳回 → 经销商可见原因，可修改重提
+      └─ 通过/部分通过 → Write-off（核销）
+            → 生成核销单（赔付内容）
+            → 触发发货需求 → Parts &amp; Inventory（出库扣减 → 发货填单号）
+            → 经销商 Shipments 可见 → 确认收货 → 索赔 Closed
+</code></pre>
+<h3 id="54-oe">5.4 OE 配件查询（自服务）</h3>
+<pre><code>Parts Catalog → 输入 OE 号/关键词 / 选品牌车系树浏览
+  → 结果列表（缩略图）→ 配件详情（大图+属性+替代件+适用车型）
+  → 可选「加入索赔配件」（跳转新建索赔并预填）
+</code></pre>
+<hr>
+<h2 id="6-rbac-routing">6. 权限与路由映射（RBAC &amp; Routing）</h2>
+<table>
+<thead>
+<tr>
+<th>路由前缀</th>
+<th>角色可见</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/login</code></td>
+<td>所有</td>
+<td>统一登录</td>
+</tr>
+<tr>
+<td><code>/dealer/*</code></td>
+<td>经销商管理员 / 经销商售后专员</td>
+<td>仅本机构数据</td>
+</tr>
+<tr>
+<td><code>/admin/*</code></td>
+<td>内部售后管理员 / 索赔审核员 / 备件管理员 / 系统管理员</td>
+<td>全量数据</td>
+</tr>
+</tbody>
+</table>
+<p><strong>数据级权限（关键）：</strong>
+- 经销商只能访问 <strong>本机构（dealer_id）</strong> 名下的车辆、维保、索赔、发货。
+- <strong>品牌维度</strong>：经销商可见品牌 = 机构被授权的品牌集合（如 KTL 授权 BYD，AvaMotor 授权现代/零跑）。
+- 内部角色按模块授权：审核员可审/批复，备件管理员可库存/发货，系统管理员可 OE/规则/账号。</p>
+<hr>
+<h2 id="7-nfr">7. 非功能需求（NFR）</h2>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>性能</td>
+<td>车辆/索赔列表首屏 &lt; 2s；OE 检索响应 &lt; 1s（数据量预期：OE 万级、车辆千级）</td>
+</tr>
+<tr>
+<td>安全</td>
+<td>HTTPS 全站；登录限流与防暴力破解；会话超时；关键操作（批复/核销/发货）二次留痕</td>
+</tr>
+<tr>
+<td>响应式</td>
+<td>桌面优先，平板可用；移动端仅保证查看可用（V1 不优化操作）</td>
+</tr>
+<tr>
+<td>多语言</td>
+<td>V1 英文；框架预留 i18n（未来可加波斯语/阿拉伯语/中文）</td>
+</tr>
+<tr>
+<td>兼容</td>
+<td>现代浏览器（Chrome/Safari/Edge 近 2 年版本）；不做 IE</td>
+</tr>
+<tr>
+<td>可访问性</td>
+<td>表单有 label、错误有明确提示、状态色配文字（不单靠颜色）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="8">8. 页面状态规范</h2>
+<p>每个列表/详情页必须覆盖四态：
+- <strong>Loading</strong>：骨架屏/加载指示
+- <strong>Empty</strong>：空态文案 + 引导动作（如"暂无索赔，点击新建"）
+- <strong>Error</strong>：错误提示 + 重试
+- <strong>Data</strong>：正常数据渲染</p>
+<hr>
+<h2 id="9-mvp">9. MVP 页面优先级（小步快跑拆分）</h2>
+<p><strong>迭代 0（跑通骨架，本次前端骨架已覆盖）：</strong>
+Login + Dealer Dashboard/Vehicles/Claims(New+List)/Parts Catalog + Admin Dashboard/Claims Review/Write-off/Parts Inventory。</p>
+<p><strong>迭代 1：</strong> Vehicles Detail 维保时间线、索赔详情页、发货确认收货、OE 详情替代件展示。</p>
+<p><strong>迭代 2：</strong> OE Catalog Admin 导入、Warranty Rules 配置、Users &amp; Access 完整版、通知中心（站内信）。</p>
+<p><strong>迭代 3（P2）：</strong> 以图搜图、VIN 反查配件、财务对账、邮件/WhatsApp 通知、多语言。</p>
+<hr>
+<p><em>本文档为 v1.0，需与 L001-AOSS_001（业务 PRD）、L001-AOSS_003（技术架构）配套评审。</em></p></article></div></body></html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Detail · Dealer Portal</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app">
+  <aside class="sidebar">
+    <div class="brand">LimeAuto<span>After-Sales</span></div>
+    <nav>
+      <div class="nav-group">Dealer Portal</div>
+      <a href="dashboard.html"><span class="ic">📊</span> Dashboard</a>
+      <a href="vehicles.html"><span class="ic">🚗</span> Vehicles</a>
+      <a href="claims.html"><span class="ic">📝</span> Claims</a>
+      <a href="parts-catalog.html"><span class="ic">🔩</span> Parts Catalog</a>
+      <a href="shipments.html"><span class="ic">📦</span> Shipments</a>
+    </nav>
+    <div class="sidebar-foot">KTL Dealer · Iran</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar"><h2>Vehicle Detail</h2>
+      <div class="user"><span id="topbar-user">KTL Dealer</span><div class="avatar">K</div></div>
+    </header>
+    <main class="content">
+      <div class="grid g-2">
+        <div class="card">
+          <h3>Vehicle Profile</h3>
+          <div id="profile"></div>
+        </div>
+        <div class="card">
+          <h3>Warranty Coverage</h3>
+          <div id="warranty"></div>
+        </div>
+      </div>
+
+      <div class="card mt16">
+        <h3>Maintenance History</h3>
+        <ul class="timeline">
+          <li><div class="t-date">2026-08-02 · 18,200 km</div><div class="t-title">Routine maintenance (first service)</div></li>
+          <li><div class="t-date">2026-06-10 · 11,500 km</div><div class="t-title">Software update &amp; inspection</div></li>
+          <li><div class="t-date">2026-03-15 · 0 km</div><div class="t-title">Delivery / PDI completed</div></li>
+        </ul>
+        <button class="btn btn-outline btn-sm mt8">+ Add Maintenance Record</button>
+      </div>
+
+      <div class="card mt16">
+        <h3>Related Claims</h3>
+        <table class="table" id="claimTable">
+          <thead><tr><th>Claim</th><th>Fault</th><th>Status</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/app.js"></script>
+  <script>
+    const L = window.LIME;
+    (async () => {
+      const { data } = await L.api('GET', '/api/vehicles');
+      const v = data[0]; // 骨架演示：取第一台
+      L.$('#profile').innerHTML = `
+        <div class="flex" style="gap:12px">
+          <span class="tag tag-byd">${L.esc(v.brand)}</span>
+          <span style="font-weight:700;font-size:16px">${L.esc(v.model)}</span>
+        </div>
+        <div class="mt8" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px;color:var(--muted)">
+          <div>VIN<br><span class="mono" style="color:var(--text)">${L.esc(v.vin)}</span></div>
+          <div>Plate<br><span style="color:var(--text)">${L.esc(v.plate)}</span></div>
+          <div>Sale Date<br><span style="color:var(--text)">${L.esc(v.saleDate)}</span></div>
+          <div>Mileage<br><span style="color:var(--text)">${v.mileage.toLocaleString()} km</span></div>
+        </div>`;
+      L.$('#warranty').innerHTML = `
+        <div class="check-item"><div class="mark mark-ok">✓</div>
+          <div class="txt"><b>Whole Vehicle</b><span>${v.wholeMonths} months / ${v.wholeKm.toLocaleString()} km — In Warranty</span></div></div>
+        <div class="check-item"><div class="mark mark-ok">✓</div>
+          <div class="txt"><b>EV Components (Battery / Motor / ECU)</b><span>${v.evMonths} months / ${v.evKm.toLocaleString()} km — In Warranty</span></div></div>
+        <div class="check-item"><div class="mark mark-ok">✓</div>
+          <div class="txt"><b>Warranty Start</b><span>${L.esc(v.warrantyStart)}</span></div></div>`;
+
+      const claims = await L.api('GET', '/api/claims');
+      const related = claims.data.filter(c => c.vehicle === v.vin);
+      L.$('#claimTable tbody').innerHTML = related.map(c =>
+        `<tr><td><span class="mono">${L.esc(c.no)}</span></td><td>${L.esc(c.fault)}</td><td>${L.badge(c.status)}</td></tr>`).join('') || '<tr><td colspan="3" class="muted">No claims</td></tr>';
+    })();
+  </script>
+</body>
+</html>

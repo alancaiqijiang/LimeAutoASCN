@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parts & Inventory · Admin Console</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app">
+  <aside class="sidebar">
+    <div class="brand">LimeAuto<span>After-Sales</span></div>
+    <nav>
+      <div class="nav-group">Admin Console</div>
+      <a href="dashboard.html"><span class="ic">📊</span> Dashboard</a>
+      <a href="claims-review.html"><span class="ic">🧾</span> Claims Review</a>
+      <a href="writeoff.html"><span class="ic">✅</span> Write-off</a>
+      <a href="parts-inventory.html"><span class="ic">📦</span> Parts &amp; Inventory</a>
+      <div class="nav-group">Setup</div>
+      <a href="#"><span class="ic">🔩</span> OE Catalog<span class="soon">soon</span></a>
+      <a href="#"><span class="ic">📐</span> Warranty Rules<span class="soon">soon</span></a>
+      <a href="#"><span class="ic">👥</span> Users &amp; Access<span class="soon">soon</span></a>
+    </nav>
+    <div class="sidebar-foot">LimeAuto · Admin</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar"><h2>Parts &amp; Inventory</h2>
+      <div class="user"><span id="topbar-user">Alan (Admin)</span><div class="avatar">A</div></div>
+    </header>
+    <main class="content">
+      <div class="toolbar">
+        <div class="search"><span class="s-ic">🔍</span><input placeholder="Search SKU / OE no."></div>
+        <button class="btn btn-outline btn-sm">+ Add SKU</button>
+      </div>
+      <div class="card">
+        <table class="table" id="invTable">
+          <thead><tr><th>SKU</th><th>OE No.</th><th>Name</th><th>Qty</th><th>Location</th><th>Stock Level</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/app.js"></script>
+  <script>
+    const L = window.LIME;
+    (async () => {
+      const { data } = await L.api('GET', '/api/inventory');
+      L.$('#invTable tbody').innerHTML = data.map(i => {
+        const low = i.qty <= i.safety;
+        return `<tr>
+          <td><span class="mono">${L.esc(i.sku)}</span></td>
+          <td><span class="mono">${L.esc(i.oe)}</span></td>
+          <td>${L.esc(i.name)}</td>
+          <td><b style="color:${low ? 'var(--danger)' : 'inherit'}">${i.qty}</b></td>
+          <td>${L.esc(i.location)}</td>
+          <td>${low ? '<span class="badge b-red"><span class="dot"></span>Low</span>' : '<span class="badge b-green"><span class="dot"></span>OK</span>'}</td>
+          <td><button class="btn btn-outline btn-sm" onclick="outbound('${i.oe}')">Outbound</button></td>
+        </tr>`;
+      }).join('');
+    })();
+    window.outbound = async (oe) => {
+      await L.api('POST', '/api/inventory/outbound', { oe_no: oe, qty: 1 });
+      alert('Outbound (mock). Backend: POST /api/inventory/outbound → deduct stock + create outbound order.');
+    };
+  </script>
+</body>
+</html>

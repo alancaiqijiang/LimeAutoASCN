@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+
+# 日志
+*.log
+npm-debug.log*
+
+# Laravel（后续开发阶段）
+/vendor
+/node_modules
+.env
+.env.backup
+public/storage
+storage/*.key
+
+# IDE / 编辑器
+.idea/
+.vscode/
+*.swp
+
+# 备份 / 临时
+*.tmp
+*.bak

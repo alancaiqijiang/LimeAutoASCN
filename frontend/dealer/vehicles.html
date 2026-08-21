@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicles · Dealer Portal</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app">
+  <aside class="sidebar">
+    <div class="brand">LimeAuto<span>After-Sales</span></div>
+    <nav>
+      <div class="nav-group">Dealer Portal</div>
+      <a href="dashboard.html"><span class="ic">📊</span> Dashboard</a>
+      <a href="vehicles.html"><span class="ic">🚗</span> Vehicles</a>
+      <a href="claims.html"><span class="ic">📝</span> Claims</a>
+      <a href="parts-catalog.html"><span class="ic">🔩</span> Parts Catalog</a>
+      <a href="shipments.html"><span class="ic">📦</span> Shipments</a>
+    </nav>
+    <div class="sidebar-foot">KTL Dealer · Iran</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar"><h2>Vehicles</h2>
+      <div class="user"><span id="topbar-user">KTL Dealer</span><div class="avatar">K</div></div>
+    </header>
+    <main class="content">
+      <div class="toolbar">
+        <div class="search"><span class="s-ic">🔍</span>
+          <input id="searchBox" placeholder="Search by VIN or plate no." onkeyup="filterVehicles()">
+        </div>
+      </div>
+      <div class="card">
+        <table class="table" id="vTable">
+          <thead><tr><th>VIN</th><th>Brand / Model</th><th>Plate</th><th>Mileage</th><th>Warranty</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/app.js"></script>
+  <script>
+    const L = window.LIME;
+    let all = [];
+    const render = (list) => {
+      L.$('#vTable tbody').innerHTML = list.map(v => {
+        const tagCls = v.brand === 'BYD' ? 'tag-byd' : 'tag-leap';
+        return `<tr>
+          <td><span class="mono">${L.esc(v.vin)}</span></td>
+          <td><span class="tag ${tagCls}">${L.esc(v.brand)}</span> ${L.esc(v.model)}</td>
+          <td>${L.esc(v.plate)}</td>
+          <td>${v.mileage.toLocaleString()} km</td>
+          <td>${L.badge(v.status)}</td>
+          <td><a class="link" href="vehicle-detail.html?id=${v.id}">Details →</a></td>
+        </tr>`;
+      }).join('');
+    };
+    window.filterVehicles = () => {
+      const q = L.$('#searchBox').value.toLowerCase();
+      render(all.filter(v => v.vin.toLowerCase().includes(q) || v.plate.toLowerCase().includes(q)));
+    };
+    (async () => { const { data } = await L.api('GET', '/api/vehicles'); all = data; render(data); })();
+  </script>
+</body>
+</html>

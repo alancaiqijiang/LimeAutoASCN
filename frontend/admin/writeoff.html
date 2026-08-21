@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Write-off · Admin Console</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app">
+  <aside class="sidebar">
+    <div class="brand">LimeAuto<span>After-Sales</span></div>
+    <nav>
+      <div class="nav-group">Admin Console</div>
+      <a href="dashboard.html"><span class="ic">📊</span> Dashboard</a>
+      <a href="claims-review.html"><span class="ic">🧾</span> Claims Review</a>
+      <a href="writeoff.html"><span class="ic">✅</span> Write-off</a>
+      <a href="parts-inventory.html"><span class="ic">📦</span> Parts &amp; Inventory</a>
+      <div class="nav-group">Setup</div>
+      <a href="#"><span class="ic">🔩</span> OE Catalog<span class="soon">soon</span></a>
+      <a href="#"><span class="ic">📐</span> Warranty Rules<span class="soon">soon</span></a>
+      <a href="#"><span class="ic">👥</span> Users &amp; Access<span class="soon">soon</span></a>
+    </nav>
+    <div class="sidebar-foot">LimeAuto · Admin</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar"><h2>Write-off</h2>
+      <div class="user"><span id="topbar-user">Alan (Admin)</span><div class="avatar">A</div></div>
+    </header>
+    <main class="content">
+      <div class="card">
+        <h3>Approved Claims — Awaiting Write-off</h3>
+        <table class="table">
+          <thead><tr><th>Claim</th><th>Vehicle</th><th>Approved Parts</th><th>Settlement</th><th></th></tr></thead>
+          <tbody>
+            <tr>
+              <td><span class="mono">CLM-2026-0006</span></td>
+              <td>Sealion 7</td>
+              <td><span class="mono">BYD-LMP-2207</span> Tail Light ×1</td>
+              <td><span class="tag">Replace part</span></td>
+              <td><button class="btn btn-primary btn-sm" onclick="writeoff(this)">Write-off → Ship</button></td>
+            </tr>
+            <tr>
+              <td><span class="mono">CLM-2026-0007</span></td>
+              <td>Sealion 6</td>
+              <td><span class="mono">BYD-BAT-8842</span> Battery Pack ×1</td>
+              <td><span class="tag">Replace part</span></td>
+              <td><button class="btn btn-primary btn-sm" onclick="writeoff(this)">Write-off → Ship</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="hint mt8">Write-off generates a write-off order and triggers a shipment request to Parts &amp; Inventory.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/app.js"></script>
+  <script>
+    const L = window.LIME;
+    window.writeoff = async (btn) => {
+      await L.api('POST', '/api/claims/{id}/writeoff', {});
+      btn.textContent = '✓ Written off'; btn.disabled = true; btn.classList.remove('btn-primary'); btn.classList.add('btn-success');
+      alert('Write-off created (mock). Backend: POST /api/claims/{id}/writeoff → shipment request.');
+    };
+  </script>
+</body>
+</html>

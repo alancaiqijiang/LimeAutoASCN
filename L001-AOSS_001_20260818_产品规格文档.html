@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LimeAuto 售后经销商 OA 系统 — PRD v1.0</title>
+<style>
+:root{
+  --bg:#f5f6f8; --card:#ffffff; --ink:#1f2733; --muted:#5b6675;
+  --line:#e5e8ee; --brand:#c62828; --brand-soft:#fdeeee; --accent:#1565c0;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  line-height:1.75; font-size:15.5px;
+}
+.wrap{max-width:900px;margin:0 auto;padding:40px 28px 80px}
+article{
+  background:var(--card); border:1px solid var(--line); border-radius:14px;
+  padding:48px 56px; box-shadow:0 8px 30px rgba(20,30,50,.06);
+}
+h1{font-size:27px; line-height:1.35; margin:0 0 6px; color:#111}
+h2{font-size:20px; margin:42px 0 14px; padding:10px 14px; background:var(--brand-soft);
+   border-left:4px solid var(--brand); border-radius:6px; color:#a01f1f}
+h3{font-size:16.5px; margin:28px 0 10px; color:var(--accent)}
+h4{font-size:15px; margin:20px 0 8px; color:var(--ink)}
+p{margin:12px 0}
+blockquote{margin:16px 0;padding:12px 16px;background:#f0f6fd;border-left:4px solid var(--accent);
+   border-radius:6px;color:#37475a;font-size:14.5px}
+blockquote p{margin:4px 0}
+ul,ol{margin:10px 0;padding-left:26px}
+li{margin:5px 0}
+code{background:#eef1f6;padding:2px 6px;border-radius:4px;font-family:"SF Mono",Menlo,Consolas,monospace;
+   font-size:13px;color:#b3261e}
+pre{background:#1f2733;color:#e8eef5;padding:16px 18px;border-radius:10px;overflow-x:auto;font-size:13px;line-height:1.6}
+pre code{background:none;color:inherit;padding:0}
+table{border-collapse:collapse;width:100%;margin:16px 0;font-size:14px}
+th,td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+th{background:#f2f4f8;font-weight:600;color:#37475a;white-space:nowrap}
+tr:nth-child(even) td{background:#fafbfd}
+hr{border:none;border-top:1px solid var(--line);margin:30px 0}
+a{color:var(--accent);text-decoration:none}
+.dochead{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:8px}
+.badge{display:inline-block;background:var(--brand);color:#fff;font-size:12px;font-weight:600;
+   padding:3px 10px;border-radius:20px;margin-right:6px;vertical-align:2px}
+.meta{color:var(--muted);font-size:13.5px}
+.meta b{color:var(--ink)}
+.toc{background:#f7f9fc;border:1px solid var(--line);border-radius:10px;padding:14px 20px;margin:18px 0;font-size:14px}
+.toc ul{list-style:none;padding-left:0;margin:0}
+.toc li{margin:3px 0}
+.toc a{color:var(--accent)}
+@media print{body{background:#fff}.wrap{padding:0}article{box-shadow:none;border:none}}
+@media (max-width:640px){article{padding:28px 20px}.wrap{padding:16px 10px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<article>
+<div class="dochead">
+  <span class="badge">PRD · v1.0</span>
+  <span class="badge" style="background:#1565c0">L001-AOSS_001</span>
+</div>
+<h1 id="limeauto-oa-prd">LimeAuto 售后经销商 OA 系统 — 产品规格文档（PRD）</h1>
+<blockquote>
+<p><strong>Project ID:</strong> L001-AOSS_001　|　<strong>所属客户:</strong> L001-TMLD 杭州通木朗科技（LimeAuto 自有公司）· 公司子项目
+<strong>文档版本:</strong> v1.0　|　<strong>状态:</strong> 待评审（Draft for Review）　|　<strong>日期:</strong> 2026-08-18
+<strong>作者:</strong> Alan Cai（产品负责人）　|　<strong>品牌范围:</strong> 多品牌全覆盖（BYD / 零跑 / 阿维塔 / 方程豹 / 现代SKD）
+<strong>界面语言:</strong> 英文为主　|　<strong>用户角色:</strong> 海外经销商 + LimeAuto 内部</p>
+</blockquote>
+<hr>
+<h2 id="1-problem-statement">1. 背景与问题陈述（Problem Statement）</h2>
+<p>LimeAuto 将比亚迪、零跑、阿维塔、方程豹、现代（SKD）等中国品牌整车出口至伊朗、沙特、迪拜等市场。车辆售出后，<strong>售后维保与质保索赔环节目前完全依赖人工 + 分散工具（Excel、微信、WhatsApp、邮件）</strong>，缺乏统一的数字化管理。</p>
+<p>当海外某台车发生故障（例如：<strong>一台比亚迪车的电池包损坏</strong>），经销商（如 KTL）向 LimeAuto 发起质保索赔时，我们面临五个"看不清"：</p>
+<ol>
+<li><strong>看不清维保历史</strong> —— 无法快速调取该车从出厂到当前的全部质保/维保记录，难以判断故障是否落在质保与保养范围内。</li>
+<li><strong>看不清索赔边界</strong> —— 索赔范围、易损件排除、里程/年限限制等质保规则分散在合同与人脑里，容易超赔或漏赔。</li>
+<li><strong>看不清核销状态</strong> —— 索赔审批与核销无流程留痕，靠人盯，容易遗漏、重复或延误。</li>
+<li><strong>看不清备件库存</strong> —— 索赔通过后，从备件库发货靠人工登记，库存与发货进度不透明。</li>
+<li><strong>看不清配件信息</strong> —— 已握有 BYD 售后的 OE 配件号与图片，但缺一套可查询、可检索、可关联到索赔与备件的 OE 目录体系。</li>
+</ol>
+<p><strong>不解决的代价：</strong> 质保赔付纠纷与多赔/漏赔带来的直接损失、经销商与终端客户满意度下降、备件库存积压或断供、售后团队人力成本持续放大，以及在多品牌扩张时售后管理进一步失控。</p>
+<hr>
+<h2 id="2-goals">2. 目标（Goals）</h2>
+<h3 id="_1">用户目标（经销商/内部团队得到什么）</h3>
+<ul>
+<li><strong>G1</strong> 任一车辆可 10 秒内调出完整质保/维保档案（VIN 或车牌一键检索）。</li>
+<li><strong>G2</strong> 索赔全流程线上化、可追踪，经销商能实时看到每一步状态，不再靠催问。</li>
+<li><strong>G3</strong> 备件库存与发货状态对经销商与内部双向透明。</li>
+</ul>
+<h3 id="limeauto">业务目标（LimeAuto 得到什么）</h3>
+<ul>
+<li><strong>G4</strong> 将单笔索赔从提交到核销的平均周期缩短 50%（从当前人工流程的 N 天缩短至 N/2 天），并实现 100% 留痕可审计。</li>
+<li><strong>G5</strong> 通过质保规则引擎减少 30% 以上超范围赔付（在 6 个月内）。</li>
+<li><strong>G6</strong> 备件发货及时率 ≥ 95%，索赔驳回原因 100% 可追溯。</li>
+<li><strong>G7</strong> OE 配件查询库上线后，经销商自服务查件率 ≥ 70%（减少对内部售后的重复人工咨询）。</li>
+</ul>
+<blockquote>
+<p>目标均为可衡量的结果（Outcome），而非"做一个系统"这类输出（Output）。</p>
+</blockquote>
+<hr>
+<h2 id="3-non-goals">3. 非目标（Non-Goals）</h2>
+<p>明确 <strong>V1 不做</strong> 的内容，防止范围蔓延：</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>非目标</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N1</td>
+<td>售前 CRM / 销售漏斗 / 询价报价</td>
+<td>本系统聚焦"售出之后"；售前线索与报价已有其他方式管理</td>
+</tr>
+<tr>
+<td>N2</td>
+<td>财务总账 / 结算 / 打款</td>
+<td>V1 只做索赔的"业务核销"，不做钱款账务；财务耦合预留接口，后续接入</td>
+</tr>
+<tr>
+<td>N3</td>
+<td>车辆远程诊断 / 车联网（OTA、远程读取车辆数据）</td>
+<td>依赖车企开放能力，周期长、成本高，V1 仅支持人工录入故障与诊断信息</td>
+</tr>
+<tr>
+<td>N4</td>
+<td>完整 ERP（生产、采购、人事等）</td>
+<td>本系统是售后垂直域系统，不做通用 ERP</td>
+</tr>
+<tr>
+<td>N5</td>
+<td>在线支付 / 经销商在线下单付款</td>
+<td>备件出库先走线下商务确认，V1 不做支付网关</td>
+</tr>
+<tr>
+<td>N6</td>
+<td>经销商在线注册自助开户</td>
+<td>V1 由 LimeAuto 内部为经销商开账号，防止未授权访问质保数据</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="4-personas-roles">4. 用户与角色（Personas &amp; Roles）</h2>
+<h3 id="41">4.1 角色矩阵</h3>
+<table>
+<thead>
+<tr>
+<th>角色</th>
+<th>端</th>
+<th>权限摘要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>经销商管理员</strong>（如 KTL / AvaMotor 负责人）</td>
+<td>经销商门户</td>
+<td>查看本机构全部车辆/维保/索赔，发起索赔，管理本机构成员</td>
+</tr>
+<tr>
+<td><strong>经销商售后专员</strong></td>
+<td>经销商门户</td>
+<td>建车、录维保、发起索赔、查 OE 配件、查备件进度</td>
+</tr>
+<tr>
+<td><strong>LimeAuto 售后管理员</strong>（Alan/中方团队）</td>
+<td>内部后台</td>
+<td>全量查看、分派索赔、核销审批</td>
+</tr>
+<tr>
+<td><strong>LimeAuto 索赔审核员</strong></td>
+<td>内部后台</td>
+<td>审核质保范围、判定赔付、批复金额/配件</td>
+</tr>
+<tr>
+<td><strong>LimeAuto 备件管理员</strong></td>
+<td>内部后台</td>
+<td>备件库存、出库、发货、物流跟踪</td>
+</tr>
+<tr>
+<td><strong>系统管理员</strong></td>
+<td>内部后台</td>
+<td>品牌/车型/OE 数据、质保规则、账号与权限</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>仓库物流、财务</strong> 角色为 P2（后续扩展），V1 通过数据模型预留扩展位。</p>
+</blockquote>
+<h3 id="42">4.2 权限原则</h3>
+<ul>
+<li><strong>机构数据隔离</strong>：经销商只能看自己机构名下的车辆与索赔，互不可见。</li>
+<li><strong>品牌维度可访问性</strong>：同一经销商可能只代理部分品牌（如 AvaMotor 主要现代/零跑，KTL 主要比亚迪），系统按品牌授予数据可见性。</li>
+<li><strong>最小权限 + 审批留痕</strong>：关键动作（审批、核销、发货）必须留痕，可审计。</li>
+</ul>
+<hr>
+<h2 id="5-user-stories">5. 用户故事（User Stories）</h2>
+<p>按优先级排序。核心贯穿场景：<strong>海外一台比亚迪车电池包损坏 → 经销商 KTL 索赔 → 查质保 → 核销 → 备件发货</strong>。</p>
+<p><strong>P0（必须）：</strong>
+- 作为经销商售后专员，我希望用 VIN/车牌一键查询某台车的质保与维保档案，以便判断故障是否在质保范围内。
+- 作为经销商售后专员，我希望在线提交质保索赔单（附故障描述、照片、诊断信息），以便 LimeAuto 能及时受理并给出结论。
+- 作为 LimeAuto 索赔审核员，我希望看到索赔单自动关联的车辆质保状态、维保记录与质保规则，以便快速判定"是否赔付 / 赔多少"。
+- 作为 LimeAuto 索赔审核员，我希望对索赔进行"通过 / 部分通过 / 驳回"的线上批复并留痕，以便结果可追溯。
+- 作为 LimeAuto 售后管理员，我希望对已批复的索赔执行"核销"，并生成备件发货单，以便索赔闭环并驱动备件出库。
+- 作为经销商售后专员，我希望在 OE 配件库按 OE 号 / 车型 / 关键词检索配件（含图片），以便自服务查件、减少反复咨询。
+- 作为备件管理员，我希望查看备件库存并完成出库、发货、填写物流单号，以便经销商实时看到发货进度。</p>
+<p><strong>P1（重要）：</strong>
+- 作为经销商管理员，我希望查看本机构全部索赔的实时状态看板，以便统一跟进不再催问。
+- 作为索赔审核员，我希望系统对"超里程/超年限/易损件"自动给出风险提示，以便减少人工漏判。
+- 作为售后管理员，我希望将索赔单中的配件条目直接关联 OE 目录（自动带出图片、名称、替代件、价格），以便核销时快速生成发货明细。</p>
+<p><strong>P2（未来）：</strong>
+- 作为经销商，我希望以图搜图 / 上传实物照片反查配件，以便在仅有实物无编号时也能定位配件。
+- 作为财务，我希望对核销后的索赔生成对账/结算汇总，以便与经销商对账。</p>
+<hr>
+<h2 id="6-requirements">6. 功能需求（Requirements）</h2>
+<h3 id="60">6.0 模块总览</h3>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>编码</th>
+<th>核心能力</th>
+<th>优先级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>车辆档案与维保记录</td>
+<td>M1</td>
+<td>车辆主档、VIN 管理、维保记录</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>质保索赔管理</td>
+<td>M2</td>
+<td>索赔单、状态流、审批</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>索赔核销</td>
+<td>M3</td>
+<td>批复核销、赔付明细、闭环</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>备件库与发货</td>
+<td>M4</td>
+<td>库存、出库、发货、物流</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>OE 配件查询库</td>
+<td>M5</td>
+<td>OE 目录、检索、图片</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>经销商门户</td>
+<td>M6</td>
+<td>经销商工作台</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>内部管理后台</td>
+<td>M7</td>
+<td>审核/核销/发货/规则/账号</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>多品牌与规则引擎</td>
+<td>M8</td>
+<td>品牌字典、质保规则配置</td>
+<td>P0（架构）/ P1（规则引擎进阶）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="61-m1-vehicle-maintenance-records">6.1 M1 车辆档案与维保记录（Vehicle &amp; Maintenance Records）</h3>
+<p><strong>说明：</strong> 每台售出车辆建立唯一档案，作为索赔判断的事实基础。</p>
+<p><strong>P0：</strong>
+- 车辆主档：VIN（唯一键）、品牌、车系/车型、年款、配置、销售日期、出厂日期、质保起始日、经销商（所属机构）、终端客户信息（合规最小化）。
+- 质保维度：整车质保期、三电质保期（电池/电机/电控，BYD 通常更长）、里程限制、特殊约定（如 SKD/平行出口差异）。
+- 维保记录：每次保养/维修录入 —— 日期、里程、项目、机构、单据附件；支持经销商录入 + LimeAuto 补录。</p>
+<p><strong>P1：</strong> 维保记录批量导入（Excel）；保养到期/里程预警提醒。</p>
+<p><strong>验收标准（AC）：</strong>
+- [ ] 输入 VIN 可 1 次检索出该车完整档案与全部维保记录（含历史）。
+- [ ] 车辆可绑定唯一经销商机构，机构间数据隔离。
+- [ ] 维保记录支持附件上传（图片/PDF）且不可篡改（留痕）。</p>
+<hr>
+<h3 id="62-m2-warranty-claim">6.2 M2 质保索赔管理（Warranty Claim）</h3>
+<p><strong>说明：</strong> 索赔全流程线上化，这是系统的主干。</p>
+<p><strong>P0：</strong>
+- 索赔单字段：索赔编号、关联车辆（自动带出质保信息）、故障描述、故障照片/视频、诊断信息、索赔配件（可关联 OE 目录）、索赔金额（若有）、期望处理方式（退换件/补发件/赔付）。
+- 状态机（见第 7 章流程图）。
+- 审批：审核员对"质保范围"判定，批复结果 = 通过 / 部分通过（改件/改额）/ 驳回，附理由。
+- 规则引擎（V1 基础版）：自动校验 是否超里程 / 超年限 / 属易损件排除项，并高亮风险。</p>
+<p><strong>P1：</strong> 索赔附件 OCR/辅助识别；驳回原因模板化，便于统计分析。</p>
+<p><strong>验收标准（AC）：</strong>
+- [ ] 经销商可在线提交索赔，提交后自动生成唯一编号并进入待审队列。
+- [ ] 审核员页面可看到该车质保状态与维保记录摘要，并完成三态批复，全程留痕。
+- [ ] 状态流转中每一步都有通知（经销商门户站内信，P1 扩展邮件/WhatsApp）。
+- [ ] 超里程/超年限/易损件 场景下系统给出明确风险提示。</p>
+<hr>
+<h3 id="63-m3-claim-write-off-settlement">6.3 M3 索赔核销（Claim Write-off / Settlement）</h3>
+<p><strong>说明：</strong> 把"批复结论"落地为"可执行动作"，是索赔闭环的关键。</p>
+<p><strong>P0：</strong>
+- 核销动作：对已批复的索赔执行核销，生成"核销单"，明确赔付内容（配件补发 / 退换 / 金额冲抵）。
+- 核销单自动生成备件发货需求，流转到 M4 备件库。
+- 核销记录留痕：操作人、时间、批复依据、赔付明细。</p>
+<p><strong>P1：</strong> 部分核销（一次索赔分批核销）；核销与财务对账接口预留。</p>
+<p><strong>验收标准（AC）：</strong>
+- [ ] 只有"已批复（通过/部分通过）"的索赔才能被核销。
+- [ ] 核销完成后索赔进入"已闭环"，且可在经销商端看到结果与发货信息。</p>
+<hr>
+<h3 id="64-m4-spare-parts-warehouse-shipping">6.4 M4 备件库与发货（Spare Parts Warehouse &amp; Shipping）</h3>
+<p><strong>说明：</strong> 库存可见 + 发货透明，支撑核销落地。</p>
+<p><strong>P0：</strong>
+- 库存：SKU（关联 OE 号）、当前库存量、库位、安全库存阈值。
+- 出库：由核销单/补发单触发，扣减库存，生成出库单。
+- 发货：填写物流单号、承运商、预计送达；经销商端可见进度。</p>
+<p><strong>P1：</strong> 安全库存预警、补货建议；发货物流状态自动抓取。</p>
+<p><strong>验收标准（AC）：</strong>
+- [ ] 核销后可在备件库直接生成出库单并扣减库存。
+- [ ] 库存不足时系统提示，不允许负数出库。
+- [ ] 发货后经销商端实时可见物流单号与状态。</p>
+<hr>
+<h3 id="65-m5-oe-oe-parts-catalog">6.5 M5 OE 配件查询库（OE Parts Catalog）</h3>
+<p><strong>说明：</strong> 这是你<strong>最关心</strong>的模块。你已有 BYD OE 号与图片，缺的是"如何组织成可查询文档"的思路。详细设计见 <strong>第 8 章</strong>。</p>
+<p><strong>P0：</strong>
+- OE 目录数据模型 + 检索（按 OE 号 / 车型 / 系统树 / 关键词）。
+- 配件详情页：图片（主图+角度图）、名称（中英）、适用车型、替代件号、交叉引用、质保类别、易损件标识。
+- 与索赔、备件联动：索赔单配件条目可直接引用 OE 目录，自动带出图片/名称/替代件。</p>
+<p><strong>P1：</strong> 以图搜图；VIN 反查适用配件清单；价格/货期字段。</p>
+<p><strong>验收标准（AC）：</strong>
+- [ ] 输入 OE 号可精确命中配件并展示图片与属性。
+- [ ] 可按"品牌 → 车系 → 系统 → 子系统 → 零件"层级浏览。
+- [ ] 索赔单中选配件时能引用 OE 目录并回填信息。</p>
+<hr>
+<h3 id="66-m6-dealer-portal">6.6 M6 经销商门户（Dealer Portal）</h3>
+<p><strong>说明：</strong> 海外经销商（英文界面）的入口。</p>
+<p><strong>P0：</strong> 登录、车辆列表、维保记录录入、索赔提交与状态查询、OE 配件查询、备件发货进度查看、本机构成员管理（管理员）。</p>
+<p><strong>P1：</strong> 索赔状态看板、通知中心。</p>
+<hr>
+<h3 id="67-m7-admin-console">6.7 M7 内部管理后台（Admin Console）</h3>
+<p><strong>说明：</strong> LimeAuto 内部（英文界面）的运营中枢。</p>
+<p><strong>P0：</strong> 全量车辆/维保/索赔视图、索赔审核、核销、备件库存与发货、OE 目录维护、质保规则配置、经销商账号与品牌权限管理、操作审计日志。</p>
+<hr>
+<h3 id="68-m8-multi-brand-rule-engine">6.8 M8 多品牌与规则引擎（Multi-brand &amp; Rule Engine）</h3>
+<p><strong>说明：</strong> 多品牌全覆盖的核心架构要求。</p>
+<p><strong>P0：</strong>
+- 所有核心实体（车辆、维保、索赔、OE、备件、质保规则）均带 <strong>品牌维度</strong>。
+- 品牌字典 + 车系/车型字典可配置。
+- 质保规则按"品牌 × 车系"配置（质保期、三电质保、里程限制、易损件清单）。</p>
+<p><strong>P1：</strong> 规则引擎进阶（组合条件、多级审批流、自动判定建议）。</p>
+<p><strong>P2：</strong> 品牌差异化工作流（不同品牌不同审批路径）。</p>
+<hr>
+<h2 id="7-workflows">7. 核心业务流程（Workflows）</h2>
+<h3 id="71">7.1 索赔全流程状态机</h3>
+<pre><code>Draft（草稿）
+   │ 经销商提交
+   ▼
+Submitted（已提交）
+   │ 审核员受理
+   ▼
+Under Review（审核中）
+   │ 规则引擎自动校验 + 人工判定
+   ├──► Approved（通过）──┐
+   ├──► Partial（部分通过）┤
+   └──► Rejected（驳回）──┤ 经销商可见驳回原因，可修改后重新提交
+                         ▼
+                 Write-off（核销）
+                         │ 生成发货需求
+                         ▼
+                   Shipped（已发货）
+                         │ 经销商确认收货
+                         ▼
+                   Closed（已闭环）
+</code></pre>
+<h3 id="72">7.2 质保索赔判断逻辑（核心决策）</h3>
+<blockquote>
+<p>判断"是否在质保范围内"按以下顺序：<strong>① 车辆身份 → ② 质保期限（时间+里程） → ③ 是否易损件/排除项 → ④ 是否人为/事故/私自改装 → ⑤ 是否在保养合规范围内（如脱保）</strong>。</p>
+</blockquote>
+<p>系统在审核页以卡片形式汇总这 5 项，并给出"风险提示"，人工做最终判定。</p>
+<h3 id="73">7.3 备件发货流</h3>
+<pre><code>核销单（赔付=补发配件）
+   → 自动生成发货需求（关联 OE 配件 + 数量）
+   → 备件库校验库存（不足则提示并挂起）
+   → 出库（扣减库存，生成出库单）
+   → 发货（填物流单号）
+   → 经销商门户可见进度 → 确认收货 → 索赔 Closed
+</code></pre>
+<hr>
+<h2 id="8-oe">8. OE 配件查询库 —— 文档思路（专项设计）</h2>
+<blockquote>
+<p>你的现状：<strong>已持有 BYD 售后 OE 配件号 + 图片</strong>。缺的是：把这些数据<strong>结构化、可查询、可联动</strong>的文档/数据思路。以下给出可直接落地的方案。</p>
+</blockquote>
+<h3 id="81-oe">8.1 一条 OE 记录应该有哪些字段（补全你现有数据）</h3>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>必填</th>
+<th>说明</th>
+<th>你的现状</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OE Part Number</td>
+<td>✅</td>
+<td>唯一键（BYD 官方件号）</td>
+<td>已有</td>
+</tr>
+<tr>
+<td>Part Name (EN/ZH)</td>
+<td>✅</td>
+<td>配件名称（英文为主，中文备注）</td>
+<td>需补</td>
+</tr>
+<tr>
+<td>Brand</td>
+<td>✅</td>
+<td>BYD / 零跑 / 阿维塔 / 方程豹 / 现代SKD</td>
+<td>已有（BYD）</td>
+</tr>
+<tr>
+<td>Category（系统分类）</td>
+<td>✅</td>
+<td>三电系统 / 底盘 / 车身 / 电器 / 内外饰…</td>
+<td>需补</td>
+</tr>
+<tr>
+<td>适用车系/车型</td>
+<td>✅</td>
+<td>车系 + 年款 + 配置</td>
+<td>需补</td>
+</tr>
+<tr>
+<td>图片（主图+角度图）</td>
+<td>✅</td>
+<td>按 OE 号关联</td>
+<td>已有图片</td>
+</tr>
+<tr>
+<td>Supersession（替代件号）</td>
+<td>建议</td>
+<td>老号→新号的替代关系</td>
+<td>需补</td>
+</tr>
+<tr>
+<td>Cross-reference（交叉引用号）</td>
+<td>建议</td>
+<td>供应商号 / 内部号 / 同源件</td>
+<td>需补</td>
+</tr>
+<tr>
+<td>质保类别</td>
+<td>建议</td>
+<td>三电核心件 / 易损件 / 一般件</td>
+<td>需补</td>
+</tr>
+<tr>
+<td>易损件标识</td>
+<td>建议</td>
+<td>是否属易损件（影响索赔判定）</td>
+<td>需补</td>
+</tr>
+<tr>
+<td>单位 / 重量 / 体积</td>
+<td>可选</td>
+<td>供物流与装箱</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>价格（FOB）/ 货期</td>
+<td>可选</td>
+<td>供核销与补发定价</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+<h3 id="82-oe">8.2 目录组织结构（OE 号如何归类）</h3>
+<p>采用 <strong>"品牌 → 车系 → 系统 → 子系统 → 零件"</strong> 五级树，便于按结构浏览：</p>
+<pre><code>BYD
+ ├── 海狮06 / 海狮07 / 海豹 / 汉 / 唐 ...
+ │    ├── 三电系统
+ │    │    ├── 电池包（Pack / 模组 / BMS）
+ │    │    ├── 电驱（电机 / 电控 / 减速器）
+ │    │    └── 热管理
+ │    ├── 底盘
+ │    ├── 车身
+ │    └── 电器 / 内外饰
+ ├── 方程豹（BYD 子品牌）
+ ...
+</code></pre>
+<blockquote>
+<p><strong>图片命名规范建议：</strong> <code>{OENumber}_{角度序号}.jpg</code>，例如 <code>BYD-BAT-8xxx_01.jpg</code>、<code>_02.jpg</code>、<code>_03.jpg</code>，程序可自动按 OE 号归集图片，无需人工配对。</p>
+</blockquote>
+<h3 id="83">8.3 查询维度（用户怎么找配件）</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>说明</th>
+<th>优先级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OE 号检索</td>
+<td>精确 / 模糊（前缀匹配）</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>车系系统树浏览</td>
+<td>按五级树逐层点选</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>关键词</td>
+<td>配件名中/英文关键词</td>
+<td>P0</td>
+</tr>
+<tr>
+<td>VIN 反查</td>
+<td>VIN → 车型 → 适用配件清单</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>交叉引用</td>
+<td>输供应商号/内部号反查 OE 号</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>以图搜图</td>
+<td>上传实物照片定位配件</td>
+<td>P2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="84">8.4 数据模型（简）</h3>
+<pre><code>oe_parts (id, oe_no UNIQUE, brand, category_path, name_en, name_zh,
+          applicable_models[], supersession_oe, cross_ref[],
+          warranty_class, wear_item_flag, unit, weight, volume, price, lead_time)
+oe_images (id, oe_no -&gt; oe_parts.oe_no, angle, url)
+oe_supersession (old_oe, new_oe)   -- 替代关系表（可多级链）
+oe_model_map  (oe_no, brand, model, year, trim)  -- 配件↔车型多对多
+</code></pre>
+<h3 id="85">8.5 数据导入工具</h3>
+<ul>
+<li>提供标准 <strong>Excel/CSV 导入模板</strong>（字段与 8.1 对齐）。</li>
+<li>支持<strong>批量导入 OE 号 + 图片</strong>：图片按 8.2 命名规范打包上传，系统按 OE 号自动关联。</li>
+<li>导入时自动校验 OE 号唯一性、重复件合并、替代关系建链。</li>
+</ul>
+<h3 id="86">8.6 与索赔/备件联动（关键价值）</h3>
+<ul>
+<li>索赔单"索赔配件"条目 → 引用 OE 目录 → 自动带出图片、名称、替代件、质保类别、易损件标识。</li>
+<li>核销时"补发配件" → 直接引用 OE 目录 → 生成备件出库明细（SKU 关联 OE 号）。</li>
+<li>替代件处理：若索赔件停产，系统提示可用替代件号，减少呆滞。</li>
+</ul>
+<h3 id="87">8.7 数据维护与更新</h3>
+<ul>
+<li>定期同步车企官方 EPC（电子零件目录）更新替代件关系。</li>
+<li>处理"老号停产 → 新号替代"链，避免查无此件。</li>
+</ul>
+<hr>
+<h2 id="9-data-model">9. 数据模型总览（Data Model）</h2>
+<p>核心实体关系：</p>
+<pre><code>Vehicle（车辆）──┬── MaintenanceRecord（维保记录）
+                 └── WarrantyPolicy（质保规则，按品牌×车系）
+
+Claim（索赔单）─── ClaimItem（索赔配件明细）─── oe_parts（OE 配件）
+
+Claim ──► Writeoff（核销单）──► Shipment（发货）──► Inventory（备件库存，SKU→oe_no）
+
+Dealer（经销商机构）── DealerUser（机构用户）
+Brand ── Model ── Trim（品牌/车型/配置字典，贯穿全模块）
+</code></pre>
+<blockquote>
+<p>所有业务实体均带 <code>brand</code> 维度，满足多品牌覆盖；<code>dealer</code> 维度满足机构数据隔离。</p>
+</blockquote>
+<hr>
+<h2 id="10-success-metrics">10. 成功指标（Success Metrics）</h2>
+<h3 id="14">领先指标（上线后 1–4 周）</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经销商激活率</td>
+<td>≥ 80% 目标经销商上线使用</td>
+</tr>
+<tr>
+<td>索赔在线提交率</td>
+<td>≥ 90% 索赔走系统而非线下</td>
+</tr>
+<tr>
+<td>OE 查询自服务率</td>
+<td>≥ 70% 查件不再依赖人工咨询</td>
+</tr>
+<tr>
+<td>索赔单关键字段完整率</td>
+<td>≥ 95%（VIN、故障描述、照片齐全）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="16">滞后指标（上线后 1–6 个月）</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单笔索赔处理周期</td>
+<td>缩短 ≥ 50%</td>
+</tr>
+<tr>
+<td>超范围赔付率</td>
+<td>下降 ≥ 30%</td>
+</tr>
+<tr>
+<td>备件发货及时率</td>
+<td>≥ 95%</td>
+</tr>
+<tr>
+<td>索赔驳回可追溯率</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>经销商售后满意度（NPS/回访）</td>
+<td>明显提升（基线待上线前采集）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="11-risks-dependencies">11. 风险与依赖（Risks &amp; Dependencies）</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>风险/依赖</th>
+<th>影响</th>
+<th>应对</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R1</td>
+<td><strong>数据合规</strong>：车辆 VIN、终端客户个人信息跨境存储</td>
+<td>高</td>
+<td>遵循 GDPR / 中国《个人信息保护法》最小化收集，敏感字段加密，明确数据出境合规方案</td>
+</tr>
+<tr>
+<td>R2</td>
+<td><strong>OE 数据准确性与版权</strong>：BYD EPC 数据授权</td>
+<td>高</td>
+<td>明确数据来源授权；替代件关系定期校验</td>
+</tr>
+<tr>
+<td>R3</td>
+<td><strong>多品牌车型字典工作量大</strong></td>
+<td>中</td>
+<td>分品牌分期接入（见第 12 章），先 BYD</td>
+</tr>
+<tr>
+<td>R4</td>
+<td><strong>备件价格/汇率波动</strong></td>
+<td>中</td>
+<td>价格作为可配置字段，不做硬编码</td>
+</tr>
+<tr>
+<td>R5</td>
+<td><strong>经销商英文使用习惯差异</strong></td>
+<td>低</td>
+<td>界面英文、操作引导 + 培训材料</td>
+</tr>
+<tr>
+<td>R6</td>
+<td><strong>依赖车企质保政策口径</strong></td>
+<td>中</td>
+<td>质保规则做成可配置，政策变化即时调整</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="12-phasing">12. 里程碑与分期（Phasing）</h2>
+<blockquote>
+<p>多品牌全覆盖按"先 BYD 打样 → 横向复制"分期推进，避免首版贪大。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>内容</th>
+<th>品牌</th>
+<th>目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Phase 1（V1）</strong></td>
+<td>M1–M8 核心闭环（车辆/索赔/核销/备件/OE/门户/后台/规则基础版）</td>
+<td><strong>BYD</strong></td>
+<td>打通"索赔→核销→发货"核心链路，跑通 OE 目录</td>
+</tr>
+<tr>
+<td><strong>Phase 2</strong></td>
+<td>横向接入其余品牌 + 规则引擎进阶 + 通知扩展（邮件/WhatsApp）</td>
+<td>零跑 / 阿维塔 / 方程豹 / 现代SKD</td>
+<td>多品牌可用</td>
+</tr>
+<tr>
+<td><strong>Phase 3</strong></td>
+<td>仓库物流、财务对账、以图搜图、VIN 反查、批量导入增强</td>
+<td>全部</td>
+<td>全链路 + 智能化</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="13-open-questions">13. 开放问题（Open Questions）</h2>
+<ul>
+<li>[ ] <strong>Q1（阻塞）</strong> OE 数据的官方来源与授权边界？是否有 BYD 官方 EPC 可对接或导出？（数据负责人）</li>
+<li>[ ] <strong>Q2（阻塞）</strong> V1 是否需要经销商通过邮件/WhatsApp 接收状态通知，还是站内信即可？（业务 + 开发）</li>
+<li>[ ] <strong>Q3（非阻塞）</strong> 索赔"金额赔付"与"配件补发"是否需要在 V1 同时支持？（财务/商务）</li>
+<li>[ ] <strong>Q4（非阻塞）</strong> 备件价格/汇率由谁维护、更新频率？（商务）</li>
+<li>[ ] <strong>Q5（非阻塞）</strong> 数据存放地域（境内服务器 vs 境外）与合规方案？（法务 + 开发）</li>
+</ul>
+<hr>
+<h2 id="14-glossary">14. 术语表（Glossary）</h2>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>英文</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>质保索赔</td>
+<td>Warranty Claim</td>
+<td>经销商就质保期内故障向 LimeAuto 提出的赔付/补件请求</td>
+</tr>
+<tr>
+<td>核销</td>
+<td>Write-off / Settlement</td>
+<td>对已批复索赔的赔付落地动作</td>
+</tr>
+<tr>
+<td>OE 件号</td>
+<td>OE Part Number</td>
+<td>车企官方配件编号</td>
+</tr>
+<tr>
+<td>替代件</td>
+<td>Supersession</td>
+<td>老件停产后的替代新件</td>
+</tr>
+<tr>
+<td>易损件</td>
+<td>Wear Item</td>
+<td>质保排除或短保的消耗件（如雨刮、刹车片）</td>
+</tr>
+<tr>
+<td>三电</td>
+<td>Battery/Motor/ECU</td>
+<td>电池、电机、电控（通常享受更长质保）</td>
+</tr>
+<tr>
+<td>SKD</td>
+<td>Semi-Knocked-Down</td>
+<td>半散件组装出口模式</td>
+</tr>
+<tr>
+<td>VIN</td>
+<td>Vehicle Identification Number</td>
+<td>车辆识别码（17 位唯一）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><em>本文档为 v1.0 草稿，待利益相关方评审后定稿。范围变更需同步调整目标/非目标，并重新评估分期。</em></p>
+</article>
+</div>
+</body>
+</html>

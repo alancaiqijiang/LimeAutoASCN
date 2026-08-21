@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parts Catalog · Dealer Portal</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app">
+  <aside class="sidebar">
+    <div class="brand">LimeAuto<span>After-Sales</span></div>
+    <nav>
+      <div class="nav-group">Dealer Portal</div>
+      <a href="dashboard.html"><span class="ic">📊</span> Dashboard</a>
+      <a href="vehicles.html"><span class="ic">🚗</span> Vehicles</a>
+      <a href="claims.html"><span class="ic">📝</span> Claims</a>
+      <a href="parts-catalog.html"><span class="ic">🔩</span> Parts Catalog</a>
+      <a href="shipments.html"><span class="ic">📦</span> Shipments</a>
+    </nav>
+    <div class="sidebar-foot">KTL Dealer · Iran</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar"><h2>OE Parts Catalog</h2>
+      <div class="user"><span id="topbar-user">KTL Dealer</span><div class="avatar">K</div></div>
+    </header>
+    <main class="content">
+      <div class="toolbar">
+        <div class="search"><span class="s-ic">🔍</span>
+          <input id="q" placeholder="Search by OE no. or part name (e.g. battery)" onkeyup="render()">
+        </div>
+        <select class="btn btn-outline btn-sm" onchange="render()" id="brandSel" style="width:auto">
+          <option value="">All Brands</option><option>BYD</option><option>LEAP</option>
+        </select>
+      </div>
+      <div class="grid g-3" id="grid"></div>
+    </main>
+  </div>
+
+  <script src="../assets/js/app.js"></script>
+  <script>
+    const L = window.LIME; let all = [];
+    window.render = () => {
+      const q = L.$('#q').value.toLowerCase(), b = L.$('#brandSel').value;
+      const list = all.filter(p =>
+        (!b || p.brand === b) &&
+        (!q || p.oe.toLowerCase().includes(q) || p.name.toLowerCase().includes(q)));
+      L.$('#grid').innerHTML = list.map(p => `
+        <div class="part-card">
+          <div class="part-thumb">${p.thumb}</div>
+          <div class="part-body">
+            <div class="name">${L.esc(p.name)}</div>
+            <div class="oe">${L.esc(p.oe)}</div>
+            <div class="meta">${L.esc(p.cat)} · ${p.wear ? '⚠️ Wear Item' : L.esc(p.warranty)}</div>
+            <div class="flex mt8">
+              <span class="tag ${p.brand === 'BYD' ? 'tag-byd' : 'tag-leap'}">${L.esc(p.brand)}</span>
+              <span class="right small muted">${L.esc(p.models.join(', '))}</span>
+            </div>
+          </div>
+        </div>`).join('') || `<div class="empty"><div class="e-ic">🔍</div>No parts found</div>`;
+    };
+    (async () => { const { data } = await L.api('GET', '/api/oe-parts'); all = data; render(); })();
+  </script>
+</body>
+</html>

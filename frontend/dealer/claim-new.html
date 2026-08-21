@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Claim · Dealer Portal</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app">
+  <aside class="sidebar">
+    <div class="brand">LimeAuto<span>After-Sales</span></div>
+    <nav>
+      <div class="nav-group">Dealer Portal</div>
+      <a href="dashboard.html"><span class="ic">📊</span> Dashboard</a>
+      <a href="vehicles.html"><span class="ic">🚗</span> Vehicles</a>
+      <a href="claims.html"><span class="ic">📝</span> Claims</a>
+      <a href="parts-catalog.html"><span class="ic">🔩</span> Parts Catalog</a>
+      <a href="shipments.html"><span class="ic">📦</span> Shipments</a>
+    </nav>
+    <div class="sidebar-foot">KTL Dealer · Iran</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar"><h2>New Warranty Claim</h2>
+      <div class="user"><span id="topbar-user">KTL Dealer</span><div class="avatar">K</div></div>
+    </header>
+    <main class="content">
+      <div class="card" style="max-width:760px">
+        <!-- 步骤 1：选车 -->
+        <h3>1 · Select Vehicle</h3>
+        <div class="field">
+          <label>Search VIN / Plate</label>
+          <input id="vinSearch" placeholder="e.g. LGXCE4CC0N0123456">
+        </div>
+        <div id="vehiclePick" class="mt8"></div>
+
+        <!-- 步骤 2：故障描述 -->
+        <h3 class="mt16">2 · Fault Description</h3>
+        <div class="field">
+          <label>Fault summary</label>
+          <input id="fault" placeholder="e.g. Battery pack failure, cannot charge">
+        </div>
+        <div class="field">
+          <label>Diagnosis / error codes</label>
+          <textarea id="diagnosis" rows="2" placeholder="e.g. Error code BMS-0x07"></textarea>
+        </div>
+        <div class="upload-zone">📷 Drop fault photos / video here (V1: attachment upload)</div>
+
+        <!-- 步骤 3：索赔配件 -->
+        <h3 class="mt16">3 · Claim Parts (from OE Catalog)</h3>
+        <div id="partPick" class="mt8"></div>
+
+        <!-- 步骤 4：提交 -->
+        <div class="form-actions">
+          <a href="claims.html" class="btn btn-outline">Cancel</a>
+          <button class="btn btn-primary" id="submitBtn">Submit Claim</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/app.js"></script>
+  <script>
+    const L = window.LIME;
+    (async () => {
+      const veh = (await L.api('GET', '/api/vehicles')).data;
+      const parts = (await L.api('GET', '/api/oe-parts')).data;
+      // 车辆下拉
+      L.$('#vehiclePick').innerHTML =
+        `<select id="vehSel" class="field" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:8px">
+          <option value="">— choose a vehicle —</option>
+          ${veh.map(v => `<option value="${v.id}">${v.vin} · ${v.model}</option>`).join('')}</select>`;
+      // 配件选择
+      L.$('#partPick').innerHTML = parts.slice(0,5).map(p =>
+        `<label class="flex" style="padding:8px 0;border-bottom:1px solid var(--border)">
+          <input type="checkbox" data-oe="${L.esc(p.oe)}" style="margin-right:8px">
+          <span style="font-size:18px">${p.thumb}</span>
+          <div><div style="font-weight:600">${L.esc(p.name)}</div>
+          <div class="mono small muted">${L.esc(p.oe)}</div></div>
+        </label>`).join('');
+
+      L.$('#submitBtn').addEventListener('click', async () => {
+        const vid = L.$('#vehSel').value, fault = L.$('#fault').value;
+        if (!vid || !fault) { alert('Please select a vehicle and describe the fault.'); return; }
+        const items = L.$$('#partPick input:checked').map(i => ({ oe_no: i.dataset.oe, qty: 1 }));
+        await L.api('POST', '/api/claims', { vehicle_id: vid, fault_desc: fault, diagnosis: L.$('#diagnosis').value, items });
+        alert('Claim submitted (mock). Backend: POST /api/claims → status "Submitted".');
+        location.href = 'claims.html';
+      });
+    })();
+  </script>
+</body>
+</html>
