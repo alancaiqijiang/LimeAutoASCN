@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="{{ html_lang|default('zh-CN') }}" data-zoom-open="{{ t.zoom_open }}" data-zoom-close="{{ t.zoom_close }}" data-zoom-hint="{{ t.zoom_hint }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}LimeAuto Aftercare{% endblock %}</title>
+  <link rel="stylesheet" href="/static/site.css?v=20260910-search-fix1">
+  <script src="/static/site.js?v=20260910-search-fix1" defer></script>
+</head>
+{% set catalog_shell = (active_path|default('')).startswith('/catalog') %}
+<body class="ui-retro{% if catalog_shell %} catalog-shell-body{% endif %}">
+{% if catalog_shell %}
+  <div class="catalog-app-shell">
+    <aside class="catalog-sidebar" id="catalog-sidebar">
+      <div class="catalog-sidebar-brand">
+        <a href="/catalog" aria-label="{{ t.catalog_home_aria }}">
+          <img class="brand-logo" src="/static/lime-logo.png" alt="" width="90" height="48">
+          <span><small>{{ t.parts_reference }}</small></span>
+        </a>
+        <button class="catalog-sidebar-close" type="button" aria-label="{{ t.close_catalog_nav }}">×</button>
+      </div>
+      <nav class="catalog-sidebar-nav" aria-label="{{ t.catalog_nav_aria }}">
+        <a class="catalog-nav-item" href="/catalog"><span class="catalog-nav-icon">⌂</span><span>{{ t.home }}</span></a>
+        <a class="catalog-nav-item" href="/ops/login"><span class="catalog-nav-icon">⌂</span><span>{{ t.aftercare_workbench }}</span></a>
+        <a class="catalog-nav-item {% if active_path.startswith('/catalog') and not active_path.startswith('/catalog/search') %}active{% endif %}" href="/catalog"><span class="catalog-nav-icon">▦</span><span>{{ t.catalog }}</span><b>●</b></a>
+        <a class="catalog-nav-item {% if active_path.startswith('/catalog/search') %}active{% endif %}" href="/catalog/search"><span class="catalog-nav-icon">⌕</span><span>{{ t.search_parts }}</span></a>
+      </nav>
+      <div class="catalog-nav-legend" aria-label="{{ t.catalog_legend_aria }}">
+        <div class="catalog-nav-section">{{ t.reference }}</div>
+        <div class="catalog-nav-note"><span>{{ t.systems_and_parts }}</span><em>{{ t.read_only }}</em></div>
+        <div class="catalog-nav-note"><span>{{ t.reference_images }}</span><em>{{ t.local }}</em></div>
+      </div>
+      <div class="catalog-sidebar-foot"><span class="catalog-readonly-dot"></span><span>{{ t.local_readonly_release }}</span></div>
+    </aside>
+    <div class="catalog-app-main">
+      <header class="catalog-topbar">
+        <button class="catalog-sidebar-toggle" type="button" aria-label="{{ t.toggle_catalog_nav }}" aria-controls="catalog-sidebar" aria-expanded="false">☰</button>
+        <nav class="catalog-breadcrumb" aria-label="{{ t.breadcrumb_aria }}">
+          <a href="/catalog">{{ t.home }}</a>
+          <span>/</span>
+          {% if catalog_locator %}
+          <a href="/catalog">{{ t.catalog }}</a>
+          <span>/</span>
+          <details class="catalog-locator" data-catalog-locator>
+            <summary>{{ catalog_locator.series_label or t.select_series }}</summary>
+            <div class="catalog-locator-panel">
+              <input type="search" data-locator-filter placeholder="{{ t.search_series }}" aria-label="{{ t.search_series }}">
+              <div class="catalog-locator-list" data-locator-series-list>
+                {% for item in catalog_locator.series_rows %}
+                <a href="/catalog/{{ item.url_code }}" {% if item.series_code == catalog_locator.series_code %}aria-current="page"{% endif %} data-search-text="{{ (item.display_series_name ~ ' ' ~ item.series_code)|lower }}">{{ item.display_series_name }}</a>
+                {% endfor %}
+              </div>
+            </div>
+          </details>
+          <span>/</span>
+          <details class="catalog-locator" data-catalog-locator data-locator-models data-series-code="{{ catalog_locator.series_code }}" data-series-token="{{ catalog_locator.series_token }}">
+            <summary>{{ catalog_locator.model_label or t.select_model }}</summary>
+            <div class="catalog-locator-panel">
+              <input type="search" data-locator-filter placeholder="{{ t.select_model }}" aria-label="{{ t.select_model }}" {% if not catalog_locator.series_code %}disabled{% endif %}>
+              <div class="catalog-locator-list" data-locator-model-list data-need-series="{{ t.select_model_need_series }}">
+                {% if catalog_locator.model_rows %}
+                  {% for item in catalog_locator.model_rows %}
+                  <a href="/catalog/{{ catalog_locator.series_token }}/{{ item.url_model_code }}" {% if item.model_code == catalog_locator.model_code %}aria-current="page"{% endif %} data-search-text="{{ (item.display_model_name ~ ' ' ~ item.model_code)|lower }}">{{ item.display_model_name }}</a>
+                  {% endfor %}
+                {% else %}
+                  <p>{{ t.select_model_need_series }}</p>
+                {% endif %}
+              </div>
+            </div>
+          </details>
+          {% else %}
+          <a href="/catalog">{{ t.catalog }}</a>
+          {% endif %}
+          {% block catalog_breadcrumb %}{% endblock %}
+        </nav>
+        <div class="catalog-topbar-status"><span>{{ t.readonly_catalog }}</span><i></i><span>{{ t.local_release }}</span></div>
+        <div class="lang-switch" role="navigation" aria-label="{{ t.language }}">
+          <a href="{{ lang_href_zh }}" class="{% if lang == 'zh' %}active{% endif %}" hreflang="zh" lang="zh-CN">中文</a>
+          <span aria-hidden="true">|</span>
+          <a href="{{ lang_href_en }}" class="{% if lang == 'en' %}active{% endif %}" hreflang="en" lang="en">English</a>
+        </div>
+        <a class="catalog-topbar-home" href="/ops/login">{{ t.enter_aftercare }}</a>
+      </header>
+      <main>
+{% else %}
+  <header class="site-header">
+    <a class="brand" href="{% if aftercare_user %}/ops/vehicles{% else %}/ops/login{% endif %}" aria-label="{{ t.aftercare_home_aria }}">
+      <img class="brand-logo" src="/static/lime-logo.png" alt="" width="106" height="56">
+      <span class="brand-product">AFTERCARE</span>
+    </a>
+    <nav aria-label="{{ t.primary_nav_aria }}">
+      <a href="{% if aftercare_user %}/ops/vehicles{% else %}/ops/login{% endif %}">{{ t.home }}</a>
+      {% if aftercare_user %}
+      <a class="{% if active_path.startswith('/ops/vehicles') %}active{% endif %}" href="/ops/vehicles">{{ t.vehicle_register }}</a>
+      <a class="{% if active_path.startswith('/ops/overview') %}active{% endif %}" href="/ops/overview">{{ t.vehicle_overview }}</a>
+      {% else %}
+      <a class="{% if active_path.startswith('/ops') %}active{% endif %}" href="/ops/login">{{ t.staff_login }}</a>
+      {% endif %}
+      {% if catalog_browse_enabled %}<a class="{% if active_path.startswith('/catalog') %}active{% endif %}" href="/catalog">{{ t.catalog }}</a>{% endif %}
+      <div class="lang-switch" role="navigation" aria-label="{{ t.language }}">
+        <a href="{{ lang_href_zh }}" class="{% if lang == 'zh' %}active{% endif %}" hreflang="zh" lang="zh-CN">中文</a>
+        <span aria-hidden="true">|</span>
+        <a href="{{ lang_href_en }}" class="{% if lang == 'en' %}active{% endif %}" hreflang="en" lang="en">English</a>
+      </div>
+      {% if aftercare_user %}<form class="nav-logout" action="/ops/logout" method="post"><input type="hidden" name="csrf_token" value="{{ aftercare_csrf_token }}"><button type="submit">{{ t.sign_out }}</button></form>{% endif %}
+    </nav>
+  </header>
+  <main>
+{% endif %}
+    {% block content %}{% endblock %}
+  </main>
+{% if catalog_shell %}
+      <footer class="catalog-footer"><span>{{ t.catalog_footer_brand }}</span><span>{{ t.catalog_footer_note }}</span></footer>
+    </div>
+  </div>
+{% else %}
+  <footer class="site-footer"><span>LimeAuto Aftercare</span><span>{{ t.aftercare_footer_note }}</span></footer>
+{% endif %}
+{% block scripts %}{% endblock %}
+</body>
+</html>

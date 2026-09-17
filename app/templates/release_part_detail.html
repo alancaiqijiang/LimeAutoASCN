@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}{{ part.display_part_name }} · LimeAuto{% endblock %}
+{% block catalog_breadcrumb %}<span>/</span><a href="/catalog/{{ model.url_series_code }}/{{ model.url_model_code }}/node/{{ node.url_key }}">{{ node.display_node_name }}</a><span>/</span><strong>{{ t.part_detail }}</strong>{% endblock %}
+{% block content %}
+<section class="catalog-page catalog-detail-page">
+  <a class="catalog-back-link" href="/catalog/{{ model.url_series_code }}/{{ model.url_model_code }}/node/{{ node.url_key }}">{{ t.back_to_parent }}</a>
+  <div class="catalog-dialog-backdrop">
+    <article class="catalog-part-dialog" aria-labelledby="material-detail-title">
+      <header class="catalog-dialog-head"><div><span class="catalog-dialog-kicker">{{ t.part_detail }}</span><span class="catalog-visually-hidden">{{ t.reference_material }}</span><h1 id="material-detail-title">{{ t.part_detail }}</h1></div><a href="/catalog/{{ model.url_series_code }}/{{ model.url_model_code }}/node/{{ node.url_key }}" aria-label="{{ t.close }}" class="catalog-dialog-close">×</a></header>
+      <div class="catalog-dialog-body">
+        <section class="catalog-material-info"><div class="catalog-dialog-section-title"><span></span>{{ t.material_attributes }}</div><dl class="catalog-detail-list"><div><dt>{{ t.material_code }}</dt><dd><code>{{ part.material_code }}</code></dd></div><div><dt>{{ t.material_name }}</dt><dd>{{ part.display_part_name }}</dd></div><div><dt>{{ t.model_version }}</dt><dd>{{ model.display_model_name }}</dd></div><div><dt>{{ t.system_catalog }}</dt><dd>{{ node.display_node_name }}</dd></div><div><dt>{{ t.catalog_position }}</dt><dd>{{ part.callout or '—' }}</dd></div><div><dt>{{ t.quantity }}</dt><dd>{{ part.quantity_raw or part.quantity or '—' }}</dd></div>{% if part.manual_code %}<div><dt>{{ t.manual_code }}</dt><dd><code>{{ part.manual_code }}</code></dd></div>{% endif %}<div><dt>{{ t.detail_status }}</dt><dd><span class="catalog-table-state">{% set status = part.source_detail_status %}{% if status == 'available' %}{{ t.detail_status_available }}{% elif status == 'unavailable' %}{{ t.detail_status_unavailable }}{% elif status %}{{ status }}{% else %}{{ t.reference_only }}{% endif %}</span></dd></div></dl></section>
+        <section class="catalog-material-media"><div class="catalog-media-frame">{% if part.media_url %}<img class="catalog-image" data-catalog-image src="{{ part.media_url }}" alt="{{ part.display_part_name }}">{% else %}<div class="catalog-image-unavailable">{{ t.no_reference_image }}</div>{% endif %}<span class="catalog-media-tag">{{ t.local_asset }}</span></div><div class="catalog-media-caption"><span>{{ t.reference_image }}</span><span>{{ t.local_release_asset }}</span></div></section>
+      </div>
+      <footer class="catalog-dialog-foot"><span class="catalog-visually-hidden">{{ t.reference_only_catalog }}</span><a class="catalog-dialog-back" href="/catalog/{{ model.url_series_code }}/{{ model.url_model_code }}/node/{{ node.url_key }}">{{ t.back_to_list }}</a></footer>
+    </article>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,4708 @@
+{
+ "schema": "limeauto.translation-naming-policy.v1",
+ "decided_by": "main-process",
+ "decided_at": "2026-09-10",
+ "criteria": "text accuracy first, no effect on runtime behaviour (overlay only, nothing published)",
+ "rules": [
+  "romanised colour names are not readable to an English-speaking end user, so a descriptive English rendering wins over the corpus majority when the majority is pinyin",
+  "a descriptive rendering must be the one the corpus already uses where such a form exists; no new English is invented",
+  "where the corpus majority is non-idiomatic English, the standard industry wording wins and the change is recorded here with its reason"
+ ],
+ "decisions": {
+  "远山黛": {
+   "chosen_en": "Distant Mountain Green",
+   "reason": "黛 is a deep grey-green; the corpus already carries the descriptive form. Pinyin 'Yuanshan Dai' (150/158 rows) is unreadable in an English catalog.",
+   "corpus_evidence": {
+    "Yuanshan Dai": 150,
+    "Distant Mountain Dark Green": 3,
+    "Distant Mountain Dai": 2,
+    "Distant Mountain Indigo": 2,
+    "Yuan Shan Dai": 1
+   }
+  },
+  "千山翠": {
+   "chosen_en": "Thousand Mountains Emerald",
+   "reason": "翠 is emerald green; the descriptive form is already in the corpus and reads as a colour.",
+   "corpus_evidence": {
+    "Qianshan Emerald": 2,
+    "Thousand Mountains Emerald": 2,
+    "Qianshan Cui": 2
+   }
+  },
+  "玄天色": {
+   "chosen_en": "Mystic Sky",
+   "reason": "玄天 is the dark/mystic sky; '色' is a Chinese colour suffix that English names drop. Pinyin 'Xuantian Color' (14/29) is unreadable and half-translated.",
+   "corpus_evidence": {
+    "Xuantian Color": 14,
+    "Mysterious Sky": 12,
+    "Mysterious Sky Color": 3,
+    "Mysterious Heaven": 2,
+    "Mystic Sky": 1
+   }
+  },
+  "玄空黑": {
+   "chosen_en": "Mystic Black",
+   "reason": "玄空 is an empty/mystic void; black is the colour. All three corpus forms appear once, so consistency is the deciding factor.",
+   "corpus_evidence": {
+    "Xuankong Black": 1,
+    "Mystic Black": 1,
+    "Xuan Kong Black": 1
+   }
+  },
+  "自制配件": {
+   "chosen_en": "Self-Made Part",
+   "reason": "capitalisation and hyphenation of the corpus's dominant form; 'Self-made Part' (500) and 'Self-manufactured Part' (52) are the same idea written three ways.",
+   "corpus_evidence": {
+    "Self-made Part": 500,
+    "Self-Made Part": 157,
+    "Self-manufactured Part": 52
+   }
+  },
+  "镀彩锌": {
+   "chosen_en": "Iridescent Zinc Plated",
+   "reason": "彩锌 (chromate conversion coating) is 'iridescent zinc' in industry English; the corpus majority 'Color Zinc Plated' (57) is a literal calque that reads oddly. The corpus already carries the idiomatic form.",
+   "corpus_evidence": {
+    "Color Zinc Plated": 57,
+    "Iridescent Zinc Plated": 12,
+    "Iridescent Zinc Plating": 2
+   }
+  }
+ },
+ "registered_exceptions": {
+  "part:e7ae27a2d942bd85e6ace249": {
+   "source_text": "SMT_PCBA-SJJC-2mm-2层-FR-4-T1.0.1_控制板",
+   "issue": "the identifier itself contains Chinese (2层 = 2-layer)",
+   "decision": "left verbatim",
+   "reason": "the identifier is a lookup key; rewriting its inside would break exact-match search by code, which is a worse outcome for the running system than one Chinese glyph inside a code string. The human-readable part (控制板) is translated as Control Board.",
+   "effect": "the integrity audit keeps reporting exactly one residual_cjk row; it is this one"
+  }
+ },
+ "text_rules_note": "WP3 term corrections read out row by row from the top-usage batch. Each rule states the corpus vote; the wording with the higher vote wins, except where the majority is not the industry term (marked accuracy). Session #3 (rows 8250-11250) appended 34 rules and recorded 6 residues. Session #5 (rows 14250-17250) appended 32 rules and recorded 20 residues. Session #6 (rows 17250-20250, rounds 116-135) appended 16 rules and recorded 12 residues; both children that timed out were re-read in 667-row slices.",
+ "text_rules": [
+  {
+   "id": "combination-lamp-headlamp",
+   "zh_pattern": "组合前灯",
+   "from": "Headlight",
+   "to": "Headlamp",
+   "corpus_votes": {
+    "Headlamp": 80,
+    "Headlight": 36
+   },
+   "reason": "SAE-preferred term and the corpus majority"
+  },
+  {
+   "id": "combination-lamp-taillight",
+   "zh_pattern": "(组合后灯|尾灯)",
+   "from": "Tail Lamp",
+   "to": "Taillight",
+   "corpus_votes": {
+    "Taillight": 47,
+    "Tail Lamp": 44
+   },
+   "reason": "one-word US form, slight majority"
+  },
+  {
+   "id": "damper-collapse",
+   "zh_pattern": "(减阻尼器|减振器|减震器)",
+   "from": "Shock Absorber Damper",
+   "to": "Shock Absorber",
+   "reason": "the double term is redundant; 阻尼器 and 减震器 name the same part"
+  },
+  {
+   "id": "damper",
+   "zh_pattern": "(减阻尼器|减振器|减震器)",
+   "from": "Damper",
+   "to": "Shock Absorber",
+   "corpus_votes": {
+    "Shock Absorber": 82,
+    "Damper": 17
+   },
+   "reason": "consistency with the majority"
+  },
+  {
+   "id": "mudguard-splash-shield",
+   "zh_pattern": "挡泥板",
+   "from": "Splash Shield",
+   "to": "Mudguard",
+   "corpus_votes": {
+    "Mudguard": 137,
+    "Splash Shield": 99
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "mudguard-mud-flap",
+   "zh_pattern": "挡泥板",
+   "from": "Mud Flap",
+   "to": "Mudguard",
+   "corpus_votes": {
+    "Mudguard": 137,
+    "Mud Flap": 10
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "hard-pipe",
+   "zh_pattern": "硬管",
+   "from": "Hard Line",
+   "to": "Hard Pipe",
+   "corpus_votes": {
+    "Hard Pipe": 217,
+    "Hard Line": 61
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "body-control-module",
+   "zh_pattern": "车身控制器",
+   "from": "Body Controller",
+   "to": "Body Control Module",
+   "corpus_votes": {
+    "Body Control Module": 11,
+    "Body Controller": 4
+   },
+   "reason": "BCM is the standard term"
+  },
+  {
+   "id": "exterior-mirror",
+   "zh_pattern": "外后视镜",
+   "from": "Outer Mirror",
+   "to": "Exterior Mirror",
+   "corpus_votes": {
+    "Exterior Mirror": 91,
+    "Outer Mirror": 74
+   },
+   "reason": "corpus majority and reads better"
+  },
+  {
+   "id": "suction-pipe",
+   "zh_pattern": "吸入管",
+   "from": "Suction Line",
+   "to": "Suction Pipe",
+   "corpus_votes": {
+    "Suction Pipe": 44,
+    "Suction Line": 31
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "front-passenger",
+   "zh_pattern": "副驾",
+   "from": "Co-Pilot",
+   "to": "Front Passenger",
+   "corpus_votes": {
+    "Front Passenger": 580,
+    "Co-Pilot": 292
+   },
+   "reason": "accuracy over majority: 'Co-Pilot Seat' is a literal rendering; parts catalogues say front passenger seat. Decision taken by the main process under the user's instruction.",
+   "accuracy_override": true
+  },
+  {
+   "id": "right-abbreviation",
+   "zh_pattern": "右",
+   "from_pattern": "(?<![A-Za-z])R (?=(Front|Rear|Side|Door|Head|Combination))",
+   "to": "Right ",
+   "reason": "accuracy: the left-hand rows say 'Left ...' while the right-hand rows abbreviate to 'R ...'; 527 rows",
+   "accuracy_override": true
+  },
+  {
+   "id": "front-electric-drive",
+   "zh_pattern": "前驱电动总成",
+   "from": "Front Drive Electric",
+   "to": "Front Electric Drive",
+   "corpus_votes": {
+    "Front Drive Electric": 10
+   },
+   "reason": "word order: the assembly is an electric drive"
+  },
+  {
+   "id": "pad-display",
+   "zh_pattern": "PAD显示屏",
+   "from": "PAD Display Screen",
+   "to": "PAD Display",
+   "corpus_votes": {
+    "PAD Display Screen": 7
+   },
+   "reason": "'Display Screen' repeats the PAD"
+  },
+  {
+   "id": "left-abbreviation",
+   "zh_pattern": "左",
+   "from_pattern": "(?<![A-Za-z])LH (?=[A-Z])",
+   "to": "Left ",
+   "corpus_votes": {
+    "Left": 6481,
+    "LH": 252
+   },
+   "reason": "accuracy: the same part family spells it out everywhere else"
+  },
+  {
+   "id": "right-rear-order",
+   "zh_pattern": "(右后|后右)",
+   "from": "Rear Right",
+   "to": "Right Rear",
+   "corpus_votes": {
+    "Right Rear": 1148,
+    "Rear Right": 505
+   },
+   "reason": "word order and the corpus majority (left-hand rows already say 'Left Rear')"
+  },
+  {
+   "id": "seatbelt",
+   "zh_pattern": "安全带",
+   "from": "Seat Belt",
+   "to": "Seatbelt",
+   "corpus_votes": {
+    "Seatbelt": 310,
+    "Seat Belt": 72
+   },
+   "reason": "corpus majority inside the same part family"
+  },
+  {
+   "id": "window-regulator",
+   "zh_pattern": "(玻璃升降器|升降器)",
+   "from": "Glass Regulator",
+   "to": "Window Regulator",
+   "corpus_votes": {
+    "Window Regulator": 196,
+    "Glass Regulator": 36
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "front-hood",
+   "zh_pattern": "前舱盖",
+   "from": "Front Compartment Hood",
+   "to": "Front Hood",
+   "corpus_votes": {
+    "Front Hood": 43,
+    "Front Compartment Hood": 11
+   },
+   "reason": "'compartment' is redundant next to hood; corpus majority"
+  },
+  {
+   "id": "switch-group",
+   "zh_pattern": "开关组",
+   "from": "Switch Group",
+   "to": "Switch Assembly",
+   "corpus_votes": {
+    "Switch Assembly": 158,
+    "Switch Group": 154
+   },
+   "reason": "corpus majority, matches 组合开关 -> Combination Switch"
+  },
+  {
+   "id": "exterior-handle",
+   "zh_pattern": "外把手",
+   "from": "Outer Handle",
+   "to": "Exterior Handle",
+   "corpus_votes": {
+    "Exterior Handle": 57,
+    "Outer Handle": 42
+   },
+   "reason": "corpus majority inside the same part family"
+  },
+  {
+   "id": "discharge-pipe",
+   "zh_pattern": "排出管",
+   "from": "Discharge Line",
+   "to": "Discharge Pipe",
+   "corpus_votes": {
+    "Discharge Pipe": 28,
+    "Discharge Line": 13
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "fuel-inlet-order",
+   "zh_pattern": "进油",
+   "from": "Inlet Fuel",
+   "to": "Fuel Inlet",
+   "corpus_votes": {
+    "Inlet Fuel": 29,
+    "Fuel Inlet": 16
+   },
+   "reason": "accuracy over majority: English puts the noun head last, 'Inlet Fuel Pipe' reads wrong"
+  },
+  {
+   "id": "side-outer-panel",
+   "zh_pattern": "侧围外板",
+   "from": "Side Panel Outer Panel",
+   "to": "Side Outer Panel",
+   "corpus_votes": {
+    "Side Panel Outer Panel": 28,
+    "Side Outer Panel": 10
+   },
+   "reason": "accuracy over majority: the doubling of 'Panel' is a translation artefact"
+  },
+  {
+   "id": "floor-air-duct",
+   "zh_pattern": "地板风道",
+   "from": "Floor Duct",
+   "to": "Floor Air Duct",
+   "corpus_votes": {
+    "Floor Air Duct": 32,
+    "Floor Duct": 8
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "seal-strip-weatherstrip",
+   "zh_pattern": "密封条",
+   "from": "Weatherstrip",
+   "to": "Seal Strip",
+   "corpus_votes": {
+    "Seal Strip": 239,
+    "Weatherstrip": 13
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "seal-strip-sealing",
+   "zh_pattern": "密封条",
+   "from": "Sealing Strip",
+   "to": "Seal Strip",
+   "corpus_votes": {
+    "Seal Strip": 239,
+    "Sealing Strip": 3
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "door-check",
+   "zh_pattern": "限位器",
+   "from": "Door Check Link",
+   "to": "Door Check",
+   "corpus_votes": {
+    "Door Check": 26,
+    "Door Check Link": 7
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "nylon-pipe",
+   "zh_pattern": "尼龙管",
+   "from": "Nylon Line",
+   "to": "Nylon Pipe",
+   "corpus_votes": {
+    "Nylon Pipe": 32,
+    "Nylon Line": 4
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "felt-channel",
+   "zh_pattern": "呢槽",
+   "from": "Wool Channel",
+   "to": "Felt Channel",
+   "corpus_votes": {
+    "Felt Channel": 60,
+    "Wool Channel": 8
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "trim-panel",
+   "zh_pattern": "装饰板",
+   "from": "Decorative Panel",
+   "to": "Trim Panel",
+   "corpus_votes": {
+    "Trim Panel": 681,
+    "Decorative Panel": 224
+   },
+   "reason": "corpus majority across the whole trim family"
+  },
+  {
+   "id": "water-channel",
+   "zh_pattern": "流水槽",
+   "from": "Water Deflector",
+   "to": "Water Channel",
+   "corpus_votes": {
+    "Water Channel": 36,
+    "Water Deflector": 17
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "sub-instrument-panel",
+   "zh_pattern": "副仪表板",
+   "from_pattern": "(?<!Sub-)(?<!sub-)Instrument Panel",
+   "to": "Sub-Instrument Panel",
+   "corpus_votes": {
+    "Sub-Instrument Panel": 539,
+    "plain Instrument Panel": 258
+   },
+   "reason": "consistency: 副仪表板 is a different panel from 仪表板 and 258 rows dropped the qualifier"
+  },
+  {
+   "id": "exterior-weatherstrip",
+   "zh_pattern": "外水切",
+   "from": "Outer Weatherstrip",
+   "to": "Exterior Weatherstrip",
+   "corpus_votes": {
+    "Outer Weatherstrip": 16,
+    "Exterior Weatherstrip": 12
+   },
+   "reason": "consistency: 外 is rendered 'Exterior' in the mirror and handle families"
+  },
+  {
+   "id": "weatherstrip-water-cut",
+   "zh_pattern": "外水切",
+   "from": "Water Cut",
+   "to": "Exterior Weatherstrip",
+   "corpus_votes": {
+    "Water Cut": 5
+   },
+   "reason": "accuracy: 水切 is the window belt weatherstrip, 'water cut' is a literal calque"
+  },
+  {
+   "id": "aftermarket-package",
+   "zh_pattern": "售后包",
+   "from": "After-Sales Package",
+   "to": "Aftermarket Package",
+   "corpus_votes": {
+    "Aftermarket Package": 7,
+    "After-Sales Package": 2
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "rear-electric-drive",
+   "zh_pattern": "后驱电动",
+   "from": "Rear Drive Electric",
+   "to": "Rear Electric Drive",
+   "reason": "word order, matching 前驱电动 -> Front Electric Drive"
+  },
+  {
+   "id": "electric-fan",
+   "zh_pattern": "电子风扇",
+   "from": "Electronic Fan",
+   "to": "Electric Fan",
+   "corpus_votes": {
+    "Electronic Fan": 11,
+    "Electric Fan": 8
+   },
+   "reason": "accuracy over majority: 电子风扇 is an electric fan; 'electronic fan' is a false friend",
+   "accuracy_override": true
+  },
+  {
+   "id": "combination-tail",
+   "zh_pattern": "组合$",
+   "from_pattern": "Assembly$",
+   "to": "Combination",
+   "corpus_votes": {
+    "Combination (source ends 组合)": 53,
+    "Assembly (source ends 组合)": 11
+   },
+   "reason": "corpus majority and it keeps 组合 distinct from 总成, which is always Assembly"
+  },
+  {
+   "id": "rhf",
+   "zh_pattern": "右",
+   "from_pattern": "(?<![A-Za-z])RHF(?![A-Za-z])",
+   "to": "Right",
+   "corpus_votes": {
+    "RHF": 65
+   },
+   "reason": "accuracy: 'RHF Front Wheel ...' duplicates the direction"
+  },
+  {
+   "id": "lhf",
+   "zh_pattern": "左",
+   "from_pattern": "(?<![A-Za-z])LHF(?![A-Za-z])",
+   "to": "Left",
+   "reason": "same as RHF"
+  },
+  {
+   "id": "skirt-panel",
+   "zh_pattern": "裙板",
+   "from": "Skirt Plate",
+   "to": "Skirt Panel",
+   "corpus_votes": {
+    "Skirt Panel": 69,
+    "Skirt Plate": 19
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "buffer-body",
+   "zh_pattern": "缓冲体",
+   "from": "Bumper Body",
+   "to": "Buffer Body",
+   "corpus_votes": {
+    "Buffer Body": 10,
+    "Bumper Body": 3
+   },
+   "reason": "accuracy: 缓冲体 is a buffer, not a bumper",
+   "accuracy_override": true
+  },
+  {
+   "id": "door-sill-inner",
+   "zh_pattern": "门槛内板",
+   "from_pattern": "(?<!Door )Sill Inner Panel",
+   "to": "Door Sill Inner Panel",
+   "corpus_votes": {
+    "Sill Inner Panel": 23,
+    "Door Sill Inner Panel": 16
+   },
+   "reason": "consistency with 门槛护板 -> Door Sill Trim Panel"
+  },
+  {
+   "id": "guard-plate",
+   "zh_pattern": "护板",
+   "from": "Guard Plate",
+   "to": "Trim Panel",
+   "corpus_votes": {
+    "Trim Panel": 1351,
+    "Guard Plate": 368
+   },
+   "reason": "corpus majority across the 护板 family"
+  },
+  {
+   "id": "guard-panel",
+   "zh_pattern": "护板",
+   "from": "Guard Panel",
+   "to": "Trim Panel",
+   "corpus_votes": {
+    "Trim Panel": 1351,
+    "Guard Panel": 226
+   },
+   "reason": "corpus majority across the 护板 family"
+  },
+  {
+   "id": "shield-trim",
+   "zh_pattern": "^(?!.*(挡泥板|隔热)).*护板",
+   "from_pattern": "(?<!Heat )Shield",
+   "to": "Trim Panel",
+   "corpus_votes": {
+    "Trim Panel": 1351,
+    "Shield": 502
+   },
+   "reason": "corpus majority: these 护板 are interior trim panels; sources naming a heat shield or a mudguard are excluded"
+  },
+  {
+   "id": "grounding-harness-wire",
+   "zh_pattern": "搭铁线束",
+   "from": "Ground Wire Harness",
+   "to": "Grounding Wiring Harness",
+   "corpus_votes": {
+    "Grounding Wiring Harness": 42,
+    "Ground Wire Harness": 8
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "grounding-harness-plain",
+   "zh_pattern": "搭铁线束",
+   "from": "Ground Harness",
+   "to": "Grounding Wiring Harness",
+   "corpus_votes": {
+    "Grounding Wiring Harness": 42,
+    "Ground Harness": 4
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "grounding-harness-short",
+   "zh_pattern": "搭铁线束",
+   "from": "Grounding Harness",
+   "to": "Grounding Wiring Harness",
+   "corpus_votes": {
+    "Grounding Wiring Harness": 42,
+    "Grounding Harness": 10
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "switch-set",
+   "zh_pattern": "开关组",
+   "from": "Switch Set",
+   "to": "Switch Assembly",
+   "corpus_votes": {
+    "Switch Assembly": 310,
+    "Switch Set": 30
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "subassembly-case",
+   "zh_pattern": "分总成",
+   "from": "Sub-assembly",
+   "to": "Sub-Assembly",
+   "corpus_votes": {
+    "Sub-assembly": 173,
+    "Sub-Assembly": 173
+   },
+   "reason": "exact split; the hyphenated compound keeps its head capitalised, matching the rest of the corpus"
+  },
+  {
+   "id": "water-tank-subsidiary",
+   "zh_pattern": "副水箱",
+   "from": "Subsidiary Water Tank",
+   "to": "Sub-tank",
+   "corpus_votes": {
+    "Sub-tank": 57,
+    "Auxiliary Water Tank": 16,
+    "Subsidiary Water Tank": 2
+   },
+   "reason": "corpus majority; 副 is rendered as the Sub- prefix elsewhere in the corpus"
+  },
+  {
+   "id": "water-tank-auxiliary",
+   "zh_pattern": "副水箱",
+   "from": "Auxiliary Water Tank",
+   "to": "Sub-tank",
+   "corpus_votes": {
+    "Sub-tank": 57,
+    "Auxiliary Water Tank": 16
+   },
+   "reason": "corpus majority, same unit"
+  },
+  {
+   "id": "drain-pipe",
+   "zh_pattern": "排水管",
+   "from": "Water Pipe",
+   "to": "Drain Pipe",
+   "corpus_votes": {
+    "Drain Pipe": 33,
+    "Water Pipe": 1
+   },
+   "reason": "accuracy over majority: 排水 is a drain, not a water supply",
+   "accuracy_override": true
+  },
+  {
+   "id": "seal-panel",
+   "zh_pattern": "封板",
+   "from": "Seal Panel",
+   "to": "Sealing Plate",
+   "corpus_votes": {
+    "Sealing Plate": 40,
+    "Seal Panel": 15
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "sealing-panel",
+   "zh_pattern": "封板",
+   "from": "Sealing Panel",
+   "to": "Sealing Plate",
+   "corpus_votes": {
+    "Sealing Plate": 40,
+    "Sealing Panel": 5
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "retaining-ring",
+   "zh_pattern": "挡圈",
+   "from": "Elastic Retaining Ring",
+   "to": "Retaining Ring",
+   "corpus_votes": {
+    "Retaining Ring": 58,
+    "Elastic Retaining Ring": 3
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "wheel-house",
+   "zh_pattern": "轮罩",
+   "from": "Wheel Arch",
+   "to": "Wheel House",
+   "corpus_votes": {
+    "Wheel House": 84,
+    "Wheel Arch": 64,
+    "Wheelhouse": 19
+   },
+   "reason": "corpus majority for 轮罩"
+  },
+  {
+   "id": "wheelhouse-one-word",
+   "zh_pattern": "轮罩",
+   "from": "Wheelhouse",
+   "to": "Wheel House",
+   "corpus_votes": {
+    "Wheel House": 84,
+    "Wheelhouse": 19
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "longitudinal-beam",
+   "zh_pattern": "纵梁",
+   "from": "Longitudinal Member",
+   "to": "Longitudinal Beam",
+   "corpus_votes": {
+    "Longitudinal Beam": 153,
+    "Longitudinal Member": 5
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "millimeter-wave",
+   "zh_pattern": "毫米波",
+   "from": "Millimeter-Wave",
+   "to": "Millimeter Wave",
+   "corpus_votes": {
+    "Millimeter Wave": 13,
+    "Millimeter-Wave": 11
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "grounding-harness-wiring",
+   "zh_pattern": "搭铁线束",
+   "from": "Ground Wiring Harness",
+   "to": "Grounding Wiring Harness",
+   "corpus_votes": {
+    "Grounding Wiring Harness": 64,
+    "Ground Wiring Harness": 9
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "nylon-pipe-tube",
+   "zh_pattern": "尼龙管",
+   "from": "Nylon Tube",
+   "to": "Nylon Pipe",
+   "corpus_votes": {
+    "Nylon Pipe": 36,
+    "Nylon Tube": 6
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "mounting-bracket",
+   "zh_pattern": "(悬置支座|悬置支架)",
+   "from": "Mounting Support",
+   "to": "Mounting Bracket",
+   "corpus_votes": {
+    "Mounting Bracket": 40,
+    "Mounting Support": 6
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "hazelnut-coffee",
+   "zh_pattern": "榛子咖",
+   "from": "Hazelnut Brown",
+   "to": "Hazelnut Coffee",
+   "corpus_votes": {
+    "Hazelnut Coffee": 14,
+    "Hazelnut Brown": 5
+   },
+   "reason": "corpus majority (this is a colour name unit)"
+  },
+  {
+   "id": "reversing-lamp",
+   "zh_pattern": "倒车灯",
+   "from": "Reverse Light",
+   "to": "Reversing Lamp",
+   "corpus_votes": {
+    "Reversing Lamp": 6,
+    "Reverse Light": 3
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "trim-plate",
+   "zh_pattern": "饰板",
+   "from": "Trim Plate",
+   "to": "Trim Panel",
+   "corpus_votes": {
+    "Trim Panel": 1359,
+    "Trim Plate": 21
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "side-panel-guard",
+   "zh_pattern": "护板",
+   "from": "Guard Board",
+   "to": "Trim Panel",
+   "corpus_votes": {
+    "Guard Board": 28
+   },
+   "reason": "the 护板 family is unified on Trim Panel"
+  },
+  {
+   "id": "side-panel-guard-plain",
+   "zh_pattern": "护板",
+   "from": "Side Panel Guard",
+   "to": "Side Panel Trim",
+   "corpus_votes": {
+    "Guard (other)": 99
+   },
+   "reason": "the 护板 family is unified on Trim Panel; this form avoids doubling 'Panel'"
+  },
+  {
+   "id": "after-sales-kit",
+   "zh_pattern": "售后包",
+   "from": "Aftermarket Kit",
+   "to": "After-Sales Kit",
+   "corpus_votes": {
+    "After-Sales Kit": 99,
+    "Aftermarket Kit": 29
+   },
+   "reason": "corpus majority (supersedes the earlier Aftermarket Package call) and it matches 售后 = after-sales"
+  },
+  {
+   "id": "after-sales-kit-package",
+   "zh_pattern": "售后包",
+   "from": "Aftermarket Package",
+   "to": "After-Sales Kit",
+   "corpus_votes": {
+    "After-Sales Kit": 99,
+    "Aftermarket Package": 9
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "cooling-pipe",
+   "zh_pattern": "冷却管",
+   "from": "Coolant Pipe",
+   "to": "Cooling Pipe",
+   "corpus_votes": {
+    "Cooling Pipe": 125,
+    "Coolant Pipe": 17
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "small-wire",
+   "zh_pattern": "小线",
+   "from": "Pigtail",
+   "to": "Small Wire",
+   "corpus_votes": {
+    "Small Wire": 78,
+    "Pigtail": 2
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "trim-panel-cover",
+   "zh_pattern": "^(?!.*发动机).*装饰板",
+   "from": "Decorative Cover",
+   "to": "Trim Panel",
+   "corpus_votes": {
+    "Trim Panel": 875,
+    "Decorative Cover": 16
+   },
+   "reason": "corpus majority; the engine cover keeps its own wording"
+  },
+  {
+   "id": "trim-strip",
+   "zh_pattern": "装饰条",
+   "from": "Decorative Strip",
+   "to": "Trim Strip",
+   "corpus_votes": {
+    "Trim Strip": 134,
+    "Decorative Strip": 97
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "trim-strip-second",
+   "zh_pattern": "装饰条",
+   "from": "Decorative Trim",
+   "to": "Trim Strip",
+   "corpus_votes": {
+    "Trim Strip": 134,
+    "Decorative Trim": 4
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "seal-plate",
+   "zh_pattern": "封板",
+   "from": "Seal Plate",
+   "to": "Sealing Plate",
+   "corpus_votes": {
+    "Sealing Plate": 60,
+    "Seal Plate": 15
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "crossmember-one-word",
+   "zh_pattern": "横梁",
+   "from": "Cross Member",
+   "to": "Crossmember",
+   "corpus_votes": {
+    "Crossmember": 275,
+    "Cross Member": 26
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "lock-ring",
+   "zh_pattern": "锁环",
+   "from": "Lock Striker",
+   "to": "Lock Ring",
+   "corpus_votes": {
+    "Lock Ring": 43,
+    "Lock Striker": 13
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "front-hood-lid",
+   "zh_pattern": "前舱盖",
+   "from": "Front Compartment Lid",
+   "to": "Front Hood",
+   "corpus_votes": {
+    "Front Compartment Lid": 107,
+    "Front Hood": 54
+   },
+   "reason": "accuracy over majority: hood is the standard name for 前舱盖; 'front compartment lid' is a calque",
+   "accuracy_override": true
+  },
+  {
+   "id": "guide-rail",
+   "zh_pattern": "导轨",
+   "from": "Sliding Rail",
+   "to": "Guide Rail",
+   "corpus_votes": {
+    "Guide Rail": 94,
+    "Sliding Rail": 49
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "guard-to-trim",
+   "zh_pattern": "^(?!.*挡泥板).*护板",
+   "from_pattern": "Guard(?![A-Za-z])",
+   "to": "Trim Panel",
+   "corpus_votes": {
+    "Trim Panel": 2450,
+    "Guard remaining": 95
+   },
+   "reason": "the 护板 family is unified on Trim Panel; sources naming a mudguard are excluded"
+  },
+  {
+   "id": "sill-pedal-step",
+   "zh_pattern": "门槛踏板",
+   "from": "Sill Step",
+   "to": "Sill Pedal",
+   "corpus_votes": {
+    "Sill Pedal": 14,
+    "Sill Step": 10,
+    "Sill Plate": 8
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "sill-pedal-plate",
+   "zh_pattern": "门槛踏板",
+   "from": "Sill Plate",
+   "to": "Sill Pedal",
+   "corpus_votes": {
+    "Sill Pedal": 14,
+    "Sill Plate": 8
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "mudguard-wheel",
+   "zh_pattern": "挡泥板",
+   "from": "Wheel Mudguard",
+   "to": "Mudguard",
+   "corpus_votes": {
+    "Mudguard": 204,
+    "Wheel Mudguard": 42
+   },
+   "reason": "corpus majority drops the redundant 'Wheel'"
+  },
+  {
+   "id": "mudguard-liner",
+   "zh_pattern": "挡泥板",
+   "from": "Fender Liner",
+   "to": "Mudguard",
+   "corpus_votes": {
+    "Mudguard": 204,
+    "Fender Liner": 19
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "heat-shield-plate",
+   "zh_pattern": "隔热板",
+   "from": "Heat Shield Plate",
+   "to": "Heat Shield",
+   "corpus_votes": {
+    "Heat Shield": 75,
+    "Heat Shield Plate": 16
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "upper-beam",
+   "zh_pattern": "侧围上边梁",
+   "from": "Upper Side Member",
+   "to": "Upper Beam",
+   "corpus_votes": {
+    "Upper Beam": 7,
+    "Upper Side Member": 4
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "inner-panel-plate",
+   "zh_pattern": "内板",
+   "from": "Inner Plate",
+   "to": "Inner Panel",
+   "corpus_votes": {
+    "Inner Panel": 174,
+    "Inner Plate": 13
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "floor-crossmember",
+   "zh_pattern": "下横梁",
+   "from": "Cross Beam",
+   "to": "Crossmember",
+   "corpus_votes": {
+    "Crossmember": 54,
+    "Cross Beam": 6
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "roof-trim-strip",
+   "zh_pattern": "顶盖饰条",
+   "from": "Roof Panel Trim Strip",
+   "to": "Roof Trim Strip",
+   "corpus_votes": {
+    "Roof Trim Strip": 9,
+    "Roof Panel Trim Strip": 6
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "plate-lamp",
+   "zh_pattern": "牌照灯",
+   "from": "License Plate Light",
+   "to": "License Plate Lamp",
+   "corpus_votes": {
+    "License Plate Lamp": 22,
+    "License Plate Light": 9
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "lamp-not-light",
+   "zh_pattern": "(转向灯|位置灯|室内灯|雾灯|顶灯|阅读灯|牌照灯)",
+   "from_pattern": "(?<![A-Za-z])Light(?![a-z])(?! (Cloud|Sand|Gray|Grey|Beige|Ivory|Blue|Green|Brown|Red|White|Black|Yellow|Purple|Pink|Silver|Gold|Rose|Wine))",
+   "to": "Lamp",
+   "corpus_votes": {
+    "Lamp": 183,
+    "Light": 52
+   },
+   "reason": "corpus majority for 灯 parts; rows whose source also carries a colour name are excluded, because a colour like 浅云色 renders as 'Light Cloud' and the rule turned it into 'Lamp Cloud'",
+   "fixed_after": "the first version damaged 3 rows"
+  },
+  {
+   "id": "cover-foam",
+   "zh_pattern": "面套发泡",
+   "from": "Trim Foam Assembly",
+   "to": "Cover & Foam Assembly",
+   "corpus_votes": {
+    "Cover & Foam": 73,
+    "Trim Foam": 40
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "mount-assembly",
+   "zh_pattern": "悬置",
+   "from": "Mount Assembly",
+   "to": "Mounting Bracket Assembly",
+   "corpus_votes": {
+    "Mounting Bracket": 69,
+    "Mount ": 3
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "support-assembly",
+   "zh_pattern": "悬置",
+   "from": "Support Assembly",
+   "to": "Mounting Bracket Assembly",
+   "corpus_votes": {
+    "Mounting Bracket": 69,
+    "Support": 10
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "skid-plate",
+   "zh_pattern": "下护板",
+   "from": "Skid Plate",
+   "to": "Trim Panel",
+   "corpus_votes": {
+    "Trim Panel": 381,
+    "Skid Plate": 7
+   },
+   "reason": "corpus majority for 下护板"
+  },
+  {
+   "id": "window-frame-cover",
+   "zh_pattern": "窗框护板",
+   "from": "Window Frame Cover",
+   "to": "Window Frame Trim Panel",
+   "corpus_votes": {
+    "Window Frame Trim Panel": 18,
+    "Window Frame Cover": 6
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "electronic-control",
+   "zh_pattern": "电控",
+   "from": "E-Control",
+   "to": "Electronic Control",
+   "corpus_votes": {
+    "Electronic Control": 48,
+    "E-Control": 2
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "hose-not-flexible-pipe",
+   "zh_pattern": "软管",
+   "from": "Flexible Pipe",
+   "to": "Hose",
+   "corpus_votes": {
+    "Hose": 518,
+    "Flexible Pipe": 9
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "trailing-arm",
+   "zh_pattern": "悬.*牵引臂|牵引臂.*悬",
+   "from": "Traction Arm",
+   "to": "Trailing Arm",
+   "corpus_votes": {
+    "Traction Arm": 19,
+    "Trailing Arm": 4
+   },
+   "reason": "accuracy over majority: a suspension 牵引臂 is a trailing arm; the plain 牵引臂 (tow fitting) keeps Traction Arm",
+   "accuracy_override": true
+  },
+  {
+   "id": "water-pump-outlet",
+   "zh_pattern": "水泵出水管",
+   "from": "Water Pump Water Outlet",
+   "to": "Water Pump Outlet",
+   "corpus_votes": {
+    "Water Pump Outlet": 9,
+    "Water Pump Water Outlet": 2
+   },
+   "reason": "corpus majority and removes the doubled 'Water'"
+  },
+  {
+   "id": "moving-guide-rail",
+   "zh_pattern": "活动导轨",
+   "from": "Moving Guide Rail",
+   "to": "Sliding Guide Rail",
+   "corpus_votes": {
+    "Sliding Guide Rail": 21,
+    "Moving Guide Rail": 3
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "door-door",
+   "zh_pattern": "车门缝条",
+   "from": "Door Door",
+   "to": "Door",
+   "corpus_votes": {
+    "Door Door": 2
+   },
+   "reason": "accuracy: the doubled 'Door' is an artefact of 车门 + 缝条"
+  },
+  {
+   "id": "seam-strip",
+   "zh_pattern": "缝条",
+   "from": "Gap Seal",
+   "to": "Seam Strip",
+   "corpus_votes": {
+    "Seam Strip": 14,
+    "Gap Seal": 10
+   },
+   "reason": "corpus majority for 缝条"
+  },
+  {
+   "id": "seam-strip-two",
+   "zh_pattern": "缝条",
+   "from": "Gap Strip",
+   "to": "Seam Strip",
+   "corpus_votes": {
+    "Seam Strip": 14,
+    "Gap Strip": 4
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "acoustic-pack",
+   "zh_pattern": "声学包",
+   "from": "Acoustic Package",
+   "to": "Acoustic Pack",
+   "corpus_votes": {
+    "Acoustic Pack": 15,
+    "Acoustic Package": 4
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "onboard-power-supply",
+   "zh_pattern": "车载电源",
+   "from": "Vehicle Power Supply",
+   "to": "On-Board Power Supply",
+   "corpus_votes": {
+    "On-Board Power Supply": 3,
+    "Vehicle Power Supply": 2
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "installation-support",
+   "zh_pattern": "安装支座",
+   "from_pattern": "(?<!Support )Bracket",
+   "to": "Support",
+   "corpus_votes": {
+    "Support": 20,
+    "Bracket": 11
+   },
+   "reason": "corpus majority for 安装支座"
+  },
+  {
+   "id": "trim-assembly-to-cover",
+   "zh_pattern": "护面",
+   "from": "Trim Assembly",
+   "to": "Cover Assembly",
+   "corpus_votes": {
+    "Cover": 200,
+    "Trim": 44
+   },
+   "reason": "corpus majority for 护面"
+  },
+  {
+   "id": "crossmember-any",
+   "zh_pattern": "横梁",
+   "from": "Cross Beam",
+   "to": "Crossmember",
+   "corpus_votes": {
+    "Crossmember": 307,
+    "Cross Beam": 23
+   },
+   "reason": "corpus majority for 横梁"
+  },
+  {
+   "id": "cooling-line",
+   "zh_pattern": "冷却管",
+   "to": "Cooling Pipe",
+   "corpus_votes": {
+    "Cooling Pipe": 142,
+    "Cooling Line": 7
+   },
+   "reason": "corpus majority (verified in this session)",
+   "from": "Cooling Line"
+  },
+  {
+   "id": "buffer-pad",
+   "zh_pattern": "缓冲垫",
+   "to": "Buffer",
+   "corpus_votes": {
+    "Buffer": 52,
+    "Bumper": 8
+   },
+   "reason": "accuracy: a cushion is a buffer, not a bumper",
+   "from": "Bumper",
+   "accuracy_override": true
+  },
+  {
+   "id": "buffer-block",
+   "zh_pattern": "缓冲块",
+   "to": "Buffer Block",
+   "corpus_votes": {
+    "Buffer Block": 55,
+    "Bumper": 24
+   },
+   "reason": "accuracy: a cushion block is not a bumper",
+   "from": "Bumper",
+   "accuracy_override": true
+  },
+  {
+   "id": "luggage-compartment",
+   "zh_pattern": "行李箱",
+   "to": "Luggage Compartment",
+   "corpus_votes": {
+    "Luggage Compartment": 178,
+    "Trunk": 166
+   },
+   "reason": "near tie; majority plus the left-hand rows already say Luggage Compartment",
+   "from": "Trunk"
+  },
+  {
+   "id": "inner-pull-handle",
+   "zh_pattern": "内拉手",
+   "to": "Inner Pull Handle",
+   "corpus_votes": {
+    "Inner Pull Handle": 103,
+    "Inner Handle": 41
+   },
+   "reason": "corpus majority",
+   "from": "Inner Handle"
+  },
+  {
+   "id": "air-intake-duct",
+   "zh_pattern": "进气风道",
+   "to": "Air Intake Duct",
+   "corpus_votes": {
+    "Air Intake Duct": 15,
+    "Intake Air Duct": 11
+   },
+   "reason": "word order",
+   "from": "Intake Air Duct"
+  },
+  {
+   "id": "electronic-damper",
+   "zh_pattern": "电控阻尼器",
+   "to": "Electronic Damper",
+   "corpus_votes": {
+    "Electronic Damper": 10,
+    "Electronic Shock Absorber": 4,
+    "Electronically Controlled Damper": 3
+   },
+   "reason": "corpus majority",
+   "from": "Electronically Controlled Damper"
+  },
+  {
+   "id": "e-coat",
+   "zh_pattern": "电泳",
+   "to": "E-Coat",
+   "corpus_votes": {
+    "E-Coat": 115,
+    "Electrophoresis": 28
+   },
+   "reason": "corpus majority; E-coat is the industry term",
+   "from": "Electrophoresis"
+  },
+  {
+   "id": "mounting-base-cover",
+   "zh_pattern": "安装座盖板",
+   "to": "Mounting Base Cover",
+   "corpus_votes": {
+    "Mounting Base Cover": 30,
+    "Mounting Seat Cover": 22
+   },
+   "reason": "corpus majority; 安装座 is a mounting base",
+   "from": "Mounting Seat Cover"
+  },
+  {
+   "id": "mirror-housing",
+   "zh_pattern": "外壳",
+   "to": "Housing",
+   "corpus_votes": {
+    "Housing": 70,
+    "Shell": 13
+   },
+   "reason": "corpus majority",
+   "from": "Shell"
+  },
+  {
+   "id": "combination-headlamp",
+   "zh_pattern": "组合前灯",
+   "to": "Combination Headlamp",
+   "corpus_votes": {
+    "Combination Headlamp": 87,
+    "Headlamp": 116
+   },
+   "reason": "completeness: the source says 组合; the other 87 rows already carry it",
+   "from_pattern": "(?<!Combination )Headlamp"
+  },
+  {
+   "id": "subassembly-case-alt",
+   "zh_pattern": "(组件|合件|分装总成)",
+   "to": "Sub-Assembly",
+   "corpus_votes": {
+    "Sub-Assembly (case-sensitive)": 677,
+    "Sub-assembly (case-sensitive)": 3
+   },
+   "reason": "capitalisation, same convention as the 分总成 rule",
+   "from": "Sub-assembly"
+  },
+  {
+   "id": "return-pipe",
+   "zh_pattern": "回油管",
+   "to": "Return Pipe",
+   "corpus_votes": {
+    "Return Pipe": 12,
+    "Return Line": 4
+   },
+   "reason": "corpus majority",
+   "from": "Return Line"
+  },
+  {
+   "id": "front-panel",
+   "zh_pattern": "前围",
+   "to": "Front Panel",
+   "corpus_votes": {
+    "Front Panel": 89,
+    "Front Bulkhead": 25,
+    "Firewall": 2
+   },
+   "reason": "corpus majority",
+   "from": "Firewall"
+  },
+  {
+   "id": "front-passenger-bare",
+   "zh_pattern": "副驾",
+   "to": "Front Passenger",
+   "corpus_votes": {
+    "bare Passenger": 31,
+    "Front Passenger": 872
+   },
+   "reason": "the front-passenger rule only rewrote Co-Pilot; the bare form escaped",
+   "from_pattern": "(?<!Front )Passenger"
+  },
+  {
+   "id": "service-kit",
+   "zh_pattern": "售后包",
+   "to": "After-Sales Kit",
+   "corpus_votes": {
+    "After-Sales Kit": 128,
+    "Service Kit": 7
+   },
+   "reason": "corpus majority",
+   "from": "Service Kit"
+  },
+  {
+   "id": "closing-plate",
+   "zh_pattern": "封板",
+   "to": "Sealing Plate",
+   "corpus_votes": {
+    "Sealing Plate": 75,
+    "Closing Plate": 7
+   },
+   "reason": "corpus majority",
+   "from": "Closing Plate"
+  },
+  {
+   "id": "closure-panel",
+   "zh_pattern": "封板",
+   "to": "Sealing Plate",
+   "corpus_votes": {
+    "Sealing Plate": 75,
+    "Closure Panel": 3
+   },
+   "reason": "corpus majority",
+   "from": "Closure Panel"
+  },
+  {
+   "id": "waterproof-film",
+   "zh_pattern": "防水薄膜",
+   "to": "Waterproof Film",
+   "corpus_votes": {
+    "Waterproof Film": 15,
+    "Water Shield": 5
+   },
+   "reason": "corpus majority",
+   "from": "Water Shield"
+  },
+  {
+   "id": "waterproof-film-hyphen",
+   "zh_pattern": "防水薄膜",
+   "to": "Waterproof Film",
+   "corpus_votes": {
+    "Waterproof Film": 15,
+    "Water-Proof Film": 5
+   },
+   "reason": "one-word form is the majority",
+   "from": "Water-Proof Film"
+  },
+  {
+   "id": "reverser-actuator",
+   "zh_pattern": "换向器",
+   "to": "Actuator",
+   "corpus_votes": {
+    "Actuator": 9,
+    "Reverser": 2
+   },
+   "reason": "corpus majority",
+   "from": "Reverser"
+  },
+  {
+   "id": "guide-mechanism",
+   "zh_pattern": "导正机构",
+   "to": "Guide Mechanism",
+   "corpus_votes": {
+    "Guide Mechanism": 22,
+    "Alignment Mechanism": 2
+   },
+   "reason": "corpus majority",
+   "from": "Alignment Mechanism"
+  },
+  {
+   "id": "foot-guard",
+   "zh_pattern": "护脚",
+   "to": "Foot Guard",
+   "corpus_votes": {
+    "Foot Guard": 61,
+    "Foot Shield": 27
+   },
+   "reason": "corpus majority",
+   "from": "Foot Shield"
+  },
+  {
+   "id": "cover-and-foam",
+   "zh_pattern": "面套发泡",
+   "to": "Cover & Foam",
+   "corpus_votes": {
+    "Cover & Foam": 103,
+    "Cover Foam": 100
+   },
+   "reason": "near tie; matches the cover-foam wording the policy already chose",
+   "from": "Cover Foam"
+  },
+  {
+   "id": "third-row",
+   "zh_pattern": "第三排",
+   "to": "3rd Row",
+   "corpus_votes": {
+    "3rd Row": 183,
+    "Third Row": 59
+   },
+   "reason": "corpus majority and matches 二排 -> 2nd Row",
+   "from": "Third Row"
+  },
+  {
+   "id": "outer-trim-panel",
+   "zh_pattern": "外饰板",
+   "to": "Outer Trim Panel",
+   "corpus_votes": {
+    "Outer Trim Panel": 61,
+    "Outer Trim Board": 3
+   },
+   "reason": "corpus majority",
+   "from": "Outer Trim Board"
+  },
+  {
+   "id": "seat-back-to-backrest",
+   "zh_pattern": "靠背",
+   "to": "Seat Backrest",
+   "corpus_votes": {
+    "Backrest": 947,
+    "bare Seat Back": 40
+   },
+   "reason": "corpus majority",
+   "from_pattern": "(?<!Seat )Seat Back(?![a-z])"
+  },
+  {
+   "id": "main-bearing-shell",
+   "zh_pattern": "主轴瓦",
+   "to": "Main Bearing Shell",
+   "corpus_votes": {
+    "Main Bearing Shell": 22,
+    "bare Main Bearing": 16
+   },
+   "reason": "瓦 is the shell insert; the upper/lower pair must match",
+   "from_pattern": "Main Bearing(?! Shell)"
+  },
+  {
+   "id": "sealing-gasket",
+   "zh_pattern": "密封垫",
+   "to": "Sealing Gasket",
+   "corpus_votes": {
+    "Sealing Gasket": 4,
+    "Sealing Pad": 2
+   },
+   "reason": "corpus majority and the left/right pair must match",
+   "from": "Sealing Pad"
+  },
+  {
+   "id": "face-cover",
+   "zh_pattern": "面套",
+   "to": "Cover Component",
+   "corpus_votes": {
+    "Cover": 259,
+    "Trim": 20
+   },
+   "reason": "corpus majority: 面套 is Cover (e.g. 'Driver Backrest Trim Component' -> '... Cover Component')",
+   "from": "Trim Component"
+  },
+  {
+   "id": "back-panel",
+   "zh_pattern": "背板",
+   "to": "Back Panel",
+   "corpus_votes": {
+    "Back Panel": 50,
+    "Backrest": 24
+   },
+   "reason": "背板 is a panel, not a backrest",
+   "from": "Backrest"
+  },
+  {
+   "id": "noise-canceling-mic",
+   "zh_pattern": "降噪MIC",
+   "to": "Noise-Canceling MIC",
+   "corpus_votes": {
+    "Noise-Canceling MIC": 15,
+    "Noise Reduction MIC": 1
+   },
+   "reason": "corpus majority",
+   "from": "Noise Reduction MIC"
+  },
+  {
+   "id": "soft-hose",
+   "zh_pattern": "软管",
+   "to": "Hose",
+   "corpus_votes": {
+    "Hose": 527,
+    "Soft Hose": 24
+   },
+   "reason": "corpus majority",
+   "from": "Soft Hose"
+  },
+  {
+   "id": "wind-deflector-plate",
+   "zh_pattern": "阻风板",
+   "to": "Wind Deflector",
+   "corpus_votes": {
+    "Wind Deflector": 2,
+    "Windage Tray": 1
+   },
+   "reason": "small family; 阻风板 is a deflector",
+   "from": "Windage Tray"
+  },
+  {
+   "id": "closure-skin",
+   "zh_pattern": "封皮",
+   "to": "Cover",
+   "corpus_votes": {
+    "Cover": 16,
+    "Closure Skin": 2
+   },
+   "reason": "corpus majority",
+   "from": "Closure Skin"
+  },
+  {
+   "id": "combination-lamp-light",
+   "zh_pattern": "组合灯",
+   "to": "Combination Lamp",
+   "corpus_votes": {
+    "Combination Lamp": 11,
+    "Combination Light": 2
+   },
+   "reason": "corpus majority, same as the lamp rule",
+   "from": "Combination Light"
+  },
+  {
+   "id": "roof-grab-handle",
+   "zh_pattern": "车顶拉手",
+   "to": "Roof Grab Handle",
+   "corpus_votes": {
+    "Roof Grab Handle": 36,
+    "Roof Handle": 20
+   },
+   "reason": "corpus majority",
+   "from_pattern": "(?<!Grab )Roof Handle"
+  },
+  {
+   "id": "tow-plug",
+   "zh_pattern": "堵盖",
+   "to": "Plug",
+   "corpus_votes": {
+    "Plug": 507,
+    "Cover": 94,
+    "cover_before_plug_rows_protected": 29
+   },
+   "reason": "堵盖族 Plug 507 : Cover 94（多数）；负向后顾避免吃掉已正确的 Plug；负向前瞻「Cover 之后还有独立 Plug」表示该 Cover 属于同行的另一个词（罩盖/盖板/遮物帘），必须保留 —— 实测这类 26 行的 Cover 被误替换",
+   "from_pattern": "(?<![A-Za-z])Cover(?![a-z])(?!.*(?<![A-Za-z])Plug(?![a-z]))"
+  },
+  {
+   "id": "dedup-mirror",
+   "zh_pattern": ".*",
+   "to": "Mirror",
+   "corpus_votes": {
+    "corpus-wide duplicated tokens": 30
+   },
+   "reason": "accuracy: duplicated-token artefact",
+   "from": "Mirror Mirror"
+  },
+  {
+   "id": "dedup-front",
+   "zh_pattern": ".*",
+   "to": "Front",
+   "corpus_votes": {
+    "corpus-wide duplicated tokens": 30
+   },
+   "reason": "accuracy: duplicated-token artefact",
+   "from": "Front Front"
+  },
+  {
+   "id": "dedup-rear",
+   "zh_pattern": ".*",
+   "to": "Rear",
+   "corpus_votes": {
+    "corpus-wide duplicated tokens": 30
+   },
+   "reason": "accuracy: duplicated-token artefact",
+   "from": "Rear Rear"
+  },
+  {
+   "id": "dedup-gear",
+   "zh_pattern": ".*",
+   "to": "Gear",
+   "corpus_votes": {
+    "corpus-wide duplicated tokens": 30
+   },
+   "reason": "accuracy: duplicated-token artefact",
+   "from": "Gear Gear"
+  },
+  {
+   "id": "dedup-mounting",
+   "zh_pattern": ".*",
+   "to": "Mounting",
+   "corpus_votes": {
+    "corpus-wide duplicated tokens": 30
+   },
+   "reason": "accuracy: duplicated-token artefact",
+   "from": "Mounting Mounting"
+  },
+  {
+   "id": "dedup-panel",
+   "zh_pattern": ".*",
+   "to": "Panel",
+   "corpus_votes": {
+    "corpus-wide duplicated tokens": 30
+   },
+   "reason": "accuracy: duplicated-token artefact",
+   "from": "Panel Panel"
+  },
+  {
+   "id": "dedup-strip",
+   "zh_pattern": ".*",
+   "to": "Strip",
+   "corpus_votes": {
+    "corpus-wide duplicated tokens": 30
+   },
+   "reason": "accuracy: duplicated-token artefact",
+   "from": "Strip Strip"
+  },
+  {
+   "id": "dedup-back",
+   "zh_pattern": ".*",
+   "to": "Back",
+   "corpus_votes": {
+    "corpus-wide duplicated tokens": 30
+   },
+   "reason": "accuracy: duplicated-token artefact",
+   "from": "Back Back"
+  },
+  {
+   "id": "plug-dedup",
+   "zh_pattern": "堵盖",
+   "to": "Plug",
+   "corpus_votes": {
+    "Plug Plug": 64,
+    "Plug": 523
+   },
+   "reason": "duplicated token carried in from upstream",
+   "from": "Plug Plug"
+  },
+  {
+   "id": "headlamp-plain",
+   "zh_pattern": "前大灯",
+   "to": "Headlamp",
+   "corpus_votes": {
+    "Headlamp": 15,
+    "Headlight": 5
+   },
+   "reason": "corpus majority; SAE term",
+   "from": "Headlight"
+  },
+  {
+   "id": "installation-bracket",
+   "zh_pattern": "安装支架",
+   "to": "Mounting Bracket",
+   "corpus_votes": {
+    "Mounting Bracket": 777,
+    "Installation Bracket": 127
+   },
+   "reason": "corpus majority",
+   "from": "Installation Bracket"
+  },
+  {
+   "id": "gas-spring",
+   "zh_pattern": "气弹簧",
+   "to": "Gas Spring",
+   "corpus_votes": {
+    "Gas Spring": 47,
+    "Gas Strut": 5
+   },
+   "reason": "corpus majority",
+   "from": "Gas Strut"
+  },
+  {
+   "id": "bumper-beam-impact",
+   "zh_pattern": "防撞梁",
+   "to": "Bumper Beam",
+   "corpus_votes": {
+    "Bumper Beam": 49,
+    "Impact Beam": 5
+   },
+   "reason": "corpus majority",
+   "from": "Impact Beam"
+  },
+  {
+   "id": "cover-foam-component",
+   "zh_pattern": "面套发泡组件",
+   "to": "Cover & Foam Assembly",
+   "corpus_votes": {
+    "Cover & Foam Assembly": 51,
+    "Cover & Foam Component": 35,
+    "Trim Foam Sub-Assembly": 3
+   },
+   "reason": "majority across the whole corpus (the slice-level sample said Component, the corpus says Assembly)",
+   "from": "Trim Foam Sub-Assembly"
+  },
+  {
+   "id": "headrest-slider-sleeve",
+   "zh_pattern": "后排头枕滑套组件",
+   "to": "Headrest Slider Sleeve",
+   "corpus_votes": {
+    "Headrest Slider Sleeve": 20,
+    "Rear Row Headrest Slider": 2
+   },
+   "reason": "corpus majority keeps Sleeve",
+   "from": "Rear Row Headrest Slider"
+  },
+  {
+   "id": "tweeter-speaker-cover",
+   "zh_pattern": "高音扬声器罩",
+   "to": "Tweeter Speaker Cover",
+   "corpus_votes": {
+    "Tweeter Speaker Cover": 8,
+    "Tweeter Cover": 2
+   },
+   "reason": "corpus majority",
+   "from": "Tweeter Cover"
+  },
+  {
+   "id": "laser-carved",
+   "zh_pattern": "镭雕",
+   "to": "Laser-Carved",
+   "corpus_votes": {
+    "Laser-Carved": 8,
+    "Laser Etched": 8
+   },
+   "reason": "tie; the hyphenated compound form matches the corpus's other compound modifiers and removed a left/right disagreement",
+   "from": "Laser Etched",
+   "accuracy_override": true
+  },
+  {
+   "id": "safety-handle",
+   "zh_pattern": "安全拉手",
+   "to": "Safety Handle",
+   "corpus_votes": {
+    "Safety Handle": 20,
+    "Safety Grab Handle": 5
+   },
+   "reason": "corpus majority",
+   "from": "Safety Grab Handle"
+  },
+  {
+   "id": "sub-ip-order-right-front",
+   "zh_pattern": "副仪表板",
+   "to": "Sub-Instrument Panel Right Front",
+   "corpus_votes": {
+    "after-noun": 99,
+    "before-noun": 33
+   },
+   "reason": "corpus majority puts the qualifier after the noun; mirrors disagreed",
+   "from": "Right Front Sub-Instrument Panel"
+  },
+  {
+   "id": "sub-ip-order-left-front",
+   "zh_pattern": "副仪表板",
+   "to": "Sub-Instrument Panel Left Front",
+   "corpus_votes": {
+    "after-noun": 99,
+    "before-noun": 33
+   },
+   "reason": "corpus majority puts the qualifier after the noun; mirrors disagreed",
+   "from": "Left Front Sub-Instrument Panel"
+  },
+  {
+   "id": "sub-ip-order-right",
+   "zh_pattern": "副仪表板",
+   "to": "Sub-Instrument Panel Right",
+   "corpus_votes": {
+    "after-noun": 208,
+    "before-noun": 120
+   },
+   "reason": "corpus majority puts the qualifier after the noun; mirrors disagreed",
+   "from": "Right Sub-Instrument Panel"
+  },
+  {
+   "id": "sub-ip-order-left",
+   "zh_pattern": "副仪表板",
+   "to": "Sub-Instrument Panel Left",
+   "corpus_votes": {
+    "after-noun": 208,
+    "before-noun": 120
+   },
+   "reason": "corpus majority puts the qualifier after the noun; mirrors disagreed",
+   "from": "Left Sub-Instrument Panel"
+  },
+  {
+   "id": "sub-ip-order-rear-upper",
+   "zh_pattern": "副仪表板",
+   "to": "Sub-Instrument Panel Rear Upper",
+   "corpus_votes": {
+    "after-noun": 208,
+    "before-noun": 120
+   },
+   "reason": "corpus majority puts the qualifier after the noun; mirrors disagreed",
+   "from": "Rear Upper Sub-Instrument Panel"
+  },
+  {
+   "id": "crossbeam-solid",
+   "zh_pattern": "横梁",
+   "to": "Crossmember",
+   "corpus_votes": {
+    "Crossmember": 330,
+    "Crossbeam": 11
+   },
+   "reason": "corpus majority spelling",
+   "from": "Crossbeam"
+  },
+  {
+   "id": "seal-plate-cover",
+   "zh_pattern": "封板",
+   "to": "Sealing Plate",
+   "corpus_votes": {
+    "Sealing Plate": 85,
+    "Cover Plate": 5
+   },
+   "reason": "corpus majority",
+   "from": "Cover Plate"
+  },
+  {
+   "id": "kou-shou-handle",
+   "zh_pattern": "扣手",
+   "to": "Handle",
+   "corpus_votes": {
+    "Handle": 501,
+    "Latch": 37
+   },
+   "reason": "corpus majority",
+   "from": "Latch"
+  },
+  {
+   "id": "inner-trim-panel",
+   "zh_pattern": "内护板",
+   "to": "Inner Trim Panel",
+   "corpus_votes": {
+    "Inner Trim Panel": 141,
+    "Inner Cover": 2
+   },
+   "reason": "corpus majority",
+   "from": "Inner Cover"
+  },
+  {
+   "id": "decorative-plate",
+   "zh_pattern": "装饰板",
+   "to": "Trim Panel",
+   "corpus_votes": {
+    "Trim Panel": 877,
+    "Decorative Plate": 7
+   },
+   "reason": "corpus majority",
+   "from": "Decorative Plate"
+  },
+  {
+   "id": "insulation-plate",
+   "zh_pattern": "隔热板",
+   "to": "Heat Shield",
+   "corpus_votes": {
+    "Heat Shield": 75,
+    "Insulation Plate": 2
+   },
+   "reason": "corpus majority",
+   "from": "Insulation Plate"
+  },
+  {
+   "id": "front-seat",
+   "zh_pattern": "前排座椅",
+   "to": "Front Seat",
+   "corpus_votes": {
+    "Front Seat": 68,
+    "Front Row Seat": 18
+   },
+   "reason": "corpus majority",
+   "from": "Front Row Seat"
+  },
+  {
+   "id": "air-inlet",
+   "zh_pattern": "进风口",
+   "to": "Air Inlet",
+   "corpus_votes": {
+    "Air Inlet": 15,
+    "Air Intake": 7
+   },
+   "reason": "corpus majority",
+   "from": "Air Intake"
+  },
+  {
+   "id": "anti-collision-beam",
+   "zh_pattern": "防撞梁",
+   "to": "Bumper Beam",
+   "corpus_votes": {
+    "Bumper Beam": 49,
+    "Anti-Collision Beam": 3
+   },
+   "reason": "corpus majority",
+   "from": "Anti-Collision Beam"
+  },
+  {
+   "id": "gloss-bright",
+   "zh_pattern": "亮光",
+   "to": "Gloss",
+   "corpus_votes": {
+    "Bright": 22,
+    "Gloss": 2
+   },
+   "reason": "accuracy over majority: 亮光 is a gloss finish (the counterpart of 哑光), not 'bright'",
+   "from": "Bright",
+   "accuracy_override": true
+  },
+  {
+   "id": "bright-trim-strip",
+   "zh_pattern": "装饰亮条",
+   "to": "Bright Trim Strip",
+   "corpus_votes": {
+    "Bright Trim Strip": 146,
+    "Decorative Bright Strip": 3
+   },
+   "reason": "corpus majority",
+   "from": "Decorative Bright Strip"
+  },
+  {
+   "id": "rubber-grommet",
+   "zh_pattern": "鱼嘴口胶套",
+   "to": "Rubber Grommet",
+   "corpus_votes": {
+    "Rubber Grommet": 5,
+    "Rubber Boot": 1
+   },
+   "reason": "corpus majority",
+   "from": "Rubber Boot"
+  },
+  {
+   "id": "co-driver",
+   "zh_pattern": "副驾",
+   "to": "Front Passenger",
+   "corpus_votes": {
+    "Front Passenger": 903,
+    "Co-Driver": 14
+   },
+   "reason": "the front-passenger policy did not cover the Co-Driver spelling",
+   "from": "Co-Driver"
+  },
+  {
+   "id": "oil-pump",
+   "zh_pattern": "(?<!燃)油泵",
+   "to": "Oil Pump",
+   "corpus_votes": {
+    "Oil Pump": 48,
+    "Fuel Pump": 21
+   },
+   "reason": "corpus majority; session #3 narrowed zh_pattern from 油泵 to (?<!燃)油泵 — 燃油泵 is a fuel pump and was caught as a substring (see fuel-pump-corrective)",
+   "from": "Fuel Pump"
+  },
+  {
+   "id": "blackout-film",
+   "zh_pattern": "遮黑膜",
+   "to": "Blackout Film",
+   "corpus_votes": {
+    "Blackout Film": 38,
+    "Blackout Tape": 8
+   },
+   "reason": "corpus majority",
+   "from": "Blackout Tape"
+  },
+  {
+   "id": "he-jian-assembly",
+   "zh_pattern": "合件",
+   "to": "Assembly",
+   "corpus_votes": {
+    "Assembly": 498,
+    "Combined Part": 1
+   },
+   "reason": "lone literal rendering",
+   "from": "Combined Part"
+  },
+  {
+   "id": "anchor-fixed-point",
+   "zh_pattern": "固定点",
+   "to": "Anchor",
+   "corpus_votes": {
+    "Anchor": 37,
+    "Fixed Point": 3
+   },
+   "reason": "seatbelt anchor, corpus majority",
+   "from": "Fixed Point"
+  },
+  {
+   "id": "electric-water-pump",
+   "zh_pattern": "电子水泵",
+   "to": "Electric Water Pump",
+   "corpus_votes": {
+    "Electric Water Pump": 1
+   },
+   "reason": "accuracy: 电子 here is electric (same false friend already fixed for 电子风扇)",
+   "from": "Electronic Water Pump",
+   "accuracy_override": true
+  },
+  {
+   "id": "canister",
+   "zh_pattern": "(炭罐|碳罐)",
+   "to": "Canister",
+   "corpus_votes": {
+    "Canister": 84,
+    "Carbon Canister": 16
+   },
+   "reason": "corpus majority",
+   "from": "Carbon Canister"
+  },
+  {
+   "id": "emblem",
+   "zh_pattern": "字标",
+   "to": "Emblem",
+   "corpus_votes": {
+    "Emblem": 168,
+    "Badge": 14
+   },
+   "reason": "corpus majority",
+   "from": "Badge"
+  },
+  {
+   "id": "grounding-bare",
+   "zh_pattern": "搭铁",
+   "to": "Grounding",
+   "corpus_votes": {
+    "Grounding": 90,
+    "bare Ground": 12
+   },
+   "reason": "the 搭铁线束 rule did not cover bare 搭铁",
+   "from_pattern": "(?<![A-Za-z])Ground(?![a-z])"
+  },
+  {
+   "id": "in-vehicle",
+   "zh_pattern": "车内",
+   "to": "In-Vehicle",
+   "corpus_votes": {
+    "In-Vehicle": 14,
+    "In-Car": 5
+   },
+   "reason": "corpus majority",
+   "from": "In-Car"
+  },
+  {
+   "id": "high-voltage-hyphen",
+   "zh_pattern": "高压",
+   "to": "High-Voltage",
+   "corpus_votes": {
+    "High-Voltage": 132,
+    "High Voltage": 30
+   },
+   "reason": "hyphenated compound is the corpus majority",
+   "from": "High Voltage"
+  },
+  {
+   "id": "parking-brake-cable",
+   "zh_pattern": "驻车",
+   "to": "Parking Brake Cable",
+   "corpus_votes": {
+    "Parking Brake Cable": 14,
+    "Parking Cable": 8
+   },
+   "reason": "corpus majority; bare Parking collides with the parking-sensor family",
+   "from": "Parking Cable"
+  },
+  {
+   "id": "fixing-bracket",
+   "zh_pattern": "固定支架",
+   "to": "Mounting Bracket",
+   "corpus_votes": {
+    "Mounting Bracket": 123,
+    "Fixing Bracket": 66
+   },
+   "reason": "corpus majority and matches 安装支架",
+   "from": "Fixing Bracket"
+  },
+  {
+   "id": "rear-upper",
+   "zh_pattern": "上后",
+   "to": "Rear Upper",
+   "corpus_votes": {
+    "Rear Upper": 32,
+    "Upper Rear": 7
+   },
+   "reason": "word order; mirrors disagreed",
+   "from": "Upper Rear"
+  },
+  {
+   "id": "pretensioner",
+   "zh_pattern": "预紧",
+   "to": "Pretensioner",
+   "corpus_votes": {
+    "Pretensioner": 12,
+    "Pre-tensioner": 1
+   },
+   "reason": "corpus majority one-word form",
+   "from": "Pre-tensioner"
+  },
+  {
+   "id": "mount-bracket",
+   "zh_pattern": "悬置",
+   "to": "Mounting Bracket",
+   "corpus_votes": {
+    "Mounting Bracket": 76,
+    "Mount Bracket": 14
+   },
+   "reason": "corpus majority",
+   "from": "Mount Bracket"
+  },
+  {
+   "id": "sponge-separator",
+   "zh_pattern": "海绵",
+   "to": "Sponge - ",
+   "corpus_votes": {
+    "spaced": 3,
+    "glued": 1
+   },
+   "reason": "glued separator",
+   "from": "Sponge-"
+  },
+  {
+   "id": "total-numeric-separator",
+   "zh_pattern": "总成",
+   "to": " - ",
+   "corpus_votes": {
+    "spaced": 6193,
+    "glued": 135,
+    "identifier_internal_dashes_protected": 244
+   },
+   "reason": "glued dash before a numeric suffix; negative look-behind keeps dashes that sit INSIDE a part number (STEL-2142600C) intact — the retight rules only cover line-start identifiers, so prefixed rows were silently damaged",
+   "from_pattern": "(?<![A-Z0-9])-(?=[0-9#])"
+  },
+  {
+   "id": "cover-foam-to-assembly",
+   "zh_pattern": "面套发泡组件",
+   "to": "Cover & Foam Assembly",
+   "corpus_votes": {
+    "Cover & Foam Assembly": 51,
+    "Cover & Foam Component": 35
+   },
+   "reason": "corpus majority",
+   "from": "Cover & Foam Component"
+  },
+  {
+   "id": "install-plate-mounting",
+   "zh_pattern": "安装板",
+   "from": "Installation Plate",
+   "to": "Mounting Plate",
+   "corpus_votes": {
+    "Mounting Plate": 107,
+    "Installation Plate": 20
+   },
+   "reason": "corpus majority for 安装板"
+  },
+  {
+   "id": "armrest-base",
+   "zh_pattern": "扶手座",
+   "from": "Armrest Seat",
+   "to": "Armrest Base",
+   "corpus_votes": {
+    "Armrest Base": 38,
+    "Armrest Seat": 6
+   },
+   "reason": "corpus majority for 扶手座"
+  },
+  {
+   "id": "trim-board-to-panel",
+   "zh_pattern": "饰板",
+   "from": "Trim Board",
+   "to": "Trim Panel",
+   "corpus_votes": {
+    "Trim Panel": 1475,
+    "Trim Board": 19
+   },
+   "reason": "corpus majority; the 饰板 family canonicalises on Trim Panel"
+  },
+  {
+   "id": "bright-trim-strip-missing",
+   "zh_pattern": "亮饰条",
+   "from_pattern": "Bright Trim(?![- A-Za-z])",
+   "to": "Bright Trim Strip",
+   "corpus_votes": {
+    "Bright Trim Strip": 161,
+    "dropped Strip": 5
+   },
+   "reason": "亮饰条 rows that dropped 'Strip'; only the trailing form was missing it",
+   "accuracy_override": true
+  },
+  {
+   "id": "wheel-well-to-house",
+   "zh_pattern": "轮罩",
+   "from": "Wheel Well",
+   "to": "Wheel House",
+   "corpus_votes": {
+    "Wheel House": 167,
+    "Wheel Well": 10
+   },
+   "reason": "corpus majority for 轮罩"
+  },
+  {
+   "id": "heat-insulation-layer",
+   "zh_pattern": "隔热层",
+   "from": "Heat Shield",
+   "to": "Heat Insulation Layer",
+   "corpus_votes": {
+    "Heat Insulation Layer": 34,
+    "Heat Shield": 16
+   },
+   "reason": "隔热层 rendered as Heat Shield in a minority of rows"
+  },
+  {
+   "id": "heat-insulation-layer-bare",
+   "zh_pattern": "隔热层",
+   "from_pattern": "(?<!Heat )Insulation Layer",
+   "to": "Heat Insulation Layer",
+   "corpus_votes": {
+    "Heat Insulation Layer": 43,
+    "bare Insulation Layer": 7
+   },
+   "reason": "same family without 'Heat'; the majority spells it out"
+  },
+  {
+   "id": "seat-back-panel-dedupe",
+   "zh_pattern": "靠背背板",
+   "from": "Back Panel Back Panel",
+   "to": "Backrest Back Panel",
+   "corpus_votes": {
+    "duplicated phrase": 10,
+    "Backrest Back Panel": 0
+   },
+   "reason": "repeated-word defect: every 靠背背板 row says 'Back Panel Back Panel'; 靠背 = backrest, 背板 = back panel",
+   "accuracy_override": true
+  },
+  {
+   "id": "cowl-trough-to-water-channel",
+   "zh_pattern": "流水槽",
+   "from": "Cowl Trough",
+   "to": "Water Channel",
+   "corpus_votes": {
+    "Water Channel": 53,
+    "Cowl Trough": 7
+   },
+   "reason": "corpus majority for 流水槽"
+  },
+  {
+   "id": "mirror-drop-rearview",
+   "zh_pattern": "外后视镜",
+   "from_pattern": "(?:Exterior|Outside) Rearview Mirror",
+   "to": "Exterior Mirror",
+   "corpus_votes": {
+    "Exterior Mirror": 165,
+    "Rearview forms": 5
+   },
+   "reason": "外后视镜 rows that kept 'Rearview'; corpus majority is Exterior Mirror"
+  },
+  {
+   "id": "fuel-pump-corrective",
+   "zh_pattern": "燃油泵",
+   "from": "Oil Pump",
+   "to": "Fuel Pump",
+   "corpus_votes": {
+    "Oil Pump": 8,
+    "Fuel Pump (ai_draft)": 8
+   },
+   "reason": "燃油泵 is a fuel pump; the oil-pump rule matched 油泵 as a substring of 燃油泵 and rewrote the drafts",
+   "accuracy_override": true
+  },
+  {
+   "id": "ac-abbreviation",
+   "zh_pattern": "空调",
+   "from_pattern": "(?<![A-Za-z/])AC(?![A-Za-z/])",
+   "to": "A/C",
+   "corpus_votes": {
+    "A/C": 259,
+    "AC": 76
+   },
+   "reason": "corpus majority writes the air-conditioning abbreviation as A/C"
+  },
+  {
+   "id": "fixed-bracket-to-mounting",
+   "zh_pattern": "固定支架",
+   "from": "Fixed Bracket",
+   "to": "Mounting Bracket",
+   "corpus_votes": {
+    "Mounting Bracket": 189,
+    "Fixed Bracket": 27
+   },
+   "reason": "corpus majority; the 固定支架 rule only covered the Fixing Bracket variant"
+  },
+  {
+   "id": "illumination-lamp",
+   "zh_pattern": "照明灯",
+   "from": "Illumination Light",
+   "to": "Illumination Lamp",
+   "corpus_votes": {
+    "Illumination Lamp": 18,
+    "Illumination Light": 3
+   },
+   "reason": "corpus majority for 照明灯"
+  },
+  {
+   "id": "side-right-word-order",
+   "zh_pattern": "侧部右",
+   "from": "Side Right",
+   "to": "Right Side",
+   "corpus_votes": {
+    "Side Right": 1
+   },
+   "reason": "word order: the corpus writes the side first (Right Side)",
+   "accuracy_override": true
+  },
+  {
+   "id": "side-left-word-order",
+   "zh_pattern": "侧部左",
+   "from": "Side Left",
+   "to": "Left Side",
+   "corpus_votes": {
+    "Side Left": 1
+   },
+   "reason": "word order: the corpus writes the side first (Left Side)",
+   "accuracy_override": true
+  },
+  {
+   "id": "footwell-to-foot",
+   "zh_pattern": "吹脚",
+   "from": "Footwell",
+   "to": "Foot",
+   "corpus_votes": {
+    "Foot": 98,
+    "Footwell": 9
+   },
+   "reason": "corpus majority for 吹脚"
+  },
+  {
+   "id": "foot-vent-duct",
+   "zh_pattern": "吹脚风道",
+   "from": "Foot Vent Duct",
+   "to": "Foot Duct",
+   "corpus_votes": {
+    "Foot Duct": 74,
+    "Foot Vent Duct": 1
+   },
+   "reason": "'Vent' is not used anywhere else in the 风道 family"
+  },
+  {
+   "id": "cover-foam-kit",
+   "zh_pattern": "面套发泡组件",
+   "from": "Cover & Foam Kit",
+   "to": "Cover & Foam Assembly",
+   "corpus_votes": {
+    "Cover & Foam Assembly": 93,
+    "Cover & Foam Kit": 6
+   },
+   "reason": "extends the existing 面套发泡组件 coverage to the Kit variant"
+  },
+  {
+   "id": "cover-foam-trim-foam-component",
+   "zh_pattern": "面套发泡组件",
+   "from": "Trim Foam Component",
+   "to": "Cover & Foam Assembly",
+   "corpus_votes": {
+    "Cover & Foam Assembly": 95,
+    "Trim Foam Component": 4
+   },
+   "reason": "extends the existing 面套发泡组件 coverage to Trim Foam Component"
+  },
+  {
+   "id": "cover-assembly-to-component",
+   "zh_pattern": "面套组件",
+   "from": "Cover Assembly",
+   "to": "Cover Component",
+   "corpus_votes": {
+    "Cover Component": 37,
+    "Cover Assembly": 12
+   },
+   "reason": "corpus majority for 面套组件 (the 组件 residue does not decide this family)"
+  },
+  {
+   "id": "molding-to-trim-strip",
+   "zh_pattern": "压条",
+   "from_pattern": "(?<![A-Za-z])Molding",
+   "to": "Trim Strip",
+   "corpus_votes": {
+    "Trim Strip": 23,
+    "Molding": 4
+   },
+   "reason": "corpus majority for 压条"
+  },
+  {
+   "id": "outer-exterior-weatherstrip",
+   "zh_pattern": "外水切",
+   "from": "Outer Exterior",
+   "to": "Exterior",
+   "corpus_votes": {
+    "Exterior Weatherstrip": 28,
+    "Outer Exterior Weatherstrip": 5
+   },
+   "reason": "'Outer' is redundant with Exterior (exterior-weatherstrip rule)"
+  },
+  {
+   "id": "assembly-hyphen-space",
+   "zh_pattern": "总成-",
+   "from_pattern": "(?<=Assembly)-(?=[A-Z])",
+   "to": " - ",
+   "corpus_votes": {
+    "already ' - '": 6249,
+    "glued after Assembly": 124
+   },
+   "reason": "the 总成- separator is ' - ' corpus-wide (total-numeric-separator covers the digit form); these rows glue the finish/spec",
+   "accuracy_override": true
+  },
+  {
+   "id": "small-wire-bare",
+   "zh_pattern": "小线(?!束)",
+   "from_pattern": "(?<!Small )(?<!Wiring )Wire(?![A-Za-z-])",
+   "to": "Small Wire",
+   "corpus_votes": {
+    "Small Wire": 109,
+    "bare Wire": 24
+   },
+   "reason": "小线 bare 'Wire' -> 'Small Wire' via from_pattern (a token replacement, which the engine can do)",
+   "accuracy_override": true
+  },
+  {
+   "id": "seal-strip-bare",
+   "zh_pattern": "密封条",
+   "from_pattern": "(?<!Seal )Seal(?![A-Za-z -])",
+   "to": "Seal Strip",
+   "corpus_votes": {
+    "Seal Strip": 260,
+    "bare Seal": 6
+   },
+   "reason": "密封条 bare 'Seal' -> 'Seal Strip'"
+  },
+  {
+   "id": "sub-tank-case",
+   "zh_pattern": "副水箱",
+   "from": "Sub-Tank",
+   "to": "Sub-tank",
+   "corpus_votes": {
+    "Sub-tank": 54,
+    "Sub-Tank": 23
+   },
+   "reason": "case form used by the 副水箱 rules (water-tank-subsidiary, water-tank-auxiliary) is Sub-tank"
+  },
+  {
+   "id": "assembly-installation-redundant",
+   "zh_pattern": "装配总成",
+   "from": "Installation Assembly",
+   "to": "Assembly",
+   "corpus_votes": {
+    "Assembly": 197,
+    "Installation Assembly": 1
+   },
+   "reason": "装配总成 is already covered by the assembly rules; this row kept 'Installation'"
+  },
+  {
+   "id": "outlet-hose-drop-water",
+   "zh_pattern": "出水软管",
+   "from": "Water Outlet Hose",
+   "to": "Outlet Hose",
+   "corpus_votes": {
+    "Outlet Hose": 47,
+    "Water Outlet Hose": 16,
+    "Outlet Water Hose": 13
+   },
+   "reason": "corpus majority is the bare form (47/76), matching the water-pump-outlet precedent that drops the redundant Water"
+  },
+  {
+   "id": "outlet-hose-word-order",
+   "zh_pattern": "出水软管",
+   "from": "Outlet Water Hose",
+   "to": "Outlet Hose",
+   "corpus_votes": {
+    "Outlet Hose": 47,
+    "Water Outlet Hose": 16,
+    "Outlet Water Hose": 13
+   },
+   "reason": "word order slip in the same family",
+   "accuracy_override": true
+  },
+  {
+   "id": "inlet-hose-word-order",
+   "zh_pattern": "进水软管",
+   "from": "Inlet Water Hose",
+   "to": "Inlet Hose",
+   "corpus_votes": {
+    "Inlet Hose": 31,
+    "Inlet Water Hose": 12,
+    "Water Inlet Hose": 11
+   },
+   "reason": "word order slip in the 进水软管 family",
+   "accuracy_override": true
+  },
+  {
+   "id": "inlet-hose-drop-water",
+   "zh_pattern": "进水软管",
+   "from": "Water Inlet Hose",
+   "to": "Inlet Hose",
+   "corpus_votes": {
+    "Inlet Hose": 43,
+    "Water Inlet Hose": 11
+   },
+   "reason": "measured after the word-order fix: 43 vs 11, and 出水软管 already unifies on Outlet Hose, so the pair stays symmetric"
+  },
+  {
+   "id": "side-outer-panel-plate",
+   "zh_pattern": "侧围外板",
+   "from": "Side Panel Outer Plate",
+   "to": "Side Outer Panel",
+   "corpus_votes": {
+    "Side Outer Panel": 38,
+    "Side Panel Outer Plate": 21
+   },
+   "reason": "the side-outer-panel rule target; Outer Plate -> Panel alone would leave 'Side Panel Outer Panel'"
+  },
+  {
+   "id": "outer-plate-to-panel",
+   "zh_pattern": "外板",
+   "from_pattern": "(?<![A-Za-z])Outer Plate(?![A-Za-z])",
+   "to": "Outer Panel",
+   "corpus_votes": {
+    "Outer Panel": 80,
+    "Outer Plate": 11
+   },
+   "reason": "corpus majority for 外板 outside the 侧围外板 family (declared after that rule)"
+  },
+  {
+   "id": "hex-flange-collapse",
+   "zh_pattern": "六角法兰面螺栓",
+   "from": "Hexagon Flange",
+   "to": "Hex Flange",
+   "corpus_votes": {
+    "Hex Flange": 600,
+    "Hexagon Flange": 124
+   },
+   "reason": "consistency: the 六角法兰面 family writes 'Hex Flange' corpus-wide; the rest of the corpus collapsed Hexagon->Hex"
+  },
+  {
+   "id": "hex-head-collapse",
+   "zh_pattern": "(?<!内)六角头",
+   "from": "Hexagon Head",
+   "to": "Hex Head",
+   "corpus_votes": {
+    "Hex Head": 156,
+    "Hexagon Head": 104
+   },
+   "reason": "consistency: 六角头 head form is 'Hex Head' in the majority (19pt gap); 内六角 is excluded because it is a different head"
+  },
+  {
+   "id": "combination-part-assembly",
+   "zh_pattern": "组合件",
+   "from": "Combination",
+   "to": "Assembly",
+   "corpus_votes": {
+    "Assembly": 376,
+    "Combination": 111
+   },
+   "reason": "accuracy: 组合件 is an assembly (the 组合-vs-总成 split in combination-tail applies to 组合 at the end of a source only)"
+  },
+  {
+   "id": "pan-head-misrender",
+   "zh_pattern": "盘头",
+   "from": "Flange Head",
+   "to": "Pan Head",
+   "corpus_votes": {
+    "Pan Head": 167,
+    "Flange Head": 10
+   },
+   "reason": "accuracy: 盘头 is a pan head; the 10 stragglers are 内六角花形盘头螺栓 rows mistranslated as 'Flange Head' (checked one by one)"
+  },
+  {
+   "id": "phillips-unify",
+   "zh_pattern": "十字槽",
+   "from": "Cross Recessed",
+   "to": "Phillips",
+   "corpus_votes": {
+    "Phillips": 144,
+    "Cross Recessed": 75
+   },
+   "reason": "catalogue wording: the cross recess is 'Phillips' in the corpus majority (32pt gap)"
+  },
+  {
+   "id": "hex-socket-collapse",
+   "zh_pattern": "内六角",
+   "from": "Hexagon Socket",
+   "to": "Hex Socket",
+   "corpus_votes": {
+    "Hex Socket": 139,
+    "Hexagon Socket": 32
+   },
+   "reason": "consistency: the same Hexagon->Hex collapse as the head/flange families"
+  },
+  {
+   "id": "large-round-head",
+   "zh_pattern": "大半圆头",
+   "from": "Large Pan Head",
+   "to": "Large Round Head",
+   "corpus_votes": {
+    "Large Round Head": 51,
+    "Large Pan Head": 3
+   },
+   "reason": "consistency with the 半圆头 family, which reads 'Large Round Head'"
+  },
+  {
+   "id": "clip-base",
+   "zh_pattern": "卡座",
+   "from": "Clip Seat",
+   "to": "Clip Base",
+   "corpus_votes": {
+    "Clip Base": 18,
+    "Clip Seat": 6
+   },
+   "reason": "corpus majority for 卡座 (50pt gap)"
+  },
+  {
+   "id": "beige-unify",
+   "zh_pattern": "米黄",
+   "from": "Cream Yellow",
+   "to": "Beige",
+   "corpus_votes": {
+    "Beige": 384,
+    "Cream Yellow": 16
+   },
+   "reason": "colour naming: 米黄 is Beige corpus-wide (this is a colour term, so the colour-name guard in the lamp rule does not apply)"
+  },
+  {
+   "id": "off-white-unify",
+   "zh_pattern": "米白",
+   "from": "Rice White",
+   "to": "Off-White",
+   "corpus_votes": {
+    "Off-White": 155,
+    "Rice White": 2
+   },
+   "reason": "colour naming: 米白 is Off-White corpus-wide"
+  },
+  {
+   "id": "patch-not-smt",
+   "zh_pattern": "贴片",
+   "from_pattern": "(?<![A-Za-z_])SMT(?![A-Za-z_])",
+   "to": "Patch",
+   "corpus_votes": {
+    "Patch": 11,
+    "SMT": 2
+   },
+   "reason": "accuracy: bare 贴片 is a patch; the lookarounds keep the SMT identifier prefix (registered exception SMT_PCBA-...) intact"
+  },
+  {
+   "id": "limit-block",
+   "zh_pattern": "限位块",
+   "from": "Stopper",
+   "to": "Limit Block",
+   "corpus_votes": {
+    "Limit Block": 22,
+    "Stopper": 3
+   },
+   "reason": "corpus majority for 限位块"
+  },
+  {
+   "id": "tailgate-lid",
+   "zh_pattern": "行李箱盖",
+   "from": "Tailgate",
+   "to": "Luggage Compartment Lid",
+   "corpus_votes": {
+    "Luggage Compartment Lid": 85,
+    "Tailgate": 16
+   },
+   "reason": "consistency with the existing luggage-compartment rule (行李箱 -> Luggage Compartment); 盖 is the lid"
+  },
+  {
+   "id": "two-hole",
+   "zh_pattern": "[两双]孔",
+   "from": "Dual Hole",
+   "to": "Two Hole",
+   "corpus_votes": {
+    "Two Hole": 44,
+    "Dual Hole": 1
+   },
+   "reason": "corpus majority for 双孔/两孔"
+  },
+  {
+   "id": "deep-black-dedupe",
+   "zh_pattern": "深黑",
+   "from": "Dark Deep Black",
+   "to": "Deep Black",
+   "corpus_votes": {
+    "Deep Black": 1349,
+    "Dark Deep Black": 1
+   },
+   "reason": "accuracy: 'Dark Deep Black' duplicates the darkness (深黑 = deep black)"
+  },
+  {
+   "id": "pn-hyphen-retight-w2",
+   "zh_pattern": "^[A-Z0-9][A-Z0-9./-]*-[0-9]",
+   "from_pattern": "(?<=^[A-Z0-9]{2}) - (?=[0-9])",
+   "to": "-",
+   "corpus_votes": {
+    "tight hyphen": 3922,
+    "spaced hyphen": 1504
+   },
+   "reason": "源以「含连字符的零件号」开头时，英文里的首个「 - 」是零件号被切开，不是饰面分隔符（紧贴 3922 vs 空格 1504）。用定宽后顾锚在行首零件号上，避免把饰面「 - 色名」误粘。"
+  },
+  {
+   "id": "pn-hyphen-retight-w3",
+   "zh_pattern": "^[A-Z0-9][A-Z0-9./-]*-[0-9]",
+   "from_pattern": "(?<=^[A-Z0-9]{3}) - (?=[0-9])",
+   "to": "-",
+   "corpus_votes": {
+    "tight hyphen": 3922,
+    "spaced hyphen": 1504
+   },
+   "reason": "源以「含连字符的零件号」开头时，英文里的首个「 - 」是零件号被切开，不是饰面分隔符（紧贴 3922 vs 空格 1504）。用定宽后顾锚在行首零件号上，避免把饰面「 - 色名」误粘。"
+  },
+  {
+   "id": "pn-hyphen-retight-w4",
+   "zh_pattern": "^[A-Z0-9][A-Z0-9./-]*-[0-9]",
+   "from_pattern": "(?<=^[A-Z0-9]{4}) - (?=[0-9])",
+   "to": "-",
+   "corpus_votes": {
+    "tight hyphen": 3922,
+    "spaced hyphen": 1504
+   },
+   "reason": "源以「含连字符的零件号」开头时，英文里的首个「 - 」是零件号被切开，不是饰面分隔符（紧贴 3922 vs 空格 1504）。用定宽后顾锚在行首零件号上，避免把饰面「 - 色名」误粘。"
+  },
+  {
+   "id": "pn-hyphen-retight-w5",
+   "zh_pattern": "^[A-Z0-9][A-Z0-9./-]*-[0-9]",
+   "from_pattern": "(?<=^[A-Z0-9]{5}) - (?=[0-9])",
+   "to": "-",
+   "corpus_votes": {
+    "tight hyphen": 3922,
+    "spaced hyphen": 1504
+   },
+   "reason": "源以「含连字符的零件号」开头时，英文里的首个「 - 」是零件号被切开，不是饰面分隔符（紧贴 3922 vs 空格 1504）。用定宽后顾锚在行首零件号上，避免把饰面「 - 色名」误粘。"
+  },
+  {
+   "id": "pn-hyphen-retight-w6",
+   "zh_pattern": "^[A-Z0-9][A-Z0-9./-]*-[0-9]",
+   "from_pattern": "(?<=^[A-Z0-9]{6}) - (?=[0-9])",
+   "to": "-",
+   "corpus_votes": {
+    "tight hyphen": 3922,
+    "spaced hyphen": 1504
+   },
+   "reason": "源以「含连字符的零件号」开头时，英文里的首个「 - 」是零件号被切开，不是饰面分隔符（紧贴 3922 vs 空格 1504）。用定宽后顾锚在行首零件号上，避免把饰面「 - 色名」误粘。"
+  },
+  {
+   "id": "pn-hyphen-retight-w8",
+   "zh_pattern": "^[A-Z0-9][A-Z0-9./-]*-[0-9]",
+   "from_pattern": "(?<=^[A-Z0-9]{8}) - (?=[0-9])",
+   "to": "-",
+   "corpus_votes": {
+    "tight hyphen": 3922,
+    "spaced hyphen": 1504
+   },
+   "reason": "源以「含连字符的零件号」开头时，英文里的首个「 - 」是零件号被切开，不是饰面分隔符（紧贴 3922 vs 空格 1504）。用定宽后顾锚在行首零件号上，避免把饰面「 - 色名」误粘。"
+  },
+  {
+   "id": "pn-hyphen-retight-w10",
+   "zh_pattern": "^[A-Z0-9][A-Z0-9./-]*-[0-9]",
+   "from_pattern": "(?<=^[A-Z0-9]{10}) - (?=[0-9])",
+   "to": "-",
+   "corpus_votes": {
+    "tight hyphen": 3922,
+    "spaced hyphen": 1504
+   },
+   "reason": "源以「含连字符的零件号」开头时，英文里的首个「 - 」是零件号被切开，不是饰面分隔符（紧贴 3922 vs 空格 1504）。用定宽后顾锚在行首零件号上，避免把饰面「 - 色名」误粘。"
+  },
+  {
+   "id": "second-row-2nd",
+   "zh_pattern": "二排",
+   "from": "Second Row",
+   "to": "2nd Row",
+   "corpus_votes": {
+    "2nd Row": 618,
+    "Second Row": 10
+   },
+   "reason": "同一中文族两种写法；语料 2nd Row 618 : Second Row 10，取多数派（左/右座椅件用 Second Row 为少数写法）。"
+  },
+  {
+   "id": "slider-sleeve",
+   "zh_pattern": "滑套",
+   "from": "Slide Sleeve",
+   "to": "Slider Sleeve",
+   "corpus_votes": {
+    "Slider Sleeve": 144,
+    "Slide Sleeve": 15
+   },
+   "reason": "座椅头枕滑套族；语料 Slider Sleeve 144 : Slide Sleeve 15，且该件是滑块式导套，取多数派。"
+  },
+  {
+   "id": "face-duct-air",
+   "zh_pattern": "吹面风道",
+   "from": "Face Air Duct",
+   "to": "Face-Level Air Duct",
+   "corpus_votes": {
+    "Face-Level Air Duct": 19,
+    "Face Air Duct": 4
+   },
+   "reason": "吹面风道族三种写法；语料 Face-Level Air Duct 19 : Face-Level Duct 7 : Face Air Duct 4，取多数派。"
+  },
+  {
+   "id": "face-duct-level",
+   "zh_pattern": "吹面风道",
+   "from": "Face-Level Duct",
+   "to": "Face-Level Air Duct",
+   "corpus_votes": {
+    "Face-Level Air Duct": 19,
+    "Face-Level Duct": 7
+   },
+   "reason": "同上族；补 Air，与多数派 Face-Level Air Duct 一致。"
+  },
+  {
+   "id": "rear-view-open",
+   "zh_pattern": "后视(定位|影像|摄像|探测)",
+   "from_pattern": "(?<![A-Za-z])Rearview(?![a-z])",
+   "to": "Rear View",
+   "corpus_votes": {
+    "Rear View": 30,
+    "Rearview": 13
+   },
+   "reason": "后视复合词闭/开两种写法；族内 Rear View 30 : Rearview 13，取开式（与 Rear View Camera 惯例一致）。"
+  },
+  {
+   "id": "rear-panel-consistency",
+   "zh_pattern": "后围",
+   "from_pattern": "Rear End( Panel)?(?![A-Za-z])",
+   "to": "Rear Panel",
+   "corpus_votes": {
+    "Rear Panel": 40,
+    "Rear End( Panel)": 5
+   },
+   "reason": "后围板族；语料 Rear Panel 40 : Rear End( Panel) 5。同时避免 Rear End 与 后端/rear-end 语义相撞，与前围统一为面板式构词。"
+  },
+  {
+   "id": "tube-beam",
+   "zh_pattern": "管梁",
+   "from": "Crossmember",
+   "to": "Tube Beam",
+   "corpus_votes": {
+    "Tube Beam": 32,
+    "Crossmember": 3
+   },
+   "reason": "管梁是管式横梁，不是 crossmember；语料 Tube Beam 32 : Crossmember 3。"
+  },
+  {
+   "id": "door-sill",
+   "zh_pattern": "门槛(?!内板|踏板)",
+   "from_pattern": "(?<!Door )(?<!Tailgate )(?<!Compartment )Sill(?![A-Za-z])",
+   "to": "Door Sill",
+   "corpus_votes": {
+    "Door Sill": 175,
+    "bare Sill": 25
+   },
+   "reason": "裸门槛（已排除 门槛内板/门槛踏板）族内 Door Sill 244 : 裸 Sill 33；后顾排除 后背门槛(Tailgate)/行李箱门槛(Compartment)，四定宽后顾避免误改它们。"
+  },
+  {
+   "id": "cover-plate-panel",
+   "zh_pattern": "盖板",
+   "from": "Cover Panel",
+   "to": "Cover Plate",
+   "corpus_votes": {
+    "Cover Plate": 657,
+    "Cover Panel": 90
+   },
+   "reason": "盖板族 Cover Plate 657 : Cover Panel 90；去掉与车门外板/侧围「Panel」的撞词。"
+  },
+  {
+   "id": "wiring-harness-cable",
+   "zh_pattern": "线束",
+   "from": "Cable Harness",
+   "to": "Wiring Harness",
+   "corpus_votes": {
+    "Wiring Harness": 679,
+    "Cable Harness": 4
+   },
+   "reason": "线束族 Wiring Harness 679 : Cable Harness 4。"
+  },
+  {
+   "id": "sealing-plate-end",
+   "zh_pattern": "封板",
+   "from": "End Plate",
+   "to": "Sealing Plate",
+   "corpus_votes": {
+    "Sealing Plate": 90,
+    "End Plate": 8
+   },
+   "reason": "纵梁封板族 Sealing Plate 90 : End Plate 8；End Plate 与端板撞词。"
+  },
+  {
+   "id": "off-white-ivory",
+   "zh_pattern": "米白",
+   "from": "Ivory White",
+   "to": "Off-White",
+   "corpus_votes": {
+    "Off-White": 157,
+    "Ivory White": 77
+   },
+   "reason": "米白族 Off-White 157 : Ivory White 77，且与已登记 off-white-unify 口径一致。"
+  },
+  {
+   "id": "rubber-pad-gasket",
+   "zh_pattern": "胶垫",
+   "from": "Rubber Gasket",
+   "to": "Rubber Pad",
+   "corpus_votes": {
+    "Rubber Pad": 187,
+    "Rubber Gasket": 19
+   },
+   "reason": "胶垫族 Rubber Pad 187 : Rubber Gasket 19；Gasket 应留给密封垫。"
+  },
+  {
+   "id": "reinforcement-plate-panel",
+   "zh_pattern": "加强板",
+   "from": "Reinforcement Panel",
+   "to": "Reinforcement Plate",
+   "corpus_votes": {
+    "Reinforcement Plate": 169,
+    "Reinforcement Panel": 14
+   },
+   "reason": "A/B/C 柱加强板族 Reinforcement Plate 169 : Reinforcement Panel 14。"
+  },
+  {
+   "id": "sound-insulation-pad",
+   "zh_pattern": "隔音垫",
+   "from_pattern": "(?<![A-Za-z])Sound Insulator(?! Pad)(?![A-Za-z])",
+   "to": "Sound Insulation Pad",
+   "corpus_votes": {
+    "Sound Insulation Pad": 29,
+    "Sound Insulator": 4
+   },
+   "reason": "轮罩隔音垫族 Sound Insulation Pad 29 : Sound Insulator 4；后顾/前瞻避免误改已含 Pad 的行。"
+  },
+  {
+   "id": "front-panel-bulkhead",
+   "zh_pattern": "前围",
+   "from": "Front Bulkhead",
+   "to": "Front Panel",
+   "corpus_votes": {
+    "Front Panel": 91,
+    "Front Bulkhead": 25
+   },
+   "reason": "前围族 Front Panel 91 : Front Bulkhead 25；与已登记 front-panel（前围板）口径一致。"
+  },
+  {
+   "id": "small-wire-subharness",
+   "zh_pattern": "小线",
+   "from": "Sub-harness",
+   "to": "Small Wire",
+   "corpus_votes": {
+    "Small Wire": 104,
+    "Sub-harness": 17
+   },
+   "reason": "小线已有 small-wire/small-wire-bare 指向 Small Wire；语料 Small Wire 104 : Sub-harness 17。"
+  },
+  {
+   "id": "flat-washer-plain",
+   "zh_pattern": "平垫圈",
+   "from": "Plain Washer",
+   "to": "Flat Washer",
+   "corpus_votes": {
+    "Flat Washer": 307,
+    "Plain Washer": 55
+   },
+   "reason": "平垫圈族 Flat Washer 307 : Plain Washer 55。"
+  },
+  {
+   "id": "through-hole",
+   "zh_pattern": "通孔",
+   "from": "Through-Hole",
+   "to": "Through Hole",
+   "corpus_votes": {
+    "Through Hole": 20,
+    "Through-Hole": 2
+   },
+   "reason": "通孔族 Through Hole 20 : Through-Hole 2；语料一律开式，去掉词内连字符口径分歧。"
+  },
+  {
+   "id": "matte-electroplated",
+   "zh_pattern": "哑光电镀",
+   "from": "Matte Chrome",
+   "to": "Matte Electroplated",
+   "corpus_votes": {
+    "Matte Electroplated": 76,
+    "Matte Chrome": 1
+   },
+   "reason": "哑光电镀族 Matte Electroplated 76 : Matte Chrome 1。"
+  },
+  {
+   "id": "cap-plug-dedupe",
+   "zh_pattern": "堵盖",
+   "from_pattern": "(?<![A-Za-z])Plug Cap(?![a-z])",
+   "to": "Plug",
+   "corpus_votes": {
+    "Plug Cap（重复）": 24,
+    "Plug（单次）": 523
+   },
+   "reason": "拖钩/儿童锁堵盖行写成「Plug Cap」，同一中文词被渲染两遍；先归并为 Plug（24 行），再由 cap-plug 处理裸 Cap。"
+  },
+  {
+   "id": "cap-plug",
+   "zh_pattern": "堵盖",
+   "from_pattern": "(?<![A-Za-z])(?<!Plug )Cap(?![a-z])",
+   "to": "Plug",
+   "corpus_votes": {
+    "Plug": 523,
+    "Cap": 71
+   },
+   "reason": "堵盖族 Plug 530 : Cap 94；前瞻 (?![a-z]) 防止 Capacitor/Capscrew，后顾 (?<!Plug ) 避免二次替换。"
+  },
+  {
+   "id": "limit-block-stop",
+   "zh_pattern": "限位块",
+   "from": "Stop Block",
+   "to": "Limit Block",
+   "corpus_votes": {
+    "Limit Block": 25,
+    "Stop Block": 12
+   },
+   "reason": "限位块已有 limit-block 规则指向 Limit Block；语料 Limit Block 25 : Stop Block 12（挡块 族不在此规则内，Stop Block 是它的正确写法）。"
+  },
+  {
+   "id": "tweeter-speaker",
+   "zh_pattern": "高音扬声器",
+   "from_pattern": "(?<![A-Za-z])Tweeter(?! Speaker)(?![A-Za-z])",
+   "to": "Tweeter Speaker",
+   "corpus_votes": {
+    "Tweeter Speaker": 26,
+    "bare Tweeter": 10
+   },
+   "reason": "高音扬声器罩规则已把该族定为 Tweeter Speaker Cover；裸 Tweeter 为少数写法。前瞻排除已含 Speaker 的行。"
+  },
+  {
+   "id": "felt-channel-weatherstrip",
+   "zh_pattern": "呢槽",
+   "from": "Weatherstrip",
+   "to": "Felt Channel",
+   "corpus_votes": {
+    "Felt Channel": 68,
+    "Weatherstrip": 8
+   },
+   "reason": "呢槽族 Felt Channel 68 : Weatherstrip 8；Weatherstrip 是密封条，呢槽为绒/呢槽道。"
+  },
+  {
+   "id": "felt-channel-wool",
+   "zh_pattern": "呢槽",
+   "from": "Wool Groove",
+   "to": "Felt Channel",
+   "corpus_votes": {
+    "Felt Channel": 68,
+    "Wool Groove": 2
+   },
+   "reason": "呢槽族少数行直译成 Wool Groove（非英语读法），归并到多数派 Felt Channel。"
+  },
+  {
+   "id": "shield-protective-cover",
+   "zh_pattern": "护罩",
+   "from_pattern": "(?<![A-Za-z])Protective Cover(?! Pl)(?![A-Za-z])",
+   "to": "Shield",
+   "corpus_votes": {
+    "Shield": 30,
+    "Protective Cover": 6,
+    "bare Cover": 26
+   },
+   "reason": "护罩族 Shield 30 : Protective Cover 6 : 裸 Cover 19；前瞻排除「Protective Cover Plate/Panel」（护罩盖板），只归并裸 Protective Cover。"
+  },
+  {
+   "id": "in-car-vehicle",
+   "zh_pattern": "车载(?!电源)",
+   "from_pattern": "(?<![A-Za-z-])In-Car(?![A-Za-z])",
+   "to": "Vehicle",
+   "corpus_votes": {
+    "Vehicle": 90,
+    "In-Car": 2
+   },
+   "reason": "车载族 Vehicle 90 : In-Car 2（On-Board 属车载电源规则，已被前瞻排除）。"
+  },
+  {
+   "id": "dedupe-handle",
+   "zh_pattern": "扣手",
+   "from": "Handle Handle",
+   "to": "Handle",
+   "corpus_votes": {
+    "Handle": 526,
+    "Handle Handle": 12
+   },
+   "reason": "扣手族 526 行用单次 Handle；12 行被写成重复词 Handle Handle（同一中文词渲染两遍）。"
+  },
+  {
+   "id": "dedupe-block",
+   "zh_pattern": "缓冲块",
+   "from": "Block Block",
+   "to": "Block",
+   "corpus_votes": {
+    "Block": 76,
+    "Block Block": 4
+   },
+   "reason": "缓冲块族 76 行用 Buffer Block；4 行多渲染一个 Block（Buffer Block Block）。"
+  },
+  {
+   "id": "dedupe-wiper",
+   "zh_pattern": "刮水器",
+   "from": "Wiper Wiper",
+   "to": "Wiper",
+   "corpus_votes": {
+    "Wiper": 11,
+    "Wiper Wiper": 1
+   },
+   "reason": "前刮水器刮臂 被写成 Front Wiper Wiper Arm（源只有一次 刮），去掉重复词。"
+  },
+  {
+   "id": "pn-stray-letter-ha3ha-8108330",
+   "zh_pattern": "HA3HA-8108330",
+   "from": "HA3HA-8108330A",
+   "to": "HA3HA-8108330",
+   "corpus_votes": {
+    "HA3HA-8108330": 1,
+    "HA3HA-8108330A": 1
+   },
+   "reason": "源零件号无尾字母 A，英文被多加一个字母；按源回填，标识符门禁复跑通过。"
+  },
+  {
+   "id": "sub-ip-center-console",
+   "zh_pattern": "副仪表板",
+   "from": "Center Console",
+   "to": "Sub-Instrument Panel",
+   "corpus_votes": {
+    "Sub-Instrument Panel": 797,
+    "Center Console": 2
+   },
+   "reason": "consistency: the 副仪表板 family is unified on Sub-Instrument Panel; these rows still said Center Console"
+  },
+  {
+   "id": "upper-edge-beam-to-upper-beam",
+   "zh_pattern": "上边梁",
+   "from": "Upper Edge Beam",
+   "to": "Upper Beam",
+   "corpus_votes": {
+    "Upper Beam": 11,
+    "Upper Edge Beam": 3
+   },
+   "reason": "consistency with the 侧围上边梁 rows already on Upper Beam"
+  },
+  {
+   "id": "auto-park-sensor",
+   "zh_pattern": "自动泊车探头",
+   "from": "Auto Park Sensor",
+   "to": "Automatic Parking Probe",
+   "corpus_votes": {
+    "Automatic Parking Probe": 77,
+    "Auto Park Sensor": 7
+   },
+   "reason": "corpus majority inside the SHHB-3603800 harness family"
+  },
+  {
+   "id": "cream-white-to-off-white",
+   "zh_pattern": "(?<!净)米白",
+   "from": "Cream White",
+   "to": "Off-White",
+   "corpus_votes": {
+    "Off-White": 234,
+    "Cream White": 2
+   },
+   "reason": "extends the existing 米白 = Off-White policy (off-white-unify / off-white-ivory) to the Cream White variant"
+  },
+  {
+   "id": "beige-over-cream",
+   "zh_pattern": "米黄",
+   "from_pattern": "Cream(?!\\s*(?:White|Yellow))",
+   "to": "Beige",
+   "corpus_votes": {
+    "Beige": 399,
+    "Cream": 2
+   },
+   "reason": "extends beige-unify (Cream Yellow -> Beige) to the bare Cream variant; lookahead keeps Cream White / Cream Yellow untouched"
+  },
+  {
+   "id": "gray-black-hyphen",
+   "zh_pattern": "灰黑",
+   "from": "Gray-Black",
+   "to": "Gray Black",
+   "corpus_votes": {
+    "Gray Black": 148,
+    "Gray-Black": 2
+   },
+   "reason": "corpus majority writes the two-tone colour without a hyphen; note the trailing source digit must stay (Gray Black 6_M00666)"
+  },
+  {
+   "id": "high-gloss-hyphen",
+   "zh_pattern": "高亮",
+   "from": "High-Gloss",
+   "to": "High Gloss",
+   "corpus_votes": {
+    "High Gloss": 97,
+    "High-Gloss": 17
+   },
+   "reason": "corpus majority writes the finish token without a hyphen"
+  },
+  {
+   "id": "three-in-one-separator",
+   "zh_pattern": "三合一",
+   "from": "3-in - 1",
+   "to": "3-in-1",
+   "corpus_votes": {
+    "3-in-1": 5,
+    "3-in - 1": 4
+   },
+   "accuracy_override": true,
+   "reason": "our own WP5 separator batch inserted spaces around the hyphens of 3-in-1; restore the numeric abbreviation"
+  },
+  {
+   "id": "two-in-one-separator",
+   "zh_pattern": "二合一",
+   "from": "2-in - 1",
+   "to": "2-in-1",
+   "corpus_votes": {
+    "2-in-1": 7,
+    "2-in - 1": 4
+   },
+   "accuracy_override": true,
+   "reason": "same WP5 separator misfire on 2-in-1"
+  },
+  {
+   "id": "headrest-slider-sleeve-assembly",
+   "zh_pattern": "头枕滑套组件",
+   "from": "Headrest Slider Assembly",
+   "to": "Headrest Slider Sleeve Assembly",
+   "corpus_votes": {
+    "Headrest Slider Sleeve Assembly": 37,
+    "Headrest Slider Sleeve Component": 43,
+    "Headrest Slider Assembly": 6
+   },
+   "reason": "滑套 = sleeve; the family already uses Sleeve (headrest-slider-sleeve) and Assembly keeps 组件"
+  },
+  {
+   "id": "fixed-panel-to-fixing-plate",
+   "zh_pattern": "固定板",
+   "from": "Fixed Panel",
+   "to": "Fixing Plate",
+   "corpus_votes": {
+    "Fixing Plate": 18,
+    "Fixed Panel": 1
+   },
+   "reason": "corpus majority inside the 固定板 family"
+  },
+  {
+   "id": "gear-1st-2nd-ampersand",
+   "zh_pattern": "一二[档挡]",
+   "from": "1st/2nd",
+   "to": "1st & 2nd",
+   "corpus_votes": {
+    "1st & 2nd": 18,
+    "1st/2nd": 2
+   },
+   "reason": "corpus majority inside the 一二档 family"
+  },
+  {
+   "id": "buffer-body-combination",
+   "zh_pattern": "缓冲体",
+   "from": "Buffer Combination",
+   "to": "Buffer Body Combination",
+   "corpus_votes": {
+    "Buffer Body Combination": 8,
+    "Buffer Combination": 4
+   },
+   "reason": "consistency with buffer-body (缓冲体 = Buffer Body)"
+  },
+  {
+   "id": "temperature-blend-door",
+   "zh_pattern": "冷暖风门",
+   "from": "HVAC Door",
+   "to": "Temperature Blend Door",
+   "corpus_votes": {
+    "Temperature Blend Door": 7,
+    "HVAC Door": 1
+   },
+   "reason": "corpus majority inside the 冷暖风门 family"
+  },
+  {
+   "id": "face-cover-assembly",
+   "zh_pattern": "面套总成",
+   "from": "Trim Assembly",
+   "to": "Cover Assembly",
+   "corpus_votes": {
+    "Cover Assembly": 3,
+    "Trim Assembly": 1
+   },
+   "reason": "the 面套 family is Cover (face-cover); small family, no counter-evidence"
+  },
+  {
+   "id": "electric-not-power",
+   "zh_pattern": "电动(?=-)",
+   "from_pattern": "(?<= - )Power(?= - )",
+   "to": "Electric",
+   "corpus_votes": {
+    "Electric": 310,
+    "Power": 50
+   },
+   "reason": "inside the 电动 spec-token family 9 of 10 rows already read Electric"
+  },
+  {
+   "id": "low-pressure-not-voltage",
+   "zh_pattern": "低压(?=[油燃管软])",
+   "from": "Low Voltage",
+   "to": "Low Pressure",
+   "corpus_votes": {
+    "Low Pressure": 1,
+    "Low Voltage": 5
+   },
+   "reason": "accuracy: 低压油泵/燃油/管/软管为压力回路，非电压；同片 20530 低压阀帽 已作 Low Pressure",
+   "accuracy_override": true
+  },
+  {
+   "id": "six-position-not-six-point",
+   "zh_pattern": "六分",
+   "from": "Six-Point",
+   "to": "Six-Position",
+   "corpus_votes": {
+    "Six-Position": 23,
+    "Six-Point": 3
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "recliner-not-angle-adjuster",
+   "zh_pattern": "调角器",
+   "from": "Angle Adjuster",
+   "to": "Recliner",
+   "corpus_votes": {
+    "Recliner": 20,
+    "Angle Adjuster": 2
+   },
+   "reason": "corpus majority（座椅调角器 = recliner）"
+  },
+  {
+   "id": "reverse-shift-not-gear-shift",
+   "zh_pattern": "倒[档挡]换[档挡]",
+   "from": "Reverse Gear Shift",
+   "to": "Reverse Shift",
+   "corpus_votes": {
+    "Reverse Shift": 6,
+    "Reverse Gear Shift": 2
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "hex-flange-not-hexagon-flange",
+   "zh_pattern": "六角法兰(?!面螺栓)",
+   "from": "Hexagon Flange",
+   "to": "Hex Flange",
+   "corpus_votes": {
+    "Hex Flange": 183,
+    "Hexagon Flange": 5
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "hex-socket-not-socket-head",
+   "zh_pattern": "内六角(?!花)",
+   "from_pattern": "(?<!Hex )(?<!Hexagon )Socket Head",
+   "to": "Hex Socket",
+   "corpus_votes": {
+    "Hex Socket": 58,
+    "Socket Head": 21
+   },
+   "reason": "corpus majority；lookbehind 排除已规范的 Hex/Hexagon Socket Head，避免 Hex Hex… 重复词"
+  },
+  {
+   "id": "pipe-clamp-not-tube-clamp",
+   "zh_pattern": "管夹",
+   "from": "Tube Clamp",
+   "to": "Pipe Clamp",
+   "corpus_votes": {
+    "Pipe Clamp": 215,
+    "Tube Clamp": 2
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "round-head-not-socket-head",
+   "zh_pattern": "半圆头",
+   "from": "Socket Head Cap Screw",
+   "to": "Round Head Screw",
+   "corpus_votes": {
+    "Round Head": 54,
+    "Socket Head Cap Screw": 1
+   },
+   "reason": "accuracy: 半圆头=round head，非 socket head；同族 20935/20941 已用 Round Head",
+   "accuracy_override": true
+  },
+  {
+   "id": "blend-door-not-damper",
+   "zh_pattern": "风门",
+   "from_pattern": "(?<![A-Za-z])Damper(?![a-z])",
+   "to": "Blend Door",
+   "corpus_votes": {
+    "Blend Door": 27,
+    "Damper": 11
+   },
+   "reason": "corpus majority（风门 = HVAC blend door；word-boundary 防误伤）"
+  },
+  {
+   "id": "illumination-lamp-not-light",
+   "zh_pattern": "照明灯",
+   "from_pattern": "(?<![A-Za-z])Light(?![a-z])(?!\\s(?:Cloud|Sand|Blue|Gray|Grey|Beige|Ivory|Green|Brown|Red|White|Black|Yellow|Purple|Pink|Silver|Gold|Rose|Wine|Khaki|Cream|Orange))",
+   "to": "Illumination Lamp",
+   "corpus_votes": {
+    "Illumination Lamp": 12,
+    "Light": 5
+   },
+   "reason": "corpus majority；车色 Light Cloud 由 lookahead 排除（历史教训）"
+  },
+  {
+   "id": "inside-rearview-mirror",
+   "zh_pattern": "内后视镜",
+   "from": "Interior Rearview Mirror",
+   "to": "Inside Rearview Mirror",
+   "corpus_votes": {
+    "Inside Rearview Mirror": 16,
+    "Interior Rearview Mirror": 2
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "front-bumper-not-buffer-block",
+   "zh_pattern": "前保险杠.{0,8}缓冲块",
+   "from": "Front Buffer Block",
+   "to": "Front Bumper",
+   "corpus_votes": {
+    "Front Buffer Block": 3,
+    "Front Bumper": 0
+   },
+   "reason": "accuracy: buffer-block(Bumper->Buffer Block) 规则在含缓冲块的行里把车头词 Bumper 一并替换，本规则回修 3 行",
+   "accuracy_override": true
+  },
+  {
+   "id": "bupper-typo-bumper",
+   "zh_pattern": "前保险杠上亮饰条",
+   "from": "Front Bupper",
+   "to": "Front Bumper",
+   "corpus_votes": {
+    "Bupper": 1
+   },
+   "reason": "accuracy: Bupper 为拼写错误",
+   "accuracy_override": true
+  },
+  {
+   "id": "mounting-support-not-base",
+   "zh_pattern": "安装支座",
+   "from_pattern": "(?<![A-Za-z])Mounting Base(?![a-z])",
+   "to": "Mounting Support",
+   "corpus_votes": {
+    "Mounting Support": 25,
+    "Mounting Base": 3
+   },
+   "reason": "corpus majority；与 installation-support 同族"
+  },
+  {
+   "id": "air-intake-mesh-qualifier",
+   "zh_pattern": "进气网格",
+   "from_pattern": "(?<!Air )Intake Mesh",
+   "to": "Air Intake Mesh",
+   "corpus_votes": {
+    "Air Intake Mesh": 25,
+    "Intake Mesh (bare)": 8
+   },
+   "reason": "corpus majority（同族 25 行已带 Air 限定）"
+  },
+  {
+   "id": "air-curtain-duct-dedupe",
+   "zh_pattern": "气帘风道",
+   "from": "Air Curtain Air Duct",
+   "to": "Air Curtain Duct",
+   "corpus_votes": {
+    "Air Curtain Duct": 3,
+    "Air Curtain Air Duct": 1
+   },
+   "reason": "corpus majority（现文本重复 Air）"
+  },
+  {
+   "id": "rubber-limit-block",
+   "zh_pattern": "限位块",
+   "from": "Rubber Bumper",
+   "to": "Rubber Limit Block",
+   "corpus_votes": {
+    "Limit Block": 37,
+    "Rubber Limit Block": 2,
+    "Rubber Bumper": 2
+   },
+   "reason": "accuracy: 限位块是限位块不是保险杠；同族 37+2 行已用 Limit Block"
+  },
+  {
+   "id": "wind-deflector-not-air-deflector",
+   "zh_pattern": "阻风板",
+   "from": "Air Deflector",
+   "to": "Wind Deflector",
+   "corpus_votes": {
+    "Wind Deflector": 3,
+    "Air Deflector": 2
+   },
+   "reason": "corpus majority（小族 5 行）"
+  },
+  {
+   "id": "ventilation-cover-plug",
+   "zh_pattern": "通风盖板堵盖",
+   "from": "Ventilation Plug",
+   "to": "Ventilation Cover Plug",
+   "corpus_votes": {
+    "Ventilation Plug": 3,
+    "Ventilation Cover Plug": 0
+   },
+   "reason": "accuracy: 源文含盖板，英文漏掉 Cover",
+   "accuracy_override": true
+  },
+  {
+   "id": "grey-to-gray",
+   "zh_pattern": "灰",
+   "from_pattern": "(?<![A-Za-z])Grey(?![a-z])",
+   "to": "Gray",
+   "corpus_votes": {
+    "Gray": 1953,
+    "Grey": 11
+   },
+   "reason": "corpus majority；word-boundary 防 Greystone 类误伤"
+  },
+  {
+   "id": "beige-yellow-remnant",
+   "zh_pattern": "米黄",
+   "from": "Beige Yellow",
+   "to": "Beige",
+   "corpus_votes": {
+    "Beige": 401,
+    "Beige Yellow": 5
+   },
+   "reason": "corpus majority（同族 401 行已用 Beige）"
+  },
+  {
+   "id": "water-channel-not-trough",
+   "zh_pattern": "水槽",
+   "from": "Water Trough",
+   "to": "Water Channel",
+   "corpus_votes": {
+    "Water Channel": 60,
+    "Water Trough": 1
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "bright-strip-not-bright-trim",
+   "zh_pattern": "亮条",
+   "from_pattern": "(?<!Strip )Bright Trim(?! Strip)",
+   "to": "Bright Strip",
+   "corpus_votes": {
+    "Bright Strip": 8,
+    "Bright Trim": 4
+   },
+   "reason": "corpus majority；lookahead 保护既有的 Bright Trim Strip（亮饰条）"
+  },
+  {
+   "id": "headlamp-not-headlight",
+   "zh_pattern": "前灯",
+   "from_pattern": "(?<![A-Za-z])Headlight(?![a-z])",
+   "to": "Headlamp",
+   "corpus_votes": {
+    "Headlamp": 125,
+    "Headlight": 2
+   },
+   "reason": "corpus majority；word-boundary 防误伤"
+  },
+  {
+   "id": "defrost-vent-not-nozzle",
+   "zh_pattern": "除霜风口",
+   "from": "Defrost Nozzle",
+   "to": "Defrost Vent",
+   "corpus_votes": {
+    "Defrost Vent": 7,
+    "Defrost Nozzle": 1
+   },
+   "reason": "corpus majority"
+  },
+  {
+   "id": "screw-assembly-word-order",
+   "zh_pattern": "弹垫平垫组合",
+   "from": "Screw with Spring Washer and Flat Washer Assembly",
+   "to": "Screw Assembly with Spring Washer and Flat Washer",
+   "corpus_votes": {
+    "word-order-defect": 2
+   },
+   "reason": "accuracy: 组合=Assembly 属螺钉，现文本把 Assembly 挂在垫圈短语之后（悬挂 Assembly）",
+   "accuracy_override": true
+  },
+  {
+   "id": "lamp-family-light-to-lamp-door",
+   "zh_pattern": "门灯",
+   "from_pattern": "(?<![A-Za-z])Light(?![a-z])(?! (?:Cloud|Sand|Gray|Grey|Beige|Ivory|Blue|Green|Brown|Red|White|Black|Yellow|Purple|Pink|Silver|Gold|Rose|Wine|Khaki|Cream|Orange))",
+   "to": "Lamp",
+   "reason": "灯具族 Light->Lamp 已覆盖转向灯/位置灯/室内灯/雾灯/顶灯/阅读灯/牌照灯，门灯是漏网族；语料 Door Lamp 44 : Door Light 4（右门灯已是 Door Lamp，同族内不一致）。前瞻排除车色名",
+   "corpus_votes": {
+    "(?<![A-Za-z])Light(?![a-z])(?! (?:Cloud|Sand|Gray|Grey|Beige|Ivory|Blue|Green|Brown|Red|White|Black|Yellow|Purple|Pink|Silver|Gold|Rose|Wine|Khaki|Cream|Orange))": 44,
+    "family_rows": 48
+   },
+   "rows_affected": 44
+  },
+  {
+   "id": "blackout-film-not-black-film",
+   "zh_pattern": "(?<!遮)黑膜",
+   "from": "Black Film",
+   "to": "Blackout Film",
+   "reason": "同族 遮黑膜 已规范为 Blackout Film（46 行），裸 黑膜 17 行仍作 Black Film，属同族不一致",
+   "corpus_votes": {
+    "Black Film": 17,
+    "family_rows": 20
+   },
+   "rows_affected": 17
+  },
+  {
+   "id": "halfshaft-to-axle-shaft-gear",
+   "zh_pattern": "半轴齿轮",
+   "from_pattern": "Half ?shaft Gear",
+   "to": "Axle Shaft Gear",
+   "reason": "语料 Axle Shaft Gear 37 : Halfshaft Gear 2",
+   "corpus_votes": {
+    "Half ?shaft Gear": 2,
+    "family_rows": 40
+   },
+   "rows_affected": 2
+  },
+  {
+   "id": "rear-bumper-step-not-buffer-step",
+   "zh_pattern": "后保踏板",
+   "from": "Rear Buffer Step",
+   "to": "Rear Bumper Step",
+   "reason": "缓冲按既有规则对应 Buffer，但后保(后保险杠)=Bumper；同族 2 行均误用 Buffer Step",
+   "corpus_votes": {
+    "Rear Buffer Step": 2,
+    "family_rows": 2
+   },
+   "rows_affected": 2
+  },
+  {
+   "id": "right-right-rear-doubling",
+   "zh_pattern": "右后右(?=[上侧])",
+   "from": "Right Right Rear",
+   "to": "Right Rear Right",
+   "reason": "源文「右后右」为「右后 + 右上/右侧」，现译 Right Right Rear 把两个 Right 前置成重复词",
+   "corpus_votes": {
+    "Right Right Rear": 2,
+    "family_rows": 2
+   },
+   "rows_affected": 2
+  },
+  {
+   "id": "right-front-missing-front",
+   "zh_pattern": "右前(?=座椅|悬架|护板|线束|拖钩|昼行灯|手动升降器|拉线)",
+   "from_pattern": "^Right (?!Front)(?=[A-Z])",
+   "to": "Right Front ",
+   "reason": "右前族宽匹配分母 793；真正缺 Front 20 行（右前座椅/护板/拖钩/线束等），其余 773 行已正确写 Right Front，属子代理误报。规则用行首锚定 + 否定前瞻",
+   "corpus_votes": {
+    "^Right (?!Front)(?=[A-Z])": 20,
+    "family_rows": 79
+   },
+   "rows_affected": 20
+  },
+  {
+   "id": "bare-regulator-to-window-regulator",
+   "zh_pattern": "升降器",
+   "from_pattern": "(?<!Window )Regulator",
+   "to": "Window Regulator",
+   "reason": "语料 Window Regulator 232 : 裸 Regulator 29（升降器支架/电机系列漏 Window）；负向后顾避免把已正确的 Window Regulator 二次改写",
+   "corpus_votes": {
+    "(?<!Window )Regulator": 29,
+    "family_rows": 263
+   },
+   "rows_affected": 29
+  },
+  {
+   "id": "pn-hyphen-retight-us2",
+   "zh_pattern": "[A-Z][A-Z0-9]{1,}-[0-9]",
+   "from_pattern": "(?<=_[A-Z0-9]{2}) - (?=[0-9])",
+   "to": "-",
+   "corpus_votes": {
+    "glued identifier after _": 244
+   },
+   "reason": "repair a part number that total-numeric-separator spaced out when it is preceded by an underscore segment (前缀_零件号_名称); pn-hyphen-retight-w* only anchors at line start, so these rows were never repaired"
+  },
+  {
+   "id": "pn-hyphen-retight-us3",
+   "zh_pattern": "[A-Z][A-Z0-9]{1,}-[0-9]",
+   "from_pattern": "(?<=_[A-Z0-9]{3}) - (?=[0-9])",
+   "to": "-",
+   "corpus_votes": {
+    "glued identifier after _": 244
+   },
+   "reason": "repair a part number that total-numeric-separator spaced out when it is preceded by an underscore segment (前缀_零件号_名称); pn-hyphen-retight-w* only anchors at line start, so these rows were never repaired"
+  },
+  {
+   "id": "pn-hyphen-retight-us4",
+   "zh_pattern": "[A-Z][A-Z0-9]{1,}-[0-9]",
+   "from_pattern": "(?<=_[A-Z0-9]{4}) - (?=[0-9])",
+   "to": "-",
+   "corpus_votes": {
+    "glued identifier after _": 244
+   },
+   "reason": "repair a part number that total-numeric-separator spaced out when it is preceded by an underscore segment (前缀_零件号_名称); pn-hyphen-retight-w* only anchors at line start, so these rows were never repaired"
+  },
+  {
+   "id": "pn-hyphen-retight-us5",
+   "zh_pattern": "[A-Z][A-Z0-9]{1,}-[0-9]",
+   "from_pattern": "(?<=_[A-Z0-9]{5}) - (?=[0-9])",
+   "to": "-",
+   "corpus_votes": {
+    "glued identifier after _": 244
+   },
+   "reason": "repair a part number that total-numeric-separator spaced out when it is preceded by an underscore segment (前缀_零件号_名称); pn-hyphen-retight-w* only anchors at line start, so these rows were never repaired"
+  },
+  {
+   "id": "pn-hyphen-retight-us6",
+   "zh_pattern": "[A-Z][A-Z0-9]{1,}-[0-9]",
+   "from_pattern": "(?<=_[A-Z0-9]{6}) - (?=[0-9])",
+   "to": "-",
+   "corpus_votes": {
+    "glued identifier after _": 244
+   },
+   "reason": "repair a part number that total-numeric-separator spaced out when it is preceded by an underscore segment (前缀_零件号_名称); pn-hyphen-retight-w* only anchors at line start, so these rows were never repaired"
+  },
+  {
+   "id": "pn-hyphen-retight-us8",
+   "zh_pattern": "[A-Z][A-Z0-9]{1,}-[0-9]",
+   "from_pattern": "(?<=_[A-Z0-9]{8}) - (?=[0-9])",
+   "to": "-",
+   "corpus_votes": {
+    "glued identifier after _": 244
+   },
+   "reason": "repair a part number that total-numeric-separator spaced out when it is preceded by an underscore segment (前缀_零件号_名称); pn-hyphen-retight-w* only anchors at line start, so these rows were never repaired"
+  },
+  {
+   "id": "orphan-e-coat-prefix",
+   "zh_pattern": "电泳黑漆",
+   "from": "E-Electrophoretic",
+   "to": "Electrophoretic",
+   "corpus_votes": {
+    "E-Electrophoretic（缺陷）": 4,
+    "Electrophoretic（台账裁决）": 94
+   },
+   "reason": "wp2-finish-unification 把 电泳黑漆 统一为 Electrophoretic Black Paint 时只匹配到尾部 Coat Black Paint，留下孤儿的 E-（E-Coat 的残片）。台账对 电泳黑漆 的裁决本身是 Electrophoretic Black Paint（94/98），故直接去掉孤儿前缀；带 zh_pattern 门禁，不会误伤正常的 E-Coat。",
+   "rows_affected": 4
+  },
+  {
+   "id": "pn-hyphen-retight-lsc",
+   "zh_pattern": "_[A-Za-z0-9-]*[a-z][A-Za-z0-9-]*-[0-9]",
+   "from_pattern": "(?<=[A-Za-z]) - (?=[0-9][A-Za-z0-9/]*[A-Za-z])",
+   "to": "-",
+   "corpus_votes": {
+    "glued_in_identifier": 1,
+    "spaced_finish_separators_preserved": 10
+   },
+   "reason": "总成 行里 total-numeric-separator 会把零件号内部的连字符拆开，而它的守卫 (?<![A-Z0-9]) 只保护全大写段；小写段（HA-20Ah-152S）漏网。会话#9 的 pn-hyphen-retight-us* 只覆盖 _ 后全大写段，同样漏掉小写。本规则的门禁限定「_ 分隔段内同时含小写字母与连字符-数字粘连」，from_pattern 要求空格两侧是 字母 - 数字+字母，只命中零件号内部，不碰 Assembly - 086 Manual 这类真正的饰面分隔符（把守卫放宽会丢掉 10 行正确分格，故不采用）。",
+   "rows_affected": 1
+  },
+  {
+   "id": "foot-guard-support",
+   "zh_pattern": "护脚",
+   "from_pattern": "(?<![A-Za-z])Foot Support(?! Guard)",
+   "to": "Foot Guard",
+   "corpus_votes": {
+    "Foot Guard": 88,
+    "Foot Support": 10
+   },
+   "reason": "护脚 族语料 88:10 支持 Foot Guard；既有 foot-guard 规则只吃 Foot Shield，漏掉 Foot Support。护栏 (?<!Guard) 必需：另有 8 行源文是「支脚+护脚」两个词，译文 Foot Support Guard 里的 Support 属「支脚」，朴素替换会产出 Foot Guard Guard。",
+   "rows_affected": 2
+  },
+  {
+   "id": "he-jian-set",
+   "zh_pattern": "合件",
+   "from_pattern": "(?<![A-Za-z])Set(?![A-Za-z])",
+   "to": "Assembly",
+   "corpus_votes": {
+    "Assembly": 610,
+    "Set": 4
+   },
+   "reason": "合件 既有规则只覆盖 Combined Part / Combination，漏掉 Set；语料 610:4 明确支持 Assembly。",
+   "rows_affected": 4
+  },
+  {
+   "id": "sound-insulation-pad-plain",
+   "zh_pattern": "隔音垫",
+   "from_pattern": "(?<!Sound )(?<![A-Za-z])Insulation Pad",
+   "to": "Sound Insulation Pad",
+   "corpus_votes": {
+    "Sound Insulation Pad": 33,
+    "Insulation Pad": 6
+   },
+   "reason": "隔音垫 既有 sound-insulation-pad 规则只吃 Sound Insulator，漏掉裸 Insulation Pad（漏译「隔音」）；语料 33:6。",
+   "rows_affected": 6
+  },
+  {
+   "id": "outlet-water-pipe",
+   "zh_pattern": "出水管",
+   "from_pattern": "Outlet Water Pipe",
+   "to": "Outlet Pipe",
+   "corpus_votes": {
+    "Outlet Pipe": 64,
+    "Outlet Water Pipe": 11
+   },
+   "reason": "出水管 语料 64:11 用 Outlet Pipe；既有 water-pump-outlet 规则只处理 Water Pump Water Outlet 连写情形。",
+   "rows_affected": 11
+  },
+  {
+   "id": "vent-hard-pipe",
+   "zh_pattern": "通气硬管",
+   "from_pattern": "Vent Hard Tube",
+   "to": "Vent Hard Pipe",
+   "corpus_votes": {
+    "Vent Hard Pipe": 7,
+    "Vent Hard Tube": 1
+   },
+   "reason": "通气硬管 语料 7:1 用 Vent Hard Pipe；Tube/Pipe 属硬管用词不一致。",
+   "rows_affected": 1
+  },
+  {
+   "id": "seam-strip-weatherstrip",
+   "zh_pattern": "缝条",
+   "from_pattern": "(?<![A-Za-z])Weatherstrip(?![A-Za-z])",
+   "to": "Seam Strip",
+   "corpus_votes": {
+    "Seam Strip": 28,
+    "Weatherstrip": 4
+   },
+   "reason": "缝条 既有规则只吃 Gap Seal / Gap Strip；裸 Weatherstrip 漏网，而 Weatherstrip 在语料里是「密封条」的译法。语料 28:4。",
+   "rows_affected": 4
+  },
+  {
+   "id": "electronic-shock-absorber",
+   "zh_pattern": "电控减振器",
+   "from_pattern": "(?:Electronically|Electronic) Controlled Shock Absorber",
+   "to": "Electronic Shock Absorber",
+   "corpus_votes": {
+    "Electronic Shock Absorber": 4,
+    "Electronically Controlled Shock Absorber": 3,
+    "Electronic Controlled Shock Absorber": 2
+   },
+   "reason": "电控减振器 无规则覆盖（electronic-damper 只挂 电控阻尼器，且它在 index 118，而 damper 在 index 3 已把 Damper→Shock Absorber，导致该规则永不匹配）；家族内三种拼法并存。取相对多数 Electronic Shock Absorber，与 减振器⇒Shock Absorber 族一致。",
+   "rows_affected": 5
+  },
+  {
+   "id": "connecting-plate",
+   "zh_pattern": "连接板",
+   "from": "Connection Plate",
+   "to": "Connecting Plate",
+   "corpus_votes": {
+    "Connecting Plate": 159,
+    "Connection Plate": 62
+   },
+   "reason": "连接作前置定语时英语用动名词 Connecting；语料 159:62（71.9%）已以 Connecting Plate 为主，裸 Plates 族按它统一。已排除连接支架（那条已登记为近持平残留）。"
+  },
+  {
+   "id": "trim-assembly-to-panel",
+   "zh_pattern": "饰板总成|装饰板总成",
+   "from_pattern": "(?<!Panel )Trim Assembly",
+   "to": "Trim Panel Assembly",
+   "corpus_votes": {
+    "Trim Panel Assembly": 741,
+    "Trim Assembly": 6
+   },
+   "reason": "饰板 统一译 Trim Panel；总成族里 741:6（99.2%）已是 Trim Panel Assembly，仅 6 行漏掉 Panel（左侧围外饰板/顶盖后中饰板/左侧翼子板装饰板/左侧围B柱饰板/顶盖后右饰板/顶盖后左饰板）。负向断言 (?<!Panel ) 保证已成形的 Panel Assembly 不会被二次改写；源文仅一处 Trim Board 时另有 trim-board-to-panel 负责，两处并存的行（右后门中央装饰板上饰板）本规则自动跳过。"
+  },
+  {
+   "id": "subclimate-control-door",
+   "zh_pattern": "副冷暖风门",
+   "from": "Sub-Climate Control Door",
+   "to": "Front Passenger HVAC Blend Door",
+   "corpus_votes": {
+    "Front Passenger HVAC Blend Door": 8,
+    "Sub-Climate Control Door": 1
+   },
+   "reason": "副驾 在全语料一致作 Front Passenger（副驾冷暖风门内轴/执行连杆/连杆1-4 共 7 行），仅 副冷暖风门执行连杆 1 行孤例写成 Sub-Climate Control Door。按同族多数并齐。"
+  },
+  {
+   "id": "sampling-line-to-wire",
+   "zh_pattern": "采样线",
+   "from": "Sampling Line",
+   "to": "Sampling Wire",
+   "corpus_votes": {
+    "Sampling Wire": 10,
+    "Sampling Line": 2
+   },
+   "reason": "采样线 语料 10:2 作 Sampling Wire（采样线护板/采样线束同族），仅 采样线密封圈 2 行写成 Sampling Line，按多数统一。"
+  },
+  {
+   "id": "conical-not-tapered",
+   "zh_pattern": "锥形",
+   "from": "Tapered",
+   "to": "Conical",
+   "corpus_votes": {
+    "Conical": 21,
+    "Tapered": 4
+   },
+   "reason": "锥形 语料 21:4 作 Conical（锥形弹性垫圈全族 Conical），差速器半轴锥形环/锥形塞/锥形环 3 行为少数写法。"
+  },
+  {
+   "id": "lock-catch-to-latch",
+   "zh_pattern": "锁扣",
+   "from": "Lock Catch",
+   "to": "Latch",
+   "corpus_votes": {
+    "Latch": 9,
+    "Lock Catch": 4
+   },
+   "reason": "锁扣 语料 9:4 作 Latch（滑门前锁锁扣总成=Latch Assembly），杂物箱锁扣 4 行为少数写法。"
+  },
+  {
+   "id": "inspection-cover-drop-port",
+   "zh_pattern": "检修口盖",
+   "from": "Inspection Port Cover",
+   "to": "Inspection Cover",
+   "corpus_votes": {
+    "Inspection Cover": 7,
+    "Inspection Port Cover": 3
+   },
+   "reason": "检修口盖 在 Inspection 子族里 7:3 作 Inspection Cover。3 行多出的 Port 系草稿自行添加，其中 邮箱检修口盖 更是源文错别字（应为油箱）。"
+  },
+  {
+   "id": "distribution-wire-power",
+   "zh_pattern": "^配电线",
+   "from_pattern": "(?<!Power )(?<!Wiring )(?<![A-Za-z])Distribution Wire(?![a-z])",
+   "to": "Power Distribution Wire",
+   "corpus_votes": {
+    "Power Distribution Wire": 10,
+    "bare Distribution Wire": 1
+   },
+   "reason": "配电线 全族 10 行均含 Power（高压配电线束/直流配电线束），仅 配电线总成支架 1 行漏掉 Power。负向断言排除 Power/Wiring 前缀以免重复。"
+  }
+ ],
+ "registered_residues": {
+  "競競蓝": {
+   "rendering": "Competitive Blue",
+   "rows": 1,
+   "reason": "single row, no competing wording in the corpus: 競競 is a colour name, 'competitive' is almost certainly wrong, but there is no corpus evidence for a replacement and inventing one is out of scope"
+  },
+  "组件": {
+   "renderings": {
+    "Component": 668,
+    "Assembly": 657
+   },
+   "rows": 277,
+   "reason": "no majority and both readings are defensible (组件 = a component set or a subassembly); left as is rather than churned on a coin flip"
+  },
+  "装饰件": {
+   "renderings": {
+    "Decorative Part": 56,
+    "Trim Piece": 56
+   },
+   "rows": 2,
+   "reason": "exact tie; both readings are acceptable English, so no unification is justified"
+  },
+  "影青": {
+   "rendering": "finish dropped in 4 rows",
+   "rows": 4,
+   "reason": "the fix is to insert a missing finish, not to replace wording; the rule engine only rewrites, so it needs a manual pass"
+  },
+  "总成-色名 粘连分隔符": {
+   "rows": 3,
+   "reason": "the separator pass locates the finish through the ledger's renderings; session #3's assembly-hyphen-space rule now covers the 'Assembly-' glued form itself, so only the underscore-glued and unknown-finish rows are left to the separator pass",
+   "status": "partially superseded by assembly-hyphen-space"
+  },
+  "中(...) Middle/Center": {
+   "renderings": {
+    "Center": 60,
+    "Middle": 51
+   },
+   "reason": "no majority (60 vs 51) and both are correct; unification would be churn"
+  },
+  "小线 bare Wire": {
+   "status": "superseded",
+   "reason": "session #3 resolved this with the small-wire-bare rule: from_pattern replaces the bare token 'Wire' with 'Small Wire' (a replacement, not the insertion the earlier note assumed)"
+  },
+  "加强板 bare Reinforcement": {
+   "reason": "same reason: the row drops 'Plate', so the fix is an insertion"
+  },
+  "拨叉 bare Fork": {
+   "reason": "same reason: bare 'Fork' needs 'Shift' inserted"
+  },
+  "护板 bare Panel": {
+   "reason": "rows that dropped 'Trim' before 'Panel' need an insertion"
+  },
+  "安装 Installation": {
+   "renderings": {
+    "Mounting": 1255,
+    "Installation": 223
+   },
+   "reason": "too broad to rewrite blindly: 'Installation' also appears in non-bracket phrases; the specific 安装支架 rule covers the real cases"
+  },
+  "及/与/和 '&' vs 'and'": {
+   "renderings": {
+    "and": 745,
+    "&": 295
+   },
+   "reason": "the policy's own wording deliberately uses '&' (Cover & Foam Assembly, Bolt & Washer), so a corpus-wide '&' -> 'and' would contradict it; left as is"
+  },
+  "轮包 Wheel House/Arch": {
+   "renderings": {
+    "Wheel House": 3,
+    "Wheel Arch": 2
+   },
+   "reason": "too few rows and it would collide with the 轮眉 -> Wheel Arch rule"
+  },
+  "品牌粘连 (BYDSEAL)": {
+   "renderings": {
+    "split": 12,
+    "glued": 7
+   },
+   "reason": "corpus is split and brand strings are risky to re-split automatically"
+  },
+  "镜片 omission": {
+   "reason": "the fix is to insert 'Mirror Lens', which the replace-only engine cannot do"
+  },
+  "侧围护板 左右不一致": {
+   "renderings": {
+    "Side Panel Trim Assembly": 15,
+    "Side Panel Trim Panel Assembly": 15
+   },
+   "rows": 30,
+   "reason": "exact tie (15/15) and the split is exactly left/right (the right-hand rows drop 'Panel'); both readings are defensible and unifying either way touches only one side, so it needs a user call"
+  },
+  "牵引臂 Trailing/Traction/Towing Arm": {
+   "renderings": {
+    "Traction Arm": 13,
+    "Trailing Arm": 10,
+    "Towing Arm": 6
+   },
+   "rows": 29,
+   "reason": "no majority (13/10/6): the suspension rows are already pinned to Trailing Arm by the trailing-arm rule, the rest are tow fittings where Traction/Towing are both used"
+  },
+  "垫片 Shim/Gasket/Washer": {
+   "renderings": {
+    "Shim": 221,
+    "Gasket": 99,
+    "Washer": 89
+   },
+   "rows": 409,
+   "reason": "context-dependent, not a vote: 气缸盖垫片 is a cylinder-head gasket, 螺塞垫片 a plug washer and an adjustment 垫片 a shim, so forcing one rendering would mistranslate (a slice proposal to unify on Shim was rejected)"
+  },
+  "冷却 Coolant vs Cooling": {
+   "renderings": {
+    "Cooling": 209,
+    "Coolant": 20
+   },
+   "rows": 267,
+   "reason": "Coolant shows up in 冷却液 and in fluid-path items (Coolant Pump, Coolant Heat Exchanger, Coolant Degassing Hose) where it is the idiomatic term; a blanket rewrite would give 'Cooling Pump'"
+  },
+  "小线 Cable/Wiring Harness": {
+   "renderings": {
+    "Small Wire": 80,
+    "Cable": 9,
+    "Wiring Harness": 8
+   },
+   "rows": 133,
+   "reason": "Cable is the idiomatic rendering for the multimedia/antenna/discharge items (多媒体小线, 放电小线) and Wiring Harness for 油箱小线; only the bare 'Wire' rows were a defect (fixed by small-wire-bare)"
+  },
+  "弹性档圈 Elastic Retaining Ring": {
+   "renderings": {
+    "Retaining Ring": 59,
+    "Elastic Retaining Ring": 1
+   },
+   "rows": 1,
+   "reason": "the single row is source-faithful (弹性 = elastic); deleting the word to match the family would lose source information for a one-row gain"
+  },
+  "P/N_中文 下划线分隔": {
+   "renderings": {
+    "下划线保留": 1361,
+    "改为空格": 3202
+   },
+   "rows": 4563,
+   "reason": "两种写法都大量存在（同一 P/N_中文 结构），方向不明确；改另一边都是几千行的大改写，留待 WP4 抽检或用户裁决"
+  },
+  "花形 hexalobular 标记": {
+   "renderings": {
+    "Torx": 57,
+    "Hexalobular": 15,
+    "省略标记": 89
+   },
+   "rows": 100,
+   "reason": "票数接近且三种写法都能读懂；ISO 口径是 hexalobular，北美目录口径常写 Torx，无法单方面定口径"
+  },
+  "十字槽凹穴 多余 Socket": {
+   "renderings": {
+    "多出 Socket": 1
+   },
+   "rows": 1,
+   "reason": "单行、方向不明（凹穴=deep recess 而非 Socket），改法无法从语料其余行推定"
+  },
+  "撑杆 Strut vs Support Rod": {
+   "renderings": {
+    "Strut": 1,
+    "Support Rod": 1
+   },
+   "rows": 2,
+   "reason": "1:1 平票，两种英文都成立，不构成多数口径"
+  },
+  "减震支架 Vibration Bracket vs Vibration Damping Bracket": {
+   "renderings": {
+    "Vibration Bracket": 3,
+    "Vibration Damping Bracket": 2
+   },
+   "rows": 5,
+   "reason": "差 <15%，未过多数门槛"
+  },
+  "渗碳 工艺词省略": {
+   "renderings": {
+    "省略渗碳": 2
+   },
+   "rows": 2,
+   "reason": "语料里没有把渗碳写进英文的先例（carburizing），新增术语需要用户确认，不是一致性改写"
+  },
+  "顶盖第N横梁 Roof vs Roof Panel": {
+   "renderings": {
+    "Roof": 12,
+    "Roof Panel": 9
+   },
+   "rows": 21,
+   "reason": "口径被「第N」序号打散，同一族两种写法混用；差 <15%"
+  },
+  "漆色/工艺后缀粘连（Trim-Hutong Gray、Plate-E-Coat）": {
+   "rows": 3,
+   "reason": "既可能是 总成-色名 粘连分隔符缺陷，也可能是词内连字符（E-Coat）；历史教训明确禁止在词内连字符处切分，故不写规则"
+  },
+  "影像模组（后视影像模组/影像模组）": {
+   "renderings": {
+    "Image Module": 14,
+    "Camera Module": 11,
+    "Imaging Module": 10
+   },
+   "rows": 35,
+   "reason": "三种写法近似三分（Image/Camera/Imaging Module），无多数派；且 Camera Module 与 摄像头模组 撞词，需人工定口径后再统一。"
+  },
+  "遮阳板安装座盖板": {
+   "renderings": {
+    "Cover Plate": 22,
+    "bare Cover": 44
+   },
+   "rows": 44,
+   "reason": "左右孪生件 22:22 精确打平（左用 Cover Plate、右用裸 Cover）——按 <15% 门槛留残留，不靠硬币决定。"
+  },
+  "活动组件/固定组件 配对": {
+   "renderings": {
+    "Movable Component": 6,
+    "Moving Component": 5
+   },
+   "rows": 13,
+   "reason": "导正机构 固定/活动组件 应成对；Movable 6 : Moving 5 差 <15%，两读法均可，留残留。"
+  },
+  "字标（LOGO 大小写）": {
+   "renderings": {
+    "LOGO": 6,
+    "Logo": 6
+   },
+   "rows": 183,
+   "reason": "品牌字标行 LOGO 6 : Logo 6 打平；大小写属文风口径，非错译，留残留。"
+  },
+  "通气管": {
+   "renderings": {
+    "Ventilation Tube": 7,
+    "Vent Pipe": 5,
+    "Ventilation Pipe": 4
+   },
+   "rows": 27,
+   "reason": "三写法近似均分（7:5:4），且 Ventilation Tube 已是多数派但差距 <15%；留残留，等下一次口径确认。"
+  },
+  "管路（Line/Pipe/Pipeline）": {
+   "renderings": {
+    "bare Line": 82,
+    "bare Pipe": 41,
+    "Pipeline": 35
+   },
+   "rows": 152,
+   "reason": "中空管路 Line 82 : Pipe 41 : Pipeline 35；Line 与 Pipeline/Pipe 合计接近（差别 <15%），且 Pipeline 并非错译，留残留不硬改 35 行。"
+  },
+  "十字槽凹穴六角头": {
+   "renderings": {
+    "Countersunk Hex Head": 22,
+    "bare Hex Head": 42,
+    "Hexagon Socket Head": 9
+   },
+   "rows": 51,
+   "reason": "22:20:9 无多数派；且凹穴≠沉头（Countersunk 为错译），标准读法应为 cross recessed hex head，语料尚无该写法，留残留待人工定口径。"
+  },
+  "级别语序（Grade 前置/后置）": {
+   "renderings": {
+    "Grade <num>（前置）": 25,
+    "<num> Grade（后置）": 24
+   },
+   "rows": 50,
+   "reason": "Grade 前置 26 : 后置 24（差 <15%）；整数级一律前置，族内一致性支持统一但票数未过门槛，留残留。"
+  },
+  "型（设计符重复 X Type X）": {
+   "renderings": {
+    "X Type X（重复）": 0,
+    "X Type（单次）": 44
+   },
+   "rows": 160,
+   "reason": "「A型」行的重复来自源文本身：零件号以 _A 结尾 + 型 的设计符，英文 BYDQ675110_A Type A 是两条信息，删任一条都会丢信息或触发标识符门禁；判为合理重复，不写规则。"
+  },
+  "风窗（Windshield/Window）": {
+   "renderings": {
+    "Windshield": 54,
+    "Window（后风窗）": 20
+   },
+   "rows": 74,
+   "reason": "Windshield/Window 并非混用：前风窗=Windshield、后风窗=Window 是有意区分，禁止统一；登记以免后续会话误改。"
+  },
+  "封皮": {
+   "renderings": {
+    "Skin（通风盖板X封皮）": 8,
+    "Seal Assembly（X封皮总成）": 6,
+    "Cover（裸封皮）": 18
+   },
+   "rows": 18,
+   "reason": "18 行分三种语境各有写法（Skin 6 / Seal Assembly 6 / Cover 6），按 zh_pattern 无法区分语境；强改会产生「Right Cover Assembly」这类冗词，留残留。"
+  },
+  "护罩（裸 Cover）": {
+   "renderings": {
+    "Shield": 30,
+    "bare Cover": 26,
+    "Protective Cover": 6
+   },
+   "rows": 69,
+   "reason": "裸 Cover 19 行与 Cover Plate/Cover Panel（护罩盖板）无法区分，且 Shield 30 : Cover 19 差距不足，只归并 Protective Cover（已写规则），裸 Cover 留残留。"
+  },
+  "拉手": {
+   "renderings": {
+    "bare Handle": 455,
+    "Pull Handle": 173,
+    "Grab Handle": 75
+   },
+   "rows": 455,
+   "reason": "三写法并存且裸 Handle 45% : Pull Handle 38% : Grab Handle 16%（差 <15%）；车门拉手本就该是 Handle，硬改成 Pull Handle 会误伤，留残留。"
+  },
+  "前舱盖（裸 Hood）": {
+   "renderings": {
+    "Front Hood": 161,
+    "bare Hood": 165
+   },
+   "rows": 165,
+   "reason": "少数行缺 Front：只要源文有 前 而英文丢掉定语属脱漏（规则引擎只能改写、不能插入），留残留待补写口径。"
+  },
+  "呢槽（Seal/Run/Trim Channel 变体）": {
+   "renderings": {
+    "Seal Channel": 5,
+    "Run Channel": 2,
+    "Trim Channel": 1
+   },
+   "rows": 8,
+   "reason": "Weatherstrip/Wool Groove 已归并到 Felt Channel（规则）；Seal Channel 6 / Run Channel 2 / Trim Channel 1 属可接受的同义变体（玻璃呢槽+角窗密封条行 Run Channel 反而更贴切），留残留。"
+  },
+  "缓冲垫（缺 Pad）": {
+   "renderings": {
+    "Buffer Pad": 20,
+    "bare Buffer": 58
+   },
+   "rows": 58,
+   "reason": "多数行写作裸 Buffer（58:20，如 Spring Upper Buffer），少数写作 Buffer Pad；裸 Buffer 属脱漏「垫」，但规则引擎不能插入，留残留。"
+  },
+  "支架（Support 与 Bracket）": {
+   "renderings": {
+    "Bracket": 3217,
+    "Support": 72
+   },
+   "rows": 3224,
+   "reason": "Bracket 3217 : Support 72；但 Support 多用于渲染 支撑（如 Support Bracket、Hood Strut Support），并非 支架 的错译，禁止整族把 Support 改成 Bracket。"
+  },
+  "右后右上/右后右侧（Right 重复）": {
+   "rows": 2,
+   "renderings": {
+    "Right Right Rear ...": 2
+   },
+   "reason": "源文自身重复「右」（右后+右上/右侧），英文 Right Right 忠实但读不顺；正确归并需人工判断，留残留。"
+  },
+  "源文自身重复词（USB/USB、铝/铝白）": {
+   "rows": 4,
+   "renderings": {
+    "USB USB ...": 1,
+    "Aluminum Aluminum White": 1
+   },
+   "reason": "源文本身把同一 token 写了两遍（USB数据线_..._USB_黑色、铝_铝白色），英文重复是忠实转写而非缺陷，禁止按去重规则处理。"
+  },
+  "中高音扬声器": {
+   "rows": 1,
+   "renderings": {
+    "Mid-High Frequency Speaker": 1
+   },
+   "reason": "单行；中文是 中高音扬声器（不是高音扬声器族），英文未用 Tweeter 而是描述式写法，需单独定口径。"
+  },
+  "解锁（Unlock 与 Release）": {
+   "rows": 211,
+   "renderings": {
+    "Unlock": 142,
+    "Release": 68
+   },
+   "reason": "分义：解锁手柄/解锁扣手用 Release Handle 是正确英语，只有解锁状态类才该用 Unlock；全局改写会把 68 行改坏。"
+  },
+  "挡板（Baffle 与 Shield）": {
+   "rows": 77,
+   "renderings": {
+    "Baffle": 51,
+    "Shield": 24
+   },
+   "reason": "分义：轮内侧挡板/离合器挡板等是 shield，导流挡板才是 baffle；票数差不足以支撑全局替换。"
+  },
+  "连接支架（Connecting 与 Connection）": {
+   "rows": 45,
+   "renderings": {
+    "Connecting Bracket": 26,
+    "Connection Bracket": 19
+   },
+   "reason": "差 15.6% 且 Connection Bracket（车身连接支架）本身可读，按近持平处理。"
+  },
+  "卡座（Clip / Clip Base / Holder）": {
+   "rows": 52,
+   "renderings": {
+    "Clip Base": 24,
+    "bare Clip": 15,
+    "Holder": 4
+   },
+   "reason": "撑杆卡座用 Clip 是主流可读写法，Clip Base 未形成稳定多数。"
+  },
+  "主轴瓦级别分隔符（_Grade 与 - Grade）": {
+   "rows": 38,
+   "renderings": {
+    "bare Grade": 14,
+    "_Grade": 8,
+    "- Grade": 6
+   },
+   "reason": "分隔符与构件名（Main Bearing Shell_Grade 1）耦合，三种写法并存，需单独定稿。"
+  },
+  "扬声器罩（Grille 与 Cover）": {
+   "rows": 33,
+   "renderings": {
+    "Speaker Grille": 17,
+    "Speaker Cover": 16
+   },
+   "reason": "差 1 票（3%），且 高音扬声器罩 已有 Tweeter Speaker Cover 规则，保持现状。"
+  },
+  "护膝板（Knee Shield / Knee Guard Panel / Knee Bolster）": {
+   "rows": 23,
+   "renderings": {
+    "Knee Guard Panel": 11,
+    "Knee Shield": 9,
+    "Knee Bolster": 3
+   },
+   "reason": "差 10% 且三种子义并存（护膝板/膝部护板/膝部垫），无稳定多数。"
+  },
+  "后灯护板（Rear Tail Light 与 Rear Light）": {
+   "rows": 8,
+   "renderings": {
+    "Rear Tail Light Trim Panel": 4,
+    "Rear Light Trim Panel": 4
+   },
+   "reason": "4:4 完全持平；尾灯语义与 后灯 不完全等价，留给人工定稿。"
+  },
+  "净米白（Pure White 与 Pure Off-White）": {
+   "rows": 32,
+   "renderings": {
+    "Pure White": 30,
+    "Pure Off-White": 2
+   },
+   "reason": "车色名（历史教训：不得误伤车色名），2 行车色写法差异不动。"
+  },
+  "护板裸 Panel（缺 Trim）": {
+   "rows": 80,
+   "renderings": {
+    "bare Panel": 80
+   },
+   "reason": "护板 族已统一 Trim Panel，但缺 Trim 的 80 行里 Panel 多与 Instrument/Side/Roof Panel 等复合词同现，全局替换会产 ... 误伤（如 Roof Panel Inner Trim Panel），需按子语境处理。"
+  },
+  "副仪表板盖板（Cover Assembly 与 Cover Plate Assembly）": {
+   "rows": 36,
+   "renderings": {
+    "Cover Plate Assembly": 20,
+    "Cover Assembly": 16
+   },
+   "reason": "差 11% < 15%，盖板 与 盖板总成 混用，保持现状。"
+  },
+  "记号橙（Mark 与 Marker）": {
+   "rows": 35,
+   "renderings": {
+    "Mark Orange": 18,
+    "Marker Orange": 17
+   },
+   "reason": "差 1 票（3%），织物印花色名，无稳定多数。"
+  },
+  "桶（Can 与 Bucket 与 Bottle）": {
+   "renderings": {
+    "Can": 26,
+    "Bottle": 16,
+    "Bucket": 10,
+    "Barrel": 4
+   },
+   "rows": 56,
+   "reason": "液体包装单位（1.5L/桶 等）复数票最高者 Can 仅 46%，Bucket/Bottle 亦为常用读法，无稳定多数，保持现状。"
+  },
+  "储物箱（Storage Compartment 与 Storage Box 与 Glove Box）": {
+   "renderings": {
+    "Storage Compartment": 4,
+    "Storage Box": 3,
+    "Glove Box": 2
+   },
+   "rows": 9,
+   "reason": "差 11% < 15%；多数行是副仪表板/门板储物箱（非手套箱），未能定名。"
+  },
+  "压板（Clamp 与 Pressure Plate）": {
+   "renderings": {
+    "Clamp": 21,
+    "Pressure Plate": 9
+   },
+   "rows": 63,
+   "reason": "压板 语义随子语境漂移（充电口压板/稳定杆压板/线束压板），与 稳定杆压板 5:5 冲突，未统一。"
+  },
+  "稳定杆压板（Clamp Plate 与 Press Plate）": {
+   "renderings": {
+    "Clamp Plate": 5,
+    "Press Plate": 5
+   },
+   "rows": 10,
+   "reason": "5:5 持平，两种读法都成立，保持现状。"
+  },
+  "进气口通道（Duct 与 Channel）": {
+   "renderings": {
+    "Duct": 8,
+    "Channel": 6
+   },
+   "rows": 14,
+   "reason": "差 14% < 15%，两个同义的空气通道词混用，未统一。"
+  },
+  "进气格栅（Air Intake Grille 与 裸 Intake Grille）": {
+   "renderings": {
+    "bare Intake Grille": 6,
+    "Air Intake Grille": 4
+   },
+   "rows": 10,
+   "reason": "与 进气网格 方向相反（裸写占多数），票数不足以支撑统一；仅 进气网格 已按 25:8 加 Air 限定。"
+  },
+  "滑轨组件（Slide Rail Assembly 与 Slide Rail Component）": {
+   "renderings": {
+    "Slide Rail Assembly": 8,
+    "Slide Rail Component": 8
+   },
+   "rows": 22,
+   "reason": "8:8 持平，组件 族本身已在 registered_residues 登记为无多数。"
+  },
+  "PLP盖板（PLP Cover Plate 与 PLP Cover）": {
+   "renderings": {
+    "PLP Cover Plate": 4,
+    "PLP Cover": 4
+   },
+   "rows": 8,
+   "reason": "4:4 持平，保持现状。"
+  },
+  "饰盖右总成（Assembly Right 与 Right Assembly）": {
+   "renderings": {
+    "Assembly Right": 1,
+    "Right Assembly": 1
+   },
+   "rows": 2,
+   "reason": "1:1 持平且仅 2 行，语序两种都成立，保持现状。"
+  },
+  "后左/后右 语序（Right Rear 与 Rear Left 与 Left Rear）": {
+   "renderings": {
+    "Right Rear": 16,
+    "Rear Left": 10,
+    "Left Rear": 2
+   },
+   "rows": 27,
+   "reason": "后右 已统一为 Right Rear（16 行），但 后左 的多数仍是 Rear Left（10:2），镜像不一致；改动方向与票数相反，未动。"
+  },
+  "with/With 大小写（带/加装 连接词）": {
+   "renderings": {
+    " - with": 26,
+    " - With": 28
+   },
+   "rows": 54,
+   "reason": "差 4% < 15%，句子中段的连接词大小写两种写法近半半，未统一。"
+  },
+  "前排出管（Front Row Exhaust Pipe）": {
+   "rendering": "Front Row Exhaust Pipe",
+   "rows": 1,
+   "reason": "单行且切分有误（前排≠Front Row，前排出管 的 排出 是 discharge 还是 exhaust 无定论），不作为规则改写。"
+  },
+  "倒挡支架（Reverse Bracket 与 Reverse Gear Bracket）": {
+   "renderings": {
+    "Reverse Bracket": 2,
+    "Reverse Gear Bracket": 1
+   },
+   "rows": 3,
+   "reason": "3 行样本、票数指向现状（Reverse Bracket），把多数改成少数不成立，保持现状。"
+  },
+  "总成- 后缀丢失（源端）": {
+   "dropped": 11,
+   "rows": 6372,
+   "reason": "6,372 行 总成- 结构中 11 行英文丢了 Assembly 后缀（如 双色点阵纹 行只剩饰面），属源端抽取/渲染缺陷，不是术语规则可覆盖的；未动。"
+  },
+  "无天窗版无蓝牙 后缀丢失（源端）": {
+   "dropped": 1,
+   "rows": 1,
+   "reason": "单行整段丢 无天窗版无蓝牙 限定，属源端抽取缺陷，非术语规则可覆盖。"
+  },
+  "高压（连字符 vs 空格）": {
+   "rows": 64,
+   "renderings": {
+    "High-Pressure": 35,
+    "High Pressure": 29
+   },
+   "reason": "连字符 54.7% : 空格 45.3%，差 9.4% < 15%，两种写法均可读，按近持平处理，不做统一（session #12 末场点票）。"
+  },
+  "风门（裸词，19 行其他 Door 族）": {
+   "rows": 19,
+   "renderings": {
+    "Foot Blowing Door": 8,
+    "Recirculation Door": 5,
+    "Center Air Outlet Door": 2,
+    "Blend Door": 6
+   },
+   "reason": "裸 风门 已按出风位置分别译成 Foot Blowing/Recirculation/Center Air Outlet Door 等专名，不是同一族的变体，统一成 Blend Door 会丢语义（session #12）。"
+  },
+  "副冷暖风门 之外的 冷暖风门 变体": {
+   "rows": 12,
+   "renderings": {
+    "HVAC Blend Door": 15,
+    "Temperature Blend Door": 8,
+    "Temperature Control Door": 3,
+    "Hot/Cold Air Door": 3
+   },
+   "reason": "主/副驾 冷暖风门 已有 Driver/Front Passenger 前缀区分，尾部若再统一成 HVAC Blend Door 会与 15 行裸词族冲突；保留现有分族（session #12）。"
+  }
+ },
+ "text_rules_version": 1
+}

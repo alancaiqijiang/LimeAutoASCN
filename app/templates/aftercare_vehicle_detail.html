@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}{{ t.vehicle_record_title }}{% endblock %}
+{% block content %}
+<section class="account-page account-wide">
+  <div class="account-heading">
+    <div>
+      <p class="eyebrow">{{ t.vehicle_record_eyebrow }}</p>
+      <h1>VIN ····{{ vehicle.vin_last4 }}</h1>
+    </div>
+    <div class="button-row" style="margin-top:0">
+      <a class="button-secondary" href="/ops/vehicles">{{ t.back_to_vehicles }}</a>
+      <a class="button-secondary" href="/ops/overview">{{ t.vehicle_overview }}</a>
+      {% if catalog_browse_enabled %}<a class="button-primary" href="/catalog">{{ t.open_catalog }}</a>{% endif %}
+    </div>
+  </div>
+  {% if error %}<div class="notice error" role="alert">{{ error }}</div>{% endif %}
+  <div class="account-grid">
+    <section class="account-section">
+      <div class="section-topline"><div><p class="eyebrow">{{ t.vehicle_details }}</p><h2>{{ t.record_information }}</h2></div></div>
+      <form class="account-form" method="post" action="/ops/vehicles/{{ vehicle.id }}">
+        <input type="hidden" name="csrf_token" value="{{ aftercare_csrf_token }}">
+        <label>{{ t.brand }}<input name="brand" value="{{ vehicle.brand or '' }}"></label>
+        <label>{{ t.model_description }}<input name="model_label" value="{{ vehicle.model_label or '' }}"></label>
+        <label>{{ t.model_year }}<input type="number" min="1900" max="2100" name="model_year" value="{{ vehicle.model_year or '' }}"></label>
+        <label>{{ t.color }}<input name="color" value="{{ vehicle.color or '' }}"></label>
+        <label>{{ t.delivery_date }}<input type="date" name="delivery_date" value="{{ vehicle.delivery_date or '' }}"></label>
+        <label>{{ t.registration_date }}<input type="date" name="registration_date" value="{{ vehicle.registration_date or '' }}"></label>
+        <label>{{ t.departure_date }}<input type="date" name="departure_date" value="{{ vehicle.departure_date or '' }}"></label>
+        <label>{{ t.license_plate_date }}<input type="date" name="license_plate_date" value="{{ vehicle.license_plate_date or '' }}"></label>
+        <label>{{ t.internal_note }}<textarea name="note" rows="3">{{ vehicle.note or '' }}</textarea></label>
+        <button type="submit">{{ t.update_record }}</button>
+      </form>
+    </section>
+    <section class="account-section">
+      <div class="section-topline"><div><p class="eyebrow">{{ t.related_catalog }}</p><h2>{{ t.manual_shortcut }}</h2></div></div>
+      {% if shortcut %}
+        <p><strong>{{ shortcut.display_series_name }} · {{ shortcut.display_model_name }}</strong></p>
+        <p><code>{{ shortcut.series_code }} / {{ shortcut.model_code }}</code></p>
+        <p>{{ shortcut.confirmation_note or t.no_confirmation_note }}</p>
+        <div class="button-row">
+          <a class="button-primary" href="/catalog/{{ catalog_url_token(shortcut.series_code) }}/{{ catalog_url_token(shortcut.model_code) }}">{{ t.open_related_catalog }}</a>
+          <a class="button-secondary" href="/ops/vehicles/{{ vehicle.id }}/catalog-shortcut">{{ t.change }}</a>
+        </div>
+      {% else %}
+        <p>{{ t.no_shortcut }}</p>
+        <div class="button-row">
+          {% if catalog_browse_enabled %}<a class="button-primary" href="/catalog">{{ t.open_catalog }}</a>{% endif %}
+          <a class="button-secondary" href="/ops/vehicles/{{ vehicle.id }}/catalog-shortcut">{{ t.select_related_catalog }}</a>
+        </div>
+      {% endif %}
+    </section>
+  </div>
+  <section class="account-section" style="margin-top:24px">
+    <div class="section-topline">
+      <div><p class="eyebrow">{{ t.maintenance_history }}</p><h2>{{ t.recorded_maintenance }}</h2></div>
+      <a class="button-primary" href="/ops/vehicles/{{ vehicle.id }}/maintenance/new">{{ t.add_maintenance }}</a>
+    </div>
+    {% if maintenance %}
+      <div class="table-wrap"><table><thead><tr><th>{{ t.date }}</th><th>{{ t.type }}</th><th>{{ t.summary }}</th><th>{{ t.maintenance_items }}</th><th>{{ t.photos }}</th><th>{{ t.odometer }}</th><th>{{ t.source }}</th><th></th></tr></thead><tbody>
+      {% for record in maintenance %}
+        <tr>
+          <td>{{ record.maintenance_date }}</td>
+          <td>{% if record.maintenance_type in ('maintenance', 'inspection', 'repair', 'replacement', 'other') %}{{ t('type_' ~ record.maintenance_type) }}{% else %}{{ record.maintenance_type }}{% endif %}</td>
+          <td>
+            {{ record.summary }}
+            {% if record.complaint %}<div><small>{{ t.complaint }}：{{ record.complaint }}</small></div>{% endif %}
+            {% if record.correction %}<div><small>{{ t.correction }}：{{ record.correction }}</small></div>{% endif %}
+          </td>
+          <td>
+            {% if record['items'] %}
+              <ul class="maintenance-item-list">{% for item in record['items'] %}<li>{{ item.item_name }}{% if item.material_code %} · <code>{{ item.material_code }}</code>{% endif %}{% if item.quantity is not none %} × {{ item.quantity }}{% endif %} <span class="maintenance-status maintenance-status-{{ item.item_status }}">{{ t('item_status_' ~ item.item_status) if item.item_status in ('completed','recommended','deferred','not_completed') else item.item_status }}</span></li>{% endfor %}</ul>
+            {% else %}0{% endif %}
+          </td>
+          <td>
+            {% if record.attachments %}
+              <div class="maintenance-photo-row">
+                {% for attachment in record.attachments %}
+                  <a href="/ops/vehicles/{{ vehicle.id }}/maintenance/{{ record.id }}/attachments/{{ attachment.id }}"><img data-catalog-image src="/ops/vehicles/{{ vehicle.id }}/maintenance/{{ record.id }}/attachments/{{ attachment.id }}" alt="{{ attachment.original_filename or t.photos }}"></a>
+                {% endfor %}
+              </div>
+            {% else %}0{% endif %}
+          </td>
+          <td>{{ record.odometer_km or '—' }}</td>
+          <td>{% if record.service_provider %}{{ record.service_provider }}{% endif %}{% if record.service_provider and record.source_reference %}<br>{% endif %}{% if record.source_reference %}<small>{{ t.ref_prefix }}{{ record.source_reference }}</small>{% endif %}{% if not record.service_provider and not record.source_reference %}—{% endif %}</td>
+          <td><a href="/ops/vehicles/{{ vehicle.id }}/maintenance/{{ record.id }}">{{ t.view_record }}</a><br><a href="/ops/vehicles/{{ vehicle.id }}/maintenance/{{ record.id }}/edit">{{ t.edit }}</a></td>
+        </tr>
+      {% endfor %}
+      </tbody></table></div>
+    {% else %}
+      <div class="empty-state"><h3>{{ t.no_maintenance }}</h3></div>
+    {% endif %}
+  </section>
+</section>
+{% endblock %}

@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block title %}{{ t.maintenance_title }}{% endblock %}
+{% block content %}
+{% set item_type_options = (('maintenance','type_maintenance'),('inspection','type_inspection'),('repair','type_repair'),('replacement','type_replacement'),('adjustment','type_adjustment')) %}
+{% set item_status_options = (('completed','item_status_completed'),('recommended','item_status_recommended'),('deferred','item_status_deferred'),('not_completed','item_status_not_completed')) %}
+<section class="account-page account-maintenance"><div class="account-card">
+  <p class="eyebrow">{{ t.maintenance_eyebrow }}</p>
+  <h1>{% if record and record.id %}{{ t.edit_record }}{% else %}{{ t.add_record }}{% endif %}</h1>
+  <p class="account-lede">{{ t('maintenance_lede', last4=vehicle.vin_last4) }}</p>
+  {% if error %}<div class="notice error" role="alert">{{ error }}</div>{% endif %}
+  <form class="account-form" method="post" enctype="multipart/form-data" action="{% if record and record.id %}/ops/vehicles/{{ vehicle.id }}/maintenance/{{ record.id }}{% else %}/ops/vehicles/{{ vehicle.id }}/maintenance{% endif %}">
+    <input type="hidden" name="csrf_token" value="{{ aftercare_csrf_token }}">
+
+    <fieldset class="form-section">
+      <legend>{{ t.section_basics }}</legend>
+      <div class="form-section-grid">
+        <label>{{ t.date }}<input type="date" name="maintenance_date" value="{{ record.maintenance_date if record else '' }}" required></label>
+        <label>{{ t.maintenance_type_label }}<select name="maintenance_type">{% if record and record.maintenance_type and record.maintenance_type not in ('maintenance','inspection','repair','replacement','other') %}<option value="{{ record.maintenance_type }}" selected>{{ record.maintenance_type }}</option>{% endif %}{% for item, key in (('maintenance','type_maintenance'),('inspection','type_inspection'),('repair','type_repair'),('replacement','type_replacement'),('other','type_other')) %}<option value="{{ item }}"{% if record and record.maintenance_type == item %} selected{% endif %}>{{ t(key) }}</option>{% endfor %}</select></label>
+        <label>{{ t.odometer_km }}<input type="number" min="0" name="odometer_km" value="{{ record.odometer_km if record and record.odometer_km is not none else '' }}"></label>
+        <label>{{ t.service_provider }}<input name="service_provider" maxlength="{{ text_limits.provider }}" value="{{ record.service_provider if record else '' }}"></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="form-section">
+      <legend>{{ t.section_repair }}</legend>
+      <label>{{ t.complaint }}<textarea name="complaint" rows="3" maxlength="{{ text_limits.note }}">{{ record.complaint if record else '' }}</textarea></label>
+      <label>{{ t.summary }}<textarea name="summary" rows="3" maxlength="{{ text_limits.summary }}" required>{{ record.summary if record else '' }}</textarea></label>
+    </fieldset>
+
+    <div class="maintenance-items" data-item-list>
+      <div class="section-topline compact"><div><p class="eyebrow">{{ t.section_items }}</p></div><button type="button" class="button-secondary" data-add-item>{{ t.add_item }}</button></div>
+      {% set current_items = record['items'] if record and record['items'] else [] %}
+      {% for item in current_items %}
+      <div class="maintenance-item-card" data-item-row>
+        <p class="maintenance-item-title">{{ t.item_row_title }}</p>
+        <div class="maintenance-item-main">
+          <label>{{ t.item_name }}<input name="item_name" value="{{ item.item_name }}"></label>
+          <label>{{ t.item_type_label }}<select name="item_type">{% if item.item_type == 'recommendation' %}<option value="recommendation" selected>{{ t.type_recommendation }}</option>{% endif %}{% for value, key in item_type_options %}<option value="{{ value }}"{% if item.item_type == value %} selected{% endif %}>{{ t(key) }}</option>{% endfor %}</select></label>
+          <label>{{ t.item_status_label }}<select name="item_status">{% for value, key in item_status_options %}<option value="{{ value }}"{% if item.item_status == value %} selected{% endif %}>{{ t(key) }}</option>{% endfor %}</select></label>
+        </div>
+        <div class="maintenance-item-parts">
+          <p class="maintenance-item-sub">{{ t.parts_info }}</p>
+          <label>{{ t.material_code }}<input name="material_code" value="{{ item.material_code or '' }}"></label>
+          <label>{{ t.quantity }}<input type="number" min="0" name="quantity" value="{{ item.quantity if item.quantity is not none else '' }}"></label>
+        </div>
+        <label>{{ t.item_note_label }}<textarea name="item_note" rows="2">{{ item.note or '' }}</textarea></label>
+        <button type="button" class="button-secondary maintenance-item-remove" data-remove-item>{{ t.remove_item }}</button>
+      </div>
+      {% endfor %}
+      {% if not current_items %}
+      <div class="maintenance-item-card" data-item-row>
+        <p class="maintenance-item-title">{{ t.item_row_title }} 1</p>
+        <div class="maintenance-item-main">
+          <label>{{ t.item_name }}<input name="item_name"></label>
+          <label>{{ t.item_type_label }}<select name="item_type">{% for value, key in item_type_options %}<option value="{{ value }}">{{ t(key) }}</option>{% endfor %}</select></label>
+          <label>{{ t.item_status_label }}<select name="item_status">{% for value, key in item_status_options %}<option value="{{ value }}">{{ t(key) }}</option>{% endfor %}</select></label>
+        </div>
+        <div class="maintenance-item-parts">
+          <p class="maintenance-item-sub">{{ t.parts_info }}</p>
+          <label>{{ t.material_code }}<input name="material_code"></label>
+          <label>{{ t.quantity }}<input type="number" min="0" name="quantity"></label>
+        </div>
+        <label>{{ t.item_note_label }}<textarea name="item_note" rows="2"></textarea></label>
+        <button type="button" class="button-secondary maintenance-item-remove" data-remove-item>{{ t.remove_item }}</button>
+      </div>
+      {% endif %}
+    </div>
+    <template data-item-template>
+      <div class="maintenance-item-card" data-item-row>
+        <p class="maintenance-item-title">{{ t.item_row_title }}</p>
+        <div class="maintenance-item-main">
+          <label>{{ t.item_name }}<input name="item_name"></label>
+          <label>{{ t.item_type_label }}<select name="item_type">{% for value, key in item_type_options %}<option value="{{ value }}">{{ t(key) }}</option>{% endfor %}</select></label>
+          <label>{{ t.item_status_label }}<select name="item_status">{% for value, key in item_status_options %}<option value="{{ value }}">{{ t(key) }}</option>{% endfor %}</select></label>
+        </div>
+        <div class="maintenance-item-parts">
+          <p class="maintenance-item-sub">{{ t.parts_info }}</p>
+          <label>{{ t.material_code }}<input name="material_code"></label>
+          <label>{{ t.quantity }}<input type="number" min="0" name="quantity"></label>
+        </div>
+        <label>{{ t.item_note_label }}<textarea name="item_note" rows="2"></textarea></label>
+        <button type="button" class="button-secondary maintenance-item-remove" data-remove-item>{{ t.remove_item }}</button>
+      </div>
+    </template>
+
+    <fieldset class="form-section">
+      <legend>{{ t.section_closing }}</legend>
+      <label>{{ t.correction_label }}<textarea name="correction" rows="3" maxlength="{{ text_limits.note }}">{{ record.correction if record else '' }}</textarea></label>
+      <label>{{ t.record_note_label }}<textarea name="note" rows="3" maxlength="{{ text_limits.note }}">{{ record.note if record else '' }}</textarea></label>
+      <label>{{ t.source_reference }}<input name="source_reference" maxlength="{{ text_limits.reference }}" value="{{ record.source_reference if record else '' }}"></label>
+      {% if record and record.attachments %}
+        <div class="maintenance-existing-photos">
+          <p>{{ t.photos }}</p>
+          {% for attachment in record.attachments %}
+            <label class="maintenance-existing-photo">
+              <img data-catalog-image src="/ops/vehicles/{{ vehicle.id }}/maintenance/{{ record.id }}/attachments/{{ attachment.id }}" alt="{{ attachment.original_filename or t.photos }}">
+              <span><input type="checkbox" name="delete_attachment_ids" value="{{ attachment.id }}"> {{ t.delete_photo }}</span>
+            </label>
+          {% endfor %}
+        </div>
+      {% endif %}
+      <label>{{ t.upload_photos }}<input type="file" name="photos" accept="image/jpeg,image/png,image/webp" multiple><small>{{ t.photo_help }}</small></label>
+    </fieldset>
+
+    <div class="button-row"><button type="submit">{{ t.save_record }}</button><a class="button-secondary" href="/ops/vehicles/{{ vehicle.id }}">{{ t.cancel }}</a></div>
+  </form>
+</div></section>
+{% endblock %}

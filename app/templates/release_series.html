@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}{{ series_display_name }} · LimeAuto {{ t.catalog }}{% endblock %}
+{% block catalog_breadcrumb %}{% endblock %}
+{% block content %}
+<section class="catalog-page catalog-series-page">
+  <a class="catalog-back-link" href="/catalog">{{ t.back_to_parent }}</a>
+  <div class="catalog-page-head compact">
+    <div>
+      <div class="catalog-kicker">{{ t.model_versions }}</div>
+      <h1>{{ series_display_name }}</h1>
+      <p>{{ t.choose_model_version }}</p>
+    </div>
+    {% if series_thumbnail_url %}<div class="catalog-series-heading-visual"><img data-catalog-image src="{{ series_thumbnail_url }}" alt="{{ series_display_name }}"></div>{% endif %}
+    <div class="catalog-code-block"><span>{{ t.series_code }}</span><code>{{ series_code }}</code></div>
+  </div>
+  <div class="catalog-toolbar simple"><div class="catalog-toolbar-note"><span class="catalog-blue-dot"></span> {{ t('model_version_count', n=models|length) }}</div></div>
+  {% if models %}
+    <div class="catalog-model-grid">
+      {% for model in models %}
+        <a class="catalog-model-card" data-catalog-card data-search-text="{{ (model.display_model_name ~ ' ' ~ model.model_code)|lower }}" href="/catalog/{{ series_url_code }}/{{ model.url_model_code }}">
+          <div class="catalog-model-visual"><span>{{ '%02d'|format(loop.index) }}</span><i></i></div>
+          <div class="catalog-model-copy"><span class="catalog-model-label">{{ t.model_version }}</span><h2>{{ model.display_model_name }}</h2><code>{{ model.model_code }}</code></div>
+          <span class="catalog-card-arrow">›</span>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="catalog-empty"><h2>{{ t.no_model_versions }}</h2></div>
+  {% endif %}
+</section>
+{% endblock %}

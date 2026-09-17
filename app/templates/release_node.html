@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}{{ node.display_node_name }} · LimeAuto{% endblock %}
+{% block catalog_breadcrumb %}{% for ancestor in node_ancestors|default([]) %}<span>/</span><a href="/catalog/{{ model.url_series_code }}/{{ model.url_model_code }}/node/{{ ancestor.url_key }}">{{ ancestor.display_node_name }}</a>{% endfor %}<span>/</span><strong>{{ node.display_node_name }}</strong>{% endblock %}
+{% block content %}
+{% macro render_tree(items, depth=0) %}
+  {% for item in items %}
+    <div class="catalog-tree-branch{% if item.expanded %} is-expanded{% endif %}" data-tree-depth="{{ depth }}">
+      <a href="/catalog/{{ model.url_series_code }}/{{ model.url_model_code }}/node/{{ item.url_key }}" class="catalog-tree-item{% if item.selected %} selected{% endif %}" style="--tree-depth: {{ depth }}"{% if item.selected %} aria-current="page"{% endif %}{% if item.children %} data-tree-toggle aria-expanded="{{ 'true' if item.expanded else 'false' }}"{% endif %}>
+        <span class="catalog-tree-caret" aria-hidden="true">{{ '›' if item.children else '·' }}</span>
+        <span>{{ item.display_node_name }}{% if item.path_variant_count > 1 %} · {{ t('source_variants', n=item.path_variant_count) }}{% endif %}</span>
+        <small>{{ item.direct_part_count + item.descendant_part_count }}</small>
+      </a>
+      {% if item.children %}<div class="catalog-tree-children"{% if not item.expanded %} hidden{% endif %}>{{ render_tree(item.children, depth + 1) }}</div>{% endif %}
+    </div>
+  {% endfor %}
+{% endmacro %}
+<section class="catalog-page catalog-workbench-page">
+  <a class="catalog-back-link" href="{{ back_href }}">{{ t.back_to_parent }}</a>
+  <div class="catalog-model-heading"><div><div class="catalog-kicker">{{ t.epc_system }}</div><h1>{{ node.display_node_name }}</h1><p>{{ model.display_model_name }} <span>·</span> {{ t('part_items', n=node.direct_part_count + node.descendant_part_count) }}{% if node.path_variant_count > 1 %} <span>·</span> <b>{{ t('source_variants', n=node.path_variant_count) }}</b>{% endif %}</p></div><div class="catalog-status-pill"><i></i> {{ t.read_only }}</div></div>
+  <div class="catalog-workbench">
+    <aside class="catalog-tree-panel">
+      <div class="catalog-panel-head"><span>{{ t.system_catalog }}</span><small>{{ t('groups_count', n=catalog_tree|length) }}</small></div>
+      <nav class="catalog-tree" aria-label="{{ t.system_catalog }}">{{ render_tree(catalog_tree) }}</nav>
+    </aside>
+    <div class="catalog-data-panel">
+      {% if node_asset_slots %}
+        <section class="catalog-epc-reference" aria-labelledby="catalog-epc-reference-title">
+          <div class="catalog-epc-reference-head"><div><div class="catalog-kicker">{{ t.reference_images }}</div><h2 id="catalog-epc-reference-title">{{ t.epc_media }}</h2></div><span class="catalog-table-state">{{ t.reference_only }}</span></div>
+          <div class="catalog-epc-assets">
+            {% for asset in node_asset_slots %}
+              <figure class="catalog-epc-asset"><div class="catalog-epc-asset-frame">{% if asset.media_url %}<img data-catalog-image src="{{ asset.media_url }}" loading="lazy" alt="{{ node.display_node_name }} {% if asset.asset_type == 'thumbnail' %}{{ t.epc_thumbnail }}{% else %}{{ t.epc_drawing }}{% endif %}">{% else %}<div class="catalog-epc-asset-placeholder" role="img" aria-label="{{ t.no_reference_image }}"></div>{% endif %}</div><figcaption><span>{% if asset.asset_type == 'thumbnail' %}{{ t.epc_thumbnail }}{% else %}{{ t.epc_drawing }}{% endif %}</span><span>{{ t.reference_only }}</span></figcaption></figure>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+      {% if children %}
+        <div class="catalog-data-head"><div><div class="catalog-kicker">{{ t.child_systems }}</div><h2>{{ t.continue_subsystems }}</h2><p>{{ t('child_count_hint', n=children|length) }}</p></div><span class="catalog-data-count">{{ t('subsystem_count', n=children|length) }}</span></div>
+        <div class="catalog-child-table-wrap"><table class="catalog-system-table"><thead><tr><th>{{ t.subsystems }}</th><th>{{ t.parts }}</th><th>{{ t.catalog_type }}</th><th></th></tr></thead><tbody>{% for child in children %}<tr><td><a href="/catalog/{{ model.url_series_code }}/{{ model.url_model_code }}/node/{{ child.url_key }}"><b>{{ child.display_node_name }}</b>{% if child.source_obj_code %}<small>{{ t.source_code }}{{ child.source_obj_code }}</small>{% endif %}{% if child.path_variant_count > 1 %}<small>{{ t('source_variants', n=child.path_variant_count) }}</small>{% endif %}</a></td><td>{{ child.direct_part_count + child.descendant_part_count }}</td><td><span class="catalog-table-state">{{ t.reference }}</span></td><td><a class="catalog-row-arrow" href="/catalog/{{ model.url_series_code }}/{{ model.url_model_code }}/node/{{ child.url_key }}">›</a></td></tr>{% endfor %}</tbody></table></div>
+      {% endif %}
+      {% if parts_page is not none and (parts_page.total or not children) %}
+        <div class="catalog-data-head"><div><div class="catalog-kicker">{{ t.material_list }}</div><h2>{{ node.display_node_name }}</h2><p>{{ t('material_list_hint', n=parts_page.total) }}</p></div><span class="catalog-data-count">{{ t('item_count', n=parts_page.total) }}</span></div>
+        {% if parts_page['items'] %}<div class="catalog-parts-table-wrap"><table class="catalog-parts-table"><thead><tr><th>#</th><th>{{ t.material_code }}</th><th>{{ t.material_description }}</th><th>{{ t.quantity }}</th><th>{{ t.manual_code }}</th><th></th></tr></thead><tbody>{% for part in parts_page['items'] %}<tr><td><span class="catalog-callout">{{ part.callout or '—' }}</span></td><td><a href="/catalog/{{ model.url_series_code }}/{{ model.url_model_code }}/node/{{ node.url_key }}/part/{{ part.url_part_code }}"><b>{{ part.material_code }}</b></a></td><td>{{ part.display_part_name }}</td><td>{{ part.quantity_raw or part.quantity or '—' }}</td><td><code>{{ part.manual_code or '—' }}</code></td><td><a class="catalog-row-arrow" href="/catalog/{{ model.url_series_code }}/{{ model.url_model_code }}/node/{{ node.url_key }}/part/{{ part.url_part_code }}">›</a></td></tr>{% endfor %}</tbody></table></div>{% if parts_page.has_next %}<a class="catalog-next-page" href="?limit={{ parts_page.limit }}&offset={{ parts_page.offset + parts_page.limit }}">{{ t.next_page }}</a>{% endif %}{% else %}<div class="catalog-empty"><h2>{{ t.no_parts }}</h2><span class="catalog-visually-hidden">{{ t.empty_but_valid }}</span></div>{% endif %}
+      {% elif not children %}<div class="catalog-empty"><h2>{{ t.node_missing }}</h2></div>{% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,34 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Runtime state, databases, media, and deployment artifacts
+data/
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+runtime/
+assets/
+catalog-assets/
+artifacts/
+reports/
+staging/
+*.log
+
+# Local evidence, corpora, and operator dirt (do not upload)
+local-reports/
+translation/runs/
+translation/reviews/
+qpren-source/
+archives/
+.hermes/
+.DS_Store

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}{{ t.catalog_title }}{% endblock %}
+{% block catalog_breadcrumb %}{% endblock %}
+{% block content %}
+<section class="catalog-page catalog-overview-page">
+  <div class="catalog-page-head">
+    <div>
+      <div class="catalog-kicker">{{ t.catalog_kicker }}</div>
+      <h1>{{ t.catalog_heading }}</h1>
+      <span class="catalog-visually-hidden">{{ t.browse_by_vehicle }}</span>
+      <p>{{ t.catalog_lede }}</p>
+    </div>
+    <div class="catalog-head-metrics">
+      <div><strong>{{ series|length }}</strong><span>{{ t.series_metric }}</span></div>
+      <div><strong>{{ series|sum(attribute='model_count') }}</strong><span>{{ t.model_versions_metric }}</span></div>
+    </div>
+  </div>
+  <div class="catalog-toolbar">
+    <label class="catalog-search-field"><span>{{ t.search_series }}</span><input type="search" data-catalog-filter placeholder="{{ t.search_series_placeholder }}" autocomplete="off"></label>
+    <div class="catalog-toolbar-note"><span class="catalog-blue-dot"></span> {{ t.local_readonly_note }}</div>
+  </div>
+  {% if series %}
+    <div class="catalog-series-grid" data-catalog-card-list>
+      {% for item in series %}
+        <a class="catalog-series-card" data-catalog-card data-search-text="{{ (item.display_series_name ~ ' ' ~ item.series_code)|lower }}" href="/catalog/{{ item.url_code }}">
+          <span class="catalog-card-meta">
+            <span class="catalog-card-index">{{ '%02d'|format(loop.index) }}</span>
+            <span class="catalog-count-badge">{{ t('model_count_badge', n=item.model_count) }}</span>
+          </span>
+          {% if item.thumbnail_url %}<span class="catalog-series-thumbnail"><img data-catalog-image src="{{ item.thumbnail_url }}" loading="lazy" alt="{{ item.display_series_name }}"></span>{% else %}<span class="catalog-series-thumbnail catalog-series-thumbnail-empty" aria-hidden="true"><span>{{ t.image_unavailable }}</span></span>{% endif %}
+          <strong>{{ item.display_series_name }}</strong>
+          <code>{{ item.series_code }}</code>
+          <span class="catalog-card-arrow">›</span>
+        </a>
+      {% endfor %}
+    </div>
+    <p class="catalog-filter-empty" data-catalog-filter-empty hidden>{{ t.no_matching_series }}</p>
+  {% else %}
+    <div class="catalog-empty"><h2>{{ t.catalog_empty }}</h2><p>{{ t.catalog_empty_hint }}</p><span class="catalog-visually-hidden">{{ t.browse_by_vehicle }}</span></div>
+  {% endif %}
+</section>
+{% endblock %}

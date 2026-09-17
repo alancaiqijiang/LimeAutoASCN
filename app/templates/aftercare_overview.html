@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}{{ t.vehicle_overview_title }}{% endblock %}
+{% block content %}
+<section class="account-page account-wide">
+  <div class="account-heading">
+    <div>
+      <p class="eyebrow">LimeAuto Aftercare</p>
+      <h1>{{ t.vehicle_overview_heading }}</h1>
+    </div>
+    <div class="button-row" style="margin-top:0">
+      <a class="button-secondary" href="/ops/vehicles">{{ t.back_to_vehicles }}</a>
+      <a class="button-primary" href="/ops/vehicles/new">{{ t.register_vehicle }}</a>
+    </div>
+  </div>
+  <form class="account-form ledger-filter" method="get" action="/ops/overview">
+    <label>{{ t.model_description }}<input name="model_label" value="{{ filters.model_label }}" placeholder="{{ t.filter_any }}"></label>
+    <label>{{ t.model_year }}<input name="model_year" value="{{ filters.model_year }}" inputmode="numeric" placeholder="{{ t.filter_any }}"></label>
+    <label>{{ t.brand }}<input name="brand" value="{{ filters.brand }}" placeholder="{{ t.filter_any }}"></label>
+    <label>{{ t.color }}<input name="color" value="{{ filters.color }}" placeholder="{{ t.filter_any }}"></label>
+    <label>{{ t.delivery_date }}<input name="delivery_date" type="date" value="{{ filters.delivery_date }}"></label>
+    <label>{{ t.registration_date }}<input name="registration_date" type="date" value="{{ filters.registration_date }}"></label>
+    <label>{{ t.departure_date }}<input name="departure_date" type="date" value="{{ filters.departure_date }}"></label>
+    <label>{{ t.license_plate_date }}<input name="license_plate_date" type="date" value="{{ filters.license_plate_date }}"></label>
+    <div class="button-row ledger-filter-actions">
+      <button type="submit">{{ t.filter }}</button>
+      <a class="button-secondary" href="/ops/overview">{{ t.reset }}</a>
+    </div>
+  </form>
+  {% if filter_error %}<p class="notice info">{{ t.overview_filter_hint }}</p>{% endif %}
+  <div class="account-section" style="margin-top:24px">
+    <div class="section-topline"><div><p class="eyebrow">{{ t.vehicle_register_eyebrow }}</p><h2>{{ t('result_count', n=vehicles|length) }}</h2></div></div>
+    {% if vehicles %}
+      <div class="table-wrap"><table>
+        <thead><tr>
+          <th>{{ t.model_description }}</th>
+          <th>{{ t.model_year }}</th>
+          <th>{{ t.brand }}</th>
+          <th>{{ t.color }}</th>
+          <th>{{ t.delivery_date }}</th>
+          <th>{{ t.registration_date }}</th>
+          <th>{{ t.departure_date }}</th>
+          <th>{{ t.license_plate_date }}</th>
+          <th></th>
+        </tr></thead>
+        <tbody>
+        {% for vehicle in vehicles %}
+          <tr>
+            <td>{{ vehicle.model_label or t.not_recorded }}</td>
+            <td>{{ vehicle.model_year or t.not_recorded }}</td>
+            <td>{{ vehicle.brand or t.not_recorded }}</td>
+            <td>{{ vehicle.color or t.not_recorded }}</td>
+            <td>{{ vehicle.delivery_date or t.not_recorded }}</td>
+            <td>{{ vehicle.registration_date or t.not_recorded }}</td>
+            <td>{{ vehicle.departure_date or t.not_recorded }}</td>
+            <td>{{ vehicle.license_plate_date or t.not_recorded }}</td>
+            <td><a href="/ops/vehicles/{{ vehicle.id }}">{{ t.open_record }}</a></td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table></div>
+    {% else %}
+      <div class="empty-state"><h3>{{ t.no_vehicles }}</h3><p>{% if filtered or filter_error %}{{ t.no_matching_overview }}{% else %}{{ t.no_vehicles_hint }}{% endif %}</p></div>
+    {% endif %}
+    {% if previous_url or next_url %}
+      <nav class="pagination" aria-label="{{ t.pagination_aria }}">
+        {% if previous_url %}<a class="button-secondary" rel="prev" href="{{ previous_url }}">{{ t.previous }}</a>{% endif %}
+        <span aria-current="page">{{ t('page_n', n=page) }}</span>
+        {% if next_url %}<a class="button-secondary" rel="next" href="{{ next_url }}">{{ t.next }}</a>{% endif %}
+      </nav>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

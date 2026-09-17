@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}{{ t.search_parts_title }}{% endblock %}
+{% block catalog_breadcrumb %}<span>/</span><strong>{{ t.search_parts }}</strong>{% endblock %}
+{% block content %}
+<section class="catalog-page catalog-overview-page">
+  <a class="catalog-back-link" href="/catalog">{{ t.back_to_parent }}</a>
+  <div class="catalog-page-head">
+    <div>
+      <div class="catalog-kicker">{{ t.catalog_kicker }}</div>
+      <h1>{{ t.search_parts }}</h1>
+    </div>
+  </div>
+  <form class="catalog-search-form" method="get" action="/catalog/search">
+    <label>{{ t.series }}
+      <select name="series_code" data-search-series>
+        <option value="">{{ t.select_series }}</option>
+        {% for item in series_rows %}
+          <option value="{{ item.series_code }}"{% if series_code == item.series_code %} selected{% endif %}>{{ item.display_series_name }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>{{ t.model }}
+      <select name="model_code" data-search-model data-need-series="{{ t.select_model_need_series }}" data-select-model="{{ t.select_model }}"{% if not series_code %} disabled{% endif %}>
+        <option value="">{% if series_code %}{{ t.select_model }}{% else %}{{ t.select_model_need_series }}{% endif %}</option>
+        {% for item in model_rows %}
+          <option value="{{ item.model_code }}"{% if model_code == item.model_code %} selected{% endif %}>{{ item.display_model_name }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>{{ t.material_code }}<input name="material_code" value="{{ material_code }}" placeholder="{{ t.search_parts_placeholder_code }}"></label>
+    <label>{{ t.material_name }}<input name="material_name" value="{{ material_name }}" placeholder="{{ t.search_parts_placeholder_name }}"></label>
+    <div class="button-row">
+      <button type="submit">{{ t.search }}</button>
+      <a class="button-secondary" href="/catalog/search">{{ t.reset }}</a>
+    </div>
+  </form>
+  {% if search_error %}<p class="notice info">{{ t(search_error) }}</p>{% endif %}
+  {% if named and (named.series or named.models or named.nodes) %}
+    <div class="catalog-named-groups">
+      {% if named.series %}
+        <section class="catalog-named-group">
+          <h3>{{ t.search_named_series }}</h3>
+          <ul>
+            {% for item in named.series %}
+              <li><a href="{{ item.url }}">{{ item.display_series_name }}</a><span class="catalog-named-meta">{{ t('search_named_series_meta', n=item.model_count) }}</span></li>
+            {% endfor %}
+          </ul>
+          {% if named.truncated.series %}<p class="catalog-named-more">{{ t.search_named_more }}</p>{% endif %}
+        </section>
+      {% endif %}
+      {% if named.models %}
+        <section class="catalog-named-group">
+          <h3>{{ t.search_named_models }}</h3>
+          <ul>
+            {% for item in named.models %}
+              <li><a href="{{ item.url }}">{{ item.display_model_name }}</a><span class="catalog-named-meta">{{ item.display_series_name }}</span></li>
+            {% endfor %}
+          </ul>
+          {% if named.truncated.models %}<p class="catalog-named-more">{{ t.search_named_more }}</p>{% endif %}
+        </section>
+      {% endif %}
+      {% if named.nodes %}
+        <section class="catalog-named-group">
+          <h3>{{ t.search_named_nodes }}</h3>
+          <ul>
+            {% for item in named.nodes %}
+              <li><a href="{{ item.url }}">{{ item.display_node_name }}</a><span class="catalog-named-meta">{{ item.display_series_name }} · {{ item.display_model_name }}</span></li>
+            {% endfor %}
+          </ul>
+          {% if named.truncated.nodes %}<p class="catalog-named-more">{{ t.search_named_more }}</p>{% endif %}
+        </section>
+      {% endif %}
+    </div>
+  {% endif %}
+  {% if results and (results['items'] or not (named and (named.series or named.models or named.nodes))) %}
+    <div class="catalog-data-head"><div><h2>{{ t('item_count', n=results.total) }}</h2></div></div>
+    {% if results['items'] %}
+      <div class="catalog-parts-table-wrap"><table class="catalog-system-table">
+        <thead><tr><th>{{ t.material_code }}</th><th>{{ t.material_name }}</th><th>{{ t.applicable_series }}</th><th>{{ t.applicable_model }}</th><th>{{ t.system_node }}</th><th>{{ t.quantity }}</th><th></th></tr></thead>
+        <tbody>
+        {% for part in results['items'] %}
+          <tr>
+            <td><a href="/catalog/{{ part.url_series_code }}/{{ part.url_model_code }}/node/{{ part.url_node_key }}/part/{{ part.url_part_code }}"><b>{{ part.material_code }}</b></a></td>
+            <td>{{ part.display_part_name }}</td>
+            <td>{{ part.display_series_name }}</td>
+            <td>{{ part.display_model_name }}</td>
+            <td>{{ part.display_node_name }}</td>
+            <td>{{ part.quantity_raw or part.quantity or '—' }}</td>
+            <td><a href="/catalog/{{ part.url_series_code }}/{{ part.url_model_code }}/node/{{ part.url_node_key }}/part/{{ part.url_part_code }}">{{ t.view_part }}</a></td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table></div>
+      {% if results.next_url %}
+        <a class="catalog-next-page" href="{{ results.next_url }}">{{ t.next_page }}</a>
+      {% endif %}
+    {% else %}
+      <div class="catalog-empty"><h2>{{ t.no_matching_parts }}</h2></div>
+    {% endif %}
+  {% elif submitted and not (named and (named.series or named.models or named.nodes)) %}
+    <p class="notice info">{{ t.search_parts_hint }}</p>
+  {% endif %}
+</section>
+{% endblock %}

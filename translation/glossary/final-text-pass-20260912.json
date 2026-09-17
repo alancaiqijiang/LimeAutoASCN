@@ -1,0 +1,4450 @@
+{
+ "schema": "limeauto.catalog-final-text-pass.v1",
+ "generated_at": "2026-09-12",
+ "note": "Text-layer pass recorded so re-running the pipeline cannot silently drop it. Replayed by tools/build_catalog_translation_final_en.py.",
+ "rows": 631,
+ "changes": {
+  "model:e5e218baeab5bfbe8e19d523": [
+   {
+    "zh": "欧标",
+    "from": "Euro Standard",
+    "to": "EU Standard"
+   }
+  ],
+  "model:d9b687e8ae2b2996d2cc1988": [
+   {
+    "zh": "欧标",
+    "from": "Euro Standard",
+    "to": "EU Standard"
+   }
+  ],
+  "model:e3fcad5790de779e471f1229": [
+   {
+    "zh": "国标",
+    "from": "National Standard",
+    "to": "GB Standard"
+   }
+  ],
+  "model:4001861a884e765df357e9cc": [
+   {
+    "zh": "国标",
+    "from": "National Standard",
+    "to": "GB Standard"
+   }
+  ],
+  "model:c7f8ba2071276235f1e1459d": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6C (1.5L Premium Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6461ST6C (1.5L Premium Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:26a2d5fe1920601be7b671b7": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6C (1.5L Flagship Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6461ST6C (1.5L Flagship Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:f1c8c81ab20eafa411d8bf6a": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6C (1.5L Luxury Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6461ST6C (1.5L Luxury Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:ce0c3a66151f9e2430426770": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6HEV3 (1.5L Premium Y (Brown-Gray Dual-Tone Interio",
+    "to": "BYD6461ST6HEV3 (1.5L Premium Y (Brown-Gray Two-Tone Interior"
+   }
+  ],
+  "model:0066656dd6580301a2965882": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6HEV3 (1.5L Premium Y (Blue-Gray Dual-Tone Interior",
+    "to": "BYD6461ST6HEV3 (1.5L Premium Y (Blue-Gray Two-Tone Interior)"
+   }
+  ],
+  "model:1d39c75ae39a839c54ca707e": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6HEV3 (1.5L Luxury Y (CQL - Brown-Gray Dual-Tone In",
+    "to": "BYD6461ST6HEV3 (1.5L Luxury Y (CQL - Brown-Gray Two-Tone Int"
+   }
+  ],
+  "model:1c37adfc2c2268d44373b84e": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6HEV3 (1.5L Luxury Y (Blue-Gray Dual-Tone Interior)",
+    "to": "BYD6461ST6HEV3 (1.5L Luxury Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:86b10576ecb0864d55790d1a": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6HEV4 (1.5L Flagship Y (Brown-Gray Dual-Tone Interi",
+    "to": "BYD6461ST6HEV4 (1.5L Flagship Y (Brown-Gray Two-Tone Interio"
+   }
+  ],
+  "model:fbfdddd062893b62a1bc5041": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6HEV4 (1.5L Flagship Y (Blue-Gray Dual-Tone Interio",
+    "to": "BYD6461ST6HEV4 (1.5L Flagship Y (Blue-Gray Two-Tone Interior"
+   }
+  ],
+  "model:3aef7d19f295f45c434a34cc": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6HEV4 (1.5L Navigator Y (Brown-Gray Dual-Tone Inter",
+    "to": "BYD6461ST6HEV4 (1.5L Navigator Y (Brown-Gray Two-Tone Interi"
+   }
+  ],
+  "model:841569028f0018dad3e92f24": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6HEV5 (Premium Y (Gray-Brown Dual-Tone Interior))",
+    "to": "BYD6461ST6HEV5 (Premium Y (Gray-Brown Two-Tone Interior))"
+   }
+  ],
+  "model:8db69592d241222ea379c6bb": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6HEV5 (Elite Y (Gray-Brown Dual-Tone Interior))",
+    "to": "BYD6461ST6HEV5 (Elite Y (Gray-Brown Two-Tone Interior))"
+   }
+  ],
+  "model:fad26696e77a0551e81c3066": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6HEV5 (Luxury Y (Gray-Brown Dual-Tone Interior))",
+    "to": "BYD6461ST6HEV5 (Luxury Y (Gray-Brown Two-Tone Interior))"
+   }
+  ],
+  "model:5a131102a6dbf3dc337a50af": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6HEV6 (Honor Edition Y (Gray-Brown Dual-Tone Interi",
+    "to": "BYD6461ST6HEV6 (Honor Edition Y (Gray-Brown Two-Tone Interio"
+   }
+  ],
+  "model:29d8399961095eaf96633caa": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6HEV6 (Flagship Y (Gray-Brown Dual-Tone Interior))",
+    "to": "BYD6461ST6HEV6 (Flagship Y (Gray-Brown Two-Tone Interior))"
+   }
+  ],
+  "model:4b0b83829bd613ef71469839": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6HEV6 (Flagship Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6461ST6HEV6 (Flagship Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:c05e31eab31586a280683959": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6HEV7 (Premium Y (Gray-Brown Dual-Tone Interior))",
+    "to": "BYD6461ST6HEV7 (Premium Y (Gray-Brown Two-Tone Interior))"
+   }
+  ],
+  "model:913107b93f21bf6e44fc3289": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6HEV7 (Elite Y (Gray-Brown Dual-Tone Interior))",
+    "to": "BYD6461ST6HEV7 (Elite Y (Gray-Brown Two-Tone Interior))"
+   }
+  ],
+  "model:b21eeb49ba89e12a8ead05bd": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6HEV7 (Luxury Y (Gray-Brown Dual-Tone Interior))",
+    "to": "BYD6461ST6HEV7 (Luxury Y (Gray-Brown Two-Tone Interior))"
+   }
+  ],
+  "model:c9d1c79a590ef01a20e0d6b5": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6HEV8 (Honor Edition Y (Gray-Brown Dual-Tone Interi",
+    "to": "BYD6461ST6HEV8 (Honor Edition Y (Gray-Brown Two-Tone Interio"
+   }
+  ],
+  "model:4fde638908473bbbc823efb3": [
+   {
+    "zh": "systematic",
+    "from": "BYD6461ST6HEV8 (Flagship Y (Gray-Brown Dual-Tone Interior))",
+    "to": "BYD6461ST6HEV8 (Flagship Y (Gray-Brown Two-Tone Interior))"
+   }
+  ],
+  "model:73af2101f8e5023e5367deaf": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470SBEV (Premium Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6470SBEV (Premium Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:3650a891bb60dd98a7ff8ec8": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470SBEV2 (Luxury Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6470SBEV2 (Luxury Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:8ae4720831d90c671158c3f4": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470SBEV3 (Honor Edition Y (Blue-Gray Dual-Tone Interior)",
+    "to": "BYD6470SBEV3 (Honor Edition Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:c0866be4ed8c75c17321a229": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470SBEV3 (Premium Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6470SBEV3 (Premium Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:f1e74d2ac20c4d028109ca92": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470SBEV4 (Flagship Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6470SBEV4 (Flagship Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:6cf0c5b5a116d18297b40588": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470SBEV6 (Honor Edition Y (Blue-Gray Dual-Tone Interior)",
+    "to": "BYD6470SBEV6 (Honor Edition Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:eee3419153f4daa5ee9ed43b": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470SBEV6 (Premium Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6470SBEV6 (Premium Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:3fb27a41069d4c1acd43fc74": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470SBEV6 (Luxury Y (Europe Export Tow Hook - Blue-Gray D",
+    "to": "BYD6470SBEV6 (Luxury Y (Europe Export Tow Hook - Blue-Gray T"
+   }
+  ],
+  "model:34edc4473b6c704cee11cb0a": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470SBEV6 (Luxury Y (Europe Export EU Standard - Blue-Gra",
+    "to": "BYD6470SBEV6 (Luxury Y (Europe Export EU Standard - Blue-Gra"
+   }
+  ],
+  "model:3d4f071836fadf37ba63d883": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470SBEV7 (Premium Y (Europe Export Tow Hook - Blue-Gray ",
+    "to": "BYD6470SBEV7 (Premium Y (Europe Export Tow Hook - Blue-Gray "
+   }
+  ],
+  "model:b8e6389784037f59b400658b": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470SBEV7 (Premium Y (Europe Export EU Standard - Blue-Gr",
+    "to": "BYD6470SBEV7 (Premium Y (Europe Export EU Standard - Blue-Gr"
+   }
+  ],
+  "model:4e0917100ea724b0f18031c0": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470SBEV7 (Flagship Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6470SBEV7 (Flagship Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:13c710c1ee92561a5c151c74": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV1 (-10 Y (Australia Export - Blue-Gray Dual-Ton",
+    "to": "BYD6470ST6HEV1 (-10 Y (Australia Export - Blue-Gray Two-Tone"
+   }
+  ],
+  "model:88f8119857b7a8a939dc785d": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV1 (-10 Y (Australia Export with Tow Hook - Blue",
+    "to": "BYD6470ST6HEV1 (-10 Y (Australia Export with Tow Hook - Blue"
+   }
+  ],
+  "model:e589a8cccadb2413b80a2eeb": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV1 (1.5L Honor Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6470ST6HEV1 (1.5L Honor Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:20d86d97d726479776fb9555": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV1 (Honor Y (Asia-Pacific Export - Blue-Gray Dua",
+    "to": "BYD6470ST6HEV1 (Honor Y (Asia-Pacific Export - Blue-Gray Two"
+   }
+  ],
+  "model:d1f987d3f93133b500d14e9c": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV1 (Honor Y (South America Export - Blue-Gray Du",
+    "to": "BYD6470ST6HEV1 (Honor Y (South America Export - Blue-Gray Tw"
+   }
+  ],
+  "model:841a6e8a582a556476b9b4d3": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV1 (Honor Y (South America Export EU Standard - ",
+    "to": "BYD6470ST6HEV1 (Honor Y (South America Export EU Standard - "
+   }
+  ],
+  "model:133a15268713b3ea41e926e9": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV1 (Honor Y (Brazil Export - Blue-Gray Dual-Tone",
+    "to": "BYD6470ST6HEV1 (Honor Y (Brazil Export - Blue-Gray Two-Tone "
+   }
+  ],
+  "model:57ff0d792c200d59083b2f1d": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV1 (Honor Y (Brazil Export EU Standard - Blue-Gr",
+    "to": "BYD6470ST6HEV1 (Honor Y (Brazil Export EU Standard - Blue-Gr"
+   }
+  ],
+  "model:a84064906fc54ca4bf9bdbde": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV1 (Honor Y (Brazil Export EU Standard - Blue-Gr",
+    "to": "BYD6470ST6HEV1 (Honor Y (Brazil Export EU Standard - Blue-Gr"
+   }
+  ],
+  "model:3b0ae5fd0262d929f78c3d78": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV1 (Honor Y (Blue-Gray Dual-Tone Interior) 1201)",
+    "to": "BYD6470ST6HEV1 (Honor Y (Blue-Gray Two-Tone Interior) 1201)"
+   }
+  ],
+  "model:75e339ac55651ea19808b891": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV1 (Premium Y (Asia-Pacific Export - Blue-Gray D",
+    "to": "BYD6470ST6HEV1 (Premium Y (Asia-Pacific Export - Blue-Gray T"
+   }
+  ],
+  "model:bd33a19b859f97d5aa7a00c9": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV1 (Premium Y (South America Export - Blue-Gray ",
+    "to": "BYD6470ST6HEV1 (Premium Y (South America Export - Blue-Gray "
+   }
+  ],
+  "model:592f5944e7a567569231a10a": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV1 (Premium Y (South America Export EU Standard ",
+    "to": "BYD6470ST6HEV1 (Premium Y (South America Export EU Standard "
+   }
+  ],
+  "model:a68e49d3925917a6ee2a10ff": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV1 (Premium Y (Blue-Gray Dual-Tone Interior) 120",
+    "to": "BYD6470ST6HEV1 (Premium Y (Blue-Gray Two-Tone Interior) 1202"
+   }
+  ],
+  "model:141d6680467ea6ac900a57e5": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV10 (Flagship PLUS 5G Y (Blue-Gray Dual-Tone Int",
+    "to": "BYD6470ST6HEV10 (Flagship PLUS 5G Y (Blue-Gray Two-Tone Inte"
+   }
+  ],
+  "model:0ba0cc138d3d09288609faa1": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV10 (Flagship PLUS Y (Blue-Gray Dual-Tone Interi",
+    "to": "BYD6470ST6HEV10 (Flagship PLUS Y (Blue-Gray Two-Tone Interio"
+   }
+  ],
+  "model:2d6d73c77a99e919e3776f9a": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV10 (Flagship Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6470ST6HEV10 (Flagship Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:83872690fb8b70e58cef49e7": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV11 (Flagship PLUS Y (Blue-Gray Dual-Tone Interi",
+    "to": "BYD6470ST6HEV11 (Flagship PLUS Y (Blue-Gray Two-Tone Interio"
+   }
+  ],
+  "model:891221778761d2c2bf517a9c": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV11 (Flagship Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6470ST6HEV11 (Flagship Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:37d827c5225901fb73a5fcde": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV12 (Premium Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6470ST6HEV12 (Premium Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:313e1dc7622d50813caae5d0": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV12 (Premium Y (Black-Brown Dual-Tone Interior))",
+    "to": "BYD6470ST6HEV12 (Premium Y (Black-Brown Two-Tone Interior))"
+   }
+  ],
+  "model:1a04ce35964ed29971d8fd53": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV13 (Honor Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6470ST6HEV13 (Honor Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:0ad5dfafc7e2d71e1d66bf8a": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV13 (Honor Y (Black-Brown Dual-Tone Interior))",
+    "to": "BYD6470ST6HEV13 (Honor Y (Black-Brown Two-Tone Interior))"
+   }
+  ],
+  "model:06a80cd2701e962fcc9b3011": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV13 (Premium Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6470ST6HEV13 (Premium Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:31e2d1ede67d024cef946ca4": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV13 (Premium Y (Black-Brown Dual-Tone Interior))",
+    "to": "BYD6470ST6HEV13 (Premium Y (Black-Brown Two-Tone Interior))"
+   }
+  ],
+  "model:b0677a86cdea234371908d00": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV13 (Flagship Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6470ST6HEV13 (Flagship Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:fb1de4185395c6441279bf71": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV13 (Flagship Y (Black-Brown Dual-Tone Interior)",
+    "to": "BYD6470ST6HEV13 (Flagship Y (Black-Brown Two-Tone Interior))"
+   }
+  ],
+  "model:bb3e0811a7a8384506b23ea9": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV14 (Flagship Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6470ST6HEV14 (Flagship Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:8295855b49aea4afec30bf55": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV14 (Flagship Y (Black-Brown Dual-Tone Interior)",
+    "to": "BYD6470ST6HEV14 (Flagship Y (Black-Brown Two-Tone Interior))"
+   }
+  ],
+  "model:cebc7b6b7cae498e173690e3": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV2 (-20 (Uzbekistan Export - Blue-Gray Dual-Tone",
+    "to": "BYD6470ST6HEV2 (-20 (Uzbekistan Export - Blue-Gray Two-Tone "
+   }
+  ],
+  "model:78da6aaa8c164565934e9970": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV2 (-30 (Uzbekistan Export - Blue-Gray Dual-Tone",
+    "to": "BYD6470ST6HEV2 (-30 (Uzbekistan Export - Blue-Gray Two-Tone "
+   }
+  ],
+  "model:e69c43aef819daaecb147b74": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV2 (1.5L Flagship PLUS Y (Blue-Gray Dual-Tone In",
+    "to": "BYD6470ST6HEV2 (1.5L Flagship PLUS Y (Blue-Gray Two-Tone Int"
+   }
+  ],
+  "model:27470bcefa4986b4380b84b5": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV2 (1.5L Flagship PLUS Y (Black-Brown Dual-Tone ",
+    "to": "BYD6470ST6HEV2 (1.5L Flagship PLUS Y (Black-Brown Two-Tone I"
+   }
+  ],
+  "model:6ddedf03b0d632dbd8d12a96": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV2 (Flagship PLUS 5G Y (Blue-Gray Dual-Tone Inte",
+    "to": "BYD6470ST6HEV2 (Flagship PLUS 5G Y (Blue-Gray Two-Tone Inter"
+   }
+  ],
+  "model:b4123d93748788c47696a108": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV3 (-30 Y (Australia Export - Black-Brown Dual-T",
+    "to": "BYD6470ST6HEV3 (-30 Y (Australia Export - Black-Brown Two-To"
+   }
+  ],
+  "model:8c5c93dad90bf0295e45ac4f": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV3 (-30 Y (Australia Export with Tow Hook - Blac",
+    "to": "BYD6470ST6HEV3 (-30 Y (Australia Export with Tow Hook - Blac"
+   }
+  ],
+  "model:ce0e89c75cb9177e6ef70264": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV3 (-40 (Uzbekistan Export - Black-Brown Dual-To",
+    "to": "BYD6470ST6HEV3 (-40 (Uzbekistan Export - Black-Brown Two-Ton"
+   }
+  ],
+  "model:6fed533600cd317e061dd5d4": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV3 (-40 Y (Middle East & Africa Export - Blue-Gr",
+    "to": "BYD6470ST6HEV3 (-40 Y (Middle East & Africa Export - Blue-Gr"
+   }
+  ],
+  "model:c06f175ed2ef10cf20b7236d": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV3 (1.5L Premium Y (Mid-term Europe - Blue-Gray ",
+    "to": "BYD6470ST6HEV3 (1.5L Premium Y (Mid-term Europe - Blue-Gray "
+   }
+  ],
+  "model:caa5c10ef6ada910710902d6": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV3 (1.5L Premium Y (Mid-term Europe - Black-Brow",
+    "to": "BYD6470ST6HEV3 (1.5L Premium Y (Mid-term Europe - Black-Brow"
+   }
+  ],
+  "model:a588c724acbd5a463dc14371": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV3 (1.5L Flagship PLUS Y (Blue-Gray Dual-Tone In",
+    "to": "BYD6470ST6HEV3 (1.5L Flagship PLUS Y (Blue-Gray Two-Tone Int"
+   }
+  ],
+  "model:aed43a2cfb4135781c8df314": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV3 (1.5L Flagship PLUS Y (Black-Brown Dual-Tone ",
+    "to": "BYD6470ST6HEV3 (1.5L Flagship PLUS Y (Black-Brown Two-Tone I"
+   }
+  ],
+  "model:d26350cb6f284ccd730a6f96": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV3 (Premium Y (Mid-term Europe Tow Hook - Blue-G",
+    "to": "BYD6470ST6HEV3 (Premium Y (Mid-term Europe Tow Hook - Blue-G"
+   }
+  ],
+  "model:d220ebb7657d6cdb0cba72ac": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV3 (Flagship PLUS 5G Y (Black-Brown Dual-Tone In",
+    "to": "BYD6470ST6HEV3 (Flagship PLUS 5G Y (Black-Brown Two-Tone Int"
+   }
+  ],
+  "model:682dddb5cd4d382d6787cb7f": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV4 (1.5L Comfort Y (Mid-term Europe - Blue-Gray ",
+    "to": "BYD6470ST6HEV4 (1.5L Comfort Y (Mid-term Europe - Blue-Gray "
+   }
+  ],
+  "model:e80160f32a240311f0f31433": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV4 (1.5L Comfort Y (Mid-term Europe - Black-Brow",
+    "to": "BYD6470ST6HEV4 (1.5L Comfort Y (Mid-term Europe - Black-Brow"
+   }
+  ],
+  "model:09d531f1158e14d44e530429": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV4 (Comfort Y (Mid-term Europe Tow Hook - Blue-G",
+    "to": "BYD6470ST6HEV4 (Comfort Y (Mid-term Europe Tow Hook - Blue-G"
+   }
+  ],
+  "model:22b4c92fb20886b9d363c4f9": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV4 (Comfort Y (Mid-term Europe Tow Hook - Black-",
+    "to": "BYD6470ST6HEV4 (Comfort Y (Mid-term Europe Tow Hook - Black-"
+   }
+  ],
+  "model:ce1bf25864ca6c0085ea58ab": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV5 (-10 Y (South America Export - Blue-Gray Dual",
+    "to": "BYD6470ST6HEV5 (-10 Y (South America Export - Blue-Gray Two-"
+   }
+  ],
+  "model:9d120d75c42ec77a56397f70": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV5 (-20 Y (South America Export - Blue-Gray Dual",
+    "to": "BYD6470ST6HEV5 (-20 Y (South America Export - Blue-Gray Two-"
+   }
+  ],
+  "model:5e27518e3ae646e41f8bdf3d": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV5 (-20 Y (Australia Export - Black-Brown Dual-T",
+    "to": "BYD6470ST6HEV5 (-20 Y (Australia Export - Black-Brown Two-To"
+   }
+  ],
+  "model:9858426c833b5f978563a06d": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV5 (-20 Y (Australia Export with Tow Hook - Blac",
+    "to": "BYD6470ST6HEV5 (-20 Y (Australia Export with Tow Hook - Blac"
+   }
+  ],
+  "model:f4c62e1567d7e49d42748e95": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV5 (-30 Y (South America Export - Blue-Gray Dual",
+    "to": "BYD6470ST6HEV5 (-30 Y (South America Export - Blue-Gray Two-"
+   }
+  ],
+  "model:05895c8db6ed855061d9f422": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV5 (-40 Y (South America Export - Blue-Gray Dual",
+    "to": "BYD6470ST6HEV5 (-40 Y (South America Export - Blue-Gray Two-"
+   }
+  ],
+  "model:5434cf0eaec68e901dafc9ba": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV5 (1.5L Flagship PLUS Y (Blue-Gray Dual-Tone In",
+    "to": "BYD6470ST6HEV5 (1.5L Flagship PLUS Y (Blue-Gray Two-Tone Int"
+   }
+  ],
+  "model:818e6d7a9b4ba6c67b9e9eeb": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV5 (1.5L Flagship Y (Blue-Gray Dual-Tone Interio",
+    "to": "BYD6470ST6HEV5 (1.5L Flagship Y (Blue-Gray Two-Tone Interior"
+   }
+  ],
+  "model:432f56ba7b6345a7dfdb484e": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV5 (1.5L Luxury Y (Mid-term Europe - Blue-Gray D",
+    "to": "BYD6470ST6HEV5 (1.5L Luxury Y (Mid-term Europe - Blue-Gray T"
+   }
+  ],
+  "model:af9debab0e5db67afe7bd67b": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV5 (1.5L Luxury Y (Mid-term Europe - Black-Brown",
+    "to": "BYD6470ST6HEV5 (1.5L Luxury Y (Mid-term Europe - Black-Brown"
+   }
+  ],
+  "model:a38bd40c8f3283ca2a859c08": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV5 (Luxury Y (Mid-term Europe Tow Hook - Blue-Gr",
+    "to": "BYD6470ST6HEV5 (Luxury Y (Mid-term Europe Tow Hook - Blue-Gr"
+   }
+  ],
+  "model:291dc03da4b88f44d37ec9b7": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV6 (1.5L Flagship PLUS Y (Blue-Gray Dual-Tone In",
+    "to": "BYD6470ST6HEV6 (1.5L Flagship PLUS Y (Blue-Gray Two-Tone Int"
+   }
+  ],
+  "model:b8ce833d3aaabbc89f796bbc": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV6 (1.5L Flagship Y (Blue-Gray Dual-Tone Interio",
+    "to": "BYD6470ST6HEV6 (1.5L Flagship Y (Blue-Gray Two-Tone Interior"
+   }
+  ],
+  "model:168c6edcc3726b5cd2b34dcd": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV7 (-10 Y (Middle East & Africa Export - Blue-Gr",
+    "to": "BYD6470ST6HEV7 (-10 Y (Middle East & Africa Export - Blue-Gr"
+   }
+  ],
+  "model:af0b8b61127ebfcfd20990a0": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV7 (-20 Y (Middle East & Africa Export - Blue-Gr",
+    "to": "BYD6470ST6HEV7 (-20 Y (Middle East & Africa Export - Blue-Gr"
+   }
+  ],
+  "model:dede00f1e770f3e49ad90c5c": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV7 (-30 Y (Middle East & Africa Export - Blue-Gr",
+    "to": "BYD6470ST6HEV7 (-30 Y (Middle East & Africa Export - Blue-Gr"
+   }
+  ],
+  "model:97e655dc6712f7f666771ce7": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV7 (1.5L Flagship PLUS Y (Blue-Gray Dual-Tone In",
+    "to": "BYD6470ST6HEV7 (1.5L Flagship PLUS Y (Blue-Gray Two-Tone Int"
+   }
+  ],
+  "model:7242e4c6b162f6693e0c080a": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV7 (1.5L Flagship Y (Blue-Gray Dual-Tone Interio",
+    "to": "BYD6470ST6HEV7 (1.5L Flagship Y (Blue-Gray Two-Tone Interior"
+   }
+  ],
+  "model:30e30ef0559dd0dca14b01a7": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV8 (Flagship PLUS 5G Y (Blue-Gray Dual-Tone Inte",
+    "to": "BYD6470ST6HEV8 (Flagship PLUS 5G Y (Blue-Gray Two-Tone Inter"
+   }
+  ],
+  "model:41436850fc09be8f32eeb5eb": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV8 (Flagship PLUS Y (Blue-Gray Dual-Tone Interio",
+    "to": "BYD6470ST6HEV8 (Flagship PLUS Y (Blue-Gray Two-Tone Interior"
+   }
+  ],
+  "model:d67b6d2f623dbf68f7d1d599": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV8 (Flagship Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6470ST6HEV8 (Flagship Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:e4952d2a2fb8fa39197a3858": [
+   {
+    "zh": "systematic",
+    "from": "BYD6470ST6HEV9 (Honor Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD6470ST6HEV9 (Honor Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:868e672e41840cd14996c0fa": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV1 (-20 (Gray-Brown Dual-Tone Interior))",
+    "to": "BYD6471ST6HEV1 (-20 (Gray-Brown Two-Tone Interior))"
+   }
+  ],
+  "model:91adf6d25b8b59508d4594b0": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV2 (-10 (Gray-Brown Dual-Tone Interior) 05LS)",
+    "to": "BYD6471ST6HEV2 (-10 (Gray-Brown Two-Tone Interior) 05LS)"
+   }
+  ],
+  "model:9f435e70bd7bb3d0b39e643e": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV2 (-20 (7442-Gray-Brown Dual-Tone Interior 00LS",
+    "to": "BYD6471ST6HEV2 (-20 (7442-Gray-Brown Two-Tone Interior 00LS)"
+   }
+  ],
+  "model:d84b4534be4688a3972ee628": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV2 (-20 (Gray-Brown Dual-Tone Interior))",
+    "to": "BYD6471ST6HEV2 (-20 (Gray-Brown Two-Tone Interior))"
+   }
+  ],
+  "model:8c10160a68ce4d2aab8e424b": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV2 (-20 (Gray-Brown Dual-Tone Interior) 05LS)",
+    "to": "BYD6471ST6HEV2 (-20 (Gray-Brown Two-Tone Interior) 05LS)"
+   }
+  ],
+  "model:6c656d29c30e78995ea62e9a": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV2 (-20 (Gray-Brown Dual-Tone Interior 05LS) 745",
+    "to": "BYD6471ST6HEV2 (-20 (Gray-Brown Two-Tone Interior 05LS) 7451"
+   }
+  ],
+  "model:fc782be78653158c24670364": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV2 (-30 (Gray-Brown Dual-Tone Interior))",
+    "to": "BYD6471ST6HEV2 (-30 (Gray-Brown Two-Tone Interior))"
+   }
+  ],
+  "model:c7598901fa3d2477ce44382b": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV2 (-30 (Gray-Brown Dual-Tone Interior) 05LS)",
+    "to": "BYD6471ST6HEV2 (-30 (Gray-Brown Two-Tone Interior) 05LS)"
+   }
+  ],
+  "model:bebd336f7610aeac1067cdac": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV2 (-30 (Gray-Brown Dual-Tone Interior 00LS))",
+    "to": "BYD6471ST6HEV2 (-30 (Gray-Brown Two-Tone Interior 00LS))"
+   }
+  ],
+  "model:75808fe5007c360a00abe0d5": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV3 (-20 (Gray-Brown Dual-Tone Interior 05LS) 745",
+    "to": "BYD6471ST6HEV3 (-20 (Gray-Brown Two-Tone Interior 05LS) 7453"
+   }
+  ],
+  "model:f07ac93e01c1d2234dcfb7d4": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV3 (-30 (Gray-Brown Dual-Tone Interior) 05LS)",
+    "to": "BYD6471ST6HEV3 (-30 (Gray-Brown Two-Tone Interior) 05LS)"
+   }
+  ],
+  "model:29838044b85f263763b4ebd3": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV4 (-10 (Gray-Brown Dual-Tone Interior) 05LS)",
+    "to": "BYD6471ST6HEV4 (-10 (Gray-Brown Two-Tone Interior) 05LS)"
+   }
+  ],
+  "model:055fa71ab6faa0ae42d9d8cb": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV4 (-10 (Gray-Brown Dual-Tone Interior 05LS) 745",
+    "to": "BYD6471ST6HEV4 (-10 (Gray-Brown Two-Tone Interior 05LS) 7455"
+   }
+  ],
+  "model:f639de25210e3960f692b906": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV4 (-10 (Gray-Brown Dual-Tone Interior 05LS) 877",
+    "to": "BYD6471ST6HEV4 (-10 (Gray-Brown Two-Tone Interior 05LS) 8777"
+   }
+  ],
+  "model:293ebe10ab2b962cd8f2b823": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV4 (-20 (Gray-Brown Dual-Tone Interior) 05LS)",
+    "to": "BYD6471ST6HEV4 (-20 (Gray-Brown Two-Tone Interior) 05LS)"
+   }
+  ],
+  "model:32cd5c253b3c34914f318c84": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV4 (-20 (Gray-Brown Dual-Tone Interior 00LS))",
+    "to": "BYD6471ST6HEV4 (-20 (Gray-Brown Two-Tone Interior 00LS))"
+   }
+  ],
+  "model:31351be1e293a506489e68c2": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV4 (-20 (Gray-Brown Dual-Tone Interior 05LS) 743",
+    "to": "BYD6471ST6HEV4 (-20 (Gray-Brown Two-Tone Interior 05LS) 7431"
+   }
+  ],
+  "model:7058bea35c405298e82721ee": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV4 (-20 (Gray-Brown Dual-Tone Interior 05LS) 878",
+    "to": "BYD6471ST6HEV4 (-20 (Gray-Brown Two-Tone Interior 05LS) 8780"
+   }
+  ],
+  "model:7213ee3686381711241c3abe": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV5 (-20 (Gray-Brown Dual-Tone Interior 00LS))",
+    "to": "BYD6471ST6HEV5 (-20 (Gray-Brown Two-Tone Interior 00LS))"
+   }
+  ],
+  "model:07007b68afca68a932811dd9": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV5 (-20 (Gray-Brown Dual-Tone Interior 05LS) 743",
+    "to": "BYD6471ST6HEV5 (-20 (Gray-Brown Two-Tone Interior 05LS) 7433"
+   }
+  ],
+  "model:4e14d7a66051d14b065aa9ce": [
+   {
+    "zh": "systematic",
+    "from": "BYD6471ST6HEV5 (-30 (Gray-Brown Dual-Tone Interior 05LS) 745",
+    "to": "BYD6471ST6HEV5 (-30 (Gray-Brown Two-Tone Interior 05LS) 7457"
+   }
+  ],
+  "model:27eda0b3f5ac810a9562d790": [
+   {
+    "zh": "systematic",
+    "from": "BYD6476ST6HEV1 (SA6HA-10 (Blue-Beige Dual-Tone Interior))",
+    "to": "BYD6476ST6HEV1 (SA6HA-10 (Blue-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:2e908ed6bcf16b7ec7249925": [
+   {
+    "zh": "systematic",
+    "from": "BYD6476ST6HEV1 (SA6HA-10 (Blue-Beige Dual-Tone Interior) SZ)",
+    "to": "BYD6476ST6HEV1 (SA6HA-10 (Blue-Beige Two-Tone Interior) SZ)"
+   }
+  ],
+  "model:e46c7f2fd9f1103f2dd7c887": [
+   {
+    "zh": "systematic",
+    "from": "BYD6476ST6HEV1 (SA6HA-20 (Blue-Beige Dual-Tone Interior) SZ)",
+    "to": "BYD6476ST6HEV1 (SA6HA-20 (Blue-Beige Two-Tone Interior) SZ)"
+   }
+  ],
+  "model:b08f28ec7a0ace9134d6398a": [
+   {
+    "zh": "systematic",
+    "from": "BYD6476ST6HEV2 (SA6HC-40 (Blue-Beige Dual-Tone Interior))",
+    "to": "BYD6476ST6HEV2 (SA6HC-40 (Blue-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:a700bc786a4a4a3661f04c26": [
+   {
+    "zh": "systematic",
+    "from": "BYD6476ST6HEV2 (SA6HC-50 (Blue-Beige Dual-Tone Interior))",
+    "to": "BYD6476ST6HEV2 (SA6HC-50 (Blue-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:5afec4a36c2c6199d7b75314": [
+   {
+    "zh": "systematic",
+    "from": "BYD6476ST6HEV2 (SA6HC-50 (Blue-Beige Dual-Tone Interior) SZ)",
+    "to": "BYD6476ST6HEV2 (SA6HC-50 (Blue-Beige Two-Tone Interior) SZ)"
+   }
+  ],
+  "model:1b9243fa626ce8a7dc8589ed": [
+   {
+    "zh": "systematic",
+    "from": "BYD6476ST6HEV3 (SA6HB-20 (Blue-Beige Dual-Tone Interior))",
+    "to": "BYD6476ST6HEV3 (SA6HB-20 (Blue-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:8d1f97726db6a7ba138087b0": [
+   {
+    "zh": "systematic",
+    "from": "BYD6476ST6HEV3 (SA6HB-20 (Blue-Beige Dual-Tone Interior) SZ)",
+    "to": "BYD6476ST6HEV3 (SA6HB-20 (Blue-Beige Two-Tone Interior) SZ)"
+   }
+  ],
+  "model:02b38cac52ad765b777e9c73": [
+   {
+    "zh": "systematic",
+    "from": "BYD6476ST6HEV3 (SA6HB-30 (Blue-Beige Dual-Tone Interior))",
+    "to": "BYD6476ST6HEV3 (SA6HB-30 (Blue-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:eddf2bf0d678d320509fd5cf": [
+   {
+    "zh": "systematic",
+    "from": "BYD6476ST6HEV3 (SA6HB-30 (Blue-Beige Dual-Tone Interior) SZ)",
+    "to": "BYD6476ST6HEV3 (SA6HB-30 (Blue-Beige Two-Tone Interior) SZ)"
+   }
+  ],
+  "model:999cd90ab2c7298661f75e24": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV (-10 (Uzbekistan Export - Blue/Gray Dual-Tone In",
+    "to": "BYD6483SBEV (-10 (Uzbekistan Export - Blue/Gray Two-Tone Int"
+   }
+  ],
+  "model:c1caa0d1b1e3ab3fb88545d7": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV (-10 (Uzbekistan Export - Blue/Gray Dual-Tone In",
+    "to": "BYD6483SBEV (-10 (Uzbekistan Export - Blue/Gray Two-Tone Int"
+   }
+  ],
+  "model:82016312bb7b739580345fcc": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV (-10 (Israel Export - Blue/Gray Dual-Tone Interi",
+    "to": "BYD6483SBEV (-10 (Israel Export - Blue/Gray Two-Tone Interio"
+   }
+  ],
+  "model:8931aef06b8d27bb66844f05": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV (-10 (Latin America Export - Blue/Gray Dual-Tone",
+    "to": "BYD6483SBEV (-10 (Latin America Export - Blue/Gray Two-Tone "
+   }
+  ],
+  "model:51208ffd792b1fa42097fdf9": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV (-10 (Beige/Brown Dual-Tone Interior 32601))",
+    "to": "BYD6483SBEV (-10 (Beige/Brown Two-Tone Interior 32601))"
+   }
+  ],
+  "model:6fcfee92184119e2737d9d64": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV (-10 (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483SBEV (-10 (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:c9c7bbe1b818cdb886034ccf": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV (-20 (Turkey Export - Blue/Gray Dual-Tone Interi",
+    "to": "BYD6483SBEV (-20 (Turkey Export - Blue/Gray Two-Tone Interio"
+   }
+  ],
+  "model:16c29feb2791463d2b226bf9": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV (-20 (Beige/Brown Dual-Tone Interior 32602))",
+    "to": "BYD6483SBEV (-20 (Beige/Brown Two-Tone Interior 32602))"
+   }
+  ],
+  "model:42d8d4eb677e229259d771d5": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV (-20 (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483SBEV (-20 (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:1b3134bfc51a5b3497d6fc14": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV (Honor Y (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483SBEV (Honor Y (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:7d074beda39d0745b89e0b49": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV (Premium Y (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483SBEV (Premium Y (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:49f1da3f2400346f39721a23": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV (Luxury Y (Europe Export - Blue/Gray Dual-Tone I",
+    "to": "BYD6483SBEV (Luxury Y (Europe Export - Blue/Gray Two-Tone In"
+   }
+  ],
+  "model:f8b0dabcb81b4316acc07480": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV (Luxury Y (Europe Export - Blue/Gray Dual-Tone I",
+    "to": "BYD6483SBEV (Luxury Y (Europe Export - Blue/Gray Two-Tone In"
+   }
+  ],
+  "model:a83066e71be61d96809fe71f": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV (Luxury Y (Europe Export Tow Hook - Blue/Gray Du",
+    "to": "BYD6483SBEV (Luxury Y (Europe Export Tow Hook - Blue/Gray Tw"
+   }
+  ],
+  "model:21e5c790b29a4c1b115026cc": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV (Luxury Y (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483SBEV (Luxury Y (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:60e3457f4b2c254a3095774a": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV1 (-10 (Israel Export - Blue/Gray Dual-Tone Inter",
+    "to": "BYD6483SBEV1 (-10 (Israel Export - Blue/Gray Two-Tone Interi"
+   }
+  ],
+  "model:badf0341dc58b8c3198bb8f1": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV1 (-10 (Beige/Brown Dual-Tone Interior 32603))",
+    "to": "BYD6483SBEV1 (-10 (Beige/Brown Two-Tone Interior 32603))"
+   }
+  ],
+  "model:cc9aac3f6253d9b75567da1c": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV1 (-10 (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483SBEV1 (-10 (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:7b1278f82b8093cf65f6d24f": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV1 (-20 (Uzbekistan Export - Blue/Gray Dual-Tone I",
+    "to": "BYD6483SBEV1 (-20 (Uzbekistan Export - Blue/Gray Two-Tone In"
+   }
+  ],
+  "model:e2dc6c4e1efd9e2d604ddd66": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV1 (-20 (Uzbekistan Export - Blue/Gray Dual-Tone I",
+    "to": "BYD6483SBEV1 (-20 (Uzbekistan Export - Blue/Gray Two-Tone In"
+   }
+  ],
+  "model:c8d1da6653c0fc41f760340f": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV1 (-20 (Turkey Export - Blue/Gray Dual-Tone Inter",
+    "to": "BYD6483SBEV1 (-20 (Turkey Export - Blue/Gray Two-Tone Interi"
+   }
+  ],
+  "model:1375386f529ff7d3f5568ba0": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV1 (-20 (Beige/Brown Dual-Tone Interior))",
+    "to": "BYD6483SBEV1 (-20 (Beige/Brown Two-Tone Interior))"
+   }
+  ],
+  "model:c934cc3c912f63861f3a9970": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV1 (-20 (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483SBEV1 (-20 (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:eaa0990447b753f7ecaf35a0": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV1 (Premium Y (Europe Export - Blue/Gray Dual-Tone",
+    "to": "BYD6483SBEV1 (Premium Y (Europe Export - Blue/Gray Two-Tone "
+   }
+  ],
+  "model:c9b11d6813ba3b004a7a74f3": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV1 (Premium Y (Europe Export - Blue/Gray Dual-Tone",
+    "to": "BYD6483SBEV1 (Premium Y (Europe Export - Blue/Gray Two-Tone "
+   }
+  ],
+  "model:0262b0f4bf08786feb69b9af": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV1 (Premium Y (Europe Export Tow Hook - Blue/Gray ",
+    "to": "BYD6483SBEV1 (Premium Y (Europe Export Tow Hook - Blue/Gray "
+   }
+  ],
+  "model:2aa10011ee1497a1f274ae1c": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483SBEV1 (Flagship Y (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483SBEV1 (Flagship Y (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:ff49259792701919328d6970": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (-10 (Middle East/Africa Export EU Standard -",
+    "to": "BYD6483ST6HEV1 (-10 (Middle East/Africa Export EU Standard -"
+   }
+  ],
+  "model:91aa37cd91082a7434108a3a": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (-10 (Middle East/Africa Export EU Standard -",
+    "to": "BYD6483ST6HEV1 (-10 (Middle East/Africa Export EU Standard -"
+   }
+  ],
+  "model:8f30e40fd7e076fc13699f1b": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (-10 (South America Export CN Standard - Blue",
+    "to": "BYD6483ST6HEV1 (-10 (South America Export CN Standard - Blue"
+   }
+  ],
+  "model:1d56b248b9752f0259f4876c": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (-10 (South America Export CN Standard - Blac",
+    "to": "BYD6483ST6HEV1 (-10 (South America Export CN Standard - Blac"
+   }
+  ],
+  "model:0001bca75f733055bbeadd58": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (-10 (South America Export EU Standard - Blac",
+    "to": "BYD6483ST6HEV1 (-10 (South America Export EU Standard - Blac"
+   }
+  ],
+  "model:98a0870e14f222c5569eb2c4": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (-10 (Senegal Export EU Standard - Blue/Gray ",
+    "to": "BYD6483ST6HEV1 (-10 (Senegal Export EU Standard - Blue/Gray "
+   }
+  ],
+  "model:774126c800904b63fad61b76": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (-10 (Morocco Export EU Standard - Blue/Gray ",
+    "to": "BYD6483ST6HEV1 (-10 (Morocco Export EU Standard - Blue/Gray "
+   }
+  ],
+  "model:07946a702eabcd9dc953fad0": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (-10 (Morocco Export EU Standard - Black/Brow",
+    "to": "BYD6483ST6HEV1 (-10 (Morocco Export EU Standard - Black/Brow"
+   }
+  ],
+  "model:6d35b427d684ebfb4d5012a3": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (-20 (Middle East/Africa Export EU Standard -",
+    "to": "BYD6483ST6HEV1 (-20 (Middle East/Africa Export EU Standard -"
+   }
+  ],
+  "model:d4e84608bf9935f3a3c24510": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (-20 (Asia-Pacific Export CN Standard - Blue/",
+    "to": "BYD6483ST6HEV1 (-20 (Asia-Pacific Export CN Standard - Blue/"
+   }
+  ],
+  "model:d5a5605bca3f531a15af5dff": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (-20 (Asia-Pacific Export CN Standard - Black",
+    "to": "BYD6483ST6HEV1 (-20 (Asia-Pacific Export CN Standard - Black"
+   }
+  ],
+  "model:265e99e0f7189f3e4e0cc8c1": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (-20 (Asia-Pacific Export EU Standard - Blue/",
+    "to": "BYD6483ST6HEV1 (-20 (Asia-Pacific Export EU Standard - Blue/"
+   }
+  ],
+  "model:6ea39e9741e5ef24c2875c54": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (-20 (Asia-Pacific Export EU Standard - Black",
+    "to": "BYD6483ST6HEV1 (-20 (Asia-Pacific Export EU Standard - Black"
+   }
+  ],
+  "model:a42718624c5f71c6e88f4f54": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (-20 (South America Export CN Standard - Blue",
+    "to": "BYD6483ST6HEV1 (-20 (South America Export CN Standard - Blue"
+   }
+  ],
+  "model:b796ea69bd0f0affe3093145": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (-20 (South America Export CN Standard - Blac",
+    "to": "BYD6483ST6HEV1 (-20 (South America Export CN Standard - Blac"
+   }
+  ],
+  "model:005555e53562a38f7539a934": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (-20 (South America Export EU Standard - Blue",
+    "to": "BYD6483ST6HEV1 (-20 (South America Export EU Standard - Blue"
+   }
+  ],
+  "model:7aabfb43e5f54acfdbf882d2": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (-20 (South America Export EU Standard - Blac",
+    "to": "BYD6483ST6HEV1 (-20 (South America Export EU Standard - Blac"
+   }
+  ],
+  "model:a4133893d36ef80dac4ff973": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (Honor Y (7542-Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV1 (Honor Y (7542-Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:08c0b6ca05173df2d82f58f5": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (Premium Y (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV1 (Premium Y (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:a81e4b21a3434b8c25c43bca": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV1 (Premium Y (Blue/Gray Dual-Tone Interior 1571",
+    "to": "BYD6483ST6HEV1 (Premium Y (Blue/Gray Two-Tone Interior 15710"
+   }
+  ],
+  "model:7013ab794b1944e411b9552f": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV10 (-10 (Beige/Brown Dual-Tone Interior 32587))",
+    "to": "BYD6483ST6HEV10 (-10 (Beige/Brown Two-Tone Interior 32587))"
+   }
+  ],
+  "model:d2e9201eeea475f5a58e042d": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV10 (-10 (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV10 (-10 (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:97c100910846aaaeef202c77": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV10 (-20 (Beige/Brown Dual-Tone Interior 32585))",
+    "to": "BYD6483ST6HEV10 (-20 (Beige/Brown Two-Tone Interior 32585))"
+   }
+  ],
+  "model:5400e5249f36f73b2964c520": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV10 (-20 (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV10 (-20 (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:dceaa68c874da6b4653b50bc": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV10 (-20 (Black/Brown Dual-Tone Interior 32588))",
+    "to": "BYD6483ST6HEV10 (-20 (Black/Brown Two-Tone Interior 32588))"
+   }
+  ],
+  "model:dbd8d9592e861fb64415206c": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV11 (-20 (Beige/Brown Dual-Tone Interior 32583))",
+    "to": "BYD6483ST6HEV11 (-20 (Beige/Brown Two-Tone Interior 32583))"
+   }
+  ],
+  "model:9b7184ef03c0939227a7cf84": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV11 (-20 (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV11 (-20 (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:b4fea4ebac133ba745fe4158": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV11 (-30 (Beige/Brown Dual-Tone Interior 32581))",
+    "to": "BYD6483ST6HEV11 (-30 (Beige/Brown Two-Tone Interior 32581))"
+   }
+  ],
+  "model:60bf79269c3c50a8c40a0507": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV11 (-30 (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV11 (-30 (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:dd39c7665b01c5953a3cc42f": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV12 (-10 (Beige/Brown Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV12 (-10 (Beige/Brown Two-Tone Interior))"
+   }
+  ],
+  "model:24cc9def495bc2d67b94f8f7": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV12 (-10 (Beige/Brown Dual-Tone Interior 46701))",
+    "to": "BYD6483ST6HEV12 (-10 (Beige/Brown Two-Tone Interior 46701))"
+   }
+  ],
+  "model:5b60ad031d6702f5b74bacfc": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV2 (-10 (Middle East/Africa Export EU Standard -",
+    "to": "BYD6483ST6HEV2 (-10 (Middle East/Africa Export EU Standard -"
+   }
+  ],
+  "model:a67a63a3ecd6cc0f5311e49e": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV2 (-10 (Brazil L8 Emission Export - Blue/Gray D",
+    "to": "BYD6483ST6HEV2 (-10 (Brazil L8 Emission Export - Blue/Gray T"
+   }
+  ],
+  "model:bec3076177029cf620348865": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV2 (-10 (Brazil L8 Emission Export with Tow Hook",
+    "to": "BYD6483ST6HEV2 (-10 (Brazil L8 Emission Export with Tow Hook"
+   }
+  ],
+  "model:e8c6073918488f7f8123d5b9": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV2 (-10 (Brazil Export - Blue/Gray Dual-Tone Int",
+    "to": "BYD6483ST6HEV2 (-10 (Brazil Export - Blue/Gray Two-Tone Inte"
+   }
+  ],
+  "model:eff6a289786389664dba3d16": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV2 (-10 (Brazil Export - Black/Brown Dual-Tone I",
+    "to": "BYD6483ST6HEV2 (-10 (Brazil Export - Black/Brown Two-Tone In"
+   }
+  ],
+  "model:791b3246ab0ec13a7164616e": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV2 (-10 (Morocco Export EU Standard - Blue/Gray ",
+    "to": "BYD6483ST6HEV2 (-10 (Morocco Export EU Standard - Blue/Gray "
+   }
+  ],
+  "model:fa577f73f31f7dd3450e4da2": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV2 (-10 (Morocco Export EU Standard - Black/Brow",
+    "to": "BYD6483ST6HEV2 (-10 (Morocco Export EU Standard - Black/Brow"
+   }
+  ],
+  "model:35356620877dbcfe22fe03dc": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV2 (-30 (Australia Export - Blue/Gray Dual-Tone ",
+    "to": "BYD6483ST6HEV2 (-30 (Australia Export - Blue/Gray Two-Tone I"
+   }
+  ],
+  "model:c81be322567fa4333b5ed936": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV2 (-30 (Australia Export - Black/Brown Dual-Ton",
+    "to": "BYD6483ST6HEV2 (-30 (Australia Export - Black/Brown Two-Tone"
+   }
+  ],
+  "model:452d7e56ef0432d248fd9f71": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV2 (-30Y (New Zealand Export - Blue/Gray Dual-To",
+    "to": "BYD6483ST6HEV2 (-30Y (New Zealand Export - Blue/Gray Two-Ton"
+   }
+  ],
+  "model:9f2ed34ed4297da4832069c4": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV2 (-30Y (New Zealand Export - Black/Brown Dual-",
+    "to": "BYD6483ST6HEV2 (-30Y (New Zealand Export - Black/Brown Two-T"
+   }
+  ],
+  "model:1b2ed621c571079636205688": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV2 (-40 (Middle East/Africa Export EU Standard -",
+    "to": "BYD6483ST6HEV2 (-40 (Middle East/Africa Export EU Standard -"
+   }
+  ],
+  "model:674c7317c6534063a3839959": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV2 (-40 (Middle East/Africa Export EU Standard -",
+    "to": "BYD6483ST6HEV2 (-40 (Middle East/Africa Export EU Standard -"
+   }
+  ],
+  "model:97d2d6eee2607c5d4c167943": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV2 (Premium Y (Europe Export - Black/Brown Dual-",
+    "to": "BYD6483ST6HEV2 (Premium Y (Europe Export - Black/Brown Two-T"
+   }
+  ],
+  "model:0353b632d9be3e97de1c1234": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV3 (-10 (Brazil Export - Blue/Gray Dual-Tone Int",
+    "to": "BYD6483ST6HEV3 (-10 (Brazil Export - Blue/Gray Two-Tone Inte"
+   }
+  ],
+  "model:111ef50d28005eeebda2e974": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV3 (-10 (Brazil Export with Tow Hook - Blue/Gray",
+    "to": "BYD6483ST6HEV3 (-10 (Brazil Export with Tow Hook - Blue/Gray"
+   }
+  ],
+  "model:5c3593db464df81e6ab3841b": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV3 (-10 (Jamaica Export - Black/Brown Dual-Tone ",
+    "to": "BYD6483ST6HEV3 (-10 (Jamaica Export - Black/Brown Two-Tone I"
+   }
+  ],
+  "model:2b09a2ee2426745e1e536382": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV3 (-10 (Africa Export EU Standard - Blue/Gray D",
+    "to": "BYD6483ST6HEV3 (-10 (Africa Export EU Standard - Blue/Gray T"
+   }
+  ],
+  "model:d06e0a886c54cf254d7d940f": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV3 (-20 (Thailand Export - Black/Brown Dual-Tone",
+    "to": "BYD6483ST6HEV3 (-20 (Thailand Export - Black/Brown Two-Tone "
+   }
+  ],
+  "model:efe26bc3c42861f674e138a7": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV3 (-20 (Australia Export - Black/Brown Dual-Ton",
+    "to": "BYD6483ST6HEV3 (-20 (Australia Export - Black/Brown Two-Tone"
+   }
+  ],
+  "model:adbb2bf5d2147e1930392d6a": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV3 (-20Y (New Zealand Export - Black/Brown Dual-",
+    "to": "BYD6483ST6HEV3 (-20Y (New Zealand Export - Black/Brown Two-T"
+   }
+  ],
+  "model:b88aecef9fa621190336bf49": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV3 (-40 (South America Export EU Standard - Blue",
+    "to": "BYD6483ST6HEV3 (-40 (South America Export EU Standard - Blue"
+   }
+  ],
+  "model:729cd5649e4d3e121e5e584b": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV3 (-40 (South America Export EU Standard - Blac",
+    "to": "BYD6483ST6HEV3 (-40 (South America Export EU Standard - Blac"
+   }
+  ],
+  "model:d7c134bd458482fbeffd2172": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV3 (Honor Y (7543-Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV3 (Honor Y (7543-Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:0d210e90603bae3038a3b88f": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV3 (Premium Y (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV3 (Premium Y (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:a5f5f801d71d358a8b4b4d15": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV3 (Luxury Y (Europe Export - Black/Brown Dual-T",
+    "to": "BYD6483ST6HEV3 (Luxury Y (Europe Export - Black/Brown Two-To"
+   }
+  ],
+  "model:d378019b8678119e49be301e": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV4 (Honor Y (7544-Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV4 (Honor Y (7544-Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:5eadb959e11183a77aee5789": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV4 (Honor Y (Blue/Gray Dual-Tone Interior 15709)",
+    "to": "BYD6483ST6HEV4 (Honor Y (Blue/Gray Two-Tone Interior 15709))"
+   }
+  ],
+  "model:75ea3c99bb448c859cfa6232": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV4 (Premium Y (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV4 (Premium Y (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:4d85d49142999a1a8f4eaafe": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV4 (Premium Y (Blue/Gray Dual-Tone Interior 1571",
+    "to": "BYD6483ST6HEV4 (Premium Y (Blue/Gray Two-Tone Interior 15710"
+   }
+  ],
+  "model:f400f3fb0c4332e07264660f": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV5 (-10 (Uzbekistan Export CN Standard - Blue/Gr",
+    "to": "BYD6483ST6HEV5 (-10 (Uzbekistan Export CN Standard - Blue/Gr"
+   }
+  ],
+  "model:3ed6cbc6a063f8cc01c575cb": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV5 (-10 (Uzbekistan Export CN Standard - Black/B",
+    "to": "BYD6483ST6HEV5 (-10 (Uzbekistan Export CN Standard - Black/B"
+   }
+  ],
+  "model:a085f2e2bbe9ecd4cabd40f9": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV5 (Honor Y (7545-Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV5 (Honor Y (7545-Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:298ee73d35e906dc7b08645a": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV5 (Premium Y (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV5 (Premium Y (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:e729f44465fa61e09b3df01c": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV5 (Premium Y (Blue/Gray Dual-Tone Interior 1571",
+    "to": "BYD6483ST6HEV5 (Premium Y (Blue/Gray Two-Tone Interior 15710"
+   }
+  ],
+  "model:808ed3169f3dfe88a9d203a1": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV6 (Honor Y (7541-Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV6 (Honor Y (7541-Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:5d25989622846c8b614a4fab": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV6 (Premium Y (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV6 (Premium Y (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:e04d98a2efc9249185c789c9": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV7 (Honor Y (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV7 (Honor Y (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:0f9b50ca9f70e4e51f17368f": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV7 (Honor Y (Blue/Gray Dual-Tone Interior 15711)",
+    "to": "BYD6483ST6HEV7 (Honor Y (Blue/Gray Two-Tone Interior 15711))"
+   }
+  ],
+  "model:4f851eb147ef6b2336f641e4": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV7 (Premium Y (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV7 (Premium Y (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:f410c022a20b6cf2f690713a": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV7 (Premium Y (Blue/Gray Dual-Tone Interior 1571",
+    "to": "BYD6483ST6HEV7 (Premium Y (Blue/Gray Two-Tone Interior 15712"
+   }
+  ],
+  "model:f234b766a7aa8c3b1c358944": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV8 (-20 (Uzbekistan Export CN Standard - Blue/Gr",
+    "to": "BYD6483ST6HEV8 (-20 (Uzbekistan Export CN Standard - Blue/Gr"
+   }
+  ],
+  "model:aa1a39d216506b7f0f22468d": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV8 (-20 (Uzbekistan Export CN Standard - Black/B",
+    "to": "BYD6483ST6HEV8 (-20 (Uzbekistan Export CN Standard - Black/B"
+   }
+  ],
+  "model:fed0453ad848531f220462dd": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV8 (Honor Y (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV8 (Honor Y (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:a0a98227f0e2a84d4c7462a4": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV8 (Honor Y (Blue/Gray Dual-Tone Interior 15711)",
+    "to": "BYD6483ST6HEV8 (Honor Y (Blue/Gray Two-Tone Interior 15711))"
+   }
+  ],
+  "model:3a6c859f0031840b97a0100c": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV8 (Premium Y (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV8 (Premium Y (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:cadd56bfb5ab1b74f983af52": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV9 (Luxury Y (Blue/Gray Dual-Tone Interior))",
+    "to": "BYD6483ST6HEV9 (Luxury Y (Blue/Gray Two-Tone Interior))"
+   }
+  ],
+  "model:84ec9f2be1846e579abcbb60": [
+   {
+    "zh": "systematic",
+    "from": "BYD6483ST6HEV9 (Luxury Y (Blue/Gray Dual-Tone Interior 12601",
+    "to": "BYD6483ST6HEV9 (Luxury Y (Blue/Gray Two-Tone Interior 12601)"
+   }
+  ],
+  "model:3b926759813da2bbde4e0fdb": [
+   {
+    "zh": "systematic",
+    "from": "BYD6485ST6HEV1 (-40 (Deep Black 5 + Sandstone Beige Dual-Ton",
+    "to": "BYD6485ST6HEV1 (-40 (Deep Black 5 + Sandstone Beige Two-Tone"
+   }
+  ],
+  "model:71334e6081f45a5ac16b4cf8": [
+   {
+    "zh": "systematic",
+    "from": "BYD6485ST6HEV1 (-50 (Deep Black 5 + Sandstone Beige Dual-Ton",
+    "to": "BYD6485ST6HEV1 (-50 (Deep Black 5 + Sandstone Beige Two-Tone"
+   }
+  ],
+  "model:e80fe1da770a36000740102a": [
+   {
+    "zh": "systematic",
+    "from": "BYD6485ST6HEV2 (-10 (Deep Black 5 + Sandstone Beige Dual-Ton",
+    "to": "BYD6485ST6HEV2 (-10 (Deep Black 5 + Sandstone Beige Two-Tone"
+   }
+  ],
+  "model:09e5fc33288aedec0b3b0cf7": [
+   {
+    "zh": "systematic",
+    "from": "BYD7001BEVA2 (-10 Type (Latin America Export - Blue/Green Du",
+    "to": "BYD7001BEVA2 (-10 Type (Latin America Export - Blue/Green Tw"
+   }
+  ],
+  "model:9850f3e3e90802deb908389b": [
+   {
+    "zh": "欧标",
+    "from": "Euro Standard",
+    "to": "EU Standard"
+   }
+  ],
+  "model:079e3911b2d0c07ebeb545b1": [
+   {
+    "zh": "欧标",
+    "from": "Euro Standard",
+    "to": "EU Standard"
+   },
+   {
+    "zh": "systematic",
+    "from": "BYD7001BEVA2 (-10 Type (Latin America Export 5-Seater - EU S",
+    "to": "BYD7001BEVA2 (-10 Type (Latin America Export 5-Seater - EU S"
+   }
+  ],
+  "model:574d806cfe5fcba1bd1545a2": [
+   {
+    "zh": "欧标",
+    "from": "Euro Standard",
+    "to": "EU Standard"
+   },
+   {
+    "zh": "systematic",
+    "from": "BYD7001BEVA2 (-10 Type (Latin America Export 5-Seater - EU S",
+    "to": "BYD7001BEVA2 (-10 Type (Latin America Export 5-Seater - EU S"
+   }
+  ],
+  "model:d8ca2cdf9c475be316b9934d": [
+   {
+    "zh": "systematic",
+    "from": "BYD7001BEVA2 (-10 Type (Latin America Export 5-Seater - Blue",
+    "to": "BYD7001BEVA2 (-10 Type (Latin America Export 5-Seater - Blue"
+   }
+  ],
+  "model:a0dacfecdbbbfb193388c837": [
+   {
+    "zh": "systematic",
+    "from": "BYD7001BEVA2 (-10 Type (Latin America Export 5-Seater - Blue",
+    "to": "BYD7001BEVA2 (-10 Type (Latin America Export 5-Seater - Blue"
+   }
+  ],
+  "model:f74fb984802753eed8bcf005": [
+   {
+    "zh": "systematic",
+    "from": "BYD7001BEVA2 (-10 Type (Latin America Export Euro Standard -",
+    "to": "BYD7001BEVA2 (-10 Type (Latin America Export Euro Standard -"
+   }
+  ],
+  "model:7b02ef3ab11bf2a29320551f": [
+   {
+    "zh": "systematic",
+    "from": "BYD7001BEVA2 (Comfort Y (Blue/Orange Dual-Tone Interior))",
+    "to": "BYD7001BEVA2 (Comfort Y (Blue/Orange Two-Tone Interior))"
+   }
+  ],
+  "model:90396a1843e3d39572211693": [
+   {
+    "zh": "systematic",
+    "from": "BYD7001BEVA2 (Comfort Y (Blue/Orange Dual-Tone Interior 1898",
+    "to": "BYD7001BEVA2 (Comfort Y (Blue/Orange Two-Tone Interior 18983"
+   }
+  ],
+  "model:0a88014452e55749143a063f": [
+   {
+    "zh": "systematic",
+    "from": "BYD7001BEVA2 (Comfort Y (Blue/Green Dual-Tone Interior))",
+    "to": "BYD7001BEVA2 (Comfort Y (Blue/Green Two-Tone Interior))"
+   }
+  ],
+  "model:b7989c0488fbaee8c8a46d25": [
+   {
+    "zh": "systematic",
+    "from": "BYD7001BEVA2 (Luxury Y (Blue/Orange Dual-Tone Interior))",
+    "to": "BYD7001BEVA2 (Luxury Y (Blue/Orange Two-Tone Interior))"
+   }
+  ],
+  "model:6ac1b742d8c1a277af59bed3": [
+   {
+    "zh": "systematic",
+    "from": "BYD7001BEVA2 (Luxury Y (Blue/Orange Dual-Tone Interior 19002",
+    "to": "BYD7001BEVA2 (Luxury Y (Blue/Orange Two-Tone Interior 19002)"
+   }
+  ],
+  "model:b67ceee4b69a31d9160e58ba": [
+   {
+    "zh": "systematic",
+    "from": "BYD7001BEVA2 (Luxury Y (Blue/Green Dual-Tone Interior))",
+    "to": "BYD7001BEVA2 (Luxury Y (Blue/Green Two-Tone Interior))"
+   }
+  ],
+  "model:26832e2e211fedcf1ee5f1fa": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA (-10 Type (Beige/Brown Dual-Tone Interior 04))",
+    "to": "BYD7003BEVA (-10 Type (Beige/Brown Two-Tone Interior 04))"
+   }
+  ],
+  "model:1c8c5ed5a749d92bcb7b79ae": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA (-20 Type (Beige/Brown Dual-Tone Interior 04))",
+    "to": "BYD7003BEVA (-20 Type (Beige/Brown Two-Tone Interior 04))"
+   }
+  ],
+  "model:275fa1c950ae9e7db247af1c": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA (Prestige Y (Blue/Gray Dual-Tone Interior HF))",
+    "to": "BYD7003BEVA (Prestige Y (Blue/Gray Two-Tone Interior HF))"
+   }
+  ],
+  "model:3002a72d29acd4eba4841627": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA (Comfort Y_South America_LHD (Euro Standard Char",
+    "to": "BYD7003BEVA (Comfort Y_South America_LHD (EU Charging Standa"
+   }
+  ],
+  "model:20265606f487e52c8cb7c613": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA (Luxury Y (Blue/Gray Dual-Tone Interior 04))",
+    "to": "BYD7003BEVA (Luxury Y (Blue/Gray Two-Tone Interior 04))"
+   }
+  ],
+  "model:86129017e38255480993e9f5": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA (Luxury Y (Blue/Gray Dual-Tone Interior HF))",
+    "to": "BYD7003BEVA (Luxury Y (Blue/Gray Two-Tone Interior HF))"
+   }
+  ],
+  "model:9f36d9c56e00199d90a3c6bc": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA1 (-30 Type (Beige/Brown Dual-Tone Interior 04))",
+    "to": "BYD7003BEVA1 (-30 Type (Beige/Brown Two-Tone Interior 04))"
+   }
+  ],
+  "model:84fae628de6d92bafa03d67a": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA1 (-40 Type (Beige/Brown Dual-Tone Interior 04))",
+    "to": "BYD7003BEVA1 (-40 Type (Beige/Brown Two-Tone Interior 04))"
+   }
+  ],
+  "model:16256d37080f1404aa01486d": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA1 (-40 Type (Beige/Brown Dual-Tone Interior Conti",
+    "to": "BYD7003BEVA1 (-40 Type (Beige/Brown Two-Tone Interior Contin"
+   }
+  ],
+  "model:342afddeabde5d3fe482987c": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA1 (-50 Type (Beige/Brown Dual-Tone Interior 04))",
+    "to": "BYD7003BEVA1 (-50 Type (Beige/Brown Two-Tone Interior 04))"
+   }
+  ],
+  "model:decee41c5f06d34ab06265e9": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA1 (-50 Type (Beige/Brown Dual-Tone Interior Conti",
+    "to": "BYD7003BEVA1 (-50 Type (Beige/Brown Two-Tone Interior Contin"
+   }
+  ],
+  "model:30173ad2750d56c197efbd5c": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA1 (Premium Y (Blue/Gray Dual-Tone Interior 04))",
+    "to": "BYD7003BEVA1 (Premium Y (Blue/Gray Two-Tone Interior 04))"
+   }
+  ],
+  "model:e796af865407fa9f8c6091c2": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA1 (Premium Y (Blue/Gray Dual-Tone Interior HF))",
+    "to": "BYD7003BEVA1 (Premium Y (Blue/Gray Two-Tone Interior HF))"
+   }
+  ],
+  "model:bd3966a0c796a77330e9171d": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA1 (Premium Y (Blue/Gray Dual-Tone Interior Contin",
+    "to": "BYD7003BEVA1 (Premium Y (Blue/Gray Two-Tone Interior Contine"
+   }
+  ],
+  "model:24afbe0630a72b4a06bee263": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA1 (Prestige Y_South America_LHD (Euro Standard Ch",
+    "to": "BYD7003BEVA1 (Prestige Y_South America_LHD (EU Charging Stan"
+   }
+  ],
+  "model:9475e32dfc8861139e5603cf": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA1 (Flagship Y (Blue/Gray Dual-Tone Interior 04))",
+    "to": "BYD7003BEVA1 (Flagship Y (Blue/Gray Two-Tone Interior 04))"
+   }
+  ],
+  "model:bf806287a591f2243f781010": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA1 (Flagship Y (Blue/Gray Dual-Tone Interior HF))",
+    "to": "BYD7003BEVA1 (Flagship Y (Blue/Gray Two-Tone Interior HF))"
+   }
+  ],
+  "model:179b8b6e408f157060afcadb": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA1 (Flagship Y (Blue/Gray Dual-Tone Interior Conti",
+    "to": "BYD7003BEVA1 (Flagship Y (Blue/Gray Two-Tone Interior Contin"
+   }
+  ],
+  "model:de72650826458c375549532a": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA1 (Flagship Y (Blue/Gray Dual-Tone Interior Conti",
+    "to": "BYD7003BEVA1 (Flagship Y (Blue/Gray Two-Tone Interior Contin"
+   }
+  ],
+  "model:74e1f987a32abff4be4be2d2": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA1 (Luxury Y (Blue/Gray Dual-Tone Interior 04))",
+    "to": "BYD7003BEVA1 (Luxury Y (Blue/Gray Two-Tone Interior 04))"
+   }
+  ],
+  "model:79fae16dd83bb5fa631b9e61": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA1 (Luxury Y (Blue/Gray Dual-Tone Interior HF))",
+    "to": "BYD7003BEVA1 (Luxury Y (Blue/Gray Two-Tone Interior HF))"
+   }
+  ],
+  "model:616d7e52076bf2bfa2137bef": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (-10 Type Y_India RHD (Euro Standard Charging))",
+    "to": "BYD7003BEVA2 (-10 Type Y_India RHD (EU Charging Standard))"
+   }
+  ],
+  "model:90d935608f7f2bf75f40017f": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (-10 Type_Southeast Asia RHD (Euro Standard Cha",
+    "to": "BYD7003BEVA2 (-10 Type_Southeast Asia RHD (EU Charging Stand"
+   }
+  ],
+  "model:3b1ddf0dde454f5606f20297": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (-10 Type_Southeast Asia RHD (Euro Standard Cha",
+    "to": "BYD7003BEVA2 (-10 Type_Southeast Asia RHD (EU Charging Stand"
+   }
+  ],
+  "model:6f7480f50ab3decf514bd551": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (-10 Type_Asia-Pacific LHD (Euro Standard Charg",
+    "to": "BYD7003BEVA2 (-10 Type_Asia-Pacific LHD (EU Charging Standar"
+   }
+  ],
+  "model:6bf7c5cea3afe863a39eaac3": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (-10 Type_India RHD (Euro Standard Charging))",
+    "to": "BYD7003BEVA2 (-10 Type_India RHD (EU Charging Standard))"
+   }
+  ],
+  "model:8e14d12b29b12d9358170662": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (-10 Type_Europe RHD (Euro Standard Charging))",
+    "to": "BYD7003BEVA2 (-10 Type_Europe RHD (EU Charging Standard))"
+   }
+  ],
+  "model:52e6654c5f650bce0cda2f48": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (-10 Type_Europe LHD (Euro Standard Charging))",
+    "to": "BYD7003BEVA2 (-10 Type_Europe LHD (EU Charging Standard))"
+   }
+  ],
+  "model:5d236f55687636fee952ec9f": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (-10 Type_Thailand RHD (Euro Standard Charging)",
+    "to": "BYD7003BEVA2 (-10 Type_Thailand RHD (EU Charging Standard))"
+   }
+  ],
+  "model:ece4fbd0232be73a53f060b4": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (-10 Type_Australia RHD (Euro Standard Charging",
+    "to": "BYD7003BEVA2 (-10 Type_Australia RHD (EU Charging Standard))"
+   }
+  ],
+  "model:0c4b55511d1b2cb5bca206b2": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (-20 Type_Thailand RHD (Euro Standard Charging)",
+    "to": "BYD7003BEVA2 (-20 Type_Thailand RHD (EU Charging Standard))"
+   }
+  ],
+  "model:ed507bcca3b15dee99275767": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (-20 Type_Australia RHD (Euro Standard Charging",
+    "to": "BYD7003BEVA2 (-20 Type_Australia RHD (EU Charging Standard))"
+   }
+  ],
+  "model:c312bbc5088157c67871c726": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (430KM_Prestige Y_Southeast Asia RHD (Euro Stan",
+    "to": "BYD7003BEVA2 (430KM_Prestige Y_Southeast Asia RHD (EU Chargi"
+   }
+  ],
+  "model:981fe15a39c4405041451cb4": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (430KM_Prestige Y_Australia RHD (Euro Standard ",
+    "to": "BYD7003BEVA2 (430KM_Prestige Y_Australia RHD (EU Charging St"
+   }
+  ],
+  "model:1d60f1b5f69502eeb66bd965": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (430KM_Flagship Y_Southeast Asia RHD (Euro Stan",
+    "to": "BYD7003BEVA2 (430KM_Flagship Y_Southeast Asia RHD (EU Chargi"
+   }
+  ],
+  "model:f9da4ce3291dff416666ec45": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (430KM_Flagship Y_South Africa RHD (Euro Standa",
+    "to": "BYD7003BEVA2 (430KM_Flagship Y_South Africa RHD (EU Charging"
+   }
+  ],
+  "model:c7ebf32735958310fba7b71b": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (430KM_Flagship Y_Australia RHD (Euro Standard ",
+    "to": "BYD7003BEVA2 (430KM_Flagship Y_Australia RHD (EU Charging St"
+   }
+  ],
+  "model:5be57b24484b70a3b2558095": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (430KM_Luxury Y_South America LHD (Euro Standar",
+    "to": "BYD7003BEVA2 (430KM_Luxury Y_South America LHD (EU Charging "
+   }
+  ],
+  "model:f7272f94deaf98fc5e9e337c": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (430KM_Luxury Y_South America LHD (Euro Standar",
+    "to": "BYD7003BEVA2 (430KM_Luxury Y_South America LHD (EU Charging "
+   }
+  ],
+  "model:0d6aedd4649a235ed1be49ce": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (SC2EAU-10 Type-Europe LHD-Euro Standard Chargi",
+    "to": "BYD7003BEVA2 (SC2EAU-10 Type-Europe LHD-EU Charging Standard"
+   }
+  ],
+  "model:68e712169b83efb72989c2e9": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (SC2EAU-10 Type-Europe LHD-Euro Standard Chargi",
+    "to": "BYD7003BEVA2 (SC2EAU-10 Type-Europe LHD-EU Charging Standard"
+   }
+  ],
+  "model:ae8ec68052fbaab90f243286": [
+   {
+    "zh": "欧标充电",
+    "from": "Euro Charging",
+    "to": "EU Charging Standard"
+   }
+  ],
+  "model:493739204538fca6f3ce7a9b": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (Premium Y (Blue-Grey Dual-Tone Interior HF))",
+    "to": "BYD7003BEVA2 (Premium Y (Blue-Grey Two-Tone Interior HF))"
+   }
+  ],
+  "model:f3d339c38b95289d4de1ea3f": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA2 (Luxury Y (Blue-Grey Dual-Tone Interior HF))",
+    "to": "BYD7003BEVA2 (Luxury Y (Blue-Grey Two-Tone Interior HF))"
+   }
+  ],
+  "model:3aa28178492e903eaf0a032a": [
+   {
+    "zh": "亚太左舵（欧标充电）)",
+    "from": "Asia-Pacific LHD (Euro Charging))",
+    "to": "Asia-Pacific LHD (EU Charging))"
+   }
+  ],
+  "model:1f80fc2aa3858e17870bfdfd": [
+   {
+    "zh": "韩国左舵（美标充电）)",
+    "from": "Korea LHD (SAE Charging))",
+    "to": "Korea LHD (US Charging))"
+   }
+  ],
+  "model:072a2766080df6bd2e97f9af": [
+   {
+    "zh": "东南亚右舵（欧标充电）)",
+    "from": "Southeast Asia RHD (Euro Charging))",
+    "to": "Southeast Asia RHD (EU Charging))"
+   }
+  ],
+  "model:bf870ca1c705a67a5542c28b": [
+   {
+    "zh": "澳洲右舵（欧标充电）)",
+    "from": "Australia RHD (Euro Charging))",
+    "to": "Australia RHD (Euro Standard Charging))"
+   },
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA3 (-30 - Australia RHD (Euro Standard Charging))",
+    "to": "BYD7003BEVA3 (-30 - Australia RHD (EU Charging Standard))"
+   }
+  ],
+  "model:c9fbfa333df3f57a61e9ae83": [
+   {
+    "zh": "东南亚右舵（欧标充电）)",
+    "from": "Southeast Asia RHD (Euro Charging))",
+    "to": "Southeast Asia RHD (EU Charging))"
+   }
+  ],
+  "model:bbcecc2f1341bcd7dd0851c8": [
+   {
+    "zh": "欧标充电",
+    "from": "Euro Charging",
+    "to": "EU Charging Standard"
+   }
+  ],
+  "model:a7048e97c9a825711437893e": [
+   {
+    "zh": "欧标充电",
+    "from": "Euro Charging",
+    "to": "EU Charging Standard"
+   }
+  ],
+  "model:d2c0c7d07bb6761e659baf53": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA3 (Honor Y (Blue-Grey Dual-Tone Interior HF))",
+    "to": "BYD7003BEVA3 (Honor Y (Blue-Grey Two-Tone Interior HF))"
+   }
+  ],
+  "model:e80f354025b63d0d1ff98bab": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA3 (Honor Y (Blue-Grey Dual-Tone Interior Continen",
+    "to": "BYD7003BEVA3 (Honor Y (Blue-Grey Two-Tone Interior Continent"
+   }
+  ],
+  "model:d8360e2f58d2d5734c06314e": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA3 (Flagship Y (Blue-Grey Dual-Tone Interior HF))",
+    "to": "BYD7003BEVA3 (Flagship Y (Blue-Grey Two-Tone Interior HF))"
+   }
+  ],
+  "model:43466db636a2a68cbf7fa56a": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA3 (Flagship Y (Blue-Grey Dual-Tone Interior Conti",
+    "to": "BYD7003BEVA3 (Flagship Y (Blue-Grey Two-Tone Interior Contin"
+   }
+  ],
+  "model:3a54da6766426cde30542107": [
+   {
+    "zh": "systematic",
+    "from": "BYD7003BEVA3 (Luxury Y (Blue-Grey Dual-Tone Interior HF))",
+    "to": "BYD7003BEVA3 (Luxury Y (Blue-Grey Two-Tone Interior HF))"
+   }
+  ],
+  "model:4a80c3005c4ce33879637eb1": [
+   {
+    "zh": "不带天窗",
+    "from": "No Sunroof",
+    "to": "Without Sunroof"
+   }
+  ],
+  "model:a7f190732112b2c58eea7347": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA3 (Ride-Hailing Y (Dark Black Interior))",
+    "to": "BYD7005BEVA3 (Ride-Hailing Y (Deep Black Interior))"
+   }
+  ],
+  "model:769b3d83d44d5d39a6a74345": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA3 (Ride-Hailing Y (Battery Pack Electric Heating ",
+    "to": "BYD7005BEVA3 (Ride-Hailing Y (Battery Pack Electric Heating "
+   }
+  ],
+  "model:c30edf5079c5dedf174f8eb1": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA4 (Premium Y (DJ-NFC - Dark Black Interior))",
+    "to": "BYD7005BEVA4 (Premium Y (DJ-NFC - Deep Black Interior))"
+   }
+  ],
+  "model:2333f2a26db0149c30d68193": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA4 (Premium Y (Battery Pack Electric Heating - Dar",
+    "to": "BYD7005BEVA4 (Premium Y (Battery Pack Electric Heating - Dee"
+   }
+  ],
+  "model:6df94b9f38ea5ab79eb7fa13": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA4 (Comfort Y (Dark Black Interior))",
+    "to": "BYD7005BEVA4 (Comfort Y (Deep Black Interior))"
+   }
+  ],
+  "model:f955dbf1623b14c62939de30": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA4 (Comfort Y (Battery Pack Heating - Dark Black I",
+    "to": "BYD7005BEVA4 (Comfort Y (Battery Pack Heating - Deep Black I"
+   }
+  ],
+  "model:8352ac1644368aa6f0a6bba4": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA4 (Luxury Y (Dark Black Interior))",
+    "to": "BYD7005BEVA4 (Luxury Y (Deep Black Interior))"
+   }
+  ],
+  "model:d5413547bfe99ee7298a40ee": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA4 (Luxury Y (Battery Pack Heating - Dark Black In",
+    "to": "BYD7005BEVA4 (Luxury Y (Battery Pack Heating - Deep Black In"
+   }
+  ],
+  "model:97af8235d0902d6f35ed510f": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA4 (Luxury Y (Battery Pack Electric Heating - Dark",
+    "to": "BYD7005BEVA4 (Luxury Y (Battery Pack Electric Heating - Deep"
+   }
+  ],
+  "model:9a069196792a0874499d7334": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA5 (Comfort Y (Dark Black Interior))",
+    "to": "BYD7005BEVA5 (Comfort Y (Deep Black Interior))"
+   }
+  ],
+  "model:4c14ada044eb44b0705921df": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA5 (Comfort Y (Battery Pack Heating - Dark Black I",
+    "to": "BYD7005BEVA5 (Comfort Y (Battery Pack Heating - Deep Black I"
+   }
+  ],
+  "model:bb9c4bc99b50140c82cffd49": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA5 (Comfort Y (Battery Pack Electric Heating - Dar",
+    "to": "BYD7005BEVA5 (Comfort Y (Battery Pack Electric Heating - Dee"
+   }
+  ],
+  "model:99e7cc84fdacbe8c0bddd7e5": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA7 (Premium Y (YDJ - Dark Black Interior))",
+    "to": "BYD7005BEVA7 (Premium Y (YDJ - Deep Black Interior))"
+   }
+  ],
+  "model:a434bed2328351fa7706866d": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA7 (Standard Y (DJ - Dark Black Interior))",
+    "to": "BYD7005BEVA7 (Standard Y (DJ - Deep Black Interior))"
+   }
+  ],
+  "model:7de2c36178c31b07eb2b63d4": [
+   {
+    "zh": "选装包",
+    "from": "Optional Package",
+    "to": "Option Package"
+   },
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA7 (Standard Y (DJ - Option Package - Dark Black I",
+    "to": "BYD7005BEVA7 (Standard Y (DJ - Option Package - Deep Black I"
+   }
+  ],
+  "model:24fe96fbcca8734e70e82051": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA7 (Standard Y (YDJ - Dark Black Interior))",
+    "to": "BYD7005BEVA7 (Standard Y (YDJ - Deep Black Interior))"
+   }
+  ],
+  "model:566e5b912bd16059704dd9bd": [
+   {
+    "zh": "选装包",
+    "from": "Optional Package",
+    "to": "Option Package"
+   },
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA7 (Standard Y (YDJ - Option Package - Dark Black ",
+    "to": "BYD7005BEVA7 (Standard Y (YDJ - Option Package - Deep Black "
+   }
+  ],
+  "model:e2e7bfb51198732affb30baa": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA7 (Comfort Y (DJ - Without Sunroof - Dark Black I",
+    "to": "BYD7005BEVA7 (Comfort Y (DJ - Without Sunroof - Deep Black I"
+   }
+  ],
+  "model:9eb0fd79fcf9e37891f83a3f": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA7 (Comfort Y (DJ - Dark Black Interior))",
+    "to": "BYD7005BEVA7 (Comfort Y (DJ - Deep Black Interior))"
+   }
+  ],
+  "model:08b265b67ebb3e2a9c6213c8": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA7 (Comfort Y (YDJ - Without Sunroof - Dark Black ",
+    "to": "BYD7005BEVA7 (Comfort Y (YDJ - Without Sunroof - Deep Black "
+   }
+  ],
+  "model:7388a3b77910649b4e45d55f": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA7 (Comfort Y (YDJ - Dark Black Interior))",
+    "to": "BYD7005BEVA7 (Comfort Y (YDJ - Deep Black Interior))"
+   }
+  ],
+  "model:a19c64d4bd565c9068d80aa1": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA7 (Comfort Y (Dark Black Interior))",
+    "to": "BYD7005BEVA7 (Comfort Y (Deep Black Interior))"
+   }
+  ],
+  "model:1d11a32146842b2f75a81aa6": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA7 (Luxury Y (DJ - Dark Black Interior))",
+    "to": "BYD7005BEVA7 (Luxury Y (DJ - Deep Black Interior))"
+   }
+  ],
+  "model:452204ae55b343242736d45b": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA7 (Luxury Y (YDJ - Dark Black Interior))",
+    "to": "BYD7005BEVA7 (Luxury Y (YDJ - Deep Black Interior))"
+   }
+  ],
+  "model:3aaeb5cc86d4662e7e7ea9db": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA7 (Luxury Y (Dark Black Interior))",
+    "to": "BYD7005BEVA7 (Luxury Y (Deep Black Interior))"
+   }
+  ],
+  "model:0584f4149aa52ccf49376dec": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA8 (Elite Y (YDJ - Dark Black Interior))",
+    "to": "BYD7005BEVA8 (Elite Y (YDJ - Deep Black Interior))"
+   }
+  ],
+  "model:50f637ab67dd48d9f669178a": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA8 (Elite Y (YDJ - Optional Package B - Dark Black",
+    "to": "BYD7005BEVA8 (Elite Y (YDJ - Optional Package B - Deep Black"
+   }
+  ],
+  "model:7a5f674d28b292a52e8a58ce": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA8 (Luxury Y (YDJ - Dark Black Interior))",
+    "to": "BYD7005BEVA8 (Luxury Y (YDJ - Deep Black Interior))"
+   }
+  ],
+  "model:0f7f9b4e69a5f2e7c84e04c8": [
+   {
+    "zh": "systematic",
+    "from": "BYD7005BEVA8 (Luxury Y (Dark Black Interior))",
+    "to": "BYD7005BEVA8 (Luxury Y (Deep Black Interior))"
+   }
+  ],
+  "model:a716129c2d777658ffe67bb4": [
+   {
+    "zh": "全景天幕)",
+    "from": "Panoramic Sunroof)",
+    "to": "Panoramic Roof)"
+   }
+  ],
+  "model:e2d5763b983a86cc859049fb": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV1 (HKHA-20 Type (Black-Gray Dual-Tone Interior 0",
+    "to": "BYD7150ADHEV1 (HKHA-20 Type (Black-Gray Two-Tone Interior 04"
+   }
+  ],
+  "model:ebc1cf4ac3e1a8031fecd3ca": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV2 (-10 Type (Black-Gray Dual-Tone Interior) S3)",
+    "to": "BYD7150ADHEV2 (-10 Type (Black-Gray Two-Tone Interior) S3)"
+   }
+  ],
+  "model:f34d65fed20cfbd426272fb6": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV2 (-20 Type (Black-Gray Dual-Tone Interior) S3)",
+    "to": "BYD7150ADHEV2 (-20 Type (Black-Gray Two-Tone Interior) S3)"
+   }
+  ],
+  "model:75c05f28ce84e5d9fe3db1f5": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV2 (HKHB-05 Type (Blue-Black Dual-Tone Interior 0",
+    "to": "BYD7150ADHEV2 (HKHB-05 Type (Blue-Black Two-Tone Interior 04"
+   }
+  ],
+  "model:4f91336a71c444827b025cd7": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV2 (HKHB-05 Type (Black-Gray Dual-Tone Interior 0",
+    "to": "BYD7150ADHEV2 (HKHB-05 Type (Black-Gray Two-Tone Interior 04"
+   }
+  ],
+  "model:73ff47dc999fec6fd33190f4": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV2 (HKHB-05 Type (Black-Gray Dual-Tone Interior 0",
+    "to": "BYD7150ADHEV2 (HKHB-05 Type (Black-Gray Two-Tone Interior 04"
+   }
+  ],
+  "model:eca4f6d6d0cae49a66aed941": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV2 (HKHB-10 Type (Blue-Black Dual-Tone Interior 0",
+    "to": "BYD7150ADHEV2 (HKHB-10 Type (Blue-Black Two-Tone Interior 04"
+   }
+  ],
+  "model:ca1938b9cbd5b513fe46be83": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV2 (HKHB-10 Type (Black-Gray Dual-Tone Interior 0",
+    "to": "BYD7150ADHEV2 (HKHB-10 Type (Black-Gray Two-Tone Interior 04"
+   }
+  ],
+  "model:2b65fd30cfd14a5707f973f5": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV2 (HKHB-20 Type (Blue-Black Dual-Tone Interior 0",
+    "to": "BYD7150ADHEV2 (HKHB-20 Type (Blue-Black Two-Tone Interior 04"
+   }
+  ],
+  "model:002298b642a6a54e83edd375": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV2 (HKHB-20 Type (Blue-Black Dual-Tone Interior 0",
+    "to": "BYD7150ADHEV2 (HKHB-20 Type (Blue-Black Two-Tone Interior 04"
+   }
+  ],
+  "model:19452313bdcfe412ea7f1b7e": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV2 (HKHB-20 Type (Black-Gray Dual-Tone Interior 0",
+    "to": "BYD7150ADHEV2 (HKHB-20 Type (Black-Gray Two-Tone Interior 04"
+   }
+  ],
+  "model:66f04d6996458048e3d6e8cd": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV2 (HKHB-20 Type (Black-Gray Dual-Tone Interior 0",
+    "to": "BYD7150ADHEV2 (HKHB-20 Type (Black-Gray Two-Tone Interior 04"
+   }
+  ],
+  "model:2794ef558491270cb0a3c077": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV5 (HKHB-05 Type (Blue-Black Dual-Tone Interior 0",
+    "to": "BYD7150ADHEV5 (HKHB-05 Type (Blue-Black Two-Tone Interior 04"
+   }
+  ],
+  "model:0f9ba62323d0368d50839573": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV5 (HKHB-05 Type (Blue-Black Dual-Tone Interior 0",
+    "to": "BYD7150ADHEV5 (HKHB-05 Type (Blue-Black Two-Tone Interior 04"
+   }
+  ],
+  "model:3adcd1d25c4ae680e2338ced": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV5 (HKHB-10 Type (Blue-Black Dual-Tone Interior 0",
+    "to": "BYD7150ADHEV5 (HKHB-10 Type (Blue-Black Two-Tone Interior 04"
+   }
+  ],
+  "model:c2177b167332c566a392c593": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV5 (HKHB-10 Type (Blue-Black Dual-Tone Interior 0",
+    "to": "BYD7150ADHEV5 (HKHB-10 Type (Blue-Black Two-Tone Interior 04"
+   }
+  ],
+  "model:e4176d2f2124dbbd6e50de2a": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV5 (HKHB-10 Type (Black-Gray Dual-Tone Interior 0",
+    "to": "BYD7150ADHEV5 (HKHB-10 Type (Black-Gray Two-Tone Interior 04"
+   }
+  ],
+  "model:ae1b4ef033808ab19533553e": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV5 (HKHB-20 Type (Blue-Black Dual-Tone Interior 0",
+    "to": "BYD7150ADHEV5 (HKHB-20 Type (Blue-Black Two-Tone Interior 04"
+   }
+  ],
+  "model:d87d1a38c9010216c5d97f24": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV5 (HKHB-20 Type (Blue-Black Dual-Tone Interior 0",
+    "to": "BYD7150ADHEV5 (HKHB-20 Type (Blue-Black Two-Tone Interior 04"
+   }
+  ],
+  "model:c76e58d05c7537136726179d": [
+   {
+    "zh": "systematic",
+    "from": "BYD7150ADHEV5 (HKHB-20 Type (Black-Gray Dual-Tone Interior 0",
+    "to": "BYD7150ADHEV5 (HKHB-20 Type (Black-Gray Two-Tone Interior 04"
+   }
+  ],
+  "model:364fb52234a4753ae45fe751": [
+   {
+    "zh": "选装侧安全气囊侧气帘",
+    "from": "Optional Side Airbag & Curtain",
+    "to": "Optional Side Airbags & Curtain Airbags"
+   }
+  ],
+  "model:a65e6883e5c0714869b93c32": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151W6A (1.5L Standard (Dark Black Interior))",
+    "to": "BYD7151W6A (1.5L Standard (Deep Black Interior))"
+   }
+  ],
+  "model:261c585a3a47f25df39fa19d": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151W6A (1.5L Comfort (Dark Black Interior))",
+    "to": "BYD7151W6A (1.5L Comfort (Deep Black Interior))"
+   }
+  ],
+  "model:26336f5d434538ae679cca9c": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151W6A (1.5L Luxury (Dark Black Interior))",
+    "to": "BYD7151W6A (1.5L Luxury (Deep Black Interior))"
+   }
+  ],
+  "model:b025db22d18777e93717a490": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151W6A (Mid-Spec Y (Dark Black Interior))",
+    "to": "BYD7151W6A (Mid-Spec Y (Deep Black Interior))"
+   }
+  ],
+  "model:387ad6f348866609a4a62d45": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151W6A (High-Spec Y (Dark Black Interior))",
+    "to": "BYD7151W6A (High-Spec Y (Deep Black Interior))"
+   }
+  ],
+  "model:9f3c632c4ade4581d3dc77b5": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151W6C (1.5L Premium Y (Dark Black Interior))",
+    "to": "BYD7151W6C (1.5L Premium Y (Deep Black Interior))"
+   }
+  ],
+  "model:fcd05de21a5a8c4480daa22b": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151W6C (1.5L Luxury Y (Dark Black Interior))",
+    "to": "BYD7151W6C (1.5L Luxury Y (Deep Black Interior))"
+   }
+  ],
+  "model:0ab5067682efaa325ebfe954": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151W6D (1.5L Comfort Y (Dark Black Interior))",
+    "to": "BYD7151W6D (1.5L Comfort Y (Deep Black Interior))"
+   }
+  ],
+  "model:adcb2ae6e397ed42ad6b8879": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151W6D (1.5L Luxury Y (Dark Black Interior))",
+    "to": "BYD7151W6D (1.5L Luxury Y (Deep Black Interior))"
+   }
+  ],
+  "model:79cedde3483c9ad431d977dc": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151W6E (1.5L Comfort Y (Dark Black Interior))",
+    "to": "BYD7151W6E (1.5L Comfort Y (Deep Black Interior))"
+   }
+  ],
+  "model:653381edb6756c980b49c98b": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151W6E (1.5L Luxury Y (Dark Black Interior))",
+    "to": "BYD7151W6E (1.5L Luxury Y (Deep Black Interior))"
+   }
+  ],
+  "model:5d60c408cf5686599bf06821": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151W6F (1.5L Premium Y (NFC-Dark Black Interior))",
+    "to": "BYD7151W6F (1.5L Premium Y (NFC-Deep Black Interior))"
+   }
+  ],
+  "model:57ac998927489d3aa442f2a1": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151W6F (1.5L Premium Y (Dark Black Interior))",
+    "to": "BYD7151W6F (1.5L Premium Y (Deep Black Interior))"
+   }
+  ],
+  "model:114ac0a026b06e2331b47d8c": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151W6F (1.5L Luxury Y (Dark Black Interior))",
+    "to": "BYD7151W6F (1.5L Luxury Y (Deep Black Interior))"
+   }
+  ],
+  "model:06263c1b8915cfe30df7ac59": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151WA (1.5L Standard (Dark Black Interior))",
+    "to": "BYD7151WA (1.5L Standard (Deep Black Interior))"
+   }
+  ],
+  "model:46af02501e60edf15a0e04e2": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151WA (1.5L Luxury (Dark Black Interior))",
+    "to": "BYD7151WA (1.5L Luxury (Deep Black Interior))"
+   }
+  ],
+  "model:3f2f0214de3967eae3acbaa2": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV (HXHA-10 Type (Black-Gray Dual-Tone Interior))",
+    "to": "BYD7151Y6HEV (HXHA-10 Type (Black-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:daac0aaf10cc752510092d54": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV (HXHA-20 Type (Black-Gray Dual-Tone Interior))",
+    "to": "BYD7151Y6HEV (HXHA-20 Type (Black-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:56265ad52671fa7b0a7aa1ef": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV (HXHA Premium Y (Red-Beige Dual-Tone Interior))",
+    "to": "BYD7151Y6HEV (HXHA Premium Y (Red-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:4eebe1ab7bcae4d7f0b6ae24": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV (HXHA Elite Y (Blue-Black Dual-Tone Interior))",
+    "to": "BYD7151Y6HEV (HXHA Elite Y (Blue-Black Two-Tone Interior))"
+   }
+  ],
+  "model:4e7343643addc54895d5e66f": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV (HXHA Luxury Y (Blue-Black Dual-Tone Interior))",
+    "to": "BYD7151Y6HEV (HXHA Luxury Y (Blue-Black Two-Tone Interior))"
+   }
+  ],
+  "model:5af65fd6129461985a03fcf9": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV (Premium Y-14-Part VCU (Black-Gray Dual-Tone In",
+    "to": "BYD7151Y6HEV (Premium Y-14-Part VCU (Black-Gray Two-Tone Int"
+   }
+  ],
+  "model:55aee2c4036dd404018d8116": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV (Elite Y-14-Part VCU (Blue-Black Dual-Tone Inte",
+    "to": "BYD7151Y6HEV (Elite Y-14-Part VCU (Blue-Black Two-Tone Inter"
+   }
+  ],
+  "model:851c932c10efb7b49f8f494a": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV (Luxury Y-14-Part VCU (Blue-Black Dual-Tone Int",
+    "to": "BYD7151Y6HEV (Luxury Y-14-Part VCU (Blue-Black Two-Tone Inte"
+   }
+  ],
+  "model:c01543e7788d94b55414fe00": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV1 (HXHA-10 Type (Blue-Black Dual-Tone Interior))",
+    "to": "BYD7151Y6HEV1 (HXHA-10 Type (Blue-Black Two-Tone Interior))"
+   }
+  ],
+  "model:e6d5ba3bf3b55c32ad1c5176": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV1 (HXHA-10 Type (Black-Gray Dual-Tone Interior) ",
+    "to": "BYD7151Y6HEV1 (HXHA-10 Type (Black-Gray Two-Tone Interior) 2"
+   }
+  ],
+  "model:f903ea39fa9cfc42d53e957d": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV1 (HXHA-20 Type (Blue-Black Dual-Tone Interior))",
+    "to": "BYD7151Y6HEV1 (HXHA-20 Type (Blue-Black Two-Tone Interior))"
+   }
+  ],
+  "model:a2464d676fcf3b60652fd15d": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV1 (HXHA-20 Type (Black-Gray Dual-Tone Interior))",
+    "to": "BYD7151Y6HEV1 (HXHA-20 Type (Black-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:60fd34855b6c0d497b26d453": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV1 (HXHA Premium Y (Red-Beige Dual-Tone Interior)",
+    "to": "BYD7151Y6HEV1 (HXHA Premium Y (Red-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:3129bbdeea644782a1d67187": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV1 (HXHA Premium Y (Black-Gray Dual-Tone Interior",
+    "to": "BYD7151Y6HEV1 (HXHA Premium Y (Black-Gray Two-Tone Interior)"
+   }
+  ],
+  "model:30f18ebda519e180723648ec": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV1 (HXHA Elite Y (Blue-Black Dual-Tone Interior))",
+    "to": "BYD7151Y6HEV1 (HXHA Elite Y (Blue-Black Two-Tone Interior))"
+   }
+  ],
+  "model:71f825bef0685a3b266230d3": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV1 (HXHA Luxury Y (Blue-Black Dual-Tone Interior)",
+    "to": "BYD7151Y6HEV1 (HXHA Luxury Y (Blue-Black Two-Tone Interior))"
+   }
+  ],
+  "model:a35dfb4840552073d29882cb": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV1 (Premium Y-Liandian VCU (Black-Gray Dual-Tone ",
+    "to": "BYD7151Y6HEV1 (Premium Y-Liandian VCU (Black-Gray Two-Tone I"
+   }
+  ],
+  "model:77ab858766934eb11ab95068": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV1 (Elite Y-Liandian VCU (Blue-Black Dual-Tone In",
+    "to": "BYD7151Y6HEV1 (Elite Y-Liandian VCU (Blue-Black Two-Tone Int"
+   }
+  ],
+  "model:1d7f0551d6b247bcdafe48b7": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV1 (Luxury Y-Liandian VCU (Blue-Black Dual-Tone I",
+    "to": "BYD7151Y6HEV1 (Luxury Y-Liandian VCU (Blue-Black Two-Tone In"
+   }
+  ],
+  "model:42aff9cfd4aa6b974416f8e8": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV2 (HXHK-10 Type Black-Gray Dual-Tone Interior)",
+    "to": "BYD7151Y6HEV2 (HXHK-10 Type Black-Gray Two-Tone Interior)"
+   }
+  ],
+  "model:1eeb50cfaad79156184d9701": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV3 (HXHG-25 Type Black-Gray Dual-Tone Interior)",
+    "to": "BYD7151Y6HEV3 (HXHG-25 Type Black-Gray Two-Tone Interior)"
+   }
+  ],
+  "model:7579b61c798eff84b139ae69": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV3 (HXHG-30 Type Red-Beige Dual-Tone Interior)",
+    "to": "BYD7151Y6HEV3 (HXHG-30 Type Red-Beige Two-Tone Interior)"
+   }
+  ],
+  "model:727adc8cf25e619d0408aaa2": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV3 (HXHG-30 Type Black-Gray Dual-Tone Interior)",
+    "to": "BYD7151Y6HEV3 (HXHG-30 Type Black-Gray Two-Tone Interior)"
+   }
+  ],
+  "model:c475d096e011048e79827cb8": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV3 (HXHG-35 Type Red-Beige Dual-Tone Interior)",
+    "to": "BYD7151Y6HEV3 (HXHG-35 Type Red-Beige Two-Tone Interior)"
+   }
+  ],
+  "model:a40834a4918803f45f0e0ce2": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151Y6HEV3 (HXHG-35 Type Black-Gray Dual-Tone Interior)",
+    "to": "BYD7151Y6HEV3 (HXHG-35 Type Black-Gray Two-Tone Interior)"
+   }
+  ],
+  "model:0564ee21dd5e8059fc46afb5": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV (HXHB Honor Y (Red-Beige Dual-Tone Interior))",
+    "to": "BYD7151YT6HEV (HXHB Honor Y (Red-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:177771c17200639f39b57624": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV (HXHB Flagship Y (Red-Beige Dual-Tone Interior",
+    "to": "BYD7151YT6HEV (HXHB Flagship Y (Red-Beige Two-Tone Interior)"
+   }
+  ],
+  "model:36a8861451a6fcfef37be40c": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV (Flagship Y-14-Part VCU (Black-Gray Dual-Tone ",
+    "to": "BYD7151YT6HEV (Flagship Y-14-Part VCU (Black-Gray Two-Tone I"
+   }
+  ],
+  "model:ddaab63e27b070e432270c86": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV2 (HXHB Honor Y (Red-Beige Dual-Tone Interior))",
+    "to": "BYD7151YT6HEV2 (HXHB Honor Y (Red-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:8e0b39d1e6aac4616133682b": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV2 (HXHB Honor Y (Black-Gray Dual-Tone Interior)",
+    "to": "BYD7151YT6HEV2 (HXHB Honor Y (Black-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:518f111be565bec3bc4682c3": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV2 (HXHB Flagship Y (Red-Beige Dual-Tone Interio",
+    "to": "BYD7151YT6HEV2 (HXHB Flagship Y (Red-Beige Two-Tone Interior"
+   }
+  ],
+  "model:484861ef1a1ac7dbabab2f70": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV2 (HXHB Flagship Y (Black-Gray Dual-Tone Interi",
+    "to": "BYD7151YT6HEV2 (HXHB Flagship Y (Black-Gray Two-Tone Interio"
+   }
+  ],
+  "model:ecc8b2db93389889ae76096c": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV2 (Honor Y-Liandian VCU (Black-Gray Dual-Tone I",
+    "to": "BYD7151YT6HEV2 (Honor Y-Liandian VCU (Black-Gray Two-Tone In"
+   }
+  ],
+  "model:ac2aa2128d4913d96c0829fa": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV2 (Flagship Y-Liandian VCU (Black-Gray Dual-Ton",
+    "to": "BYD7151YT6HEV2 (Flagship Y-Liandian VCU (Black-Gray Two-Tone"
+   }
+  ],
+  "model:4d5fe8d072592de9631abc25": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV4 (HXHF-10 Type (Red-Beige Dual-Tone Interior))",
+    "to": "BYD7151YT6HEV4 (HXHF-10 Type (Red-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:f44c488a16a7bd33edd081fe": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV4 (HXHF-10 Type (Black-Gray Dual-Tone Interior)",
+    "to": "BYD7151YT6HEV4 (HXHF-10 Type (Black-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:c7a30aa09c69b1b990e130ce": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV6 (HXHH-30 Type Red-Beige Dual-Tone Interior)",
+    "to": "BYD7151YT6HEV6 (HXHH-30 Type Red-Beige Two-Tone Interior)"
+   }
+  ],
+  "model:450c9da84059066314e352cd": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV6 (HXHH-30 Type Black-Gray Dual-Tone Interior)",
+    "to": "BYD7151YT6HEV6 (HXHH-30 Type Black-Gray Two-Tone Interior)"
+   }
+  ],
+  "model:28ae903228919af98d33accd": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV97 (HXHCL-10 Type-Brazil Export-Chrome Trim-Bla",
+    "to": "BYD7151YT6HEV97 (HXHCL-10 Type-Brazil Export-Chrome Trim-Bla"
+   }
+  ],
+  "model:aea1173eda8238c01c9de295": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV97 (HXHCL-10 Type-Brazil Export-Black Trim-Blac",
+    "to": "BYD7151YT6HEV97 (HXHCL-10 Type-Brazil Export-Black Trim-Blac"
+   }
+  ],
+  "model:1d529bc3f71c058fe0955b62": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV97 (HXHCL-10 Type Side Window Chrome Trim GB Ch",
+    "to": "BYD7151YT6HEV97 (HXHCL-10 Type Side Window Chrome Trim GB Ch"
+   }
+  ],
+  "model:f08fb491705c35eb0b9d5e1e": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV97 (HXHCL-20 Type-Brazil Export-Chrome Trim-Bla",
+    "to": "BYD7151YT6HEV97 (HXHCL-20 Type-Brazil Export-Chrome Trim-Bla"
+   }
+  ],
+  "model:5150c0fc22623a919f32ecf4": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV97 (HXHCL-20 Type-Brazil Export-Black Trim-Blac",
+    "to": "BYD7151YT6HEV97 (HXHCL-20 Type-Brazil Export-Black Trim-Blac"
+   }
+  ],
+  "model:a920cb1eb366fffce0353be9": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV97 (HXHCL-20 Type Side Window Chrome Trim GB Ch",
+    "to": "BYD7151YT6HEV97 (HXHCL-20 Type Side Window Chrome Trim GB Ch"
+   }
+  ],
+  "model:bcee49e5fb8e3ac5e4657417": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV97 (HXHCL-20 Type Side Window Chrome Trim EU Ch",
+    "to": "BYD7151YT6HEV97 (HXHCL-20 Type Side Window Chrome Trim EU Ch"
+   }
+  ],
+  "model:e0dbbf68b73c2c9a18161bfe": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV98 (HXHAZ-10 Type (Black-Gray Dual-Tone Interio",
+    "to": "BYD7151YT6HEV98 (HXHAZ-10 Type (Black-Gray Two-Tone Interior"
+   }
+  ],
+  "model:4d06a1ee65ea81040ade1a07": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV98 (HXHAZ-10 Type Black-Gray Dual-Tone Interior",
+    "to": "BYD7151YT6HEV98 (HXHAZ-10 Type Black-Gray Two-Tone Interior "
+   }
+  ],
+  "model:2e7ef6ca751ba6424ea6e34b": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV98 (HXHAZ-20 Type (Red-Beige Dual-Tone Interior",
+    "to": "BYD7151YT6HEV98 (HXHAZ-20 Type (Red-Beige Two-Tone Interior)"
+   }
+  ],
+  "model:9c709b21b55a96fec57e9aa4": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV98 (HXHAZ-20 Type Black-Gray Dual-Tone Interior",
+    "to": "BYD7151YT6HEV98 (HXHAZ-20 Type Black-Gray Two-Tone Interior "
+   }
+  ],
+  "model:e84b3ca3e77a33164c75116e": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV98 (HXHBL-20 Type Side Window Chrome Trim GB Ch",
+    "to": "BYD7151YT6HEV98 (HXHBL-20 Type Side Window Chrome Trim GB Ch"
+   }
+  ],
+  "model:13e8ea8acca4d5e60ed8c3ea": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV98 (HXHBL-20 Type Side Window Chrome Trim EU Ch",
+    "to": "BYD7151YT6HEV98 (HXHBL-20 Type Side Window Chrome Trim EU Ch"
+   }
+  ],
+  "model:bdac0c098aef13784efaafb9": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV99 (HXHAL-10 Type Side Window Chrome Trim GB Ch",
+    "to": "BYD7151YT6HEV99 (HXHAL-10 Type Side Window Chrome Trim GB Ch"
+   }
+  ],
+  "model:85dc5fa9c0cf6061c24d6a90": [
+   {
+    "zh": "systematic",
+    "from": "BYD7151YT6HEV99 (HXHAL-20 Type Side Window Chrome Trim GB Ch",
+    "to": "BYD7151YT6HEV99 (HXHAL-20 Type Side Window Chrome Trim GB Ch"
+   }
+  ],
+  "model:a3c377d0c2f1a61e5eb296f4": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152W (1.5L Comfort (Dark Black Interior))",
+    "to": "BYD7152W (1.5L Comfort (Deep Black Interior))"
+   }
+  ],
+  "model:91828add185897c2fa19fc39": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152W (1.5L Luxury (Dark Black Interior))",
+    "to": "BYD7152W (1.5L Luxury (Deep Black Interior))"
+   }
+  ],
+  "model:de9d67e7af51eb82499b7760": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT1 (1.5L Comfort Y (Optional Sunroof - Dark Black In",
+    "to": "BYD7152WT1 (1.5L Comfort Y (Optional Sunroof - Deep Black In"
+   }
+  ],
+  "model:0b5b6677a4e5804c37989fdf": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT1 (1.5L Luxury Y (Dark Black Interior))",
+    "to": "BYD7152WT1 (1.5L Luxury Y (Deep Black Interior))"
+   }
+  ],
+  "model:a696feb48ec430ebced15a70": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT3 (1.5L Honor (Dark Black Interior))",
+    "to": "BYD7152WT3 (1.5L Honor (Deep Black Interior))"
+   }
+  ],
+  "model:64b40635cff4d88dda138d09": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT3 (1.5L Honor Y (Export GCC - Dark Black Interior))",
+    "to": "BYD7152WT3 (1.5L Honor Y (Export GCC - Deep Black Interior))"
+   }
+  ],
+  "model:cd7814bc315432d5bdfd353a": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT3 (1.5L Premium (Dark Black Interior))",
+    "to": "BYD7152WT3 (1.5L Premium (Deep Black Interior))"
+   }
+  ],
+  "model:fa0a9e8e759b8c0fdfc3be2e": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT3 (1.5L Premium Y (Export GCC - Dark Black Interior",
+    "to": "BYD7152WT3 (1.5L Premium Y (Export GCC - Deep Black Interior"
+   }
+  ],
+  "model:a6a162bb729935fef3762657": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT3 (1.5L Elite (Dark Black Interior))",
+    "to": "BYD7152WT3 (1.5L Elite (Deep Black Interior))"
+   }
+  ],
+  "model:6e6584805d2810094d57a69c": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT3 (1.5L Elite Y (Export GCC - Dark Black Interior))",
+    "to": "BYD7152WT3 (1.5L Elite Y (Export GCC - Deep Black Interior))"
+   }
+  ],
+  "model:608ced781d845d6e4e3a25e5": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT3 (1.5L Luxury (Dark Black Interior))",
+    "to": "BYD7152WT3 (1.5L Luxury (Deep Black Interior))"
+   }
+  ],
+  "model:7f9946173f06bdf1feecf632": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT3 (1.5L Luxury Y (Export GCC - Dark Black Interior)",
+    "to": "BYD7152WT3 (1.5L Luxury Y (Export GCC - Deep Black Interior)"
+   }
+  ],
+  "model:3906ac050ff9c30c849c96e4": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6A (1.5L Comfort Y (LK - Dark Black Interior))",
+    "to": "BYD7152WT6A (1.5L Comfort Y (LK - Deep Black Interior))"
+   }
+  ],
+  "model:1bccf0b01510044edc0e2099": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6A (1.5L Comfort Y (Dark Black Interior))",
+    "to": "BYD7152WT6A (1.5L Comfort Y (Deep Black Interior))"
+   }
+  ],
+  "model:ec08f4e4a93240f7fb805b0d": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6A (1.5L Comfort Y (Optional Sunroof - Dark Black I",
+    "to": "BYD7152WT6A (1.5L Comfort Y (Optional Sunroof - Deep Black I"
+   }
+  ],
+  "model:94de0133fb1ad119a4ea3e9a": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6A (1.5L Luxury Y (Dark Black Interior))",
+    "to": "BYD7152WT6A (1.5L Luxury Y (Deep Black Interior))"
+   }
+  ],
+  "model:6eb00ed7b3a9f5c053ceff92": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6B (1.5L Comfort Y (LK - Dark Black Interior))",
+    "to": "BYD7152WT6B (1.5L Comfort Y (LK - Deep Black Interior))"
+   }
+  ],
+  "model:4b94fdf3348ed6a243105b55": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6C (1.5L Honor Y (Dark Black Interior))",
+    "to": "BYD7152WT6C (1.5L Honor Y (Deep Black Interior))"
+   }
+  ],
+  "model:006173bb2588525e6fddd46b": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6C (1.5L Premium (Dark Black Interior))",
+    "to": "BYD7152WT6C (1.5L Premium (Deep Black Interior))"
+   }
+  ],
+  "model:58ca2b57b2a2619c9f28f9b7": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6C (1.5L Premium Y (LK - Dark Black Interior))",
+    "to": "BYD7152WT6C (1.5L Premium Y (LK - Deep Black Interior))"
+   }
+  ],
+  "model:322ebbe9d00979dc1b273724": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6C (1.5L Elite Y (Dark Black Interior))",
+    "to": "BYD7152WT6C (1.5L Elite Y (Deep Black Interior))"
+   }
+  ],
+  "model:cad19b6f18df469de00e48f6": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6C (1.5L Luxury (Optional Sunroof - Dark Black Inte",
+    "to": "BYD7152WT6C (1.5L Luxury (Optional Sunroof - Deep Black Inte"
+   }
+  ],
+  "model:c8d8a92e826fb938626d6089": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6C (1.5L Luxury Y (LK - Dark Black Interior))",
+    "to": "BYD7152WT6C (1.5L Luxury Y (LK - Deep Black Interior))"
+   }
+  ],
+  "model:2a9f06ff0abb42ba8ff99cd5": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6C (1.5L Luxury Y (Dark Black Interior))",
+    "to": "BYD7152WT6C (1.5L Luxury Y (Deep Black Interior))"
+   }
+  ],
+  "model:6aca82c4600d635eabef8954": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB (1.5L Premium (Dark Black Interior))",
+    "to": "BYD7152WT6HEVB (1.5L Premium (Deep Black Interior))"
+   }
+  ],
+  "model:5a03857d08bd4307d96f6181": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB (1.5L Premium Y (KK-DJ-NFC - Dark Black Inter",
+    "to": "BYD7152WT6HEVB (1.5L Premium Y (KK-DJ-NFC - Deep Black Inter"
+   }
+  ],
+  "model:1d7fcde969bb7a2427f03071": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB (1.5L Premium Y (KK-NFC - Dark Black Interior",
+    "to": "BYD7152WT6HEVB (1.5L Premium Y (KK-NFC - Deep Black Interior"
+   }
+  ],
+  "model:616398ef21c2666005e36442": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB (1.5L Premium Y (KK - Dark Black Interior))",
+    "to": "BYD7152WT6HEVB (1.5L Premium Y (KK - Deep Black Interior))"
+   }
+  ],
+  "model:287b474f533180e68254e3f3": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB (1.5L Premium Y (KK - Battery Pack Heating - ",
+    "to": "BYD7152WT6HEVB (1.5L Premium Y (KK - Battery Pack Heating - "
+   }
+  ],
+  "model:505f052cc8d5165b8ebb1427": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB (1.5L Premium Y (Battery Pack Heating - Dark ",
+    "to": "BYD7152WT6HEVB (1.5L Premium Y (Battery Pack Heating - Deep "
+   }
+  ],
+  "model:8987bbfffe0692205857a7ce": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB (1.5L Flagship (Dark Black Interior))",
+    "to": "BYD7152WT6HEVB (1.5L Flagship (Deep Black Interior))"
+   }
+  ],
+  "model:c3664ddf601fa26ae28de4ae": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB (1.5L Flagship Y (KK-DJ-NFC - Dark Black Inte",
+    "to": "BYD7152WT6HEVB (1.5L Flagship Y (KK-DJ-NFC - Deep Black Inte"
+   }
+  ],
+  "model:7e9a4af9848145c35c2a6cc0": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB (1.5L Flagship Y (KK-NFC - Dark Black Interio",
+    "to": "BYD7152WT6HEVB (1.5L Flagship Y (KK-NFC - Deep Black Interio"
+   }
+  ],
+  "model:28511f75bd9c1ac015a9c50d": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB (1.5L Flagship Y (KK - Dark Black Interior))",
+    "to": "BYD7152WT6HEVB (1.5L Flagship Y (KK - Deep Black Interior))"
+   }
+  ],
+  "model:eaf3a4a85fc04e81aed6f4f5": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB (1.5L Flagship Y (KK - Battery Pack Heating -",
+    "to": "BYD7152WT6HEVB (1.5L Flagship Y (KK - Battery Pack Heating -"
+   }
+  ],
+  "model:d4781fd4e8a8dda324fcd324": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB1 (1.5L Reserve Y (NFC - Dark Black Interior))",
+    "to": "BYD7152WT6HEVB1 (1.5L Reserve Y (NFC - Deep Black Interior))"
+   }
+  ],
+  "model:4f7c00c7a278b4bbba06879e": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB1 (1.5L Reserve Y (Light Blue Headlight - Dark",
+    "to": "BYD7152WT6HEVB1 (1.5L Reserve Y (Light Blue Headlight - Deep"
+   }
+  ],
+  "model:855a2962cb4a3c16e4fd2d46": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB1 (1.5L Reserve Y (Dark Black Interior))",
+    "to": "BYD7152WT6HEVB1 (1.5L Reserve Y (Deep Black Interior))"
+   }
+  ],
+  "model:5c7a3876e99c812f3f8b070f": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB1 (1.5L Comfort Y (Light Blue Headlight - Dark",
+    "to": "BYD7152WT6HEVB1 (1.5L Comfort Y (Light Blue Headlight - Deep"
+   }
+  ],
+  "model:a47d568a883060859a226685": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB1 (1.5L Comfort Y (Dark Black Interior))",
+    "to": "BYD7152WT6HEVB1 (1.5L Comfort Y (Deep Black Interior))"
+   }
+  ],
+  "model:d6d12c822ed032ed4f5815b0": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB11 (1.5L Premium Y (Black-Gray Dual-Tone Inter",
+    "to": "BYD7152WT6HEVB11 (1.5L Premium Y (Black-Gray Two-Tone Interi"
+   }
+  ],
+  "model:b6e0dee58662913740f11661": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB12 (1.5L Comfort Y (Blue-Gray Dual-Tone Interi",
+    "to": "BYD7152WT6HEVB12 (1.5L Comfort Y (Blue-Gray Two-Tone Interio"
+   }
+  ],
+  "model:fbc79e0ad394879f94a3362c": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB12 (1.5L Luxury Y (XF - Blue-Gray Dual-Tone In",
+    "to": "BYD7152WT6HEVB12 (1.5L Luxury Y (XF - Blue-Gray Two-Tone Int"
+   }
+  ],
+  "model:4ce12870c14de5f2439e63cb": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB12 (1.5L Luxury Y (Blue-Gray Dual-Tone Interio",
+    "to": "BYD7152WT6HEVB12 (1.5L Luxury Y (Blue-Gray Two-Tone Interior"
+   }
+  ],
+  "model:ba95505749e42e2a47341080": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB13 (Luxury Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD7152WT6HEVB13 (Luxury Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:cd1da545b9531b64f59abba1": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB14 (Premium Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD7152WT6HEVB14 (Premium Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:97583ca72192e99854a0dd57": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB14 (Flagship Y (XF - Blue-Gray Dual-Tone Inter",
+    "to": "BYD7152WT6HEVB14 (Flagship Y (XF - Blue-Gray Two-Tone Interi"
+   }
+  ],
+  "model:1e326a36e13244707c31a08c": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB14 (Flagship Y (Blue-Gray Dual-Tone Interior))",
+    "to": "BYD7152WT6HEVB14 (Flagship Y (Blue-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:c12ffde2f1d90f1ec83248ab": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB2 (1.5L Premium Y (DJ - Dark Black Interior))",
+    "to": "BYD7152WT6HEVB2 (1.5L Premium Y (DJ - Deep Black Interior))"
+   }
+  ],
+  "model:008d733166d3d37cc80dc8d6": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB2 (1.5L Premium Y (Dark Black Interior))",
+    "to": "BYD7152WT6HEVB2 (1.5L Premium Y (Deep Black Interior))"
+   }
+  ],
+  "model:6049002c178ad6e597e33b30": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB2 (1.5L Flagship Y (DJ - Dark Black Interior))",
+    "to": "BYD7152WT6HEVB2 (1.5L Flagship Y (DJ - Deep Black Interior))"
+   }
+  ],
+  "model:5bb7d5efc1b6c89d3b026732": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB2 (1.5L Flagship Y (Dark Black Interior))",
+    "to": "BYD7152WT6HEVB2 (1.5L Flagship Y (Deep Black Interior))"
+   }
+  ],
+  "model:280698715f4f32ef86893016": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB3 (1.5L Reserve Y (Dark Black Interior))",
+    "to": "BYD7152WT6HEVB3 (1.5L Reserve Y (Deep Black Interior))"
+   }
+  ],
+  "model:1e445906190d283ea72c3d2b": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB3 (1.5L Comfort Y (Dark Black Interior))",
+    "to": "BYD7152WT6HEVB3 (1.5L Comfort Y (Deep Black Interior))"
+   }
+  ],
+  "model:afb69191e8a57e6c7a9b4208": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB4 (1.5L Premium Y (CQL - Blue-Gray Dual-Tone I",
+    "to": "BYD7152WT6HEVB4 (1.5L Premium Y (CQL - Blue-Gray Two-Tone In"
+   }
+  ],
+  "model:af22567197c53743247b9edc": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB4 (1.5L Premium Y (CQL - Black-Brown Dual-Tone",
+    "to": "BYD7152WT6HEVB4 (1.5L Premium Y (CQL - Black-Brown Two-Tone "
+   }
+  ],
+  "model:1bb899ad258c95d667da936a": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB4 (1.5L Flagship Y (CQL-XF - Blue-Gray Dual-To",
+    "to": "BYD7152WT6HEVB4 (1.5L Flagship Y (CQL-XF - Blue-Gray Two-Ton"
+   }
+  ],
+  "model:25ff3068a99a1e49a827febc": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB4 (1.5L Flagship Y (CQL-XF - Black-Brown Dual-",
+    "to": "BYD7152WT6HEVB4 (1.5L Flagship Y (CQL-XF - Black-Brown Two-T"
+   }
+  ],
+  "model:a4c7ec22112dc1893f4590ef": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB4 (1.5L Flagship Y (CQL - Blue-Gray Dual-Tone ",
+    "to": "BYD7152WT6HEVB4 (1.5L Flagship Y (CQL - Blue-Gray Two-Tone I"
+   }
+  ],
+  "model:e70b16e7a90fbea2652aa468": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB4 (1.5L Flagship Y (CQL - Black-Brown Dual-Ton",
+    "to": "BYD7152WT6HEVB4 (1.5L Flagship Y (CQL - Black-Brown Two-Tone"
+   }
+  ],
+  "model:d95ea6ad6ce4250c9305b64d": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB4 (1.5L Flagship Y (Blue-Gray Dual-Tone Interi",
+    "to": "BYD7152WT6HEVB4 (1.5L Flagship Y (Blue-Gray Two-Tone Interio"
+   }
+  ],
+  "model:661e44570dfdc6db8ba9069a": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB4 (1.5L Flagship Y (Black-Brown Dual-Tone Inte",
+    "to": "BYD7152WT6HEVB4 (1.5L Flagship Y (Black-Brown Two-Tone Inter"
+   }
+  ],
+  "model:bd87f7fb5d439bfc971ea9eb": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB5 (1.5L Comfort Y (CQL - Blue-Gray Dual-Tone I",
+    "to": "BYD7152WT6HEVB5 (1.5L Comfort Y (CQL - Blue-Gray Two-Tone In"
+   }
+  ],
+  "model:96e997704a4defdaaa8848b7": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB5 (1.5L Comfort Y (Blue-Gray Dual-Tone Interio",
+    "to": "BYD7152WT6HEVB5 (1.5L Comfort Y (Blue-Gray Two-Tone Interior"
+   }
+  ],
+  "model:a9fcd36ed0a973c7bb53c620": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB5 (1.5L Luxury Y (CQL-XF - Blue-Gray Dual-Tone",
+    "to": "BYD7152WT6HEVB5 (1.5L Luxury Y (CQL-XF - Blue-Gray Two-Tone "
+   }
+  ],
+  "model:050d28aaf3d5eb922e42beda": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB5 (1.5L Luxury Y (CQL - Blue-Gray Dual-Tone In",
+    "to": "BYD7152WT6HEVB5 (1.5L Luxury Y (CQL - Blue-Gray Two-Tone Int"
+   }
+  ],
+  "model:2755f069f260f016cf800a32": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB5 (1.5L Luxury Y (Blue-Gray Dual-Tone Interior",
+    "to": "BYD7152WT6HEVB5 (1.5L Luxury Y (Blue-Gray Two-Tone Interior)"
+   }
+  ],
+  "model:640740159fa0fc8ca619a2bf": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB6 (1.5L Premium Y (Blue-Gray Dual-Tone Interio",
+    "to": "BYD7152WT6HEVB6 (1.5L Premium Y (Blue-Gray Two-Tone Interior"
+   }
+  ],
+  "model:d866883257e6202089dd20e5": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB6 (1.5L Premium Y (Black-Brown Dual-Tone Inter",
+    "to": "BYD7152WT6HEVB6 (1.5L Premium Y (Black-Brown Two-Tone Interi"
+   }
+  ],
+  "model:b824c381f5438c3d85fb44d8": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB6 (1.5L Flagship Y (XF - Blue-Gray Dual-Tone I",
+    "to": "BYD7152WT6HEVB6 (1.5L Flagship Y (XF - Blue-Gray Two-Tone In"
+   }
+  ],
+  "model:dea872050f7078c195233b83": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB6 (1.5L Flagship Y (XF - Black-Brown Dual-Tone",
+    "to": "BYD7152WT6HEVB6 (1.5L Flagship Y (XF - Black-Brown Two-Tone "
+   }
+  ],
+  "model:0f6e0bb7d3f14c740aa92985": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB6 (1.5L Flagship Y (Blue-Gray Dual-Tone Interi",
+    "to": "BYD7152WT6HEVB6 (1.5L Flagship Y (Blue-Gray Two-Tone Interio"
+   }
+  ],
+  "model:8d8e4f7557c51911967ce443": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB6 (1.5L Flagship Y (Black-Brown Dual-Tone Inte",
+    "to": "BYD7152WT6HEVB6 (1.5L Flagship Y (Black-Brown Two-Tone Inter"
+   }
+  ],
+  "model:bf62664669f173559bd39527": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB7 (1.5L Comfort Y (Blue-Gray Dual-Tone Interio",
+    "to": "BYD7152WT6HEVB7 (1.5L Comfort Y (Blue-Gray Two-Tone Interior"
+   }
+  ],
+  "model:0da61194291b4ac86aa8ab41": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB7 (1.5L Luxury Y (XF - Blue-Gray Dual-Tone Int",
+    "to": "BYD7152WT6HEVB7 (1.5L Luxury Y (XF - Blue-Gray Two-Tone Inte"
+   }
+  ],
+  "model:aa5697be644e39d9a770ca8e": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB7 (1.5L Luxury Y (Blue-Gray Dual-Tone Interior",
+    "to": "BYD7152WT6HEVB7 (1.5L Luxury Y (Blue-Gray Two-Tone Interior)"
+   }
+  ],
+  "model:75488947437d3fb8571399bc": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB7 (Luxury Y (South America Export - Black-Brow",
+    "to": "BYD7152WT6HEVB7 (Luxury Y (South America Export - Black-Brow"
+   }
+  ],
+  "model:23669b3e2829a60824fdafd3": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB7 (Luxury Y (Blue-Gray Dual-Tone Interior - So",
+    "to": "BYD7152WT6HEVB7 (Luxury Y (Blue-Gray Two-Tone Interior - Sou"
+   }
+  ],
+  "model:34c53dbcc640852843b77907": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB9 (-10 Type (Beige-Brown Dual-Tone Interior 04",
+    "to": "BYD7152WT6HEVB9 (-10 Type (Beige-Brown Two-Tone Interior 04)"
+   }
+  ],
+  "model:9ed6b443c1b7d646f4fa6471": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB9 (-20 Type (Beige-Brown Dual-Tone Interior 04",
+    "to": "BYD7152WT6HEVB9 (-20 Type (Beige-Brown Two-Tone Interior 04)"
+   }
+  ],
+  "model:68d2fff65cfcebc7590add6d": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB9 (HA2HZ-10 Type (Beige-Brown Dual-Tone Interi",
+    "to": "BYD7152WT6HEVB9 (HA2HZ-10 Type (Beige-Brown Two-Tone Interio"
+   }
+  ],
+  "model:7e767021631d078aecba4364": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVB9 (HA2HZ-20 Type (Beige-Brown Dual-Tone Interi",
+    "to": "BYD7152WT6HEVB9 (HA2HZ-20 Type (Beige-Brown Two-Tone Interio"
+   }
+  ],
+  "model:ad8a7bfb645cd7fb4d172c80": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC (-10 Type (Beige-Brown Dual-Tone Interior 04)",
+    "to": "BYD7152WT6HEVC (-10 Type (Beige-Brown Two-Tone Interior 04))"
+   }
+  ],
+  "model:9cb711bb22bcfb8d5a1c2de9": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC (-20 Type (Beige-Brown Dual-Tone Interior 04)",
+    "to": "BYD7152WT6HEVC (-20 Type (Beige-Brown Two-Tone Interior 04))"
+   }
+  ],
+  "model:4ee0b94b08d5474dbfd8dbec": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC (HA2HAA-10 Type (Beige-Brown Dual-Tone Interi",
+    "to": "BYD7152WT6HEVC (HA2HAA-10 Type (Beige-Brown Two-Tone Interio"
+   }
+  ],
+  "model:a94fc82e855bd94fad36ac1f": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC1 (-10 Type (Beige-Brown Dual-Tone Interior 04",
+    "to": "BYD7152WT6HEVC1 (-10 Type (Beige-Brown Two-Tone Interior 04)"
+   }
+  ],
+  "model:4d97a4e1d45c5dc49b0cf249": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC1 (HA2HZ-10 Type (Beige-Brown Dual-Tone Interi",
+    "to": "BYD7152WT6HEVC1 (HA2HZ-10 Type (Beige-Brown Two-Tone Interio"
+   }
+  ],
+  "model:13a1df977dd7a33a8d269e2c": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC1 (HA2HZ-20 Type (Beige-Brown Dual-Tone Interi",
+    "to": "BYD7152WT6HEVC1 (HA2HZ-20 Type (Beige-Brown Two-Tone Interio"
+   }
+  ],
+  "model:9b59e4f1e60c5df3e96570c7": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC1 (Luxury Y (Blue-Gray Dual-Tone Interior 04LS",
+    "to": "BYD7152WT6HEVC1 (Luxury Y (Blue-Gray Two-Tone Interior 04LS)"
+   }
+  ],
+  "model:8a75c160b362ec94a9bca570": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC10 (-10 Type (Beige-Brown Dual-Tone Interior 0",
+    "to": "BYD7152WT6HEVC10 (-10 Type (Beige-Brown Two-Tone Interior 04"
+   }
+  ],
+  "model:005e24131ac39740f8bd40b9": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC10 (-20 Type (Beige-Brown Dual-Tone Interior 0",
+    "to": "BYD7152WT6HEVC10 (-20 Type (Beige-Brown Two-Tone Interior 04"
+   }
+  ],
+  "model:b957c9eff903326911ae7f26": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC10 (HA2HAA-20 Type (Beige-Brown Dual-Tone Inte",
+    "to": "BYD7152WT6HEVC10 (HA2HAA-20 Type (Beige-Brown Two-Tone Inter"
+   }
+  ],
+  "model:66db7b09677dc5d94fb67014": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC2 (-10 Type (Beige-Brown Dual-Tone Interior 04",
+    "to": "BYD7152WT6HEVC2 (-10 Type (Beige-Brown Two-Tone Interior 04)"
+   }
+  ],
+  "model:949650a4684447a1db0b0bbc": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC2 (-20 Type (Beige-Brown Dual-Tone Interior 04",
+    "to": "BYD7152WT6HEVC2 (-20 Type (Beige-Brown Two-Tone Interior 04)"
+   }
+  ],
+  "model:87c063da4a9e0bb74ca00a42": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC2 (-30 Type (Beige-Brown Dual-Tone Interior 04",
+    "to": "BYD7152WT6HEVC2 (-30 Type (Beige-Brown Two-Tone Interior 04)"
+   }
+  ],
+  "model:cf8bb58c16c6c2c4ba953fd8": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC2 (HA2HAA-10 Type (Beige-Brown Dual-Tone Inter",
+    "to": "BYD7152WT6HEVC2 (HA2HAA-10 Type (Beige-Brown Two-Tone Interi"
+   }
+  ],
+  "model:01a9ffceac3a6c650b572edf": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC2 (HA2HAA-20 Type (Beige-Brown Dual-Tone Inter",
+    "to": "BYD7152WT6HEVC2 (HA2HAA-20 Type (Beige-Brown Two-Tone Interi"
+   }
+  ],
+  "model:2ec6eaadeaa6494e51bf15f2": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC2 (HA2HAA-30 Type (Beige-Brown Dual-Tone Inter",
+    "to": "BYD7152WT6HEVC2 (HA2HAA-30 Type (Beige-Brown Two-Tone Interi"
+   }
+  ],
+  "model:0fde082516a1a93970711c9b": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC3 (-10 Type (Beige-Brown Dual-Tone Interior 04",
+    "to": "BYD7152WT6HEVC3 (-10 Type (Beige-Brown Two-Tone Interior 04)"
+   }
+  ],
+  "model:6e34a7cf3b5cbfda247d8313": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC3 (-20 Type (Beige-Brown Dual-Tone Interior 04",
+    "to": "BYD7152WT6HEVC3 (-20 Type (Beige-Brown Two-Tone Interior 04)"
+   }
+  ],
+  "model:7ff7c3375f69ec5fcc4a1336": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC3 (Luxury Y (Blue-Gray Dual-Tone Interior 04))",
+    "to": "BYD7152WT6HEVC3 (Luxury Y (Blue-Gray Two-Tone Interior 04))"
+   }
+  ],
+  "model:4a10cf7191c965d828c481a8": [
+   {
+    "zh": "systematic",
+    "from": "BYD7152WT6HEVC3 (Luxury Y (Blue-Gray Dual-Tone Interior 04LS",
+    "to": "BYD7152WT6HEVC3 (Luxury Y (Blue-Gray Two-Tone Interior 04LS)"
+   }
+  ],
+  "model:3b0ae980b9fc25e9e13bb529": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV (HA3HG (Comfort Y (Blue-Beige Dual-Tone Interi",
+    "to": "BYD7153WT6HEV (HA3HG (Comfort Y (Blue-Beige Two-Tone Interio"
+   }
+  ],
+  "model:c785b6ec6e26a995ae8e55a1": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV (HA3HG (Comfort Y (Black-Gray Dual-Tone Interi",
+    "to": "BYD7153WT6HEV (HA3HG (Comfort Y (Black-Gray Two-Tone Interio"
+   }
+  ],
+  "model:34c06e7ad02c441b0f48098d": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV (HA3HG (Premium Y (Blue-Beige Dual-Tone Interi",
+    "to": "BYD7153WT6HEV (HA3HG (Premium Y (Blue-Beige Two-Tone Interio"
+   }
+  ],
+  "model:039f9d2eb5053a8aa64f0ff7": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV (HA3HG (Premium Y (Black-Gray Dual-Tone Interi",
+    "to": "BYD7153WT6HEV (HA3HG (Premium Y (Black-Gray Two-Tone Interio"
+   }
+  ],
+  "model:6c5fd3a27e2f722aad95d914": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV (HA3HG Premium Y (Blue-Beige Dual-Tone Interio",
+    "to": "BYD7153WT6HEV (HA3HG Premium Y (Blue-Beige Two-Tone Interior"
+   }
+  ],
+  "model:18d62e22bac2eac9a2d3f732": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV (Comfort Y Blue-Beige Dual-Tone Interior S3)",
+    "to": "BYD7153WT6HEV (Comfort Y Blue-Beige Two-Tone Interior S3)"
+   }
+  ],
+  "model:f2607998e54fbcfa9896b09d": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV (Comfort Y Black-Gray Dual-Tone Interior)",
+    "to": "BYD7153WT6HEV (Comfort Y Black-Gray Two-Tone Interior)"
+   }
+  ],
+  "model:4b40880368f84291204d15fd": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV (Comfort Y Black-Gray Dual-Tone Interior S3)",
+    "to": "BYD7153WT6HEV (Comfort Y Black-Gray Two-Tone Interior S3)"
+   }
+  ],
+  "model:c6d1ab680928b9f45793e821": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV (Premium Y Blue-Beige Dual-Tone Interior S3)",
+    "to": "BYD7153WT6HEV (Premium Y Blue-Beige Two-Tone Interior S3)"
+   }
+  ],
+  "model:54f40894250881da0304ae2d": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV (Premium Y Black-Gray Dual-Tone Interior S3)",
+    "to": "BYD7153WT6HEV (Premium Y Black-Gray Two-Tone Interior S3)"
+   }
+  ],
+  "model:9d6d7f8c382a0d15f3876de7": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV1 (HA3HA (Exclusive Y (Blue-Beige Dual-Tone Int",
+    "to": "BYD7153WT6HEV1 (HA3HA (Exclusive Y (Blue-Beige Two-Tone Inte"
+   }
+  ],
+  "model:3ecc4aa31335cb7974bed76e": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV1 (HA3HA (Exclusive Y (Black-Gray Dual-Tone Int",
+    "to": "BYD7153WT6HEV1 (HA3HA (Exclusive Y (Black-Gray Two-Tone Inte"
+   }
+  ],
+  "model:c8d44abfede7ae44fbe75f6a": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV1 (HA3HA (Luxury Y (Blue-Beige Dual-Tone Interi",
+    "to": "BYD7153WT6HEV1 (HA3HA (Luxury Y (Blue-Beige Two-Tone Interio"
+   }
+  ],
+  "model:de717273c9527901e16e6355": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV1 (HA3HA (Luxury Y (Black-Gray Dual-Tone Interi",
+    "to": "BYD7153WT6HEV1 (HA3HA (Luxury Y (Black-Gray Two-Tone Interio"
+   }
+  ],
+  "model:31c625deb292e15b997e3665": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV1 (HA3HA (Flagship Y (Blue-Beige Dual-Tone Inte",
+    "to": "BYD7153WT6HEV1 (HA3HA (Flagship Y (Blue-Beige Two-Tone Inter"
+   }
+  ],
+  "model:cbc0c739ab15ddff459ac45e": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV1 (HA3HA (Flagship Y (Black-Gray Dual-Tone Inte",
+    "to": "BYD7153WT6HEV1 (HA3HA (Flagship Y (Black-Gray Two-Tone Inter"
+   }
+  ],
+  "model:96a8e84b70280344ebc13760": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV1 (HA3HA Flagship Y (Blue-Beige Dual-Tone Inter",
+    "to": "BYD7153WT6HEV1 (HA3HA Flagship Y (Blue-Beige Two-Tone Interi"
+   }
+  ],
+  "model:4a2ab46f2799a3019a48deee": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV1 (HA3HA Flagship Y (Black-Gray Dual-Tone Inter",
+    "to": "BYD7153WT6HEV1 (HA3HA Flagship Y (Black-Gray Two-Tone Interi"
+   }
+  ],
+  "model:8e78ce0f7dda796e2648adcc": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV1 (Honor Y Blue-Beige Dual-Tone Interior S3)",
+    "to": "BYD7153WT6HEV1 (Honor Y Blue-Beige Two-Tone Interior S3)"
+   }
+  ],
+  "model:71e5f84ddd74191f6de81481": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV1 (Honor Y Black-Gray Dual-Tone Interior S3)",
+    "to": "BYD7153WT6HEV1 (Honor Y Black-Gray Two-Tone Interior S3)"
+   }
+  ],
+  "model:4b581a5f3c427dcf5a250226": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV1 (Luxury Y Black-Gray Dual-Tone Interior)",
+    "to": "BYD7153WT6HEV1 (Luxury Y Black-Gray Two-Tone Interior)"
+   }
+  ],
+  "model:8c9f1833bc22d9f2508e1d99": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV1 (Premium Y Black-Gray Dual-Tone Interior)",
+    "to": "BYD7153WT6HEV1 (Premium Y Black-Gray Two-Tone Interior)"
+   }
+  ],
+  "model:652715577e529f0637d1320f": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV2 (Honor Y Blue-Beige Dual-Tone Interior S3)",
+    "to": "BYD7153WT6HEV2 (Honor Y Blue-Beige Two-Tone Interior S3)"
+   }
+  ],
+  "model:b6247042101f5a5e1ff98363": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV2 (Honor Y Black-Gray Dual-Tone Interior)",
+    "to": "BYD7153WT6HEV2 (Honor Y Black-Gray Two-Tone Interior)"
+   }
+  ],
+  "model:7fa91cf16772884cd7e8b34b": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV2 (Honor Y Black-Gray Dual-Tone Interior S3)",
+    "to": "BYD7153WT6HEV2 (Honor Y Black-Gray Two-Tone Interior S3)"
+   }
+  ],
+  "model:f5c68b55c4fbcbddbb20426d": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV2 (Flagship Y Red-Beige Dual-Tone Interior)",
+    "to": "BYD7153WT6HEV2 (Flagship Y Red-Beige Two-Tone Interior)"
+   }
+  ],
+  "model:52d0739c2069e263b37c55ce": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV2 (Flagship Y Blue-Beige Dual-Tone Interior S3)",
+    "to": "BYD7153WT6HEV2 (Flagship Y Blue-Beige Two-Tone Interior S3)"
+   }
+  ],
+  "model:0cc744763bb498ded626373a": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV2 (Flagship Y Black-Gray Dual-Tone Interior)",
+    "to": "BYD7153WT6HEV2 (Flagship Y Black-Gray Two-Tone Interior)"
+   }
+  ],
+  "model:35e72e8ccac5cc291b530912": [
+   {
+    "zh": "systematic",
+    "from": "BYD7153WT6HEV2 (Flagship Y Black-Gray Dual-Tone Interior S3)",
+    "to": "BYD7153WT6HEV2 (Flagship Y Black-Gray Two-Tone Interior S3)"
+   }
+  ],
+  "model:fa64c6bec27a288657caeec9": [
+   {
+    "zh": "systematic",
+    "from": "HA6HE-05 1.5L 5-Seater Black-Grey Dual-Tone Interior",
+    "to": "HA6HE-05 1.5L 5-Seater Black-Gray Two-Tone Interior"
+   }
+  ],
+  "model:e2841a3de91430375763d5e5": [
+   {
+    "zh": "systematic",
+    "from": "HXHAL (-GL CN Standard (Red-Beige Dual-Tone Interior))",
+    "to": "HXHAL (-GL CN Standard (Red-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:2a403913c14fbf749197f7c3": [
+   {
+    "zh": "systematic",
+    "from": "HXHAL (-GL EU Standard (Red-Beige Dual-Tone Interior))",
+    "to": "HXHAL (-GL EU Standard (Red-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:967bd1520fc3ae62a660835f": [
+   {
+    "zh": "systematic",
+    "from": "HXHAL (-GS CN Standard (Red-Beige Dual-Tone Interior))",
+    "to": "HXHAL (-GS CN Standard (Red-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:e0d6658ace4a5880328e870a": [
+   {
+    "zh": "systematic",
+    "from": "HXHAL (-GS US Standard (Red-Beige Dual-Tone Interior))",
+    "to": "HXHAL (-GS US Standard (Red-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:d3f9be0afa8e6f91fd4d9dfc": [
+   {
+    "zh": "systematic",
+    "from": "HXHBL (-GL 3-to-7 (V2L) (Red-Beige Dual-Tone Interior))",
+    "to": "HXHBL (-GL 3-to-7 (V2L) (Red-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:a4eeb6b1dc23ef213e2cc5c1": [
+   {
+    "zh": "systematic",
+    "from": "HXHBL (-GS 3-to-7 (Red-Beige Dual-Tone Interior))",
+    "to": "HXHBL (-GS 3-to-7 (Red-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:495a6683de9ae797cbea7f14": [
+   {
+    "zh": "systematic",
+    "from": "HXHCL (-GL 3-to-7 (Red-Beige Dual-Tone Interior))",
+    "to": "HXHCL (-GL 3-to-7 (Red-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:38eac820a6412d32f53be893": [
+   {
+    "zh": "systematic",
+    "from": "HXHCL (-GS 3-to-7 (Red-Beige Dual-Tone Interior))",
+    "to": "HXHCL (-GS 3-to-7 (Red-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:f6378c39b420a87ee7bed5fa": [
+   {
+    "zh": "systematic",
+    "from": "HXHG (-10 (Blue-Black Dual-Tone Interior))",
+    "to": "HXHG (-10 (Blue-Black Two-Tone Interior))"
+   }
+  ],
+  "model:d21a121271490f355e122959": [
+   {
+    "zh": "systematic",
+    "from": "HXHG (-20 (Blue-Black Dual-Tone Interior))",
+    "to": "HXHG (-20 (Blue-Black Two-Tone Interior))"
+   }
+  ],
+  "model:a8d6cc1877516b9fa525923a": [
+   {
+    "zh": "systematic",
+    "from": "HXHG (HXHG-25 (Black-Grey Dual-Tone Interior))",
+    "to": "HXHG (HXHG-25 (Black-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:5609bccd3087ed0e091b162f": [
+   {
+    "zh": "systematic",
+    "from": "HXHG (HXHG-30 (Black-Grey Dual-Tone Interior))",
+    "to": "HXHG (HXHG-30 (Black-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:b18ac1ccc8ef9cd45d4ffb8b": [
+   {
+    "zh": "systematic",
+    "from": "HXHG (HXHG-30 Side Window Upper/Lower Chrome Trim (Black-Gre",
+    "to": "HXHG (HXHG-30 Side Window Upper/Lower Chrome Trim (Black-Gra"
+   }
+  ],
+  "model:2473fb835fba738836204a72": [
+   {
+    "zh": "systematic",
+    "from": "HXHG (HXHG-30 Side Window Upper/Lower Black Trim (Red-Beige ",
+    "to": "HXHG (HXHG-30 Side Window Upper/Lower Black Trim (Red-Beige "
+   }
+  ],
+  "model:2b5b11cd1f78b9c556841f98": [
+   {
+    "zh": "systematic",
+    "from": "HXHG (HXHG-35 (Black-Grey Dual-Tone Interior))",
+    "to": "HXHG (HXHG-35 (Black-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:a0d312a92f6ad6e4ca6955fd": [
+   {
+    "zh": "systematic",
+    "from": "HXHH (-30 (Red-Beige Dual-Tone Interior))",
+    "to": "HXHH (-30 (Red-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:4dda1d734d297ccf2e83f5d1": [
+   {
+    "zh": "systematic",
+    "from": "HXHH (HXHH-30 (Black-Grey Dual-Tone Interior))",
+    "to": "HXHH (HXHH-30 (Black-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:6088521b764729744c3809ce": [
+   {
+    "zh": "systematic",
+    "from": "HXHH (HXHH-30 Side Window Upper/Lower Chrome Trim (Red-Beige",
+    "to": "HXHH (HXHH-30 Side Window Upper/Lower Chrome Trim (Red-Beige"
+   }
+  ],
+  "model:987b56ca32fbba69a55e2279": [
+   {
+    "zh": "systematic",
+    "from": "HXHH (HXHH-30 Side Window Upper/Lower Black Trim (Black-Grey",
+    "to": "HXHH (HXHH-30 Side Window Upper/Lower Black Trim (Black-Gray"
+   }
+  ],
+  "model:d5907434117e433a2b2980a5": [
+   {
+    "zh": "systematic",
+    "from": "HXHJ (-20 (Red-Beige Dual-Tone Interior))",
+    "to": "HXHJ (-20 (Red-Beige Two-Tone Interior))"
+   }
+  ],
+  "model:ad815a2a35610cad25fad749": [
+   {
+    "zh": "systematic",
+    "from": "HXHK (-10 (Blue-Black Dual-Tone Interior))",
+    "to": "HXHK (-10 (Blue-Black Two-Tone Interior))"
+   }
+  ],
+  "model:209dc6d3e6eb6bdc2c387f80": [
+   {
+    "zh": "systematic",
+    "from": "HXHK (HXHK-10 (Black-Grey Dual-Tone Interior))",
+    "to": "HXHK (HXHK-10 (Black-Gray Two-Tone Interior))"
+   }
+  ],
+  "model:9ccd8bca8d6e198e097bcde7": [
+   {
+    "zh": "systematic",
+    "from": "HXHK (HXHK-10 Side Window Upper/Lower Black Trim (Black-Grey",
+    "to": "HXHK (HXHK-10 Side Window Upper/Lower Black Trim (Black-Gray"
+   }
+  ],
+  "model:657dcfe7d8090d5a8c899be9": [
+   {
+    "zh": "systematic",
+    "from": "HXHK (HXHK-20 Side Window Upper/Lower Chrome Trim (Black-Gre",
+    "to": "HXHK (HXHK-20 Side Window Upper/Lower Chrome Trim (Black-Gra"
+   }
+  ],
+  "node:a495ea7bea0dce158838a0c7": [
+   {
+    "zh": "副驾驶座椅总成",
+    "from": "Co-Driver Seat Assembly",
+    "to": "Front Passenger Seat Assembly"
+   }
+  ],
+  "node:150016fd90bef11a9a1c0869": [
+   {
+    "zh": "差速器组件",
+    "from": "Differential Component",
+    "to": "Differential Assembly"
+   }
+  ],
+  "node:323f30740ee3071d994019ac": [
+   {
+    "zh": "搁物架上护板",
+    "from": "Shelf Upper Guard Panel",
+    "to": "Shelf Upper Trim Panel"
+   }
+  ],
+  "node:3e2869661ee601505dc68054": [
+   {
+    "zh": "气缸体加工部件",
+    "from": "Cylinder Block Machined Parts",
+    "to": "Cylinder Block Machined Component"
+   }
+  ],
+  "node:24a4a39759cc92a8e02d46d0": [
+   {
+    "zh": "自制",
+    "from": "In-house",
+    "to": "Self-Made"
+   }
+  ],
+  "part:bf27ced0312b709c6eb406dd": [
+   {
+    "zh": "喷漆后",
+    "from": "Post-Paint",
+    "to": "Spray Painted"
+   }
+  ],
+  "part:a158db97fd30cf54f3f1d419": [
+   {
+    "zh": "电泳",
+    "from": "Electrophoretic",
+    "to": "E-Coat"
+   }
+  ],
+  "part:e85f4974975bcd72be013f3d": [
+   {
+    "zh": "内六角花形圆柱头螺钉",
+    "from": "Hex Socket Torx Cylindrical Head Screw 10.9 Grade",
+    "to": "Hex Socket Head Cap Screw"
+   }
+  ],
+  "part:d4a2408c447736265ad61e57": [
+   {
+    "zh": "贴片",
+    "from": "Patch",
+    "to": "SMT"
+   }
+  ],
+  "part:262c41a31ef6de09572597cd": [
+   {
+    "zh": "侧气帘标识堵盖",
+    "from": "Side Curtain Airbag Label Plug",
+    "to": "Side Air Curtain Identifier Plug"
+   }
+  ],
+  "part:7716ec38400e65ebdeb81a3f": [
+   {
+    "zh": "后排头枕总成",
+    "from": "Rear Headrest Assembly",
+    "to": "Rear Row Headrest Assembly"
+   }
+  ],
+  "part:696fa6df4af9a394a374218f": [
+   {
+    "zh": "前排头枕总成",
+    "from": "Front Headrest Assembly",
+    "to": "Front Row Headrest Assembly"
+   }
+  ],
+  "part:a59b37f4f97e771ecf158571": [
+   {
+    "zh": "后排头枕总成",
+    "from": "Rear Headrest Assembly",
+    "to": "Rear Row Headrest Assembly"
+   }
+  ],
+  "part:9a85d84486f61b8ba2bc60b4": [
+   {
+    "zh": "主驾驶左侧外护板",
+    "from": "Driver Left Outer Trim Panel",
+    "to": "Driver Left Side Outer Trim Panel"
+   }
+  ],
+  "part:793d9025526af0ef97f045fc": [
+   {
+    "zh": "欧标",
+    "from": "Euro Standard",
+    "to": "EU Standard"
+   }
+  ],
+  "part:92dbc74a98af948c9eb08dcc": [
+   {
+    "zh": "电",
+    "from": "E-Coat",
+    "to": "Electric"
+   }
+  ],
+  "part:4536c8084326910f9a1aa5a7": [
+   {
+    "zh": "电泳",
+    "from": "Electrophoretic",
+    "to": "E-Coat"
+   }
+  ],
+  "part:7fef71d78b364385f22f852d": [
+   {
+    "zh": "电泳",
+    "from": "Electrophoretic",
+    "to": "E-Coat"
+   }
+  ],
+  "part:842d1d2b9f4ec0c1d64a55cb": [
+   {
+    "zh": "电泳",
+    "from": "Electrophoretic",
+    "to": "E-Coat"
+   }
+  ],
+  "part:54a75cd5e5e490d449344eaa": [
+   {
+    "zh": "电泳",
+    "from": "Electrophoretic",
+    "to": "E-Coat"
+   }
+  ],
+  "part:e40b0e89317926edd6ad530b": [
+   {
+    "zh": "电泳",
+    "from": "Electrophoretic",
+    "to": "E-Coat"
+   }
+  ],
+  "part:ee094283ed228a1447a38581": [
+   {
+    "zh": "电泳",
+    "from": "Electrophoretic",
+    "to": "E-Coat"
+   }
+  ],
+  "part:89c919094a5ffabd3d598579": [
+   {
+    "zh": "后排头枕滑套组件",
+    "from": "Headrest Slider Sleeve Assembly",
+    "to": "Rear Headrest Slider Sleeve Assembly"
+   }
+  ],
+  "part:212cf9a2bf7be70146a6e227": [
+   {
+    "zh": "后排头枕滑套组件",
+    "from": "Headrest Slider Sleeve Assembly",
+    "to": "Rear Headrest Slider Sleeve Assembly"
+   }
+  ],
+  "part:507d59211afe2c0a75f1c0db": [
+   {
+    "zh": "电",
+    "from": "E-Coat",
+    "to": "Electric"
+   }
+  ],
+  "part:e59b6c753f95fc8c81a479c8": [
+   {
+    "zh": "电泳",
+    "from": "Electrophoretic",
+    "to": "E-Coat"
+   }
+  ],
+  "part:e920f653d29b97ca5621bc2b": [
+   {
+    "zh": "电泳",
+    "from": "Electrophoretic",
+    "to": "E-Coat"
+   }
+  ],
+  "part:26ca6a60a1fe5e272a4a9653": [
+   {
+    "zh": "电泳",
+    "from": "Electrophoretic",
+    "to": "E-Coat"
+   }
+  ],
+  "part:c540d6dcb95e59913a5f758e": [
+   {
+    "zh": "烟墨",
+    "from": "Smoke Black",
+    "to": "Smoke Ink"
+   }
+  ],
+  "part:bbb1980e481d1bfd91bf40fb": [
+   {
+    "zh": "烟墨",
+    "from": "Smoke Black",
+    "to": "Smoke Ink"
+   }
+  ],
+  "part:3713abf570c3e70fcacadad4": [
+   {
+    "zh": "烟墨",
+    "from": "Smoke Black",
+    "to": "Smoke Ink"
+   }
+  ],
+  "part:750fe189e234eb8aeac96a4a": [
+   {
+    "zh": "搁物板总成",
+    "from": "Shelf Board Assembly",
+    "to": "Parcel Shelf Assembly"
+   }
+  ],
+  "part:cd5cf3a7a74fd90fd18ece53": [
+   {
+    "zh": "电泳",
+    "from": "Electrophoretic",
+    "to": "E-Coat"
+   }
+  ],
+  "part:26c2cc2727327bfe4f230f16": [
+   {
+    "zh": "中配",
+    "from": "Mid-Range",
+    "to": "Mid Spec"
+   }
+  ],
+  "part:32948036cfcc68f7a41ccffa": [
+   {
+    "zh": "高配",
+    "from": "High-Range",
+    "to": "High Spec"
+   }
+  ],
+  "part:ea67e86b210831dc84dab21a": [
+   {
+    "zh": "蓄电池压板",
+    "from": "Battery Hold-Down Plate",
+    "to": "Battery Clamp"
+   }
+  ],
+  "part:45855b73cc305f5eaf638035": [
+   {
+    "zh": "已电泳",
+    "from": "E-Coat Coated",
+    "to": "E-Coated"
+   }
+  ],
+  "part:c353e3f62945b7a63b39ff46": [
+   {
+    "zh": "通风盖板总成",
+    "from": "Ventilation Cover Assembly",
+    "to": "Ventilation Cover Plate Assembly"
+   }
+  ]
+ }
+}

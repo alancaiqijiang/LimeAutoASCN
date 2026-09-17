@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}{{ t.detail_title }}{% endblock %}
+{% block content %}
+<section class="account-page account-maintenance"><div class="account-card">
+  <p class="eyebrow">{{ t.detail_eyebrow }}</p>
+  <h1>{{ t.detail_heading }}</h1>
+  <p class="account-lede">{{ t('detail_lede', last4=vehicle.vin_last4) }}</p>
+  <div class="button-row" style="margin-top:0">
+    <a class="button-secondary" href="/ops/vehicles/{{ vehicle.id }}">{{ t.back_to_vehicle }}</a>
+    <a class="button-secondary" href="/ops/vehicles/{{ vehicle.id }}/maintenance/{{ record.id }}/edit">{{ t.edit }}</a>
+  </div>
+
+  <div class="maintenance-detail-head">
+    <div><small>{{ t.date }}</small><strong>{{ record.maintenance_date }}</strong></div>
+    <div><small>{{ t.maintenance_type_label }}</small><strong>{% if record.maintenance_type in ('maintenance', 'inspection', 'repair', 'replacement', 'other') %}{{ t('type_' ~ record.maintenance_type) }}{% else %}{{ record.maintenance_type }}{% endif %}</strong></div>
+    <div><small>{{ t.odometer_km }}</small><strong>{{ record.odometer_km if record.odometer_km is not none else '—' }}</strong></div>
+    <div><small>{{ t.service_provider }}</small><strong>{{ record.service_provider or '—' }}</strong></div>
+    <div><small>{{ t.source_reference }}</small><strong>{{ record.source_reference or '—' }}</strong></div>
+  </div>
+
+  {% if record.complaint %}<div class="maintenance-detail-block"><small>{{ t.complaint }}</small><p>{{ record.complaint }}</p></div>{% endif %}
+  <div class="maintenance-detail-block"><small>{{ t.summary }}</small><p>{{ record.summary }}</p></div>
+
+  <div class="maintenance-detail-block">
+    <small>{{ t.section_items }}</small>
+    {% if record['items'] %}
+      <div class="table-wrap"><table>
+        <thead><tr><th>{{ t.item_no }}</th><th>{{ t.item_name }}</th><th>{{ t.item_type_label }}</th><th>{{ t.item_status_label }}</th><th>{{ t.material_code }}</th><th>{{ t.quantity }}</th><th>{{ t.item_note_label }}</th></tr></thead>
+        <tbody>
+          {% for item in record['items'] %}
+          <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ item.item_name }}</td>
+            <td>{% if item.item_type in ('maintenance', 'inspection', 'repair', 'replacement', 'adjustment', 'recommendation') %}{{ t('type_' ~ item.item_type) }}{% else %}{{ item.item_type }}{% endif %}</td>
+            <td><span class="maintenance-status maintenance-status-{{ item.item_status }}">{{ t('item_status_' ~ item.item_status) if item.item_status in ('completed','recommended','deferred','not_completed') else item.item_status }}</span></td>
+            <td>{% if item.material_code %}<code>{{ item.material_code }}</code>{% else %}—{% endif %}</td>
+            <td>{{ item.quantity if item.quantity is not none else '—' }}</td>
+            <td>{{ item.note or '—' }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table></div>
+    {% else %}<p>{{ t.no_items }}</p>{% endif %}
+  </div>
+
+  {% if record.correction %}<div class="maintenance-detail-block"><small>{{ t.correction_label }}</small><p>{{ record.correction }}</p></div>{% endif %}
+  {% if record.note %}<div class="maintenance-detail-block"><small>{{ t.record_note_label }}</small><p>{{ record.note }}</p></div>{% endif %}
+
+  {% if record.attachments %}
+  <div class="maintenance-detail-block">
+    <small>{{ t.photos }}</small>
+    <div class="maintenance-photo-row">
+      {% for attachment in record.attachments %}
+        <a href="/ops/vehicles/{{ vehicle.id }}/maintenance/{{ record.id }}/attachments/{{ attachment.id }}"><img data-catalog-image src="/ops/vehicles/{{ vehicle.id }}/maintenance/{{ record.id }}/attachments/{{ attachment.id }}" alt="{{ attachment.original_filename or t.photos }}"></a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div></section>
+{% endblock %}

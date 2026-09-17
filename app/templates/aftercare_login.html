@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}LimeAuto Aftercare · {{ t.staff_sign_in }}{% endblock %}
+{% block content %}
+<section class="account-page account-narrow"><div class="account-card"><p class="eyebrow">LimeAuto Aftercare</p><h1>{{ t.staff_sign_in }}</h1>{% if error %}<div class="notice error" role="alert">{{ error }}</div>{% endif %}<form class="account-form" action="/ops/login" method="post"><input type="hidden" name="next_url" value="{{ next_url or '/ops/vehicles' }}"><label>{{ t.email }}<input type="email" name="email" value="{{ submitted_email or '' }}" autocomplete="username" required></label><label>{{ t.password }}<input type="password" name="password" autocomplete="current-password" required></label><button type="submit">{{ t.open_aftercare }}</button></form></div></section>
+{% endblock %}

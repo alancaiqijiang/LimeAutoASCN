@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}{{ model.display_model_name }} · LimeAuto{% endblock %}
+{% block catalog_breadcrumb %}{% endblock %}
+{% block content %}
+<section class="catalog-page catalog-workbench-page">
+  <a class="catalog-back-link" href="/catalog/{{ model.url_series_code }}">{{ t.back_to_parent }}</a>
+  <div class="catalog-model-heading"><div><div class="catalog-kicker">{{ t.model_catalog }}</div><h1>{{ model.display_model_name }}</h1><p>{{ model.display_series_name }} <span>·</span> <code>{{ model.model_code }}</code></p></div><div class="catalog-status-pill"><i></i> {{ t.reference_only }}</div></div>
+  <div class="catalog-workbench">
+    <aside class="catalog-tree-panel">
+      <div class="catalog-panel-head"><span>{{ t.system_catalog }}</span><small>{{ t('groups_count', n=nodes|length) }}</small></div>
+      <nav class="catalog-tree" aria-label="{{ t.system_catalog }}">
+        {% for node in nodes %}
+          <a href="/catalog/{{ model.url_series_code }}/{{ model.url_model_code }}/node/{{ node.url_key }}" class="catalog-tree-item"><span class="catalog-tree-caret">›</span><span>{{ node.display_node_name }}{% if node.path_variant_count > 1 %} · {{ t('source_variants', n=node.path_variant_count) }}{% endif %}</span><small>{{ node.direct_part_count + node.descendant_part_count }}</small></a>
+        {% endfor %}
+      </nav>
+    </aside>
+    <div class="catalog-data-panel">
+      <div class="catalog-data-head"><div><div class="catalog-kicker">{{ t.system_groups }}</div><h2>{{ t.choose_system }}</h2><p>{{ t.choose_system_hint }}</p></div><span class="catalog-data-count">{{ t('system_group_count', n=nodes|length) }}</span></div>
+      {% if nodes %}
+        <div class="catalog-system-table-wrap"><table class="catalog-system-table"><thead><tr><th>{{ t.system_group }}</th><th>{{ t.subsystems }}</th><th>{{ t.parts }}</th><th>{{ t.status }}</th><th></th></tr></thead><tbody>{% for node in nodes %}<tr><td><a href="/catalog/{{ model.url_series_code }}/{{ model.url_model_code }}/node/{{ node.url_key }}"><b>{{ node.display_node_name }}</b>{% if node.source_obj_code %}<small>{{ t.source_code }}{{ node.source_obj_code }}</small>{% endif %}{% if node.path_variant_count > 1 %}<small>{{ t('source_variants', n=node.path_variant_count) }}</small>{% endif %}</a></td><td>{{ node.child_count }}</td><td>{{ node.direct_part_count + node.descendant_part_count }}</td><td><span class="catalog-table-state">{{ t.reference }}</span></td><td><a class="catalog-row-arrow" href="/catalog/{{ model.url_series_code }}/{{ model.url_model_code }}/node/{{ node.url_key }}">›</a></td></tr>{% endfor %}</tbody></table></div>
+      {% else %}<div class="catalog-empty"><h2>{{ t.no_system_catalog }}</h2></div>{% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}
